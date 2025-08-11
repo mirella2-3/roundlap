@@ -1,0 +1,68 @@
+const yakkongData = [
+
+        {
+            id: 1,
+            title: '약콩 판테놀 클렌징 오일',
+            price: 19000,
+            salePrice: 19000,
+            category: ['cleansing', 'corneous', 'yakkong'],
+            imgurl: 'https://roundlab.co.kr/web/product/medium/202501/6abcbf2b2f3b68bb1be9b39671dadc83.jpg',
+        },
+        {
+            id: 2,
+            title: '약콩 판테놀 클렌저',
+            price: 22000,
+            salePrice: 22000,
+            category: ['cleansing', 'sensitive', 'yakkong'],
+            imgurl: 'https://roundlab.co.kr/web/product/medium/202501/35140a02772f63e616f7ec7df12a448e.jpg',
+        },
+        {
+            id: 3,
+            title: '약콩 판테놀 토너',
+            price: 21000,
+            salePrice: 21000,
+            category: ['cleansing', 'corneous', 'yakkong'],
+            imgurl: 'https://roundlab.co.kr/web/product/medium/202407/93985e9ec0e1203fc20bc8895593b76a.jpg',
+        },
+        {
+            id: 4,
+            title: '약콩 판테놀 마스크',
+            price: 20000,
+            salePrice: 20000,
+            category: ['mask', 'sensitive', 'yakkong'],
+            imgurl: 'https://roundlab.co.kr/web/product/medium/202308/a5cd0441832168b9c60a7e65f2403f84.jpg',
+        },
+        {
+            id: 5,
+            title: '약콩 판테놀 앰플',
+            price: 21000,
+            salePrice: 21000,
+            category: ['cleansing', 'corneous', 'yakkong'],
+            imgurl: 'https://roundlab.co.kr/web/product/medium/202308/bca270227df9a220d2d92a353346b552.jpg',
+        },
+        {
+            id: 6,
+            title: '약콩 판테놀 크림',
+            price: 22000,
+            salePrice: 20500,
+            category: ['lotion', 'sensitive', 'yakkong', 'sale'],
+            imgurl: 'https://roundlab.co.kr/web/product/medium/202308/e07bd0b54823923da5c707894fd22da2.jpg',
+        },
+        {
+            id: 7,
+            title: '약콩판테놀 딥 클렌징 워터',
+            price: 20000,
+            salePrice: 25000,
+            category: ['cleansing', 'corneous', 'yakkong', 'sale'],
+            imgurl: '',
+        },
+        {
+            id: 8,
+            title: '포맨 약콩 판테놀 젠틀 클렌징 크림',
+            price: 19000,
+            salePrice: 18000,
+            category: ['cleansing', 'sensitive', 'yakkong', 'man', 'sale'],
+            imgurl: 'https://roundlab.co.kr/web/product/medium/202501/35140a02772f63e616f7ec7df12a448e.jpg',
+        },
+
+];
