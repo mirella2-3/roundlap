@@ -1,7 +1,7 @@
-import { CartItemStyle } from './style';
+import React from 'react';
 
 const CartItem = () => {
-    return <CartItemStyle></CartItemStyle>;
+    return <div></div>;
 };
 
 export default CartItem;

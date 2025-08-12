@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { JoinStyle } from './style';
+import { useNavigate } from 'react-router-dom';
 
 const Join = () => {
+    const navigate = useNavigate();
+
     const [form, setForm] = useState({
         userId: '',
         password: '',
@@ -28,13 +31,24 @@ const Join = () => {
 
     const onChange = (e) => {
         const { name, value, type, checked } = e.target;
-        setForm((prev) => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value,
-        }));
+        setForm((prev) => {
+            const updated = {
+                ...prev,
+                [name]: type === 'checkbox' ? checked : value,
+            };
+            if (name.startsWith('agree') && name !== 'agreeAll') {
+                const allChecked =
+                    updated.agreeTerms &&
+                    updated.agreePrivacy &&
+                    updated.agreeInfo &&
+                    updated.agreeProcess;
+
+                updated.agreeAll = allChecked;
+            }
+            return updated;
+        });
     };
 
-    // 전체 동의 체크박스 전용 함수
     const onChangeAll = (e) => {
         const checked = e.target.checked;
         setForm((prev) => ({
@@ -47,9 +61,15 @@ const Join = () => {
         }));
     };
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        navigate('/login/Join/success');
+    };
+
     return (
         <JoinStyle>
-            <form>
+            <form onSubmit={onSubmit}>
                 <div className="inner">
                     <h2>회원가입</h2>
                     <div className="joinlayout">
@@ -93,6 +113,7 @@ const Join = () => {
                         <div className="small">
                             대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자로 입력해 주세요.
                         </div>
+
                         {/* 비밀번호 확인 */}
                         <div className="joinPWconfirm">
                             <label htmlFor="passwordConfirm">
@@ -235,31 +256,32 @@ const Join = () => {
                                 />
                             </label>
                         </div>
+
                         {/* 생년월일 */}
                         <div className="joinbirth">
                             <label htmlFor="phoneBirth">생년월일</label>
                             <div className="Phoneybd">
                                 <input
                                     type="text"
-                                    name="phoneMid"
+                                    name="birthYear"
                                     maxLength={4}
-                                    value={form.phoneMid}
+                                    value={form.birthYear}
                                     onChange={onChange}
                                 />
                                 년
                                 <input
                                     type="text"
-                                    name="phoneLast"
+                                    name="birthMonth"
                                     maxLength={4}
-                                    value={form.phoneLast}
+                                    value={form.birthMonth}
                                     onChange={onChange}
                                 />
                                 월
                                 <input
                                     type="text"
-                                    name="phoneLast"
+                                    name="birthDay"
                                     maxLength={4}
-                                    value={form.phoneLast}
+                                    value={form.birthDay}
                                     onChange={onChange}
                                 />
                                 일
@@ -269,9 +291,9 @@ const Join = () => {
                                     양력
                                     <input
                                         type="radio"
-                                        name="genbirthTypeder"
+                                        name="birthType"
                                         value="solar"
-                                        checked={form.gender === 'male'}
+                                        checked={form.birthType === 'solar'}
                                         onChange={onChange}
                                     />
                                 </label>
@@ -280,16 +302,18 @@ const Join = () => {
                                     <input
                                         type="radio"
                                         name="birthType"
-                                        value="Lunar"
-                                        checked={form.gender === 'female'}
+                                        value="lunar"
+                                        checked={form.birthType === 'lunar'}
                                         onChange={onChange}
                                     />
                                 </label>
                             </div>
                         </div>
+
                         <div className="agreementstext">
                             <h2>전체동의</h2>
                         </div>
+
                         {/* 약관 동의 */}
                         <div className="agreements">
                             <label>
@@ -339,6 +363,7 @@ const Join = () => {
                                 (필수) 개인정보 처리 위탁 동의
                             </label>
                         </div>
+
                         <div className="buttons">
                             <button type="submit">가입하기</button>
                         </div>

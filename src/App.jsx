@@ -17,6 +17,7 @@ import {
     Shop,
 } from './pages';
 import { ProductDetail, ProductList } from './components';
+import JoinSucess from './pages/login/JoinSucess';
 
 const App = () => {
     return (
@@ -51,10 +52,10 @@ const App = () => {
                         </Route>
 
                         {/* 단일 경로 */}
-
                         <Route path="/login/Login" element={<Login />} />
                         <Route path="/login/Logout" element={<Logout />} />
                         <Route path="/login/Join" element={<Join />} />
+                        <Route path="/login/Join/success" element={<JoinSucess />} />
                         <Route path="/mypage" element={<Mypage />} />
                     </Route>
                     <Route path="/notfile" element={<Notfile />} />

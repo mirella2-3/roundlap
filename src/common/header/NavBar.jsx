@@ -3,8 +3,16 @@ import { NavStyle } from './style';
 import { BsCart2 } from 'react-icons/bs';
 import { IoMdSearch } from 'react-icons/io';
 import { GoPerson } from 'react-icons/go';
+import { useState } from 'react';
+import Cart from '../../components/cart/Cart';
 
 const NavBar = () => {
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const carts = []; // 장바구니 데이터 (props나 context로 연결 가능)
+
+    const toggleCart = () => {
+        setIsCartOpen((prev) => !prev);
+    };
     return (
         <>
             <NavStyle className="nav">
@@ -152,9 +160,9 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li>
-                        <ul className="cart">
+                        <ul className="cart" onClick={toggleCart}>
                             <li>
-                                <BsCart2 className="cartIcon" />
+                                <BsCart2 className="cartIcon" o />
                             </li>
 
                             <li>
@@ -171,6 +179,7 @@ const NavBar = () => {
                         </ul>
                     </li>
                 </ul>
+                {isCartOpen && <Cart onClose={toggleCart} carts={carts} />}
             </NavStyle>
         </>
     );

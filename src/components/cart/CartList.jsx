@@ -1,7 +1,7 @@
-import { CartListStyle } from './style';
+import React from 'react';
 
 const CartList = () => {
-    return <CartListStyle></CartListStyle>;
+    return <div></div>;
 };
-C;
+
 export default CartList;

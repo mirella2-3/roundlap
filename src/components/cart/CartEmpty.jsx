@@ -1,7 +1,7 @@
-import { CartEmptyStyle } from './style';
+import React from 'react';
 
 const CartEmpty = () => {
-    return <CartEmptyStyle></CartEmptyStyle>;
+    return <div></div>;
 };
 
 export default CartEmpty;
