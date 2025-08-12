@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { Con1Style } from './style';
@@ -6,39 +6,28 @@ import { Con1Style } from './style';
 gsap.registerPlugin(ScrollTrigger);
 
 const Brand_Con1 = ({ scrollPercent }) => {
-    const ref = useRef(null);
+    // const ref = useRef(null);
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.from(ref.current, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: ref.current,
-                    // scroller: '#wrap',
-                    start: 'left center',
-                    end: 'right center',
-                    scrub: true,
-                },
-            });
+    // useEffect(() => {
+    //     const ctx = gsap.context(() => {
+    //         gsap.from(ref.current, {
+    //             opacity: 0,
+    //             y: 50,
+    //             duration: 1,
+    //             scrollTrigger: {
+    //                 trigger: ref.current,
+    //                 start: 'left center',
+    //                 end: 'right center',
+    //                 scrub: true,
+    //             },
+    //         });
+    //     }, ref);
 
-            ScrollTrigger.create({
-                trigger: '#wrap',
-                start: 'top top',
-                end: () => `+=${window.innerWidth * document.querySelectorAll('.panel').length}`,
-                scrub: true,
-                onUpdate: (self) => {
-                    setScrollPercent(self.progress * 100);
-                },
-            });
-        }, ref);
-
-        return () => ctx.revert();
-    }, []);
+    //     return () => ctx.revert();
+    // }, []);
 
     return (
-        <Con1Style ref={ref}>
+        <Con1Style>
             <ul className="top_menu">
                 <li className="on">깨끗한 원료를 선별하다</li>
                 <li>피부를 고민하다</li>

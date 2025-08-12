@@ -9,12 +9,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 1.2;
     font-family: 'Pretendard','Noto Sans KR', sans-serif;
-    color:#333;
+    color:#515151;
   }
 
   a {
     text-decoration: none;
-    color:#333; 
+    color:#515151; 
   }
   li { list-style:none }
   img { vertical-align: top; }

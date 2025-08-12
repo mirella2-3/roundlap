@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export const BrandStyle = styled.div`
-    margin-top: 1500px;
-    .wrap {
-        overflow: hidden;
-    }
-
-    .wrap > * {
-        flex-shrink: 0;
-        width: 100vw;
-        height: 100vh;
-    }
+    margin-top: 2000px;
 
     .wrap {
         display: flex;
         width: max-content;
+        overflow-x: hidden;
+
+        height: 100vh;
+    }
+
+    .wrap > * {
+        flex-shrink: 0;
+
+        height: 100vh;
     }
 
     .panel {

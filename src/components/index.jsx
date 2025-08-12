@@ -1,6 +1,4 @@
 // export { default as Cart } from './cart';
-export { default as ProductDetail } from './shop/ProductDetail';
-export { default as ProductList } from './shop/ProductList';
 
 export { default as BestItem } from './main/BestItem';
 export { default as BestReview } from './main/BestReview';
@@ -20,3 +18,14 @@ export { default as Brand_Con1 } from './brand/Brand_Con1';
 export { default as Brand_Con2 } from './brand/Brand_Con2';
 export { default as Brand_Con3 } from './brand/Brand_Con3';
 export { default as Brand_Last } from './brand/Brand_Last';
+
+export { default as ProductList } from './shop/ProductList';
+export { default as ProductItem } from './shop/ProductItem';
+export { default as ProductDetail } from './shop/ProductDetail';
+
+export { default as MypageDetail } from './mypage/MypageDetail';
+export { default as OrderCheck } from './mypage/OrderCheck';
+export { default as WishList } from './mypage/WishList';
+export { default as WishListItem } from './mypage/WishListItem';
+export { default as WishListNoting } from './mypage/WishListNoting';
+export { default as WishListList } from './mypage/WishListList';

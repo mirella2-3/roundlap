@@ -46,8 +46,12 @@ export const VideoStyle = styled.div`
 `;
 
 export const IntroStyle = styled.div`
-    height: 1080px;
+    width: 1920px;
     position: relative;
+    /* background: lightblue; */
+    /* height: 100vh; */
+    /* box-sizing: border-box; */
+    /* overflow: hidden; */
 
     .txtbox {
         position: fixed;
@@ -115,7 +119,10 @@ export const IntroStyle = styled.div`
 `;
 
 export const IndexStyle = styled.div`
-    /* border: 1px solid #000; */
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #000;
     .inner {
         height: 800px;
         margin: 140px auto;
@@ -172,9 +179,12 @@ export const IndexStyle = styled.div`
     }
 `;
 export const Con1Style = styled.div`
+    height: 100vh;
     width: 100%;
-    overflow: hidden;
     position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #000;
     .top_menu {
         width: 100%;
         height: 60px;
@@ -219,7 +229,7 @@ export const Con1Style = styled.div`
             }
         }
         .right {
-            width: 1080px;
+            width: 840px;
             position: relative;
             .txts {
                 position: absolute;
@@ -255,12 +265,14 @@ export const Con1Style = styled.div`
 export const Con2Style = styled.div`
     position: relative;
     width: 100%;
-    height: 1080px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
     background-image: url('../images/brand_con2.png');
     background-repeat: no-repeat;
     background-position: 0 60px;
     border: 1px solid #000;
-    box-sizing: border-box;
+
     .top_menu {
         width: 100%;
         height: 60px;
@@ -324,12 +336,15 @@ export const Con2Style = styled.div`
 `;
 export const Con3Style = styled.div`
     position: relative;
-    height: 1080px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* height: 1080px; */
     background-image: url('../images/brand_con3.png');
     background-repeat: no-repeat;
     background-position: 0 60px;
     border: 1px solid #000;
-    box-sizing: border-box;
+
     .top_menu {
         width: 100%;
         height: 60px;
@@ -420,6 +435,9 @@ export const Con3Style = styled.div`
 export const LastStyle = styled.div`
     border: 1px solid #000;
     height: 1080px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
 
     .inner {
         text-align: center;
