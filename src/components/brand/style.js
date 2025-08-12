@@ -6,12 +6,17 @@ export const VideoStyle = styled.div`
     left: 0;
     z-index: -10;
     width: 100%;
-    /* height: auto; */
     transition: opacity 0.3s ease-out;
+    opacity: 1;
+    display: block;
+
+    &.hidden {
+        opacity: 0;
+        /* display: none; */
+    }
 
     video {
         width: 100%;
-        /* height: auto; */
         display: block;
     }
 
@@ -41,7 +46,7 @@ export const VideoStyle = styled.div`
 `;
 
 export const IntroStyle = styled.div`
-    height: 500px;
+    height: 1080px;
     position: relative;
 
     .txtbox {
@@ -407,6 +412,8 @@ export const Con3Style = styled.div`
                     font-weight: 700;
                 }
             }
+            opacity: 0;
+            /* transform: translateY(100px); */
         }
     }
 `;

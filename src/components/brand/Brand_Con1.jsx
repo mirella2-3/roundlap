@@ -1,8 +1,44 @@
+import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import { Con1Style } from './style';
 
-const Brand_Con1 = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const Brand_Con1 = ({ scrollPercent }) => {
+    const ref = useRef(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(ref.current, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ref.current,
+                    // scroller: '#wrap',
+                    start: 'left center',
+                    end: 'right center',
+                    scrub: true,
+                },
+            });
+
+            ScrollTrigger.create({
+                trigger: '#wrap',
+                start: 'top top',
+                end: () => `+=${window.innerWidth * document.querySelectorAll('.panel').length}`,
+                scrub: true,
+                onUpdate: (self) => {
+                    setScrollPercent(self.progress * 100);
+                },
+            });
+        }, ref);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <Con1Style>
+        <Con1Style ref={ref}>
             <ul className="top_menu">
                 <li className="on">깨끗한 원료를 선별하다</li>
                 <li>피부를 고민하다</li>
@@ -24,15 +60,56 @@ const Brand_Con1 = () => {
                         <span>사람의 손이 닿지 않는 깊은 바다의</span>
                         <strong>울릉도 해양심층수</strong>
                     </div>
-                    <ul className="circle">
-                        <li className="on">Dokdo</li>
-                        <li>BIRCH</li>
-                        <li>PINE</li>
-                        <li>SOYBEAN</li>
-                        <li>VITA</li>
-                        <li>CAMELLIA</li>
-                        <li>OATS</li>
-                    </ul>
+                    <div className="scroll-section">
+                        <div className="sticky-container">
+                            <svg
+                                className="svg"
+                                width={700}
+                                height={700}
+                                viewBox="0 0 700 700"
+                                xmlns="http://www.w3.org/2000/svg"
+                                style={{ animation: 'spin 30s linear infinite' }}
+                            >
+                                <defs>
+                                    <path
+                                        id="circlePath"
+                                        d="
+                                M 350,350
+                                m -300,0
+                                a 300,300 0 1,1 600,0
+                                a 300,300 0 1,1 -600,0
+                              "
+                                    />
+                                </defs>
+                                {/* <text className={animate ? 'colorText' : ''}> */}
+                                <text className="animate">
+                                    <textPath href="#circlePath" startOffset={`${scrollPercent}%`}>
+                                        <tspan className="word" dx="50">
+                                            C A M E L L I A
+                                        </tspan>
+                                        <tspan className="word" dx="50">
+                                            O A T S
+                                        </tspan>
+                                        <tspan className="word" dx="50">
+                                            D O K D O
+                                        </tspan>
+                                        <tspan className="word" dx="50">
+                                            B I R C H
+                                        </tspan>
+                                        <tspan className="word" dx="50">
+                                            P I N E
+                                        </tspan>
+                                        <tspan className="word" dx="50">
+                                            S O Y B E A N
+                                        </tspan>
+                                        <tspan className="word" dx="50">
+                                            V I T A
+                                        </tspan>
+                                    </textPath>
+                                </text>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Con1Style>

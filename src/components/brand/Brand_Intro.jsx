@@ -16,18 +16,18 @@ const Brand_Intro = () => {
             if (targetEl) {
                 const targetTop = targetEl.getBoundingClientRect().top + window.scrollY;
 
-                const fadeStart = targetTop - 800;
-                const fadeEnd = targetTop - 500;
-                const fadeRange = fadeEnd - fadeStart;
+                // const fadeStart = targetTop - 800;
+                // const fadeEnd = targetTop - 500;
+                // const fadeRange = fadeEnd - fadeStart;
 
-                if (scrollY < fadeStart) {
-                    setOpacity(1);
-                } else if (scrollY > fadeEnd) {
-                    setOpacity(0);
-                } else {
-                    const ratio = (scrollY - fadeStart) / fadeRange;
-                    setOpacity(1 - ratio);
-                }
+                // if (scrollY < fadeStart) {
+                //     setOpacity(1);
+                // } else if (scrollY > fadeEnd) {
+                //     setOpacity(0);
+                // } else {
+                //     const ratio = (scrollY - fadeStart) / fadeRange;
+                //     setOpacity(1 - ratio);
+                // }
             }
         };
 
