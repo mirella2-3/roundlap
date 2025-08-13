@@ -136,7 +136,7 @@ const NavBar = () => {
                                 <Link to="/notice">Notice</Link>
                             </li>
                             <li>
-                                <Link to="/notice/faq">FAQ</Link>
+                                <Link to="/faq">FAQ</Link>
                             </li>
                         </ul>
                     </li>
