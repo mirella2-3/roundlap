@@ -160,9 +160,9 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li>
-                        <ul className="cart">
+                        <ul className="cart" onClick={toggleCart}>
                             <li>
-                                <BsCart2 className="cartIcon" onClick={toggleCart} />
+                                <BsCart2 className="cartIcon" />
                             </li>
 
                             <li>
@@ -179,6 +179,7 @@ const NavBar = () => {
                         </ul>
                     </li>
                 </ul>
+                {isCartOpen && <Cart onClose={toggleCart} carts={carts} />}
             </NavStyle>
         </>
     );
