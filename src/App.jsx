@@ -46,10 +46,8 @@ const App = () => {
                         </Route>
 
                         {/* Notice */}
-                        <Route path="/notice">
-                            <Route index element={<Notice />} />
-                            <Route path="/notice/faq" element={<Faq />} />
-                        </Route>
+                        <Route path="/notice" element={<Notice />} />
+                        <Route path="/faq" element={<Faq />} />
 
                         {/* 단일 경로 */}
                         <Route path="/login/Login" element={<Login />} />

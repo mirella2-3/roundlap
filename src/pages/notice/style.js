@@ -13,4 +13,16 @@ export const NociteStyle = styled.div`
         }
     }
 `;
-export const FaqStyle = styled.div``;
+export const FaqStyle = styled.div`
+    .inner {
+        padding: 160px 0px;
+
+        h2 {
+            margin-bottom: 80px;
+
+            color: #1a1a1a;
+            font-size: 36px;
+            font-weight: 700;
+        }
+    }
+`;
