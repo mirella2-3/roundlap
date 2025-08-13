@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 export const FooterStyle = styled.footer`
     background: #f6f7f0ff;
+
     .inner {
         padding: 90px 0 130px 0;
+
         > ul {
             display: flex;
             justify-content: space-between;

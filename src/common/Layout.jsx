@@ -1,15 +1,23 @@
 import { Outlet } from 'react-router-dom';
+
+import { useState } from 'react';
 import Header from './header';
 import Footer from './footer';
+import Cart from '../components/cart/Cart';
 
 const Layout = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <div className="wrap">
-            <Header />
+            <Header onIconClick={() => setIsModalOpen(true)} />
             <main className="main">
                 <Outlet />
             </main>
             <Footer />
+
+            {/* 모달 */}
+            {isModalOpen && <Cart onClose={() => setIsModalOpen(false)} />}
         </div>
     );
 };
