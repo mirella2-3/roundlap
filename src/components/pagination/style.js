@@ -17,15 +17,26 @@ export const PaginationStyle = styled.div`
             margin-right: 8px;
             background: #fff;
 
+            &.on {
+                color: #007bcc;
+            }
+            &:hover {
+                background: #e6f3fc;
+            }
+
             &:first-child {
                 width: auto;
+                font-weight: 600;
+                &:hover {
+                    background: #fff;
+                }
             }
             &:last-child {
                 width: auto;
-            }
-
-            &.on {
-                color: #007bcc;
+                font-weight: 600;
+                &:hover {
+                    background: #fff;
+                }
             }
         }
     }

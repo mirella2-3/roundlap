@@ -1,6 +1,35 @@
 import styled from 'styled-components';
 
-export const NoticeSearchWrap = styled.div``;
+export const NoticeSearchWrap = styled.div`
+    margin-bottom: 30px;
+    form {
+        text-align: right;
+        p {
+            margin-left: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 266px;
+            height: 42px;
+            border: 1px solid #c2c2c2;
+
+            box-sizing: border-box;
+            padding: 0px 20px;
+
+            input[type='text'] {
+                width: 200px;
+                height: 38px;
+                border: none;
+                outline: none;
+                &::placeholder {
+                    color: #c2c2c2;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+`;
 
 export const NoticeListStyle = styled.div`
     .noticeTable {
@@ -13,13 +42,13 @@ export const NoticeListStyle = styled.div`
         }
 
         .num {
-            width: 100px;
+            width: 80px;
         }
         .title {
             width: auto;
         }
         .date {
-            width: 140px;
+            width: 150px;
         }
         td {
             height: 70px;
@@ -43,6 +72,7 @@ export const NoticeListStyle = styled.div`
             }
             &:nth-child(3) {
                 text-align: right;
+                padding-right: 26px;
             }
         }
     }
