@@ -54,4 +54,21 @@ export const MypageStyle = styled.div`
             border-bottom: 1px solid #007bcc;
         }
     }
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            padding-right: 8px;
+            box-sizing: border-box;
+            color: #1a1a1a;
+        }
+        .more {
+            cursor: pointer;
+        }
+    }
 `;

@@ -125,7 +125,7 @@ export const IndexStyle = styled.div`
     border: 1px solid #000;
     .inner {
         height: 800px;
-        margin: 140px auto;
+        margin: 80px auto;
         display: flex;
         gap: 100px;
 
@@ -223,13 +223,12 @@ export const Con1Style = styled.div`
     .wrap {
         display: flex;
         justify-content: space-between;
+        height: calc(100vh - 60px);
         .left {
             img {
-                width: 840px;
             }
         }
         .right {
-            width: 840px;
             position: relative;
             .txts {
                 position: absolute;
@@ -248,7 +247,7 @@ export const Con1Style = styled.div`
                     font-weight: 700;
                 }
             }
-            .circle {
+            /* .circle {
                 display: flex;
                 position: absolute;
                 color: #e3e3e3;
@@ -257,7 +256,12 @@ export const Con1Style = styled.div`
                 .on {
                     color: #007bcc;
                 }
-            }
+            } */
+                .scroll-section{
+                    .sticky-container{}
+                    .animate{}
+                }
+
         }
     }
 `;

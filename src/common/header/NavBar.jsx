@@ -18,22 +18,22 @@ const NavBar = () => {
             <NavStyle className="nav">
                 <ul className="MainMenu">
                     <li>
-                        <Link to="/shop">SHOP</Link>
+                        <Link to="/shop/all/ALL">SHOP</Link>
                         <ul className="subMenu">
                             <li>
                                 전제품
                                 <ul className="subSubMenu">
                                     <li>
-                                        <Link to="/shop">#ALL</Link>
+                                        <Link to="/shop/all/ALL">#ALL</Link>
                                     </li>
                                     <li>
-                                        <Link to="/shop/best">#BEST</Link>
+                                        <Link to="/shop/all/BEST">#BEST</Link>
                                     </li>
                                     <li>
-                                        <Link to="/shop/set">#SET</Link>
+                                        <Link to="/shop/all/SET">#SET</Link>
                                     </li>
                                     <li>
-                                        <Link to="/shop/sale">#SALE</Link>
+                                        <Link to="/shop/all/SALE">#SALE</Link>
                                     </li>
                                 </ul>
                             </li>
@@ -136,7 +136,7 @@ const NavBar = () => {
                                 <Link to="/notice">Notice</Link>
                             </li>
                             <li>
-                                <Link to="/faq">FAQ</Link>
+                                <Link to="/notice/faq">FAQ</Link>
                             </li>
                         </ul>
                     </li>

@@ -28,4 +28,3 @@ export { default as OrderCheck } from './mypage/OrderCheck';
 export { default as WishList } from './mypage/WishList';
 export { default as WishListItem } from './mypage/WishListItem';
 export { default as WishListNoting } from './mypage/WishListNoting';
-export { default as WishListList } from './mypage/WishListList';

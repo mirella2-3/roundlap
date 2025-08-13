@@ -86,19 +86,28 @@ export const OrderCheckStyle = styled.div`
 `;
 
 export const WishListStyle = styled.div`
-    .title {
+    ul {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        h3 {
-            font-size: 24px;
-            font-weight: 700;
-            padding-right: 8px;
-            margin-bottom: 40px;
-            color: #1a1a1a;
-        }
-        span {
-            align-items: center;
+        li {
+            margin-right: 7.5px;
+            font-size: 20px;
+            text-align: center;
+            img {
+                margin-bottom: 20px;
+            }
+            .title {
+                display: block;
+                font-weight: 500;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                width: 230px;
+                margin: auto;
+                margin-bottom: 10px;
+            }
+            strong {
+                font-weight: 700;
+            }
         }
     }
 `;

@@ -1,4 +1,4 @@
-import { MypageDetail, OrderCheck, WishList } from '../../components';
+import { MypageDetail, OrderCheck, WishList, WishListNoting } from '../../components';
 import { MypageStyle } from './style';
 
 const Mypage = () => {
@@ -28,6 +28,12 @@ const Mypage = () => {
                     <p className="line"></p>
                 </section>
                 <section>
+                    <div className="title">
+                        <h3>위시리스트</h3>
+                        <span className="more">더보기 +</span>
+                    </div>
+
+                    {/* <WishListNoting /> */}
                     <WishList />
                 </section>
             </div>

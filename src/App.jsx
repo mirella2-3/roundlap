@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
 import GlobalStyle from './styled/GlobalStyle';
 import Layout from './common/Layout';
 import {
@@ -29,26 +29,24 @@ const App = () => {
                         <Route index element={<Main />} />
 
                         {/* shop */}
-                        <Route path="/shop">
-                            <Route index element={<Shop />} />
-                            <Route path=":category" element={<ProductList />} />
-                            <Route path=":category/:productId" element={<ProductDetail />} />
-                        </Route>
+                        <Route path="/shop/all" element={<Navigate to="/shop/all/ALL" replace />} />
+                        <Route path="/shop/:category/:line" element={<Shop />} />
+                        <Route
+                            path="/shop/:category/:line/:productId"
+                            element={<ProductDetail />}
+                        />
 
                         {/* Event */}
                         <Route path="/event" element={<Event />} />
-
                         {/* Brand */}
                         <Route path="/brand">
                             <Route index element={<Brand />} />
-                            <Route path="/brand/productline" element={<ProductLine />} />
-                            <Route path="/brand/magazine" element={<Magazine />} />
+                            <Route path="productline" element={<ProductLine />} />
+                            <Route path="magazine" element={<Magazine />} />
                         </Route>
-
                         {/* Notice */}
                         <Route path="/notice" element={<Notice />} />
                         <Route path="/faq" element={<Faq />} />
-
                         {/* 단일 경로 */}
                         <Route path="/login/Login" element={<Login />} />
                         <Route path="/login/Logout" element={<Logout />} />

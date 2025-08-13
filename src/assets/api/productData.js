@@ -1,10 +1,10 @@
-const allProductData = [
+export const allProductData = [
     {
         id: 1,
         title: '촉촉한 각질제거 1025 독도 토너 200ml',
         price: 16700,
         salePrice: 16700,
-        category: ['toner', 'water', 'dokdo', 'best'],
+        category: ['toner', 'water', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202501/8a3370d3587010a6ad8636990069e34e.jpg',
     },
     {
@@ -12,7 +12,7 @@ const allProductData = [
         title: '1025 독도 로션 400ml',
         price: 24800,
         salePrice: 24800,
-        category: ['lotion', 'sensitive', 'dokdo', 'best'],
+        category: ['lotion', 'sensitive', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202203/1302ee042ef7723fe048ad9aa1f4bcb3.jpg',
     },
     {
@@ -20,7 +20,7 @@ const allProductData = [
         title: '1025 독도 클렌저  150ml',
         price: 13800,
         salePrice: 13800,
-        category: ['cleansing', 'corneous', 'dokdo', 'best'],
+        category: ['cleansing', 'corneous', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/365366adaa42b883be155e8cc9c3743b.jpg',
     },
     {
@@ -28,7 +28,7 @@ const allProductData = [
         title: '1025 독도 수분 앰플 45g',
         price: 28000,
         salePrice: 19000,
-        category: ['essence', 'water', 'dokdo', 'best'],
+        category: ['essence', 'water', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202204/55b3eb6d92a0f592e03baef918f0e777.jpg',
     },
     {
@@ -36,7 +36,7 @@ const allProductData = [
         title: '1025 독도 필링젤 120ml',
         price: 35000,
         salePrice: 35000,
-        category: ['suncare', 'sunblock', 'dokdo', 'best'],
+        category: ['suncare', 'sunblock', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202203/aa294ebf2773976c3ad51a372bb48f9c.jpg',
     },
     {
@@ -44,7 +44,7 @@ const allProductData = [
         title: '1025 독도 클렌징밤 50ml',
         price: 29000,
         salePrice: 29000,
-        category: ['mask', 'water', 'dokdo', 'best'],
+        category: ['mask', 'water', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202506/74d7b0e0452241ab38581a2f896cc970.jpg',
     },
     {
@@ -52,7 +52,7 @@ const allProductData = [
         title: '1025 독도 토너 200ml + 독도 로션 200ml 2종 세트',
         price: 21000,
         salePrice: 21000,
-        category: ['cleansing', 'sensitive', 'best', 'dokdo', 'set'],
+        category: ['cleansing', 'sensitive', 'BEST', '1025', 'SET'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202501/20bc1d2897c2d122858af29e255ae66d.jpg',
     },
     {
@@ -60,7 +60,7 @@ const allProductData = [
         title: '1025 독도 토너 200ml + 독도 토너 500ml 2종 세트',
         price: 49500,
         salePrice: 49500,
-        category: ['cleansing', 'sensitive', 'best', 'dokdo', 'set'],
+        category: ['cleansing', 'sensitive', 'BEST', '1025', 'SET'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/41df2ffd3aa1f76b4e613224f39db368.jpg',
     },
     {
@@ -68,7 +68,7 @@ const allProductData = [
         title: '라운드랩 1025 독도 토너 500ml X 로션 200ml 2종 세트',
         price: 36500,
         salePrice: 36500,
-        category: ['lotion', 'sensitive', 'best', 'dokdo', 'set'],
+        category: ['lotion', 'sensitive', 'BEST', '1025', 'SET'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202501/d362d9833ae3f11193802de11f78551d.jpg',
     },
     {
@@ -76,7 +76,7 @@ const allProductData = [
         title: '1025 독도 패드 (70매입) 2개 세트',
         price: 34000,
         salePrice: 34000,
-        category: ['essence', 'water', 'best', 'dokdo', 'set'],
+        category: ['essence', 'water', 'BEST', '1025', 'SET'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202212/b88b826bb8820b4564b8c300ab1fa50c.jpg',
     },
     {
@@ -84,14 +84,14 @@ const allProductData = [
         title: '1025 독도 올인원 플루이드',
         price: 41000,
         salePrice: 41000,
-        category: ['lotion', 'vitamin', 'dokdo', 'best'],
+        category: ['lotion', 'vitamin', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202303/a3bf8c91d8682568f00a47dd645b6406.jpg',
     },
     {
         id: 12,
-        title: '(45% 할인) 1025 독도 크림 50ml 2개 세트',
+        title: '1025 독도 크림 50ml 2개 세트',
         price: 40500,
-        category: ['toner', 'water', 'dokdo', 'best', 'set', 'sale'],
+        category: ['toner', 'water', '1025', 'BEST', 'SET', 'SALE'],
         salePrice: 22000,
         imgurl: 'https://roundlab.co.kr/web/product/big/202111/70e76d059864acd240c27d54b7984095.jpg',
     },
@@ -100,7 +100,7 @@ const allProductData = [
         title: '1025 독도 수면팩 100ml',
         price: 30000,
         salePrice: 30000,
-        category: ['essence', 'sensitive', 'dokdo'],
+        category: ['essence', 'sensitive', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202211/40e24e6e4fa07d49a8f5778d022aec06.jpg',
     },
     {
@@ -108,7 +108,7 @@ const allProductData = [
         title: '1025 독도 클렌징 오일 200ml',
         price: 26000,
         salePrice: 26000,
-        category: ['suncare', 'sunblock', 'dokdo'],
+        category: ['suncare', 'sunblock', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202207/fe04bae04a9ebc8b8b75d4e0536dda92.jpg',
     },
     {
@@ -116,7 +116,7 @@ const allProductData = [
         title: '1025 독도 버블 폼 150ml',
         price: 16000,
         salePrice: 16000,
-        category: ['mask', 'corneous', 'dokdo', 'sale'],
+        category: ['mask', 'corneous', '1025', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202203/177810ec862da11f18c037a5107079b4.jpg',
     },
     {
@@ -124,7 +124,7 @@ const allProductData = [
         title: '1025 독도 클렌징 티슈 30매',
         price: 4500,
         salePrice: 4500,
-        category: ['lotion', 'water', 'dokdo'],
+        category: ['lotion', 'water', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202207/c914c9ce2004a8f45bfc57c1a3e7680c.jpg',
     },
     {
@@ -132,7 +132,7 @@ const allProductData = [
         title: '1025 독도 미스트 150ml',
         price: 22000,
         salePrice: 22000,
-        category: ['suncare', 'sunblock', 'dokdo'],
+        category: ['suncare', 'sunblock', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202207/cfcbed783a1e1c7d9e468e9cf9e9a79f.jpg',
     },
     {
@@ -140,7 +140,7 @@ const allProductData = [
         title: '1025 독도 아이크림 30ml',
         price: 8500,
         salePrice: 8500,
-        category: ['lotion', 'water', 'dokdo'],
+        category: ['lotion', 'water', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202212/082f13c53b403f29146b7323d8678fe6.jpg',
     },
     {
@@ -148,7 +148,7 @@ const allProductData = [
         title: '1025 독도 클렌징 밀크 200ml',
         price: 18500,
         salePrice: 18500,
-        category: ['cleansing', 'water', 'dokdo'],
+        category: ['cleansing', 'water', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202202/4224946edf88dfdefa0afd9319406458.jpg',
     },
     {
@@ -156,7 +156,7 @@ const allProductData = [
         title: '1025 독도 클렌징 밀크 200ml',
         price: 18500,
         salePrice: 18500,
-        category: ['cleansing', 'water', 'dokdo'],
+        category: ['cleansing', 'water', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202202/4224946edf88dfdefa0afd9319406458.jpg',
     },
     {
@@ -164,7 +164,7 @@ const allProductData = [
         title: '1025 독도 수분 워터겔 마스크 30ml (10매)',
         price: 40500,
         salePrice: 22000,
-        category: ['mask', 'water', 'dokdo', 'sale'],
+        category: ['mask', 'water', '1025', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202207/f00c35510a02ec07def3b47a2869c1a2.jpg',
     },
     {
@@ -172,7 +172,7 @@ const allProductData = [
         title: '1025 독도 클렌저 150ml 3개 세트',
         price: 39000,
         salePrice: 31500,
-        category: ['toner', 'sensitive', 'dokdo', 'set', 'sale'],
+        category: ['toner', 'sensitive', '1025', 'SET', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/e36b88464af9e64985c25f5104f57a0e.jpg',
     },
     {
@@ -180,7 +180,7 @@ const allProductData = [
         title: '1025 독도 토너 대용량 500ml',
         price: 30000,
         salePrice: 26500,
-        category: ['toner', 'sensitive', 'dokdo', 'sale'],
+        category: ['toner', 'sensitive', '1025', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202501/f5c67db6e8b63c0680991f62dfa96238.jpg',
     },
     {
@@ -188,7 +188,7 @@ const allProductData = [
         title: '1025 독도 클렌징 티슈 30매 2+1l',
         price: 15000,
         salePrice: 12500,
-        category: ['toner', 'sensitive', 'dokdo', 'set', 'sale'],
+        category: ['toner', 'sensitive', '1025', 'SET', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202207/6192e97e2d9543a5de2b838984af4b29.jpg',
     },
     {
@@ -196,7 +196,7 @@ const allProductData = [
         title: '1025 독도 클렌징 워터 400ml',
         price: 18000,
         salePrice: 9900,
-        category: ['toner', 'sensitive', 'dokdo', 'sale'],
+        category: ['toner', 'sensitive', '1025', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202308/970647347bb4d62a3c42183ffa576fb7.jpg',
     },
     {
@@ -204,7 +204,7 @@ const allProductData = [
         title: '1025 독도 로션 200ml',
         price: 16000,
         salePrice: 16000,
-        category: ['lotion', 'sensitive', 'dokdo', 'best'],
+        category: ['lotion', 'sensitive', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202211/700c1fccabf5cdea96d1bd014cd73bac.jpg',
     },
     {
@@ -212,7 +212,7 @@ const allProductData = [
         title: '1025 독도 크림 80ml',
         price: 16000,
         salePrice: 16000,
-        category: ['lotion', 'sensitive', 'dokdo'],
+        category: ['lotion', 'sensitive', '1025'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202207/96ab1fe05298e73355fb50b04550226b.jpg',
     },
     {
@@ -220,7 +220,7 @@ const allProductData = [
         title: '포맨 1025 독도 크림 80ml',
         price: 24000,
         salePrice: 24000,
-        category: ['lotion', 'sensitive', 'dokdo', 'man'],
+        category: ['lotion', 'sensitive', '1025', 'man'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202312/b18937125b4bb027b98a6927e7f8715e.jpg',
     },
     {
@@ -228,7 +228,7 @@ const allProductData = [
         title: '1025 독도 수분 크림 50ml',
         price: 25000,
         salePrice: 18000,
-        category: ['lotion', 'sensitive', 'dokdo', 'man', 'sale'],
+        category: ['lotion', 'sensitive', '1025', 'man', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202305/a57a5fb0143427e14b58ea27e9d89d11.jpg',
     },
     {
@@ -236,7 +236,7 @@ const allProductData = [
         title: '포 맨 1025 독도 올인원 플루이드 200ml',
         price: 24000,
         salePrice: 24000,
-        category: ['lotion', 'sensitive', 'dokdo', 'man'],
+        category: ['lotion', 'sensitive', '1025', 'man'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202303/664f1414ed0202c2c8297061f5509ae1.jpg',
     },
     {
@@ -244,7 +244,7 @@ const allProductData = [
         title: '자작나무 수분 선크림 50ml',
         price: 36000,
         salePrice: 36000,
-        category: ['suncare', 'sunblock', 'jajack', 'best'],
+        category: ['suncare', 'sunblock', 'jajack', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/3b38e738c4136407d152f345c85a6457.jpg',
     },
     {
@@ -252,7 +252,7 @@ const allProductData = [
         title: '자작나무 수분 크림 80ml',
         price: 21000,
         salePrice: 21000,
-        category: ['lotion', 'water', 'jajack', 'best'],
+        category: ['lotion', 'water', 'jajack', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/97bbefc04161f7f20c0bb6f6a9831246.jpg',
     },
     {
@@ -260,14 +260,14 @@ const allProductData = [
         title: '자작나무 수분 클렌저 150ml',
         price: 32000,
         salePrice: 32000,
-        category: ['essence', 'water', 'jajack', 'best'],
+        category: ['essence', 'water', 'jajack', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202211/36f91e19bd2c65e8b16a639b5e31ac15.jpg',
     },
     {
         id: 34,
         title: '자작나무 무기자차 선크림 50ml',
         price: 27000,
-        category: ['mask', 'water', 'jajack', 'sale'],
+        category: ['mask', 'water', 'jajack', 'SALE'],
         salePrice: 25000,
         imgurl: 'https://roundlab.co.kr/web/product/medium/202204/46e2ea4763d89a38ab86420f03e3d3cb.jpg',
     },
@@ -276,7 +276,7 @@ const allProductData = [
         title: '자작나무 수분 토너 300ml + 자작나무 수분 크림 80ml 2종 세트',
         price: 34500,
         salePrice: 34500,
-        category: ['lotion', 'water', 'jajack', 'set'],
+        category: ['lotion', 'water', 'jajack', 'SET'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/ee56f150ce78a14a3c34b75cc83ed133.jpg',
     },
     {
@@ -323,7 +323,7 @@ const allProductData = [
         id: 41,
         title: '자작나무 수분 토너 150ml',
         price: 24000,
-        category: ['toner', 'water', 'jajack', 'sale'],
+        category: ['toner', 'water', 'jajack', 'SALE'],
         salePrice: 22800,
         imgurl: 'https://roundlab.co.kr/web/product/medium/202008/72d2208f040245168e9a5e7de395f304.jpg',
     },
@@ -331,7 +331,7 @@ const allProductData = [
         id: 42,
         title: '자작나무 수분 립밤 25g',
         price: 26000,
-        category: ['toner', 'vitamin', 'jajack', 'sale'],
+        category: ['toner', 'vitamin', 'jajack', 'SALE'],
         salePrice: 25000,
         imgurl: 'https://roundlab.co.kr/web/product/medium/202505/dca3206c957c0ad6d9998be849874788.jpg',
     },
@@ -339,7 +339,7 @@ const allProductData = [
         id: 43,
         title: '자작나무 수분 앰플 100ml',
         price: 25000,
-        category: ['toner', 'water', 'jajack', 'sale'],
+        category: ['toner', 'water', 'jajack', 'SALE'],
         salePrice: 24000,
         imgurl: 'https://roundlab.co.kr/web/product/medium/202402/f21c610a920e0fccf1d90df5f02b96e5.jpg',
     },
@@ -347,7 +347,7 @@ const allProductData = [
         id: 44,
         title: '자작나무 포 맨 쉐이빙 클렌징 폼 150ml',
         price: 24000,
-        category: ['cleansing', 'vitamin', 'jajack', 'sale', 'man'],
+        category: ['cleansing', 'vitamin', 'jajack', 'SALE', 'man'],
         salePrice: 23000,
         imgurl: 'https://roundlab.co.kr/web/product/medium/202304/8ddb016d6daab5e898c283716a3dde79.jpg',
     },
@@ -387,7 +387,7 @@ const allProductData = [
         id: 49,
         title: '포맨 자작나무 리바이탈라이징 마스크 (10매)',
         price: 38000,
-        category: ['mask', 'vitamin', 'man', 'jajack', 'sale'],
+        category: ['mask', 'vitamin', 'man', 'jajack', 'SALE'],
         salePrice: 35000,
         imgurl: 'https://roundlab.co.kr/web/product/medium/202211/8b7bdcb5e721aadda479d7d7cc97898e.jpg',
     },
@@ -395,7 +395,7 @@ const allProductData = [
         id: 50,
         title: '자작나무 수분 마스크 (10매)',
         price: 30000,
-        category: ['mask', 'water', 'jajack', 'sale'],
+        category: ['mask', 'water', 'jajack', 'SALE'],
         salePrice: 15000,
         imgurl: 'https://roundlab.co.kr/web/product/big/20200316/a0d791d8d5c522a9dcab72a21bc45a3e.jpg',
     },
@@ -516,7 +516,7 @@ const allProductData = [
         title: '약콩 판테놀 크림',
         price: 22000,
         salePrice: 20500,
-        category: ['lotion', 'sensitive', 'yakkong', 'sale'],
+        category: ['lotion', 'sensitive', 'yakkong', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202308/e07bd0b54823923da5c707894fd22da2.jpg',
     },
     {
@@ -524,7 +524,7 @@ const allProductData = [
         title: '약콩판테놀 딥 클렌징 워터',
         price: 20000,
         salePrice: 25000,
-        category: ['cleansing', 'corneous', 'yakkong', 'sale'],
+        category: ['cleansing', 'corneous', 'yakkong', 'SALE'],
         imgurl: '',
     },
     {
@@ -532,7 +532,7 @@ const allProductData = [
         title: '포맨 약콩 판테놀 젠틀 클렌징 크림',
         price: 19000,
         salePrice: 18000,
-        category: ['cleansing', 'sensitive', 'yakkong', 'man', 'sale'],
+        category: ['cleansing', 'sensitive', 'yakkong', 'man', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/35140a02772f63e616f7ec7df12a448e.jpg',
     },
     {
@@ -548,7 +548,7 @@ const allProductData = [
         title: '동백 딥 콜라겐 탄력 앰플',
         price: 30000,
         salePrice: 28500,
-        category: ['essence', 'sensitive', 'dongbaek', 'sale'],
+        category: ['essence', 'sensitive', 'dongbaek', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202411/5e5a3be6ffd2524ec780710308e6522b.jpg',
     },
     {
@@ -556,7 +556,7 @@ const allProductData = [
         title: '동백 딥 콜라겐 탄력 선세럼',
         price: 28000,
         salePrice: 26500,
-        category: ['essence', 'water', 'dongbaek', 'sale', 'suncare'],
+        category: ['essence', 'water', 'dongbaek', 'SALE', 'suncare'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202502/75e931616ed03ddac4f696191db49799.jpg',
     },
     {
@@ -564,7 +564,7 @@ const allProductData = [
         title: '동백 딥 콜라겐 브이 리프팅 겔 마스크',
         price: 29000,
         salePrice: 27000,
-        category: ['essence', 'sensitive', 'dongbaek', 'sale'],
+        category: ['essence', 'sensitive', 'dongbaek', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202504/9da3d542578d4c611cdb9ab505ff1ab9.jpg',
     },
     {
@@ -572,7 +572,7 @@ const allProductData = [
         title: '동백 딥 콜라겐 젤리 팩 클렌저',
         price: 31000,
         salePrice: 25000,
-        category: ['essence', 'water', 'dongbaek', 'sale'],
+        category: ['essence', 'water', 'dongbaek', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202507/841558b087b9d1a4524fece560e8f459.jpg',
     },
     {
@@ -580,7 +580,7 @@ const allProductData = [
         title: '비타 나이아신 잡티 크림 ',
         price: 27500,
         salePrice: 27500,
-        category: ['lotion', 'water', 'best', 'vita', 'vitamin'],
+        category: ['lotion', 'water', 'BEST', 'vita', 'vitamin'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202404/b99228e146035f4881be3eaa13109dac.jpg',
     },
     {
@@ -588,7 +588,7 @@ const allProductData = [
         title: '비타 나이아신 잡티 세럼 ',
         price: 18500,
         salePrice: 18500,
-        category: ['lotion', 'sensitive', 'best', 'vita', 'vitamin'],
+        category: ['lotion', 'sensitive', 'BEST', 'vita', 'vitamin'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202404/1bcdf8a1878728ac34385aaf82aaab58.jpg',
     },
     {
@@ -596,7 +596,7 @@ const allProductData = [
         title: '비타 나이아신 잡티 세럼 마스크',
         price: 15500,
         salePrice: 15500,
-        category: ['mask', 'corneous', 'best', 'vita', 'vitamin'],
+        category: ['mask', 'corneous', 'BEST', 'vita', 'vitamin'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202406/a0f4515d198d7e54c0e0ea8d19d86576.jpg',
     },
     {
@@ -604,7 +604,7 @@ const allProductData = [
         title: '소나무 진정 시카 앰플',
         price: 28000,
         salePrice: 28000,
-        category: ['essence', 'sensitive', 'sonamu', 'best'],
+        category: ['essence', 'sensitive', 'sonamu', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/fa6046e6b672c27ac8422416602ccb1e.jpg',
     },
     {
@@ -612,7 +612,7 @@ const allProductData = [
         title: '소나무 진정 시카 패드',
         price: 19000,
         salePrice: 19000,
-        category: ['mask', 'corneous', 'sonamu', 'best'],
+        category: ['mask', 'corneous', 'sonamu', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202304/cd7235260de2f527742d4e1afadeb9fa.jpg',
     },
     {
@@ -620,7 +620,7 @@ const allProductData = [
         title: '소나무 진정 시카 클렌저',
         price: 12000,
         salePrice: 12000,
-        category: ['cleansing', 'sensitive', 'sonamu', 'best'],
+        category: ['cleansing', 'sensitive', 'sonamu', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202304/7e4b8a6369473e087ecef062d3e11c0b.jpg',
     },
     {
@@ -628,7 +628,7 @@ const allProductData = [
         title: '소나무 진정 시카 크림 플러스',
         price: 15500,
         salePrice: 15500,
-        category: ['cleansing', 'sensitive', 'sonamu', 'best'],
+        category: ['cleansing', 'sensitive', 'sonamu', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202502/c2123230adcc5ff818062cab0489b37c.jpg',
     },
     {
@@ -636,7 +636,7 @@ const allProductData = [
         title: '소나무 진정 시카 바디 로션',
         price: 22000,
         salePrice: 22000,
-        category: ['lotion', 'sensitive', 'sonamu', 'best'],
+        category: ['lotion', 'sensitive', 'sonamu', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202209/1daefc6b8cbabcd3fcbba68dc168ea8a.jpg',
     },
     {
@@ -644,7 +644,7 @@ const allProductData = [
         title: '포 맨 소나무 진정 시카 로션',
         price: 32000,
         salePrice: 32000,
-        category: ['lotion', 'sensitive', 'best', 'man', 'sonamu'],
+        category: ['lotion', 'sensitive', 'BEST', 'man', 'sonamu'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202401/64b30edfd1e843e66628928ab6e5f3fa.jpg',
     },
     {
@@ -652,7 +652,7 @@ const allProductData = [
         title: '소나무 진정 시카 패드 (50매입) 2개 세트',
         price: 50000,
         salePrice: 39000,
-        category: ['lotion', 'sensitive', 'sale', 'sonamu', 'mask', 'set'],
+        category: ['lotion', 'sensitive', 'SALE', 'sonamu', 'mask', 'SET'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202304/a745bc93ab087b926cd2c39cb5c24da8.jpg',
     },
     {
@@ -660,7 +660,7 @@ const allProductData = [
         title: '소나무 진정 시카 패드(50매입)',
         price: 8000,
         salePrice: 8000,
-        category: ['mask', 'sensitive', 'sonamu', 'set'],
+        category: ['mask', 'sensitive', 'sonamu', 'SET'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202402/9288353a8c8a3bd50c97cc05f341a965.jpg',
     },
     {
@@ -708,7 +708,7 @@ const allProductData = [
         title: '소나무 진정 시카 두피 앰플',
         price: 35000,
         salePrice: 29500,
-        category: ['lotion', 'vitamin', 'sensitive', 'sonamu', 'sale'],
+        category: ['lotion', 'vitamin', 'sensitive', 'sonamu', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202409/00288816d2d3154540915139cfebe1f0.jpg',
     },
     {
@@ -716,7 +716,7 @@ const allProductData = [
         title: '소나무 진정 시카 샴푸',
         price: 31000,
         salePrice: 30000,
-        category: ['lotion', 'water', 'sonamu', 'sale'],
+        category: ['lotion', 'water', 'sonamu', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202409/02604132353667dd382c0029aa03ebee.jpg',
     },
     {
@@ -724,7 +724,7 @@ const allProductData = [
         title: '소나무 진정 시카 패드',
         price: 34000,
         salePrice: 32500,
-        category: ['lotion', 'vitamin', 'sonamu', 'sale'],
+        category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202402/9288353a8c8a3bd50c97cc05f341a965.jpg',
     },
     {
@@ -732,7 +732,7 @@ const allProductData = [
         title: '소나무 진정 시카 코팩',
         price: 35000,
         salePrice: 32000,
-        category: ['lotion', 'vitamin', 'sonamu', 'sale'],
+        category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202310/66280fc593d5748dffccbe10bf47a53f.jpg',
     },
     {
@@ -740,7 +740,7 @@ const allProductData = [
         title: '소나무 진정 시카 바디 미스트 ',
         price: 22000,
         salePrice: 21000,
-        category: ['lotion', 'vitamin', 'sonamu', 'sale'],
+        category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202304/4ed41a9ed46b367138b7eadc82369f2e.jpg',
     },
     {
@@ -748,7 +748,7 @@ const allProductData = [
         title: '소나무 진정 시카 바디 워시 ',
         price: 50000,
         salePrice: 39000,
-        category: ['lotion', 'vitamin', 'sonamu', 'sale'],
+        category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202304/a60d23310c416f697380e1ff56d7e2a3.jpg',
     },
     {
@@ -756,7 +756,7 @@ const allProductData = [
         title: '소나무 진정 시카 앰플 ',
         price: 24000,
         salePrice: 21500,
-        category: ['lotion', 'vitamin', 'sonamu', 'sale'],
+        category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         imgurl: 'https://roundlab.co.kr/web/product/medium/202501/76184c1d2f6a22438b62fc131ab05e7a.jpg',
     },
 ];
