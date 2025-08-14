@@ -13,9 +13,10 @@ const Cart = ({ onClose, carts }) => {
         <ModalWrapper onClick={onClose}>
             <ModalContent onClick={(e) => e.stopPropagation()}>
                 <CartWrap onClose={onClose}>
+                    {/* <CartEmpty CartBottom={CartBottom} /> */}
                     <CartList carts={carts} onClose={onClose} />
-
-                    {/* {isEmpty ? (
+                    {/* 
+                    {isEmpty ? (
                         <CartEmpty />
                     ) : (
                         <>

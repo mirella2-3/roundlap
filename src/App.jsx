@@ -31,10 +31,7 @@ const App = () => {
                         {/* shop */}
                         <Route path="/shop/all" element={<Navigate to="/shop/all/ALL" replace />} />
                         <Route path="/shop/:category/:line" element={<Shop />} />
-                        <Route
-                            path="/shop/:category/:line/:productId"
-                            element={<ProductDetail />}
-                        />
+                        <Route path="/shop/:productId" element={<ProductDetail />} />
 
                         {/* Event */}
                         <Route path="/event" element={<Event />} />

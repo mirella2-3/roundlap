@@ -21,20 +21,39 @@ export const ShopStyle = styled.div`
         justify-content: center;
 
         > div {
-            padding: 14px 0;
-        }
-        &.on {
-            color: #1a1a1a;
-            font-weight: 700;
+            width: 50px;
+            text-align: center;
+            padding: 14px 0px;
             position: relative;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            &:hover {
+                color: #333;
+            }
             &::after {
                 content: '';
-                height: 3px;
-                width: 40px;
-                display: block;
                 position: absolute;
-                bottom: 0;
+                bottom: -1.5px;
+                left: 50%;
+                transform: translateX(-50%) scaleX(0);
+                transform-origin: center;
+                width: 100%;
+                height: 3px;
                 background: #007bcc;
+                transition: transform 0.3s ease;
+                display: block;
+            }
+
+            &:hover::after {
+                transform: translateX(-50%) scaleX(1);
+            }
+
+            &.active-tab {
+                font-weight: 700;
+
+                &::after {
+                    width: 100%;
+                }
             }
         }
     }
