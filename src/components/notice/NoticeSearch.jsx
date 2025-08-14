@@ -27,7 +27,7 @@ const NoticeSearch = () => {
                         placeholder="검색어를 입력하세요."
                         maxLength={14}
                     />
-                    <img src="./images/Notice_search.png" alt="" />
+                    <img src="./images/Notice/Notice_search.png" alt="" />
                 </p>
             </form>
         </NoticeSearchWrap>
