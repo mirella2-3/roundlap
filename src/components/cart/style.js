@@ -96,13 +96,18 @@ export const CartItemStyle = styled.div`
         height: 124px;
         position: relative;
         display: flex;
+        padding: 12px;
         align-items: center;
-        padding: 12px 0;
+        box-sizing: border-box;
         border-bottom: 1px solid #ddd;
+        p {
+            padding: 11px;
+            img {
+            }
+        }
         .itemInfo {
             display: flex;
             align-items: center;
-            gap: 12px;
         }
         .itemtitle {
             margin-left: 30px;
@@ -136,12 +141,12 @@ export const CartItemStyle = styled.div`
 export const CartListStyle = styled.div`
     .CartListBox {
         width: 510px;
-        max-height: 400px;
+        height: 479px;
         overflow-y: auto;
-        padding: 10px;
+        overflow-x: hidden;
         display: flex;
+
         flex-direction: column;
-        gap: 8px;
     }
     .CartPrice {
         margin-top: 40px;

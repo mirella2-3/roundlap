@@ -7,7 +7,9 @@ const CartItem = () => {
         <CartItemStyle>
             <div className="itembox">
                 <div className="itemInfo">
-                    <img src="https://placehold.co/113x113" alt="" />
+                    <p>
+                        <img src="https://placehold.co/112x112" alt="" />
+                    </p>
                 </div>
                 <div className="itemtitle">
                     <h2>상품이름</h2>
