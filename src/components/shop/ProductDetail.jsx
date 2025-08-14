@@ -1,23 +1,15 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ProductdetailStyle } from './style';
+import ProductDesc from './ProductDesc';
+import ProductRecom from './ProductRecom';
+import Review from './Review';
 
 const ProductDetail = () => {
     const { productId } = useParams();
     const { products } = useSelector((state) => state.product);
     const product = products.find((item) => item.id === productId);
     // const { title, price, imgurl } = product;
-
-    // const parsedTitle = title.split(/([\uAC00-\uD7A3]+)/).map((part, idx) => {
-    //     const isKorean = /[\uAC00-\uD7A3]+/.test(part);
-    //     return isKorean ? (
-    //         <span key={idx} className="korean-text">
-    //             {part}
-    //         </span>
-    //     ) : (
-    //         <span key={idx}>{part}</span>
-    //     );
-    // });
 
     return (
         <ProductdetailStyle>
@@ -74,14 +66,17 @@ const ProductDetail = () => {
                         </li>
                     </ul>
                 </section>
-                
                 {/* <h2>{product.title}</h2>
             <img src={product.imgurl} alt={product.title} />
             <p>가격: {product.price}원</p>
             <p>할인가: {product.salePrice}원</p> */}
                 {/* 기타 정보 렌더링 */}
-                <ProductDesc/>
-                <
+                <ProductDesc />
+                <ProductRecom />
+                <Review />
+                {/* <img src={product.imgurl} alt={product.title} />
+                <p>가격: {product.price}원</p>
+                <p>할인가: {product.salePrice}원</p>  */}
             </div>
         </ProductdetailStyle>
     );
