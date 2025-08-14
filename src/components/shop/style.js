@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
-export const Style = styled.div``;
+export const ProductdetailStyle = styled.div`
+    .text {
+        margin-top: 170px;
+        > p {
+            font-size: 36px;
+            font-weight: 700;
+        }
+    }
+`;
 export const ProductListWrap = styled.div`
     &.product-box {
         display: flex;

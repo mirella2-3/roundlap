@@ -29,11 +29,11 @@ const Shop = () => {
     useEffect(() => {
         // 첫 로딩 시 전체 상품 세팅
         dispatch(productActions.setAllProducts());
-    }, [dispatch]);
+    }, []);
 
     useEffect(() => {
         dispatch(productActions.filterByCategory(line));
-    }, [line, dispatch]);
+    }, [line]);
 
     return (
         <ShopStyle>
@@ -52,7 +52,7 @@ const Shop = () => {
                 </div>
                 <p className="line"></p>
                 <ProductList category={activeCategory} line={line} />
-                <Pagination />
+                {/* <Pagination /> */}
             </div>
         </ShopStyle>
     );
