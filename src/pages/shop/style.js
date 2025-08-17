@@ -21,7 +21,7 @@ export const ShopStyle = styled.div`
         justify-content: center;
 
         > div {
-            width: 50px;
+            /* width: 50px; */
             text-align: center;
             padding: 14px 0px;
             position: relative;
@@ -53,6 +53,7 @@ export const ShopStyle = styled.div`
 
                 &::after {
                     width: 100%;
+                    transform: translateX(-50%) scaleX(1);
                 }
             }
         }

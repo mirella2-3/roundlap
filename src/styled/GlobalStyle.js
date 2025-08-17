@@ -85,6 +85,11 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --main-font: 'Pretendard', sans-serif;
   }
+
+  html, body {
+    overflow-x: hidden;  /* ✅ 가로 스크롤 제거 */
+    width: 100%;
+  }
 `;
 
 export default GlobalStyle;

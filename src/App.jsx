@@ -18,6 +18,7 @@ import {
 } from './pages';
 import { ProductDetail, ProductList } from './components';
 import JoinSucess from './pages/login/JoinSucess';
+import './App.css';
 
 const App = () => {
     return (
