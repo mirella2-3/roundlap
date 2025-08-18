@@ -7,7 +7,7 @@ export const JoinStyle = styled.div`
 
     .small {
         margin-top: 10px;
-        margin-left: 120px;
+        margin-left: 184px;
         margin-bottom: 30px;
         font-size: 14px;
         font-weight: 400;
@@ -44,11 +44,12 @@ export const JoinStyle = styled.div`
             .joinID {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 5px;
 
                 label {
-                    width: 110px; /* 라벨 넓이 고정 */
+                    width: 107px;
+                    margin-right: 64px;
                 }
 
                 input {
@@ -66,11 +67,12 @@ export const JoinStyle = styled.div`
             .joinPW {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 5px;
 
                 label {
-                    width: 110px;
+                    width: 107px;
+                    margin-right: 64px;
                 }
                 input {
                     width: 544px;
@@ -87,11 +89,12 @@ export const JoinStyle = styled.div`
             .joinPWconfirm {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 64px;
 
                 label {
-                    width: 110px;
+                    width: 107px;
+                    margin-right: 64px;
                 }
                 input {
                     width: 544px;
@@ -108,11 +111,12 @@ export const JoinStyle = styled.div`
             .joinName {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 64px;
 
                 label {
-                    width: 110px;
+                    width: 107px;
+                    margin-right: 64px;
                 }
                 input {
                     width: 544px;
@@ -129,11 +133,12 @@ export const JoinStyle = styled.div`
             .joinAddr {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 5px;
 
                 label {
-                    width: 110px;
+                    width: 107px;
+                    margin-right: 64px;
                 }
                 input {
                     width: 360px;
@@ -153,19 +158,21 @@ export const JoinStyle = styled.div`
                     font-weight: 400;
                     cursor: pointer;
                     background: #e3e3e3;
-                    border: 1px solid #ccc;
                 }
             }
             .joinAddr1 {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 10px;
-
+                label {
+                    width: 107px;
+                    margin-right: 73px;
+                }
                 input {
                     width: 544px;
                     padding: 12px 10px;
-                    margin-left: 120px;
+                    margin-left: 0px;
                 }
                 input::placeholder {
                     padding-left: 10px;
@@ -176,13 +183,17 @@ export const JoinStyle = styled.div`
             .joinAddr2 {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 30px;
+                margin-right: 0;
 
+                label {
+                    width: 107px;
+                }
                 input {
                     width: 544px;
                     padding: 12px 10px;
-                    margin-left: 120px;
+                    margin-left: 72px;
                 }
                 input::placeholder {
                     padding-left: 10px;
@@ -194,7 +205,7 @@ export const JoinStyle = styled.div`
             .joinPhone {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 30px;
 
                 label {
@@ -202,7 +213,7 @@ export const JoinStyle = styled.div`
                 }
 
                 .joinPhoneNum {
-                    margin-left: 10px;
+                    margin-left: 67px;
                     display: flex;
                     align-items: center;
 
@@ -223,11 +234,12 @@ export const JoinStyle = styled.div`
             .joinEmail {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 30px;
 
                 label {
-                    width: 110px;
+                    width: 107px;
+                    margin-right: 61px;
                 }
                 input {
                     width: 544px;
@@ -244,11 +256,12 @@ export const JoinStyle = styled.div`
             .joinGender {
                 align-items: center;
                 display: flex;
-                font-weight: 400;
+                font-weight: 500;
                 margin-bottom: 30px;
 
                 label {
-                    margin-right: 90px;
+                    width: 107px;
+                    margin-right: 74px;
                     display: flex;
                     align-items: center;
 
@@ -295,11 +308,12 @@ export const JoinStyle = styled.div`
         .joinbirth {
             align-items: center;
             display: flex;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 30px;
 
             label {
-                width: 110px;
+                width: 107px;
+                margin-right: 55px;
             }
             .Phoneybd {
                 margin-left: 10px;

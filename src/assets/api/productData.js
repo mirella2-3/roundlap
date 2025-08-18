@@ -521,11 +521,11 @@ export const allProductData = [
     },
     {
         id: 66,
-        title: '약콩판테놀 딥 클렌징 워터',
+        title: '약콩 판테놀 딥 클렌징 워터',
         price: 20000,
         salePrice: 25000,
         category: ['cleansing', 'corneous', 'yakkong', 'SALE'],
-        imgurl: '',
+        imgurl: 'https://roundlab.co.kr/web/product/medium/202308/e07bd0b54823923da5c707894fd22da2.jpg',
     },
     {
         id: 67,

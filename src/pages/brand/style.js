@@ -5,7 +5,8 @@ export const BrandStyle = styled.div`
 
     .wrap {
         display: flex;
-        width: max-content;
+        /* width: max-content; */
+        width: 100%;
         overflow-x: hidden;
 
         height: 100vh;

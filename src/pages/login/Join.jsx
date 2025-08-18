@@ -146,7 +146,7 @@ const Join = () => {
 
                         {/* 주소 */}
                         <div className="joinAddr">
-                            <label htmlFor="postCode">우편번호</label>
+                            <label htmlFor="postCode">주소</label>
                             <input
                                 type="text"
                                 id="postCode"
@@ -158,6 +158,7 @@ const Join = () => {
                             <button type="button">주소검색</button>
                         </div>
                         <div className="joinAddr1">
+                            <label htmlFor="postCode"></label>
                             <input
                                 type="text"
                                 id="address1"
@@ -168,6 +169,7 @@ const Join = () => {
                             />
                         </div>
                         <div className="joinAddr2">
+                            <label htmlFor="postCode"></label>
                             <input
                                 type="text"
                                 id="address2"
@@ -201,7 +203,7 @@ const Join = () => {
                                     type="text"
                                     name="phoneMid"
                                     maxLength={4}
-                                    placeholder="0000"
+                                    placeholder=""
                                     value={form.phoneMid}
                                     onChange={onChange}
                                 />
@@ -210,7 +212,7 @@ const Join = () => {
                                     type="text"
                                     name="phoneLast"
                                     maxLength={4}
-                                    placeholder="0000"
+                                    placeholder=""
                                     value={form.phoneLast}
                                     onChange={onChange}
                                 />
@@ -236,7 +238,6 @@ const Join = () => {
                                 성별 <span>*</span>
                             </label>
                             <label>
-                                남자
                                 <input
                                     type="radio"
                                     name="gender"
@@ -244,9 +245,9 @@ const Join = () => {
                                     checked={form.gender === 'male'}
                                     onChange={onChange}
                                 />
+                                남자
                             </label>
                             <label>
-                                여자
                                 <input
                                     type="radio"
                                     name="gender"
@@ -254,6 +255,7 @@ const Join = () => {
                                     checked={form.gender === 'female'}
                                     onChange={onChange}
                                 />
+                                여자
                             </label>
                         </div>
 
@@ -333,7 +335,7 @@ const Join = () => {
                                     checked={form.agreeTerms}
                                     onChange={onChange}
                                 />
-                                (필수) 이용약관 동의
+                                [필수] 이용약관 동의
                             </label>
                             <label>
                                 <input
@@ -342,7 +344,7 @@ const Join = () => {
                                     checked={form.agreePrivacy}
                                     onChange={onChange}
                                 />
-                                (필수) 개인정보 수집 및 이용 동의
+                                [필수] 개인정보 수집 및 이용 동의
                             </label>
                             <label>
                                 <input
@@ -351,7 +353,7 @@ const Join = () => {
                                     checked={form.agreeInfo}
                                     onChange={onChange}
                                 />
-                                (선택) 마케팅 정보 수신 동의
+                                [선택] 마케팅 정보 수신 동의
                             </label>
                             <label>
                                 <input
@@ -360,7 +362,7 @@ const Join = () => {
                                     checked={form.agreeProcess}
                                     onChange={onChange}
                                 />
-                                (필수) 개인정보 처리 위탁 동의
+                                [선택] 개인정보 처리 위탁 동의
                             </label>
                         </div>
 
