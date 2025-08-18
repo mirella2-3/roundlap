@@ -39,15 +39,16 @@ const App = () => {
 
                         {/* Event */}
                         <Route path="/event" element={<Event />} />
+
                         {/* Brand */}
-                        <Route path="/brand">
-                            <Route index element={<Brand />} />
-                            <Route path="productline" element={<ProductLine />} />
-                            <Route path="magazine" element={<Magazine />} />
-                        </Route>
+                        <Route path="/brand" element={<Brand />} />
+                        <Route path="/productLine" element={<ProductLine />} />
+                        <Route path="/magazine" element={<Magazine />} />
+
                         {/* Notice */}
                         <Route path="/notice" element={<Notice />} />
                         <Route path="/faq" element={<Faq />} />
+
                         {/* 단일 경로 */}
                         <Route path="/login/Login" element={<Login />} />
                         <Route path="/login/Logout" element={<Logout />} />

@@ -1,7 +1,12 @@
+import ProductLineList from '../../components/productLine/productLineList';
 import { ProductlineStyle } from './style';
 
 const ProductLine = () => {
-    return <ProductlineStyle>{/* productline */}</ProductlineStyle>;
+    return (
+        <ProductlineStyle>
+            <ProductLineList />
+        </ProductlineStyle>
+    );
 };
 
 export default ProductLine;
