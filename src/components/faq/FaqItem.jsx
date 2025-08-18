@@ -7,7 +7,11 @@ const FaqItem = ({ faq, onClick }) => {
                     <span>Q.</span>
                     <p>{title}</p>
                 </div>
-                <img src="./images/Notice/Faq_arrow_off.png" alt="" />
+                {isOpen ? (
+                    <img src="./images/Notice/Faq_arrow_on.png" alt="" />
+                ) : (
+                    <img src="./images/Notice/Faq_arrow_off.png" alt="" />
+                )}
             </dt>
             {isOpen && (
                 <dd>

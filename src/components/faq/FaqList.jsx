@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { paginationActions } from '../../store/modules/paginationSlice';
 
 const FaqList = () => {
-    const { faqs } = useSelector((state) => state.faq);
+    const { faqsF } = useSelector((state) => state.faq);
     // const { pageData, perPage, currentPage } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
     // const startIdx = (currentPage - 1) * perPage;
@@ -15,10 +15,10 @@ const FaqList = () => {
     const [faqList, setFaqList] = useState([]);
 
     useEffect(() => {
-        const faqsNew = faqs.map((faq) => ({ ...faq, isOpen: false }));
+        const faqsNew = faqsF.map((faq) => ({ ...faq, isOpen: false }));
         setFaqList(faqsNew);
         dispatch(paginationActions.setData(faqsNew));
-    }, [faqs]);
+    }, [faqsF]);
 
     const onClick = (id) => {
         setFaqList((item) =>

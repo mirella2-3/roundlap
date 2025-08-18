@@ -11,6 +11,7 @@ export const PaginationStyle = styled.div`
 
             font-size: 16px;
             font-weight: 500;
+            line-height: 24px;
             color: #515151;
             vertical-align: middle;
 

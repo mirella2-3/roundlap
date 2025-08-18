@@ -1,14 +1,14 @@
 import { useDispatch } from 'react-redux';
-import { NoticeSearchWrap } from './style';
+import { FaqSearchWrap } from './style';
 import { useState } from 'react';
-import { noticeActions } from '../../store/modules/noticeSlice';
+import { faqActions } from '../../store/modules/faqSlice';
 
-const NoticeSearch = () => {
+const FaqSearch = () => {
     const dispatch = useDispatch();
     const [text, setText] = useState('');
     const onSubmit = (e) => {
         e.preventDefault();
-        dispatch(noticeActions.searchNotice(text));
+        dispatch(faqActions.searchFaq(text));
     };
     const changeInput = (e) => {
         const { value } = e.target;
@@ -16,7 +16,7 @@ const NoticeSearch = () => {
     };
 
     return (
-        <NoticeSearchWrap>
+        <FaqSearchWrap>
             <form onSubmit={onSubmit}>
                 <p>
                     <input
@@ -30,8 +30,8 @@ const NoticeSearch = () => {
                     <img src="./images/Notice/Notice_search.png" alt="" />
                 </p>
             </form>
-        </NoticeSearchWrap>
+        </FaqSearchWrap>
     );
 };
 
-export default NoticeSearch;
+export default FaqSearch;

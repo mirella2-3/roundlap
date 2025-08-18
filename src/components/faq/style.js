@@ -1,5 +1,36 @@
 import styled from 'styled-components';
 
+export const FaqSearchWrap = styled.div`
+    margin-bottom: 30px;
+    form {
+        text-align: right;
+        p {
+            margin-left: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 266px;
+            height: 42px;
+            border: 1px solid #c2c2c2;
+
+            box-sizing: border-box;
+            padding: 0px 20px;
+
+            input[type='text'] {
+                width: 200px;
+                height: 38px;
+                border: none;
+                outline: none;
+                &::placeholder {
+                    color: #c2c2c2;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+`;
+
 export const FaqListStyle = styled.div`
     dl {
         width: 1400px;

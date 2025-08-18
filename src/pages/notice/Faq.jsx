@@ -1,5 +1,5 @@
 import FaqList from '../../components/faq/FaqList';
-import NoticeSearch from '../../components/notice/NoticeSearch';
+import FaqSearch from '../../components/faq/FaqSearch';
 import Pagination from '../../components/pagination';
 import { FaqStyle } from './style';
 
@@ -9,7 +9,7 @@ const Faq = () => {
             <div className="inner">
                 <h2>FAQ</h2>
 
-                <NoticeSearch />
+                <FaqSearch />
                 <FaqList />
                 <Pagination />
             </div>

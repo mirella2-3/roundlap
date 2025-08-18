@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { paginationActions } from '../../store/modules/paginationSlice';
 
 const NoticeList = () => {
-    const { notices } = useSelector((state) => state.notice);
+    const { noticesF } = useSelector((state) => state.notice);
     const { pageData, perPage, currentPage } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
     const startIdx = (currentPage - 1) * perPage;
@@ -13,8 +13,8 @@ const NoticeList = () => {
     const currentNotices = pageData.slice(startIdx, endIdx);
 
     useEffect(() => {
-        dispatch(paginationActions.setData(notices));
-    }, [notices]);
+        dispatch(paginationActions.setData(noticesF));
+    }, [noticesF]);
 
     return (
         <NoticeListStyle>

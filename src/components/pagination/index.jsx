@@ -28,7 +28,6 @@ const Pagination = () => {
                 ))}
 
                 <button className="pageNext" onClick={() => dispatch(paginationActions.nextPage())}>
-                    {' '}
                     다음
                     <img src="./images/pagination_arrowRight.png" alt="다음" />
                 </button>

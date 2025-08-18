@@ -20,7 +20,8 @@ const MypageDetail = () => {
                     <span>쿠폰</span>
                 </li>
                 <li>
-                    <img src="./images/Mypage_Icon_board.png" alt="" />y<strong>BOARD</strong>
+                    <img src="./images/Mypage_Icon_board.png" alt="" />
+                    <strong>BOARD</strong>
                     <span>게시물 관리</span>
                 </li>
                 <li>
