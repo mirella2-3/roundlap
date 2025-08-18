@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { NoticeSearchWrap } from './style';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { noticeActions } from '../../store/modules/noticeSlice';
 
 const NoticeSearch = () => {
@@ -14,6 +14,9 @@ const NoticeSearch = () => {
         const { value } = e.target;
         setText(value);
     };
+    useEffect(() => {
+        dispatch(noticeActions.clearSearchResults());
+    }, [dispatch]);
 
     return (
         <NoticeSearchWrap>

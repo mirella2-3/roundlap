@@ -353,7 +353,7 @@ const Join = () => {
                                     checked={form.agreeInfo}
                                     onChange={onChange}
                                 />
-                                [선택] 마케팅 정보 수신 동의
+                                [선택] 개인정보 제3자 제공 동의
                             </label>
                             <label>
                                 <input
@@ -362,7 +362,7 @@ const Join = () => {
                                     checked={form.agreeProcess}
                                     onChange={onChange}
                                 />
-                                [선택] 개인정보 처리 위탁 동의
+                                [선택] 쇼핑정보 수신 동의
                             </label>
                         </div>
 

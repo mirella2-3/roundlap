@@ -19,6 +19,7 @@ import {
 import { ProductDetail, ProductList } from './components';
 import JoinSucess from './pages/login/JoinSucess';
 import './App.css';
+import Order from './pages/order/Order';
 
 const App = () => {
     return (
@@ -32,7 +33,9 @@ const App = () => {
                         {/* shop */}
                         <Route path="/shop/all" element={<Navigate to="/shop/all/ALL" replace />} />
                         <Route path="/shop/:category/:line" element={<Shop />} />
+
                         <Route path="/shop/:productId" element={<ProductDetail />} />
+                        <Route path="/shop/order" element={<Order />} />
 
                         {/* Event */}
                         <Route path="/event" element={<Event />} />

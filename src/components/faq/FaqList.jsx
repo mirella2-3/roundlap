@@ -3,11 +3,13 @@ import { FaqListStyle } from './style';
 import FaqItem from './FaqItem';
 import { useEffect, useState } from 'react';
 import { paginationActions } from '../../store/modules/paginationSlice';
+import { faqActions } from '../../store/modules/faqSlice';
 
 const FaqList = () => {
     const { faqsF } = useSelector((state) => state.faq);
     // const { pageData, perPage, currentPage } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
+    const { currentPage } = useSelector((state) => state.pagination);
     // const startIdx = (currentPage - 1) * perPage;
     // const endIdx = startIdx + perPage;
     // const currentFaqs = pageData.slice(startIdx, endIdx);
@@ -19,6 +21,11 @@ const FaqList = () => {
         setFaqList(faqsNew);
         dispatch(paginationActions.setData(faqsNew));
     }, [faqsF]);
+
+    useEffect(() => {
+        dispatch(paginationActions.setCurrentPage(1));
+        dispatch(faqActions.clearSearchResults());
+    }, [currentPage, dispatch]);
 
     const onClick = (id) => {
         setFaqList((item) =>

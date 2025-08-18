@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ProductdetailStyle } from './style';
 import ProductDesc from './ProductDesc';
 import ProductRecom from './ProductRecom';
@@ -14,6 +14,10 @@ const ProductDetail = () => {
     const { productId } = useParams();
     const { products } = useSelector((state) => state.product);
     const product = products.find((item) => item.id === productId);
+    const navigate = useNavigate();
+    const onClick = () => {
+        navigate('/shop/order');
+    };
     // const { title, price, imgurl } = product;
 
     const productRef = useRef(null);
@@ -89,7 +93,9 @@ const ProductDetail = () => {
                                     <strong>000</strong>원
                                 </span>
                             </li>
-                            <button className="buy">구매하기</button>
+                            <button className="buy" onClick={onClick}>
+                                구매하기
+                            </button>
                             <li>
                                 <ul>
                                     <button className="cart">장바구니</button>

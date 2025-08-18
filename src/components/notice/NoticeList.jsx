@@ -3,6 +3,7 @@ import { NoticeListStyle } from './style';
 import NoticeItem from './NoticeItem';
 import { useEffect } from 'react';
 import { paginationActions } from '../../store/modules/paginationSlice';
+import { noticeActions } from '../../store/modules/noticeSlice';
 
 const NoticeList = () => {
     const { noticesF } = useSelector((state) => state.notice);
@@ -15,6 +16,11 @@ const NoticeList = () => {
     useEffect(() => {
         dispatch(paginationActions.setData(noticesF));
     }, [noticesF]);
+
+    useEffect(() => {
+        dispatch(paginationActions.setCurrentPage(1));
+        dispatch(noticeActions.clearSearchResults());
+    }, [dispatch]);
 
     return (
         <NoticeListStyle>
@@ -34,5 +40,4 @@ const NoticeList = () => {
         </NoticeListStyle>
     );
 };
-
 export default NoticeList;

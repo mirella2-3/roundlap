@@ -16,6 +16,9 @@ export const faqSlice = createSlice({
                 faq.title.toLowerCase().includes(text.toLowerCase())
             );
         },
+        clearSearchResults: (state) => {
+            state.faqsF = state.faqsO;
+        },
     },
 });
 

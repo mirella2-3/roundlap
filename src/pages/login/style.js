@@ -24,6 +24,13 @@ export const JoinStyle = styled.div`
 
         h2 {
             margin-top: 160px;
+            font-size: 36px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        strong {
+            color: #515151;
+            font-size: 18px;
         }
 
         .joinlayout {
@@ -45,6 +52,8 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                color: #515151;
+                font-size: 16px;
                 margin-bottom: 5px;
 
                 label {
@@ -68,6 +77,8 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                color: #515151;
+                font-size: 16px;
                 margin-bottom: 5px;
 
                 label {
@@ -90,6 +101,8 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
+                color: #515151;
                 margin-bottom: 64px;
 
                 label {
@@ -112,6 +125,8 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
+                color: #515151;
                 margin-bottom: 64px;
 
                 label {
@@ -134,7 +149,9 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
                 margin-bottom: 5px;
+                color: #515151;
 
                 label {
                     width: 107px;
@@ -164,6 +181,8 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
+                color: #515151;
                 margin-bottom: 10px;
                 label {
                     width: 107px;
@@ -184,7 +203,9 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
                 margin-bottom: 30px;
+                color: #515151;
                 margin-right: 0;
 
                 label {
@@ -206,6 +227,8 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
+                color: #515151;
                 margin-bottom: 30px;
 
                 label {
@@ -235,7 +258,9 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
                 margin-bottom: 30px;
+                color: #515151;
 
                 label {
                     width: 107px;
@@ -257,7 +282,9 @@ export const JoinStyle = styled.div`
                 align-items: center;
                 display: flex;
                 font-weight: 500;
+                font-size: 16px;
                 margin-bottom: 30px;
+                color: #515151;
 
                 label {
                     width: 107px;
@@ -293,6 +320,8 @@ export const JoinStyle = styled.div`
                     display: block;
                     margin-bottom: 10px;
                     font-weight: 400;
+                    align-items: center;
+                    color: #515151;
 
                     input[type='checkbox'] {
                         width: 18px;
@@ -309,11 +338,13 @@ export const JoinStyle = styled.div`
             align-items: center;
             display: flex;
             font-weight: 500;
+            font-size: 16px;
             margin-bottom: 30px;
 
             label {
                 width: 107px;
                 margin-right: 55px;
+                color: #515151;
             }
             .Phoneybd {
                 margin-left: 10px;
@@ -329,6 +360,7 @@ export const JoinStyle = styled.div`
                     width: 140px;
                     padding: 12px 10px;
                     margin: 0 6px;
+                    margin-left: 20px;
                 }
                 margin-right: 30px;
             }
@@ -339,6 +371,7 @@ export const JoinStyle = styled.div`
                     font-size: 16px;
                     display: block;
                     width: 50px;
+                    color: #515151;
                     margin-right: 24px;
                     font-weight: 400;
 

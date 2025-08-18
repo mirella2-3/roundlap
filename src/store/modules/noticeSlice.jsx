@@ -16,6 +16,10 @@ export const noticeSlice = createSlice({
                 notice.title.toLowerCase().includes(text.toLowerCase())
             );
         },
+
+        clearSearchResults: (state) => {
+            state.noticesF = state.noticesO;
+        },
     },
 });
 

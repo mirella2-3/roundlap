@@ -1,11 +1,11 @@
-import { createSlice, current } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    pageData: [], // 전체 데이터
-    totalCount: 0, // 전체 데이터 수
-    perPage: 10, // 페이지당 개수
-    currentPage: 1, // 현재 페이지
-    totalPages: 1, // 전체 페이지 수
+    pageData: [],
+    totalCount: 0,
+    perPage: 10,
+    currentPage: 1,
+    totalPages: 1,
 };
 
 export const paginationSlice = createSlice({
@@ -13,14 +13,17 @@ export const paginationSlice = createSlice({
     initialState,
     reducers: {
         setData: (state, action) => {
-            // 오름차순 마지막 작성된 글이 처음으로
             state.pageData = [...action.payload].sort((a, b) => b.id - a.id);
-
             state.totalCount = state.pageData.length;
             state.totalPages = Math.ceil(state.totalCount / state.perPage);
-
-            // 처음 들어왔을때 현재 페이지는 1
             state.currentPage = 1;
+        },
+
+        setCurrentPage: (state, action) => {
+            const num = action.payload;
+            if (num >= 1 && num <= state.totalPages) {
+                state.currentPage = num;
+            }
         },
 
         goToPage: (state, action) => {
