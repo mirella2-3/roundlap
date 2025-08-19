@@ -4,7 +4,10 @@ import NavBar from './NavBar';
 
 const Header = () => {
     const location = useLocation();
-    const isMain = location.pathname === '/' || location.pathname === '/brand';
+    const isMain =
+        location.pathname === '/' ||
+        location.pathname === '/brand' ||
+        location.pathname === '/productLine';
     return (
         <HeaderStyle isMain={isMain}>
             {/* <div className="navBg"></div> */}

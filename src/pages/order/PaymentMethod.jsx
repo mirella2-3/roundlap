@@ -14,7 +14,7 @@ const PaymentMethod = ({ selectedMethod, onSelectMethod }) => {
                         checked={selectedMethod === 'card'}
                         onChange={() => onSelectMethod('card')}
                     />
-                    카드결제
+                    <p>카드결제</p>
                 </label>
                 <label>
                     <input
@@ -24,7 +24,7 @@ const PaymentMethod = ({ selectedMethod, onSelectMethod }) => {
                         checked={selectedMethod === 'easy'}
                         onChange={() => onSelectMethod('easy')}
                     />
-                    간편결제
+                    <p>간편결제</p>
                 </label>
                 <label>
                     <input
@@ -34,7 +34,7 @@ const PaymentMethod = ({ selectedMethod, onSelectMethod }) => {
                         checked={selectedMethod === 'mobile'}
                         onChange={() => onSelectMethod('mobile')}
                     />
-                    휴대폰결제
+                    <p>휴대폰결제</p>
                 </label>
                 <label>
                     <input
@@ -44,7 +44,7 @@ const PaymentMethod = ({ selectedMethod, onSelectMethod }) => {
                         checked={selectedMethod === 'bank'}
                         onChange={() => onSelectMethod('bank')}
                     />
-                    무통장입금
+                    <p>무통장입금</p>
                 </label>
             </div>
         </PaymentMethodStyles>

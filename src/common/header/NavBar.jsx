@@ -153,10 +153,10 @@ const NavBar = ({ isMain }) => {
                                     <Link to="/brand">BRAND STORY</Link>
                                 </li>
                                 <li>
-                                    <Link to="/brand/productline">PRODUCT LINE</Link>
+                                    <Link to="/productLine">PRODUCT LINE</Link>
                                 </li>
                                 <li>
-                                    <Link to="/brand/magazine">MAGAZINE</Link>
+                                    <Link to="/magazine">MAGAZINE</Link>
                                 </li>
                             </ul>
                         )}

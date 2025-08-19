@@ -14,7 +14,7 @@ const PaySucess = () => {
         <PaySucessStyles>
             <div className="inner">
                 <div className="checkbox">
-                    <img src="../../../public/images/Sucessicon.png" alt="" />
+                    <img src="/images/Sucessicon.png" alt="" />
                 </div>
                 <div className="check-text">
                     <h2>주문이 완료되었습니다.</h2>

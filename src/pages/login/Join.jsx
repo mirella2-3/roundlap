@@ -69,17 +69,17 @@ const Join = () => {
 
     return (
         <JoinStyle>
-            <form onSubmit={onSubmit}>
-                <div className="inner">
-                    <h2>회원가입</h2>
-                    <div className="joinlayout">
-                        <div className="EssentialInfo">
-                            <strong>기본정보</strong>
-                            <strong>
-                                <span>*</span>필수정보
-                            </strong>
-                        </div>
+            <div className="inner">
+                <h2>회원가입</h2>
 
+                <div className="joinlayout">
+                    <div className="EssentialInfo">
+                        <strong>기본정보</strong>
+                        <strong>
+                            <span>*</span>필수정보
+                        </strong>
+                    </div>
+                    <form onSubmit={onSubmit}>
                         {/* 아이디 */}
                         <div className="joinID">
                             <label htmlFor="userId">
@@ -89,12 +89,14 @@ const Join = () => {
                                 type="text"
                                 id="userId"
                                 name="userId"
-                                placeholder="아이디를 입력해 주세요."
+                                placeholder="아이디를 입력해주세요."
                                 value={form.userId}
                                 onChange={onChange}
                             />
                         </div>
-                        <div className="small">영문소문자 또는 숫자 4~16자로 입력해 주세요.</div>
+                        <div className="small">
+                            <p>영문소문자 또는 숫자 4~16자로 입력해주세요.</p>
+                        </div>
 
                         {/* 비밀번호 */}
                         <div className="joinPW">
@@ -105,13 +107,15 @@ const Join = () => {
                                 type="password"
                                 id="password"
                                 name="password"
-                                placeholder="비밀번호를 입력해 주세요."
+                                placeholder="비밀번호를 입력해주세요."
                                 value={form.password}
                                 onChange={onChange}
                             />
                         </div>
                         <div className="small">
-                            대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자로 입력해 주세요.
+                            <p>
+                                대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자로 입력해주세요.
+                            </p>
                         </div>
 
                         {/* 비밀번호 확인 */}
@@ -123,7 +127,7 @@ const Join = () => {
                                 type="password"
                                 id="passwordConfirm"
                                 name="passwordConfirm"
-                                placeholder="비밀번호를 다시 한번 입력해 주세요."
+                                placeholder="비밀번호를 다시 한번 입력해주세요."
                                 value={form.passwordConfirm}
                                 onChange={onChange}
                             />
@@ -138,7 +142,7 @@ const Join = () => {
                                 type="text"
                                 id="name"
                                 name="name"
-                                placeholder="이름을 입력해 주세요."
+                                placeholder="이름을 입력해주세요."
                                 value={form.name}
                                 onChange={onChange}
                             />
@@ -174,7 +178,7 @@ const Join = () => {
                                 type="text"
                                 id="address2"
                                 name="address2"
-                                placeholder="상세주소"
+                                placeholder="나머지주소 (상세주소)"
                                 value={form.address2}
                                 onChange={onChange}
                             />
@@ -226,7 +230,7 @@ const Join = () => {
                                 type="email"
                                 id="email"
                                 name="email"
-                                placeholder="이메일을 입력해 주세요."
+                                placeholder="이메일을 입력해주세요."
                                 value={form.email}
                                 onChange={onChange}
                             />
@@ -245,7 +249,7 @@ const Join = () => {
                                     checked={form.gender === 'male'}
                                     onChange={onChange}
                                 />
-                                남자
+                                <p>남자</p>
                             </label>
                             <label>
                                 <input
@@ -255,7 +259,7 @@ const Join = () => {
                                     checked={form.gender === 'female'}
                                     onChange={onChange}
                                 />
-                                여자
+                                <p>여자</p>
                             </label>
                         </div>
 
@@ -290,7 +294,6 @@ const Join = () => {
                             </div>
                             <div className="joinsolar">
                                 <label>
-                                    양력
                                     <input
                                         type="radio"
                                         name="birthType"
@@ -298,9 +301,9 @@ const Join = () => {
                                         checked={form.birthType === 'solar'}
                                         onChange={onChange}
                                     />
+                                    <p>양력</p>
                                 </label>
                                 <label>
-                                    음력
                                     <input
                                         type="radio"
                                         name="birthType"
@@ -308,6 +311,7 @@ const Join = () => {
                                         checked={form.birthType === 'lunar'}
                                         onChange={onChange}
                                     />
+                                    <p>음력</p>
                                 </label>
                             </div>
                         </div>
@@ -336,6 +340,7 @@ const Join = () => {
                                     onChange={onChange}
                                 />
                                 [필수] 이용약관 동의
+                                <span className="agreeSpan">약관보기</span>
                             </label>
                             <label>
                                 <input
@@ -345,6 +350,7 @@ const Join = () => {
                                     onChange={onChange}
                                 />
                                 [필수] 개인정보 수집 및 이용 동의
+                                <span className="agreeSpan">약관보기</span>
                             </label>
                             <label>
                                 <input
@@ -354,6 +360,7 @@ const Join = () => {
                                     onChange={onChange}
                                 />
                                 [선택] 개인정보 제3자 제공 동의
+                                <span className="agreeSpan">약관보기</span>
                             </label>
                             <label>
                                 <input
@@ -363,15 +370,16 @@ const Join = () => {
                                     onChange={onChange}
                                 />
                                 [선택] 쇼핑정보 수신 동의
+                                <span className="agreeSpan">약관보기</span>
                             </label>
                         </div>
 
                         <div className="buttons">
-                            <button type="submit">가입하기</button>
+                            <button type="submit">회원가입</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </JoinStyle>
     );
 };

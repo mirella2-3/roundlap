@@ -2,17 +2,17 @@ import styled from 'styled-components';
 
 export const JoinStyle = styled.div`
     span {
-        color: red;
+        color: #f00;
     }
 
     .small {
         margin-top: 10px;
-        margin-left: 184px;
+        margin-left: 160px;
         margin-bottom: 30px;
-        font-size: 14px;
-        font-weight: 400;
         p {
             color: #6b6b6b;
+            font-size: 14px;
+            font-weight: 400;
         }
     }
 
@@ -20,284 +20,216 @@ export const JoinStyle = styled.div`
         width: 954px;
         margin: auto;
         box-sizing: border-box;
-        position: relative;
 
         h2 {
             margin-top: 160px;
             font-size: 36px;
-            font-weight: 600;
+            font-weight: 700;
             color: #1a1a1a;
-        }
-        strong {
-            color: #515151;
-            font-size: 18px;
         }
 
         .joinlayout {
-            width: 960px;
-            margin: auto;
-            box-sizing: border-box;
-            position: relative;
-
             .EssentialInfo {
-                width: 960px;
                 margin-top: 80px;
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 50px;
+
+                strong {
+                    color: #515151;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+
+            label {
+                display: block;
+                width: 160px;
+
+                font-size: 16px;
+                font-weight: 500;
+                color: #515151;
+            }
+            input {
+                box-sizing: border-box;
+                width: 544px;
+                height: 48px;
+                padding: 0px 18px;
+                border: 1px solid #b1b1b1;
+                outline: none;
+
+                font-family: 'Pretendard';
+                font-size: 16px;
+                font-weight: 500;
+                color: #515151;
+                &::placeholder {
+                    font-family: 'Pretendard';
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #b1b1b1;
+                }
             }
 
             /* 아이디 */
-            .joinID {
+            .joinID,
+            .joinPW,
+            .joinPWconfirm,
+            .joinName,
+            .joinAddr,
+            .joinPhone,
+            .joinEmail,
+            .joinGender,
+            .joinbirth {
                 align-items: center;
                 display: flex;
-                font-weight: 500;
-                color: #515151;
-                font-size: 16px;
-                margin-bottom: 5px;
-
-                label {
-                    width: 107px;
-                    margin-right: 64px;
-                }
-
-                input {
-                    width: 544px;
-                    padding: 12px 10px;
-                    margin-left: 10px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
-                }
-            }
-
-            /* 비밀번호 */
-            .joinPW {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                color: #515151;
-                font-size: 16px;
-                margin-bottom: 5px;
-
-                label {
-                    width: 107px;
-                    margin-right: 64px;
-                }
-                input {
-                    width: 544px;
-                    padding: 12px 10px;
-                    margin-left: 10px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
-                }
             }
 
             /* 비밀번호 확인 */
             .joinPWconfirm {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
-                color: #515151;
-                margin-bottom: 64px;
-
-                label {
-                    width: 107px;
-                    margin-right: 64px;
-                }
-                input {
-                    width: 544px;
-                    padding: 12px 10px;
-                    margin-left: 10px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
-                }
+                margin-bottom: 40px;
             }
-
             /* 이름 */
             .joinName {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
-                color: #515151;
-                margin-bottom: 64px;
-
-                label {
-                    width: 107px;
-                    margin-right: 64px;
-                }
-                input {
-                    width: 544px;
-                    padding: 12px 10px;
-                    margin-left: 10px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
-                }
+                margin-bottom: 30px;
             }
 
             /* 주소 */
             .joinAddr {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
-                margin-bottom: 5px;
-                color: #515151;
-
                 label {
-                    width: 107px;
-                    margin-right: 64px;
+                    margin-bottom: 10px;
                 }
                 input {
                     width: 360px;
-                    padding: 12px 10px;
-                    margin-left: 10px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
+                    margin-bottom: 10px;
                 }
                 button {
                     margin-left: 20px;
+                    margin-bottom: 10px;
                     width: 164px;
                     height: 48px;
+                    background: #e3e3e3;
+                    border: none;
+
                     color: #515151;
                     font-size: 16px;
                     font-weight: 400;
+
                     cursor: pointer;
-                    background: #e3e3e3;
                 }
             }
             .joinAddr1 {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
-                color: #515151;
+                margin-left: 160px;
                 margin-bottom: 10px;
-                label {
-                    width: 107px;
-                    margin-right: 73px;
-                }
-                input {
-                    width: 544px;
-                    padding: 12px 10px;
-                    margin-left: 0px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
-                }
             }
-
             .joinAddr2 {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
+                margin-left: 160px;
                 margin-bottom: 30px;
-                color: #515151;
-                margin-right: 0;
-
-                label {
-                    width: 107px;
-                }
-                input {
-                    width: 544px;
-                    padding: 12px 10px;
-                    margin-left: 72px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
-                }
             }
 
             /* 휴대전화 */
             .joinPhone {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
-                color: #515151;
+                font-size: 18px;
+                color: #6b6b6b;
+                font-weight: 600;
                 margin-bottom: 30px;
-
-                label {
-                    width: 110px;
-                }
-
                 .joinPhoneNum {
-                    margin-left: 67px;
                     display: flex;
                     align-items: center;
 
                     select {
                         width: 160px;
-                        padding: 12px 10px;
+                        height: 48px;
+                        padding: 0px 20px;
                         margin-right: 12px;
+
+                        border: 1px solid #b1b1b1;
+                        outline: none;
+
+                        font-family: 'Pretendard';
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #515151;
+
+                        appearance: none;
+                        background: url('/images/join/join_phone_arrow.png') no-repeat;
+                        background-size: 24px auto;
+                        background-position: 95% 50%;
                     }
                     input {
                         width: 160px;
-                        padding: 12px 10px;
-                        margin: 0 6px;
+                        margin: 0 12px;
+                        &:last-of-type {
+                            margin-right: 0px;
+                        }
                     }
                 }
             }
 
             /* 이메일 */
             .joinEmail {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
                 margin-bottom: 30px;
-                color: #515151;
-
-                label {
-                    width: 107px;
-                    margin-right: 61px;
-                }
-                input {
-                    width: 544px;
-                    padding: 12px 10px;
-                    margin-left: 10px;
-                }
-                input::placeholder {
-                    padding-left: 10px;
-                    text-indent: 10px;
-                }
             }
 
             /* 성별 */
             .joinGender {
-                align-items: center;
-                display: flex;
-                font-weight: 500;
-                font-size: 16px;
                 margin-bottom: 30px;
-                color: #515151;
-
                 label {
-                    width: 107px;
-                    margin-right: 74px;
                     display: flex;
                     align-items: center;
-
                     input[type='radio'] {
-                        margin-left: 5px;
+                        width: 14px;
+                        height: 14px;
                         cursor: pointer;
+                        margin: 0px;
+                    }
+                    p {
+                        margin-left: 8px;
+                    }
+                    &:nth-of-type(2) {
+                        width: auto;
+                        margin-right: 40px;
                     }
                 }
             }
+
+            /* 생년월일 */
+            .joinbirth {
+                input {
+                    width: 140px;
+                    margin-left: 20px;
+                    margin-right: 5px;
+                    &:first-of-type {
+                        margin-left: 0px;
+                    }
+                }
+                .joinsolar {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 30px;
+
+                    label {
+                        width: auto;
+                        display: flex;
+                        align-items: center;
+
+                        &:first-of-type {
+                            margin-right: 24px;
+                        }
+
+                        input[type='radio'] {
+                            width: 14px;
+                            height: 14px;
+                            cursor: pointer;
+                            margin: 0px;
+                        }
+                        p {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+
+            /* 약관 동의 */
             .agreementstext {
                 margin-top: 160px;
                 border-bottom: 1px solid #cecece;
@@ -305,104 +237,70 @@ export const JoinStyle = styled.div`
                     margin: 0;
                     padding-bottom: 28px;
                     font-size: 24px;
-                    font-weight: 600;
+                    font-weight: 700;
+                    color: #1a1a1a;
                 }
             }
-            /* 약관 동의 */
+
             .agreements {
-                margin-top: 20px;
-                label:first-of-type {
-                    margin-top: 42.5px;
-                    margin-bottom: 28px;
-                }
+                margin-top: 40px;
                 label {
-                    font-size: 16px;
-                    display: block;
+                    width: 954px;
                     margin-bottom: 10px;
-                    font-weight: 400;
-                    align-items: center;
+
+                    font-size: 16px;
+                    font-weight: 500;
                     color: #515151;
+
+                    display: flex;
+                    align-items: center;
+
+                    &:first-of-type {
+                        margin-bottom: 28px;
+
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #1a1a1a;
+                    }
 
                     input[type='checkbox'] {
                         width: 18px;
                         height: 18px;
                         margin-right: 10px;
+                        border: 1px solid #515151;
                         cursor: pointer;
-                        border-radius: 0;
+                    }
+
+                    .agreeSpan {
+                        display: inline-block;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #b1b1b1;
+                        border-bottom: 1px solid #b1b1b1;
+                        text-align: right;
+                        margin-left: auto;
                     }
                 }
             }
         }
-        /* 생년월일 */
-        .joinbirth {
-            align-items: center;
-            display: flex;
-            font-weight: 500;
-            font-size: 16px;
-            margin-bottom: 30px;
 
-            label {
-                width: 107px;
-                margin-right: 55px;
-                color: #515151;
-            }
-            .Phoneybd {
-                margin-left: 10px;
-                display: flex;
-                align-items: center;
-
-                select {
-                    width: 140px;
-                    padding: 12px 10px;
-                    margin-right: 12px;
-                }
-                input {
-                    width: 140px;
-                    padding: 12px 10px;
-                    margin: 0 6px;
-                    margin-left: 20px;
-                }
-                margin-right: 30px;
-            }
-            .joinsolar {
-                display: flex;
-
-                label {
-                    font-size: 16px;
-                    display: block;
-                    width: 50px;
-                    color: #515151;
-                    margin-right: 24px;
-                    font-weight: 400;
-
-                    input[type='checkbox'] {
-                        width: 18px;
-                        height: 18px;
-                        cursor: pointer;
-                        border-radius: 0;
-                    }
-                }
-            }
-        }
         .buttons {
             margin-top: 100px;
             margin-bottom: 160px;
-            display: flex;
-            justify-content: center;
+            text-align: center;
             button[type='submit'] {
                 width: 272px;
-                padding: 15px 0;
+                height: 50px;
                 font-size: 18px;
                 font-weight: 400;
                 background-color: #515151;
-                color: white;
+                color: #fff;
                 border: none;
                 cursor: pointer;
                 text-align: center;
 
                 &:hover {
                     background-color: #54afea;
-                    color: white;
                 }
             }
         }
@@ -416,10 +314,9 @@ export const SucessStyles = styled.div`
         box-sizing: border-box;
         position: relative;
         .checkbox {
-            margin-top: 214px;
+            margin-top: 210px;
             margin-bottom: 50px;
-            display: flex;
-            justify-content: center;
+            text-align: center;
             img {
                 width: 64px;
                 height: 64px;
@@ -428,35 +325,43 @@ export const SucessStyles = styled.div`
         }
         .check-text {
             margin-bottom: 120px;
+            text-align: center;
             h2 {
                 font-size: 36px;
-                font-weight: 600;
+                font-weight: 700;
+                color: #1a1a1a;
                 margin-bottom: 14px;
             }
             h3 {
-                text-align: center;
+                font-size: 18px;
+                font-weight: 500;
             }
         }
         .buttons {
-            margin-bottom: 175px;
+            margin-bottom: 160px;
             display: flex;
             justify-content: center;
             button[type='submit'] {
                 width: 160px;
-                height: 38px;
+                height: 50px;
 
                 font-size: 18px;
                 font-weight: 400;
+                color: #fff;
+
                 background-color: #515151;
-                color: white;
                 border: none;
                 cursor: pointer;
                 text-align: center;
-                margin-right: 10px;
+                margin-right: 20px;
 
                 &:hover {
                     background-color: #54afea;
                     color: white;
+                }
+
+                &:last-of-type {
+                    margin-right: 0px;
                 }
             }
         }
