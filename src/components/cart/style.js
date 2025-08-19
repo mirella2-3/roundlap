@@ -89,6 +89,15 @@ export const CartBottomStyle = styled.div`
         }
     }
 `;
+export const OverlayStyle = styled.div`
+    position: fixed;
+    top: -50px;
+    left: -800px;
+    width: 1920px;
+    height: 1280px;
+    background: rgba(0, 0, 10, 0.8);
+    z-index: 9998;
+`;
 
 export const CartItemStyle = styled.div`
     .itembox {

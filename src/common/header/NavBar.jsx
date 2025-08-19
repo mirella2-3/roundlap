@@ -5,9 +5,13 @@ import { IoMdSearch } from 'react-icons/io';
 import { GoPerson } from 'react-icons/go';
 import { useState } from 'react';
 import Cart from '../../components/cart/Cart';
+import Search from '../../components/search/Search';
+import Overlay from '../../components/search/Overlay';
+import Overlay1 from '../../components/cart/Overlay1';
 
 const NavBar = ({ isMain }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const carts = []; // 장바구니 데이터 (props나 context로 연결 가능)
 
     //
@@ -24,6 +28,9 @@ const NavBar = ({ isMain }) => {
 
     const toggleCart = () => {
         setIsCartOpen((prev) => !prev);
+    };
+    const toggleSearch = () => {
+        setIsSearchOpen((prev) => !prev);
     };
     return (
         <>
@@ -202,7 +209,7 @@ const NavBar = ({ isMain }) => {
                         </ul>
                     </li>
                     <li>
-                        <ul className="search">
+                        <ul className="search" onClick={toggleSearch}>
                             <li>Search</li>
                             <li>
                                 <IoMdSearch />
@@ -210,7 +217,18 @@ const NavBar = ({ isMain }) => {
                         </ul>
                     </li>
                 </ul>
-                {isCartOpen && <Cart onClose={toggleCart} carts={carts} />}
+                {isCartOpen && (
+                    <>
+                        <Overlay1 onClick={toggleCart} />
+                        <Cart onClose={toggleCart} carts={carts} />
+                    </>
+                )}
+                {isSearchOpen && (
+                    <>
+                        <Overlay onClick={toggleSearch} />
+                        <Search onClose={toggleSearch} />
+                    </>
+                )}
             </NavStyle>
         </>
     );

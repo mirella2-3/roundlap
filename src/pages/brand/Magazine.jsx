@@ -1,10 +1,14 @@
+import MegazinList from '../../components/megazine/MegazinList';
+import MegazinVisual from '../../components/megazine/MegazinVisual';
 import { MagazineStyle } from './style';
 
 const Magazine = () => {
     return (
         <MagazineStyle>
-            {/* magazine */}
-            매거진
+            <div className="inner">
+                <MegazinVisual />
+                <MegazinList />
+            </div>
         </MagazineStyle>
     );
 };
