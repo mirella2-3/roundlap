@@ -89,6 +89,14 @@ video {
     vertical-align: baseline;
     font-family: 'Pretendard', sans-serif;
 }
+
+input {
+    box-sizing: border-box;
+    padding: 0px;
+    outline: none;
+    font-family: 'Pretendard', sans-serif;
+}
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,

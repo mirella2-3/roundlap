@@ -39,7 +39,7 @@ const OrderInfoInput = () => {
                         type="text"
                         id="userName"
                         name="userName"
-                        placeholder="이름을 입력해 주세요."
+                        placeholder="이름을 입력해주세요."
                         value={form.userName}
                         onChange={onChange}
                     />
@@ -56,7 +56,7 @@ const OrderInfoInput = () => {
                                 checked={form.delivery === 'save'}
                                 onChange={onChange}
                             />
-                            저장된 배송지
+                            <p>저장된 배송지</p>
                         </label>
                         <label>
                             <input
@@ -66,7 +66,7 @@ const OrderInfoInput = () => {
                                 checked={form.delivery === 'new'}
                                 onChange={onChange}
                             />
-                            신규배송지
+                            <p>신규배송지</p>
                         </label>
                     </div>
                     <div className="receiver">
@@ -79,7 +79,7 @@ const OrderInfoInput = () => {
                             type="text"
                             id="receiveName"
                             name="receiveName"
-                            placeholder="받으시는 분 이름을 입력해 주세요."
+                            placeholder="받으시는 분 이름을 입력해주세요."
                             value={form.receiveName || ''}
                             onChange={onChange}
                         />
@@ -118,7 +118,7 @@ const OrderInfoInput = () => {
                         type="text"
                         id="address2"
                         name="address2"
-                        placeholder="상세주소"
+                        placeholder="나머지주소 (상세주소)"
                         value={form.address2}
                         onChange={onChange}
                     />

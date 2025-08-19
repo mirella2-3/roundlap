@@ -6,7 +6,7 @@ const OrderInfo = () => {
     return (
         <OrderInfoStyles>
             <div className="Info">
-                <h2>주문정보</h2>
+                <h2>주문 정보</h2>
                 <OrderInfoInput />
             </div>
         </OrderInfoStyles>

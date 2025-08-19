@@ -14,7 +14,7 @@ const JoinSucess = () => {
         <SucessStyles>
             <div className="inner">
                 <div className="checkbox">
-                    <img src="../../../public/images/Sucessicon.png" alt="" />
+                    <img src="/images/Sucessicon.png" alt="" />
                 </div>
                 <div className="check-text">
                     <h2>회원가입이 완료되었습니다.</h2>
@@ -23,7 +23,7 @@ const JoinSucess = () => {
                 <div className="buttonbox">
                     <div className="buttons">
                         <button type="submit" onClick={onSubmit}>
-                            메인으로가기
+                            메인으로 이동
                         </button>
                         <button type="submit">로그인</button>
                     </div>
