@@ -2,25 +2,24 @@ import styled from 'styled-components';
 export const OverlayStyle = styled.div`
     position: fixed;
     top: -50px;
-    left: -610px;
+    left: -910px;
     width: 1920px;
     height: 1280px;
     background: rgba(0, 0, 10, 0.8);
     z-index: 9998;
 `;
 export const SearchStyle = styled.div`
-    position: relative;
+    position: absolute;
 
+    top: -50px;
+    right: -256px;
+    width: 630px;
+    height: 1080px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    z-index: 9999;
     .searchbox {
-        position: absolute;
-        top: -50px;
-        right: -256px;
-        width: 630px;
-        height: 1080px;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        z-index: 9999;
         .searchtool {
             padding: 70px 60px;
             width: 510px;

@@ -5,6 +5,7 @@ import { IoMdSearch } from 'react-icons/io';
 const Search = ({ onClose }) => {
     return (
         <SearchStyle>
+            <div className="box"></div>
             <div className="searchbox">
                 <div className="searchtool">
                     <div className="SearchTop">
