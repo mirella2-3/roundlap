@@ -1,5 +1,5 @@
 const Kcontents = () => {
-    return <div>케이콘텐츠</div>;
+    return <div></div>;
 };
 
 export default Kcontents;

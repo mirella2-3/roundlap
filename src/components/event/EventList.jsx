@@ -11,9 +11,13 @@ const EventList = () => {
     const dispatch = useDispatch();
     const { events, currentPage, itemsPerPage } = useSelector((state) => state.event);
 
+    // 🔁 isActive가 true인 항목이 먼저 오도록 정렬
+    const sortedEvents = [...events].sort((a, b) => b.isActive - a.isActive);
+
+    // 📄 페이징을 정렬된 목록에 적용
     const indexOfLast = currentPage * itemsPerPage;
     const indexOfFirst = indexOfLast - itemsPerPage;
-    const currentEvents = events.slice(indexOfFirst, indexOfLast);
+    const currentEvents = sortedEvents.slice(indexOfFirst, indexOfLast);
 
     const totalPages = Math.ceil(events.length / itemsPerPage);
 

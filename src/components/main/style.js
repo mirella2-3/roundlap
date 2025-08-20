@@ -67,6 +67,151 @@ export const BestItemStyle = styled.div`
     }
 `;
 
+export const SloganStyle = styled.div`
+    cursor: default;
+    text-align: center;
+    padding: 160px;
+    strong {
+        color: #339fe6;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    h3 {
+        padding: 22px 0;
+        color: #1a1a1a;
+        font-size: 36px;
+        font-weight: 700;
+    }
+    span {
+        font-size: 18px;
+    }
+    p {
+        padding-top: 22px;
+    }
+`;
+
+export const ProductLineStyle = styled.div`
+    position: relative;
+    padding: 160px 0;
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: 0.5s ease forwards;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .inner {
+        height: 760px;
+        overflow: visible;
+
+        h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            padding-top: 60px;
+            margin-bottom: 108px;
+        }
+    }
+    .swiper {
+        width: 1400px;
+        /* width: 1670px; */
+        height: 311px;
+    }
+    .swiper-wrapper {
+        width: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        /* border: 1px solid #000; */
+        color: rgba(255, 255, 255, 0.3);
+        span {
+            font-size: 30px;
+            font-weight: 800;
+        }
+        h4 {
+            font-size: 36px;
+            font-weight: 700;
+            padding: 20px 0 12px 0;
+        }
+        strong {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+        button {
+            display: block;
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 272px;
+            height: 50px;
+            font-size: 18px;
+
+            color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: default;
+        }
+    }
+    .swiper-slide-active {
+        span {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        color: rgba(255, 255, 255, 1);
+        button {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid #fff;
+            cursor: pointer;
+
+            &:hover {
+                color: #0087e0;
+                border: 1px solid #0087e0;
+                background: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+    .swiper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .custom-prev,
+    .custom-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0);
+        border: 1px solid #c2c2c2;
+        cursor: pointer;
+        font-size: 20px;
+        color: #c2c2c2;
+    }
+    .custom-prev {
+        left: -125px;
+    }
+
+    .custom-next {
+        right: -125px;
+    }
+`;
+
 export const MainMagazineStyle = styled.div`
     .inner {
         padding: 160px 0;

@@ -5,12 +5,19 @@ export const allProductData = [
         price: 16700,
         salePrice: 16700,
         category: ['toner', 'water', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202501/8a3370d3587010a6ad8636990069e34e.jpg',
-        color: '',
-        desc:[
-            '','','','','','',''
-        ]
-
+        nowLine: '1025', //해당line 추가
+        imgurl: 'https://roundlab.co.kr/web/product/big/202501/8a3370d3587010a6ad8636990069e34e.jpg', //image=> 배경투명화된 이미지 저장후 종류 맞춰서 url 넣기 ('/images/Data/image_00')
+        colorDark: '',
+        colorLight: '',
+        desc: [
+            '',
+            '',
+            '',
+            '',
+            '',
+            '',
+            '', //라인별로 동일하게
+        ],
     },
     {
         id: 2,
@@ -97,6 +104,7 @@ export const allProductData = [
         title: '1025 독도 크림 50ml 2개 세트',
         price: 40500,
         category: ['toner', 'water', '1025', 'BEST', 'SET', 'SALE'],
+        salePercent: 40, //category: 'sale'인거에 salePercent 추가 / 정확한 할인률일 필요x 얼추 맞춰서 써주세요. 
         salePrice: 22000,
         imgurl: 'https://roundlab.co.kr/web/product/big/202111/70e76d059864acd240c27d54b7984095.jpg',
     },
