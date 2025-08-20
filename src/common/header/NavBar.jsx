@@ -6,8 +6,6 @@ import { GoPerson } from 'react-icons/go';
 import { useState } from 'react';
 import Cart from '../../components/cart/Cart';
 import Search from '../../components/search/Search';
-import Overlay from '../../components/search/Overlay';
-import Overlay1 from '../../components/cart/Overlay1';
 
 const NavBar = ({ isMain }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -219,13 +217,13 @@ const NavBar = ({ isMain }) => {
                 </ul>
                 {isCartOpen && (
                     <>
-                        <Overlay1 onClick={toggleCart} />
+                        {/* <Overlay1 onClick={toggleCart} /> */}
                         <Cart onClose={toggleCart} carts={carts} />
                     </>
                 )}
                 {isSearchOpen && (
                     <>
-                        <Overlay onClick={toggleSearch} />
+                        {/* <Overlay onClick={toggleSearch} /> */}
                         <Search onClose={toggleSearch} />
                     </>
                 )}

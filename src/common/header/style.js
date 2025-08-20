@@ -261,6 +261,7 @@ export const NavStyle = styled.nav`
                 font-size: 20px;
                 padding: 4px 3px 0 0;
                 color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
+                cursor: pointer;
             }
         }
 
@@ -275,6 +276,7 @@ export const NavStyle = styled.nav`
             gap: 45px;
             padding: 0 9px 0 14px;
             box-sizing: border-box;
+            cursor: pointer;
         }
     }
 `;

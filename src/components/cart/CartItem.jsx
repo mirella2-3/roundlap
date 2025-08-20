@@ -12,12 +12,15 @@ const CartItem = () => {
                     </p>
                 </div>
                 <div className="itemtitle">
-                    <h2>상품이름</h2>
+                    <h2>1025 독도 토너 200ml + 독도 로션 200ml 2종 세트</h2>
                     <div className="itemquantity">
-                        <CiSquareChevLeft />
+                        <button>-</button>
                         <span>1</span>
-                        <CiSquareChevRight />
+                        <button>+</button>
                     </div>
+                </div>
+                <div className="itemPrice">
+                    <strong>000000원</strong>
                 </div>
                 <div className="itemIcon">
                     <MdOutlineClose />

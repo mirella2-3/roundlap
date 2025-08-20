@@ -17,14 +17,17 @@ export const NoticeSearchWrap = styled.div`
             box-sizing: border-box;
             padding: 0px 20px;
 
-            input[type='text'] {
+            input {
                 width: 200px;
                 height: 38px;
                 border: none;
                 outline: none;
+                font-family: 'Pretendard';
+                font-size: 16px;
+                font-weight: 400;
+                color: #1a1a1a;
                 &::placeholder {
                     color: #c2c2c2;
-                    font-weight: 500;
                 }
             }
         }
