@@ -1,12 +1,8 @@
-import ProductLineList from '../../components/productLine/productLineList';
+import React from 'react';
 import { ProductlineStyle } from './style';
 
 const ProductLine = () => {
-    return (
-        <ProductlineStyle>
-            <ProductLineList />
-        </ProductlineStyle>
-    );
+    return <ProductlineStyle></ProductlineStyle>;
 };
 
 export default ProductLine;

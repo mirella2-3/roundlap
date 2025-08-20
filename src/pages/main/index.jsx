@@ -10,6 +10,7 @@ import {
     Slogan,
     Story,
 } from '../../components';
+
 import { MainStyle } from './style';
 
 const Main = () => {
