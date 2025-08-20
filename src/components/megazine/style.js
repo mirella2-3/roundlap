@@ -2,7 +2,7 @@ import styled from 'styled-components';
 export const MegazineListStyle = styled.div`
     .magazine-list {
         width: 1394px;
-        height: 1981px;
+        flex-wrap: wrap;
         display: flex;
         justify-content: center;
         margin-top: 50px;
@@ -11,67 +11,67 @@ export const MegazineListStyle = styled.div`
         display: flex;
         justify-content: center;
     }
-    margin: 160px 0px;
+    margin: 130px 0px 160px 0px;
 `;
 export const MegazineItemStyle = styled.div`
     width: 450px;
-    height: 584px;
+    height: 583px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 
     .img-container {
         width: 450px;
         height: 450px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         img {
             width: 450px;
             height: 450px;
             object-fit: cover;
-            margin-bottom: 28px;
         }
     }
+    .text {
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 30px;
+            text-align: left;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+            margin-bottom: 10px;
+        }
 
-    h2 {
-        font-size: 20px;
-        font-weight: 600;
-        color: #1a1a1a;
+        p {
+            width: 420px;
+            font-size: 16px;
+            color: #8a8a8a;
+            font-weight: 500;
+            line-height: 130%;
+            margin-bottom: 10px;
+            width: 420px;
+            height: 42px;
+            text-align: left;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-word;
+        }
+        span {
+            display: block;
 
-        text-align: left;
-        width: 100%;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        word-break: break-word;
-        margin-bottom: 10px;
-    }
-
-    p {
-        font-size: 16px;
-        color: #8a8a8a;
-        font-weight: 500;
-        line-height: 130%;
-        margin-bottom: 10px;
-
-        text-align: left;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; /* 최대 3줄 */
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        word-break: break-word;
-    }
-    span {
-        display: block;
-        width: 100%;
-        text-align: left;
-        font-size: 14px;
-        color: #8a8a8a;
-        font-weight: 500;
+            text-align: left;
+            font-size: 14px;
+            color: #8a8a8a;
+            font-weight: 500;
+        }
     }
 `;
 export const PageButton = styled.button`

@@ -8,9 +8,11 @@ const MegazinItem = ({ magazine }) => {
             <div className="img-container">
                 <img src={imgUrl} alt={title} />
             </div>
-            <h2>{title}</h2>
-            <p>{context}</p>
-            <span>{date}</span>
+            <div className="text">
+                <h2>{title}</h2>
+                <p>{context}</p>
+                <span>{date}</span>
+            </div>
         </MegazineItemStyle>
     );
 };
