@@ -37,7 +37,7 @@ const DiscountSwiper = () => {
                 loop={true}
             >
                 {mainDiscountData.map(({ id, title, imgUrl, discount }) => (
-                    <SwiperSlide key={id}>
+                    <SwiperSlide key={id} className="slide-item">
                         <div className="wish-inner">
                             <img src={imgUrl} alt={title} />
                             <div className="bg">

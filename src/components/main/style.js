@@ -52,9 +52,16 @@ export const BestItemStyle = styled.div`
             strong {
                 width: 272px;
                 position: absolute;
-                bottom: 0;
+                top: 464px;
                 left: 50%;
                 transform: translateX(-50%);
+                font-weight: 300;
+            }
+            &:hover {
+                strong {
+                    font-weight: 400;
+                    color: #515151;
+                }
             }
         }
     }
@@ -232,13 +239,21 @@ export const SetItemStyle = styled.div`
 
                 img {
                 }
-                .title {
-                    position: absolute;
-                    bottom: 0;
-                    font-size: 18px;
-                    font-weight: 600;
-                    color: #b1b1b1;
-                    cursor: pointer;
+                .slide-item {
+                    .title {
+                        position: absolute;
+                        bottom: 0;
+                        font-size: 18px;
+                        font-weight: 300;
+                        color: #b1b1b1;
+                        cursor: pointer;
+                    }
+                    &:hover {
+                        .title {
+                            color: #1a1a1a;
+                            font-weight: 400;
+                        }
+                    }
                 }
 
                 /*  */
@@ -368,13 +383,22 @@ export const DiscountItemStyle = styled.div`
                         }
                     }
                 }
-                .title {
-                    position: absolute;
-                    bottom: 0;
-                    font-size: 18px;
-                    font-weight: 600;
-                    color: #b1b1b1;
-                    cursor: pointer;
+
+                .slide-item {
+                    .title {
+                        position: absolute;
+                        bottom: 0;
+                        font-size: 18px;
+                        font-weight: 300;
+                        color: #b1b1b1;
+                        cursor: pointer;
+                    }
+                    &:hover {
+                        .title {
+                            color: #1a1a1a;
+                            font-weight: 400;
+                        }
+                    }
                 }
                 .discount {
                     font-size: 16px;

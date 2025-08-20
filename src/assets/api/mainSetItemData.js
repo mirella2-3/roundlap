@@ -21,7 +21,7 @@ export const mainSetItemData = [
     },
     {
         id: 5,
-        title: '소나무 진정 시카 패드(50매입) 2개 세트',
+        title: '소나무 진정 시카 패드(50매) 2개 세트',
         imgUrl: '/images/Main/Main-products10.png',
     },
 ];

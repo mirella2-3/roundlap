@@ -5,26 +5,12 @@ export const HeaderStyle = styled.header`
     width: 100%;
     top: 0;
     z-index: 1000;
-    /* transition: all 0.3s ease; */
 
-    /* 스타일 분기: 메인 vs 서브 */
     position: ${({ isMain }) => (isMain ? 'fixed' : 'relative')};
     background: ${({ isMain }) => (isMain ? 'transparent' : 'white')};
     height: 120px;
     color: ${({ isMain }) => (isMain ? 'white' : '#515151')};
     border-bottom: ${({ isMain }) => (isMain ? 'none' : '1px solid #ececec')};
-
-    /* .navBg {
-        position: absolute;
-        top: 120px;
-        left: 0;
-        width: 100%;
-        height: 428px;
-        background: #fff;
-        background-image: url(/images/header/header_nav.png);
-        background-position: 183px;
-        background-repeat: no-repeat;
-    } */
 
     .inner {
         height: 100%;

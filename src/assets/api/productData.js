@@ -6,6 +6,11 @@ export const allProductData = [
         salePrice: 16700,
         category: ['toner', 'water', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202501/8a3370d3587010a6ad8636990069e34e.jpg',
+        color: '',
+        desc:[
+            '','','','','','',''
+        ]
+
     },
     {
         id: 2,
