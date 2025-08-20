@@ -7,13 +7,13 @@ const BestItem = () => {
                 <h2>BEST ITEM</h2>
                 <ul className="items">
                     <li>
-                        <p>
+                        <div className="wish">
                             <img src="/images/Main/Main-products01.png" alt="" />
                             <div className="bg">
                                 <img src="/images/wish_1.png" alt="" />
                                 <img src="/images/wish_2.png" alt="" />
                             </div>
-                        </p>
+                        </div>
                         <strong>1025 독도토너 대용량 500ml</strong>
                     </li>
                     <li>

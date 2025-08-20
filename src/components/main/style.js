@@ -202,6 +202,33 @@ export const SetItemStyle = styled.div`
                     margin-bottom: 52px;
                     font-size: 18px;
                 }
+                .wish-inner {
+                    position: relative;
+                    cursor: pointer;
+
+                    .bg {
+                        position: absolute;
+                        bottom: 40px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        gap: 20px;
+                        opacity: 0;
+                        transition: 0.65s;
+                    }
+
+                    &:hover {
+                        .bg {
+                            opacity: 1;
+                            bottom: 80px;
+                            cursor: default;
+
+                            img {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
 
                 img {
                 }
@@ -211,6 +238,7 @@ export const SetItemStyle = styled.div`
                     font-size: 18px;
                     font-weight: 600;
                     color: #b1b1b1;
+                    cursor: pointer;
                 }
 
                 /*  */
@@ -311,6 +339,34 @@ export const DiscountItemStyle = styled.div`
                 }
 
                 img {
+                    scale: 0.9;
+                }
+                .wish-inner {
+                    position: relative;
+                    cursor: pointer;
+
+                    .bg {
+                        position: absolute;
+                        bottom: 40px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        gap: 20px;
+                        opacity: 0;
+                        transition: 0.65s;
+                    }
+
+                    &:hover {
+                        .bg {
+                            opacity: 1;
+                            bottom: 80px;
+                            cursor: default;
+
+                            img {
+                                cursor: pointer;
+                            }
+                        }
+                    }
                 }
                 .title {
                     position: absolute;
@@ -318,11 +374,13 @@ export const DiscountItemStyle = styled.div`
                     font-size: 18px;
                     font-weight: 600;
                     color: #b1b1b1;
+                    cursor: pointer;
                 }
                 .discount {
+                    font-size: 16px;
                     position: absolute;
-                    top: 10px;
-                    left: 10px;
+                    top: 40px;
+                    left: 40px;
                     width: 45px;
                     height: 45px;
                     background: #515151;
@@ -352,6 +410,7 @@ export const DiscountItemStyle = styled.div`
                     position: relative;
                     .swiper-button-next-dis {
                         position: absolute;
+                        z-index: 10;
                         top: 50%;
                         transform: translateY(-50%);
                         right: 295px;
@@ -359,22 +418,138 @@ export const DiscountItemStyle = styled.div`
                         color: #8a8a8a;
                         /* width: 60px; */
                     }
-                    .swiper-button-next,
+                    /* .swiper-button-next,
                     .swiper-button-prev {
                         &::after {
                             display: none;
                         }
-                    }
+                    } */
                     .swiper-button-prev-dis {
                         position: absolute;
+                        z-index: 10;
                         top: 50%;
                         transform: translateY(-50%);
                         left: 295px;
                         background: transparent;
                         color: #8a8a8a;
-                        /* width: 60px; */
                     }
                 }
+            }
+        }
+    }
+`;
+
+export const StoryStyle = styled.div`
+    width: 100%;
+    height: 1080px;
+    display: flex;
+    .left {
+        height: 100%;
+        width: 50%;
+        background-image: url(/images/Main/Left00.png);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+    }
+    .right {
+        height: 100%;
+        width: 50%;
+        background-image: url(/images/Main/Right00.png);
+        h3 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #54afea;
+            text-align: center;
+            margin-top: 432px;
+        }
+        span {
+            display: block;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 18px;
+            color: #54afea;
+            font-weight: 300;
+        }
+        p {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+
+            button {
+                width: 226px;
+                height: 50px;
+                border: 1px solid #54afea;
+                background: transparent;
+                color: #54afea;
+                font-size: 18px;
+                transition: 0.3s;
+                &:hover {
+                    color: #fff;
+                    background: #54afea;
+                }
+            }
+        }
+    }
+`;
+
+export const SnsStyle = styled.div`
+    padding: 160px 0;
+    h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 80px;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    #box {
+        margin: 0 auto;
+        background-color: #fff;
+        overflow: hidden;
+        width: 2045px; /* 필요에 따라 조절 */
+
+        .slider_wrap {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            width: fit-content;
+        }
+        ul li {
+            width: 320px;
+            height: 320px;
+            margin-right: 25px;
+            flex-shrink: 0; /* 크기 고정 */
+            text-align: center;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+        ul li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.6s;
+
+            &:hover {
+                transform: scale(1.15);
+            }
+            &.buttonImage {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 30px;
+                height: 30px;
             }
         }
     }
