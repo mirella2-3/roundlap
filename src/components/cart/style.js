@@ -54,7 +54,7 @@ export const CartEmptyStyle = styled.div`
 `;
 export const CartWrapStyle = styled.div`
     .ModalText {
-        margin-top: 70px;
+        margin-top: 90px;
         /* margin-left: 59px; */
 
         width: 510px;

@@ -27,7 +27,7 @@ export const SearchStyle = styled.div`
         width: 510px;
         .searchtool {
             .SearchTop {
-                margin-top: 70px;
+                margin-top: 90px;
 
                 width: 510px;
                 display: flex;
@@ -58,7 +58,7 @@ export const SearchStyle = styled.div`
 
                     width: 510px;
                     height: 48px;
-                    border: 1px solid #515151;
+                    border: 1px solid #b1b1b1;
 
                     box-sizing: border-box;
                     padding: 0px 20px;
@@ -75,14 +75,14 @@ export const SearchStyle = styled.div`
                         font-weight: 400;
 
                         &::placeholder {
-                            color: #b1b1b1;
+                            color: #8a8a8a;
                         }
                     }
                 }
             }
             .best {
                 margin-top: 12px;
-                margin-bottom: 80px;
+                margin-bottom: 55px;
                 display: flex;
                 align-items: center;
                 gap: 10px;
@@ -110,14 +110,14 @@ export const SearchStyle = styled.div`
             }
             .type {
                 margin-top: 16px;
-                margin-bottom: 40px;
+                margin-bottom: 30px;
                 width: 510px;
                 button {
-                    font-size: 16px;
+                    font-size: 14px;
                     font-weight: 400;
                     color: #8a8a8a;
 
-                    border: 1px solid #8a8a8a;
+                    border: 1px solid #c2c2c2;
                     border-radius: 20px;
                     background: #fff;
                     padding: 8px 14px;
