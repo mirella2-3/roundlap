@@ -22,9 +22,12 @@ export const FaqSearchWrap = styled.div`
                 height: 38px;
                 border: none;
                 outline: none;
+                font-family: 'Pretendard';
+                font-size: 16px;
+                font-weight: 400;
+                color: #1a1a1a;
                 &::placeholder {
                     color: #c2c2c2;
-                    font-weight: 500;
                 }
             }
         }

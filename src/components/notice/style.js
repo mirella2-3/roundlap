@@ -17,7 +17,7 @@ export const NoticeSearchWrap = styled.div`
             box-sizing: border-box;
             padding: 0px 20px;
 
-            input {
+            input[type='text'] {
                 width: 200px;
                 height: 38px;
                 border: none;

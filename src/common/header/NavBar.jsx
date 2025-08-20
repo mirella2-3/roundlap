@@ -6,10 +6,12 @@ import { GoPerson } from 'react-icons/go';
 import { useState } from 'react';
 import Cart from '../../components/cart/Cart';
 import Search from '../../components/search/Search';
+import Login from '../../pages/login/Login';
 
 const NavBar = ({ isMain }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
     const carts = []; // 장바구니 데이터 (props나 context로 연결 가능)
 
     //
@@ -29,6 +31,9 @@ const NavBar = ({ isMain }) => {
     };
     const toggleSearch = () => {
         setIsSearchOpen((prev) => !prev);
+    };
+    const toggleLogin = () => {
+        setIsLoginOpen((prev) => !prev);
     };
     return (
         <>
@@ -180,8 +185,13 @@ const NavBar = ({ isMain }) => {
                 <ul className="topMenu">
                     <li>
                         <ul className="login">
-                            <li>
-                                <Link to="/login/login">LOGIN</Link>
+                            <li
+                                className="login"
+                                onClick={toggleLogin}
+                                style={{ cursor: 'pointer' }}
+                            >
+                                LOGIN
+                                {/* <Link to="/login/login">LOGIN</Link> */}
                                 {/* <Link to="/">LOGOUT</Link> */}
                             </li>
                             <li>
@@ -225,6 +235,11 @@ const NavBar = ({ isMain }) => {
                     <>
                         {/* <Overlay onClick={toggleSearch} /> */}
                         <Search onClose={toggleSearch} />
+                    </>
+                )}
+                {isLoginOpen && (
+                    <>
+                        <Login onClose={toggleLogin} />
                     </>
                 )}
             </NavStyle>

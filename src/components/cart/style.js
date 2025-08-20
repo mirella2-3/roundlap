@@ -27,7 +27,7 @@ export const CartEmptyStyle = styled.div`
     justify-content: center;
     align-items: center;
     .Emptybox {
-        margin-top: 270px;
+        margin-top: 260px;
         .EmptyIcon {
             object-fit: contain;
             display: flex;
@@ -39,16 +39,17 @@ export const CartEmptyStyle = styled.div`
         }
     }
     .EmptyText {
-        margin-top: 30px;
+        margin-top: 38px;
+        text-align: center;
+        gap: 10px;
         p {
             font-size: 28px;
-            font-weight: 600;
+            font-weight: 700;
+            color: #1a1a1a;
         }
         span {
             font-size: 16px;
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
+            font-weight: 500;
         }
     }
 `;
@@ -111,45 +112,47 @@ export const CartItemStyle = styled.div`
         display: flex;
         align-items: center;
         padding-bottom: 12px;
-        align-items: top;
         box-sizing: border-box;
         border-bottom: 1px solid #e3e3e3;
 
         .itemtitle {
-            margin-left: 30px;
-            height: 76px;
+            margin-left: 20px;
+            width: 220px;
+            height: 104px;
             display: flex;
-            justify-content: space-between;
             flex-direction: column;
-            align-items: left;
+            justify-content: space-between;
 
             h2 {
-                width: 280px;
-                font-size: 18px;
-                font-weight: 400px;
+                width: 220px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 22px;
                 color: #1a1a1a;
 
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                white-space: nowrap;
             }
             .itemquantity {
                 margin-top: 28px;
                 width: 79px;
-                font-size: 18px;
-                font-weight: 500;
+                font-size: 16px;
+                font-weight: 400;
                 line-height: 25px;
                 color: #1a1a1a;
                 display: flex;
                 justify-content: space-between;
                 text-align: center;
                 button {
-                    width: 25px;
-                    height: 25px;
-                    background: #e3e3e3;
+                    width: 22px;
+                    height: 22px;
+                    background: #cecece;
                     border: none;
 
-                    font-size: 18px;
+                    font-size: 16px;
                     font-weight: 500;
                     color: #fff;
 
@@ -160,10 +163,7 @@ export const CartItemStyle = styled.div`
             }
         }
         .itemPrice {
-            position: absolute;
-            right: 24px;
-            top: 83px;
-            transform: translateY(-50%);
+            margin-left: auto;
             font-size: 18px;
             font-weight: 600;
             color: #1a1a1a;
