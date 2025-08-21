@@ -37,17 +37,23 @@ const SetItemSwiper = () => {
                 loop={true}
             >
                 {mainSetItemData.map(({ id, title, imgUrl }) => (
-                    <SwiperSlide key={id}>
-                        <img src={imgUrl} alt={title} />
+                    <SwiperSlide key={id} className="slide-item">
+                        <div className="wish-inner">
+                            <img src={imgUrl} alt={title} />
+                            <div className="bg">
+                                <img src="/images/wish_1.png" alt="" />
+                                <img src="/images/wish_2.png" alt="" />
+                            </div>
+                        </div>
                         <span className="title">{title}</span>
                     </SwiperSlide>
                 ))}
             </Swiper>
             <button className="swiper-button-prev">
-                <MdKeyboardArrowLeft />
+                <MdKeyboardArrowLeft size={40} />
             </button>
             <button className="swiper-button-next">
-                <MdKeyboardArrowRight />
+                <MdKeyboardArrowRight size={40} />
             </button>
         </div>
     );

@@ -1,7 +1,16 @@
-import { LoginStyle } from './style';
+import { createPortal } from 'react-dom';
+import { ModalContent, ModalWrapper } from './style';
+import LoginWrap from './LoginWrap';
 
-const Login = () => {
-    return <LoginStyle>로그인</LoginStyle>;
+const Login = ({ onClose }) => {
+    return createPortal(
+        <ModalWrapper onClick={onClose}>
+            <ModalContent onClick={(e) => e.stopPropagation()}>
+                <LoginWrap onClose={onClose}></LoginWrap>
+            </ModalContent>
+        </ModalWrapper>,
+        document.body
+    );
 };
 
 export default Login;

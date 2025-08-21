@@ -19,7 +19,7 @@ const MegazinVisual = () => {
                     <button>자세히보기</button>
                 </div>
                 <div className="imeagebox">
-                    <img src="../../../public/images/banner.png" alt="" />
+                    <img src="/images/banner.png" alt="" />
                 </div>
             </div>
         </MegazineStyle>

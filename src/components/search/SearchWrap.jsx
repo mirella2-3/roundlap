@@ -1,7 +1,4 @@
-import React from 'react';
 import { SearchStyle } from './style';
-import { IoClose } from 'react-icons/io5';
-import { IoMdSearch } from 'react-icons/io';
 import { MdOutlineClose } from 'react-icons/md';
 
 const SearchWrap = ({ onClose }) => {

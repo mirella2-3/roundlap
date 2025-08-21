@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
-
 import { ModalContent, ModalWrapper } from './style';
 import SearchWrap from './SearchWrap';
+
 const Search = ({ onClose }) => {
     return createPortal(
         <ModalWrapper onClick={onClose}>

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 export const EventListStyle = styled.div`
     .Event-list {
-        width: 1394px;
+        width: 1400px;
         flex-wrap: wrap;
         display: flex;
-        justify-content: center;
+        justify-content: left;
         margin-top: 50px;
     }
     .pagination {
@@ -30,13 +30,14 @@ export const EventItemStyle = styled.div`
         }
     }
     .text {
+        width: 450px;
         h2 {
+            width: 420px;
             font-size: 20px;
             font-weight: 600;
             color: #1a1a1a;
             margin-top: 28px;
             text-align: left;
-            width: 100%;
             display: -webkit-box;
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;

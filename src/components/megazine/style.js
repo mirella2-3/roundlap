@@ -31,13 +31,14 @@ export const MegazineItemStyle = styled.div`
         }
     }
     .text {
+        width: 450px;
         h2 {
+            width: 420px;
             font-size: 20px;
             font-weight: 600;
             color: #1a1a1a;
             margin-top: 30px;
             text-align: left;
-            width: 100%;
             display: -webkit-box;
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
@@ -66,7 +67,6 @@ export const MegazineItemStyle = styled.div`
         }
         span {
             display: block;
-
             text-align: left;
             font-size: 14px;
             color: #8a8a8a;
@@ -148,6 +148,7 @@ export const MegazineStyle = styled.div`
                 color: #54afea;
                 font-size: 16px;
                 font-weight: medium;
+                transition: 0.3s;
                 &:hover {
                     background: #54afea;
                     color: white;
