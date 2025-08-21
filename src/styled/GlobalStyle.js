@@ -81,9 +81,16 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
   /* 기본 글로벌 스타일 */
   :root {
-    --main-font: 'Pretendard', sans-serif;
+    --main-font: 'Pretendard','YUniverse-B', sans-serif;
   }
 
   html, body {
