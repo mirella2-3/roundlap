@@ -6,7 +6,29 @@ export const allProductData = [
         salePrice: 16700,
         category: ['toner', 'water', '1025', 'BEST'],
         imgurl: 'https://roundlab.co.kr/web/product/big/202501/8a3370d3587010a6ad8636990069e34e.jpg',
+
+        nowLine:
+1025
+
+colorDark:
+#A1D7EB
+
+colorSale: 
+#709FD2
+
+colorLight:
+#54AFEA
+
+desc:
+
+민감한 피부도 편안하게 사용하는 저자극 수분케어
+해양심층수가 전하는 깊고 풍부한 보습 에너지
+데일리 케어에 적합한 산뜻하고 촉촉한 수분라인
+피부 밸런스를 맞춰주는 약산성 진정 솔루션
+번들거림 없이 흡수되는 산뜻한 수분 진정 포뮬러
+피부를 맑고 촉촉하게 가꿔주는 균형 잡힌 보습관리
     },
+
     {
         id: 2,
         title: '1025 독도 로션 400ml',
