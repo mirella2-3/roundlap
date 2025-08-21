@@ -64,6 +64,10 @@ export const OrderItemStyle = styled.div`
             align-items: center;
             p {
                 margin-right: 20px;
+                img {
+                    width: 112px;
+                    height: 112px;
+                }
             }
         }
 

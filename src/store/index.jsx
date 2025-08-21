@@ -5,6 +5,7 @@ import faq from './modules/faqSlice';
 import product from './modules/productSlice';
 import magazine from './modules/megazineSlice';
 import event from './modules/EventSlice';
+import order from './modules/OrderSlice';
 
 const store = configureStore({
     reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
         product,
         magazine,
         event,
+        order,
     },
 });
 

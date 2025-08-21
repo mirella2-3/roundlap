@@ -15,7 +15,7 @@ const ProductItem = ({ product }) => {
 
                 <div className="txt">
                     <p className="title">{title}</p>
-                    <h4>{price}원</h4>
+                    <h4>{price.toLocaleString()}원</h4>
                 </div>
             </Link>
         </article>

@@ -30,8 +30,8 @@ export const ProductdetailStyle = styled.div`
         position: relative;
 
         .itemImg {
-            width: 505px;
-            min-height: 700px;
+            width: 705px;
+            min-height: 800px;
             display: flex;
             box-sizing: border-box;
             align-items: center;
@@ -43,7 +43,8 @@ export const ProductdetailStyle = styled.div`
         .itemImg img {
             object-fit: contain;
             /* padding-bottom: 300px; */
-            padding-top: 100px;
+            width: 705px;
+            min-height: 800px;
         }
 
         > p {

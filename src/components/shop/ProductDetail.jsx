@@ -1,30 +1,42 @@
-import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useRef, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import { ProductdetailStyle } from './style';
 import ProductDesc from './ProductDesc';
 import ProductRecom from './ProductRecom';
 import Review from './Review';
+import { allProductData } from '../../assets/api/productData';
+import { useDispatch } from 'react-redux';
+import { setOrderItem } from '../../store/modules/OrderSlice';
 
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductDetail = () => {
     const { productId } = useParams();
-    const { products } = useSelector((state) => state.product);
-    const product = products.find((item) => item.id === productId);
     const navigate = useNavigate();
-    const onClick = () => {
-        navigate('/shop/order');
-    };
-    // const { title, price, imgurl } = product;
-
+    const dispatch = useDispatch();
+    const [product, setProduct] = useState(null);
+    const [quantity, setQuantity] = useState(1);
     const productRef = useRef(null);
     const imgRef = useRef(null);
     const targetRef = useRef(null);
 
     useEffect(() => {
+        const found = allProductData.find((item) => String(item.id) === String(productId));
+        setProduct(found);
+    }, [productId]);
+
+    const onClick = () => {
+        dispatch(setOrderItem({ ...product, quantity }));
+        navigate('/shop/order');
+    };
+    const increaseQuantity = () => setQuantity((prev) => prev + 1);
+    const decreaseQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+    useEffect(() => {
+        if (!product) return;
+
         const ctx = gsap.context(() => {
             gsap.to(imgRef.current, {
                 scale: 0.8,
@@ -35,12 +47,18 @@ const ProductDetail = () => {
                     end: 'bottom bottom',
                     scrub: 1,
                     pin: true,
-                    // pinSpacing: false,
                 },
             });
         }, productRef);
-        return () => ctx.revert(); // cleanup
-    }, []);
+
+        return () => ctx.revert();
+    }, [product]);
+
+    if (!product) {
+        return <div>상품을 불러오는 중...</div>;
+    }
+
+    const { title, price, imgUrl } = product;
 
     return (
         <>
@@ -50,52 +68,51 @@ const ProductDetail = () => {
                     <div className="bgtxt">1025</div>
 
                     <section className="text">
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad ex possimus
-                        </p>
+                        <p>{title}</p>
 
                         <div className="itemImg" ref={productRef}>
-                            {/* <img ref={imgRef} src="/images/09_jajack_cleanserPads.png" alt="" /> */}
-                            <img ref={imgRef} src="/images/image_93_1.png" alt="" />
+                            <img ref={imgRef} src={imgUrl} alt={title} />
                         </div>
+
                         <ul>
                             <li className="price">
                                 <button>
                                     <span>00</span>%
                                 </button>
                                 <span>
-                                    <strong>00,000</strong>원
+                                    <strong>{price.toLocaleString()}</strong>원
                                 </span>
-                                <p>00,000원</p>
+                                <p>{price.toLocaleString()}원</p>
                             </li>
+
                             <li>
                                 <ul className="delivery">
                                     <li>배송안내</li>
                                     <li>2,500원(15,000원 이상 구매 시 무료)</li>
                                 </ul>
                             </li>
+
                             <li>
                                 <ul className="product_title">
-                                    <li className="ttl">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                        Explicabo,
-                                    </li>
+                                    <li className="ttl">{title}</li>
                                     <li>
-                                        <button>-</button>
-                                        <strong>수량</strong>
-                                        <button>+</button>
+                                        <button onClick={decreaseQuantity}>-</button>
+                                        <strong>{quantity}</strong>
+                                        <button onClick={increaseQuantity}>+</button>
                                     </li>
                                 </ul>
                             </li>
+
                             <li className="total">
                                 TOTAL
                                 <span>
-                                    <strong>000</strong>원
+                                    <strong>{(price * quantity).toLocaleString()}</strong>원
                                 </span>
                             </li>
                             <button className="buy" onClick={onClick}>
                                 구매하기
                             </button>
+
                             <li>
                                 <ul>
                                     <button className="cart">장바구니</button>
@@ -104,19 +121,13 @@ const ProductDetail = () => {
                             </li>
                         </ul>
                     </section>
-                    {/* <h2>{product.title}</h2>
-            <img src={product.imgurl} alt={product.title} />
-            <p>가격: {product.price}원</p>
-            <p>할인가: {product.salePrice}원</p> */}
-                    {/* 기타 정보 렌더링 */}
-                    {/* <img src={product.imgurl} alt={product.title} />
-                <p>가격: {product.price}원</p>
-                <p>할인가: {product.salePrice}원</p>  */}
                 </div>
+
                 <div ref={targetRef}>
                     <ProductDesc />
                 </div>
             </ProductdetailStyle>
+
             <ProductRecom />
             <Review />
         </>

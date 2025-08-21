@@ -1,21 +1,29 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { OrderItemStyle } from './style';
 
 const OrderItem = () => {
+    const orderItems = useSelector((state) => state.order.orderItems);
+
     return (
-        <OrderItemStyle>
-            <div className="itembox">
-                <div className="itemInfo">
-                    <p>
-                        <img src="https://placehold.co/90x90" alt="" />
-                    </p>
-                </div>
-                <div className="itemtitle">
-                    <h2>상품이름</h2>
-                    <h3>00000 원</h3>
-                </div>
-            </div>
-        </OrderItemStyle>
+        <div>
+            {orderItems.map((item) => (
+                <OrderItemStyle key={item.id}>
+                    <div className="itembox">
+                        <div className="itemInfo">
+                            <p>
+                                <img src={item.imgUrl} alt={item.title} />
+                            </p>
+                        </div>
+                        <div className="itemtitle">
+                            <h2>{item.title}</h2>
+                            <h3>{(item.price * item.quantity).toLocaleString()} 원</h3>
+                            <p>수량: {item.quantity}</p>
+                        </div>
+                    </div>
+                </OrderItemStyle>
+            ))}
+        </div>
     );
 };
 
