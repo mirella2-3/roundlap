@@ -4,6 +4,7 @@ export const MypageStyle = styled.div`
     color: #515151;
     .inner {
         margin: 160px auto;
+        margin-top: 280px;
     }
     h2 {
         color: #1a1a1a;

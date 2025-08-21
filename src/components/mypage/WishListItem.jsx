@@ -25,7 +25,7 @@ const WishListItem = ({ product }) => {
                 </div>
 
                 <p className="title">{title}</p>
-                <strong>{price.toLocaleString()}원</strong>
+                {/* <strong>{price.toLocaleString()}원</strong> */}
             </div>
         </WishItemStyle>
     );

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const NociteStyle = styled.div`
+    margin-top: 120px;
     .inner {
         padding: 160px 0px;
 
@@ -14,6 +15,7 @@ export const NociteStyle = styled.div`
     }
 `;
 export const FaqStyle = styled.div`
+    margin-top: 120px;
     .inner {
         padding: 160px 0px;
 

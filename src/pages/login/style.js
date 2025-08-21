@@ -204,6 +204,7 @@ export const SearchStyle = styled.div`
 `;
 
 export const JoinStyle = styled.div`
+    padding-top: 120px;
     span {
         color: #f00;
     }

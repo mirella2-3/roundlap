@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 export const EventStyle = styled.div`
+    margin-top: 120px;
+    .engTitle {
+        font-family: 'YUniverse-B';
+    }
     .inner {
         padding-top: 160px;
         text-align: center;

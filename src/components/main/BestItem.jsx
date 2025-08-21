@@ -64,7 +64,7 @@ const BestItem = () => {
                                 </div>
                             </p>
                             <strong>{product.title}</strong>
-                            <span>{product.price.toLocaleString()}원</span>
+                            {/* <span>{product.price.toLocaleString()}원</span> */}
                         </li>
                     ))}
                 </ul>

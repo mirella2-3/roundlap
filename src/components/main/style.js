@@ -1,14 +1,26 @@
 import styled from 'styled-components';
 export const VisualStyle = styled.div`
-    width: 100vw;
+    width: 100%;
     .visualImg {
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
         display: flex;
+        li {
+            width: 50%;
+            img {
+                width: 100%;
+            }
+        }
     }
 `;
 
 export const BestItemStyle = styled.div`
     .inner {
         padding: 160px 0;
+        padding-top: 1200px;
     }
     h2 {
         font-size: 36px;
@@ -317,8 +329,9 @@ export const SetItemStyle = styled.div`
     ul {
         display: flex;
         height: 100%;
+        width: 100vw;
         li {
-            width: 50%;
+            width: 50vw;
             box-sizing: border-box;
             height: 100%;
             text-align: center;
@@ -326,6 +339,7 @@ export const SetItemStyle = styled.div`
             &.imgTitle {
                 background-image: url(/images/Main/Content1.png);
                 background-repeat: no-repeat;
+                background-size: cover;
                 color: #f9f9f9;
                 padding-top: 390px;
                 box-sizing: border-box;
@@ -461,14 +475,16 @@ export const DiscountItemStyle = styled.div`
     ul {
         display: flex;
         height: 100%;
+        width: 100vw;
         li {
-            width: 50%;
+            width: 50vw;
             height: 100%;
             text-align: center;
 
             &.imgTitle {
                 background-image: url(/images/Main/Content4.png);
                 background-repeat: no-repeat;
+                background-size: cover;
                 color: #fff;
                 padding-top: 390px;
                 box-sizing: border-box;
@@ -618,17 +634,20 @@ export const StoryStyle = styled.div`
         background-image: url(/images/Main/Left00.png);
         background-repeat: no-repeat;
         background-position: 0 0;
+        background-size: cover;
     }
     .right {
         height: 100%;
         width: 50%;
         background-image: url(/images/Main/Right00.png);
+        background-size: cover;
         h3 {
             font-size: 36px;
             font-weight: 700;
             color: #54afea;
             text-align: center;
-            margin-top: 432px;
+            /* margin-top: 432px; */
+            margin-top: 45%;
         }
         span {
             display: block;

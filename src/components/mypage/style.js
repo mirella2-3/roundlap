@@ -4,6 +4,7 @@ export const MypageDetailStyle = styled.div`
     .wrap {
         display: flex;
         border: 1px solid #e3e3e3;
+        cursor: pointer;
 
         li {
             width: 280px;
@@ -111,17 +112,23 @@ export const WishListStyle = styled.div`
         }
     }
 `;
-export const WishListNotingStyle = styled.div``;
+export const WishListNotingStyle = styled.div`
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: #b1b1b1;
+`;
 export const WishListItem = styled.div`
     position: relative;
     display: flex;
     .wishItem {
         width: 274px;
         height: 354px;
+        position: relative;
         p {
             img {
                 width: 274px;
-                height: 276px;
+                height: 354px;
                 object-fit: contain;
             }
         }
@@ -134,6 +141,10 @@ export const WishListItem = styled.div`
             cursor: pointer;
         }
         .title {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 20px;
             font-weight: 500;
         }

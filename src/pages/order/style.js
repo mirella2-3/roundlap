@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const OrderStyles = styled.div`
+    margin-top: 120px;
     .inner {
         padding: 160px 0;
         width: 1400px;

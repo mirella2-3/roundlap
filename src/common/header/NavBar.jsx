@@ -44,10 +44,11 @@ const NavBar = ({ isMain }) => {
                         onMouseEnter={() => handleMouseEnter('shop')}
                         onMouseLeave={handleMouseLeave}
                     >
+                        {hoveredMenu === 'shop' && <div className="navBg"></div>}
                         <Link to="/shop/all/ALL">SHOP</Link>
                         {hoveredMenu === 'shop' && (
                             <ul className="subMenu">
-                                <div className="navBg"></div>
+                                {/* <div className="navBg"></div> */}
                                 <li className="allMenu">
                                     전제품
                                     <ul className="subSubMenu">
@@ -199,11 +200,17 @@ const NavBar = ({ isMain }) => {
                             </li>
                         </ul>
                     </li>
-
                     <li>
                         <Link to="/mypage">
                             <GoPerson className="person" />
                         </Link>
+                    </li>
+                    <li>
+                        <ul className="search" onClick={toggleSearch}>
+                            <li>
+                                <IoMdSearch size={23} />
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <ul className="cart" onClick={toggleCart}>
@@ -213,14 +220,6 @@ const NavBar = ({ isMain }) => {
 
                             <li>
                                 <p>0{/* {carts.length} */}</p>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul className="search" onClick={toggleSearch}>
-                            <li>Search</li>
-                            <li>
-                                <IoMdSearch />
                             </li>
                         </ul>
                     </li>

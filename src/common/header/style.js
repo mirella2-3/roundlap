@@ -1,19 +1,52 @@
 import styled from 'styled-components';
 
+// export const HeaderStyle = styled.header`
+//     box-sizing: border-box;
+//     width: 100%;
+//     top: 0;
+//     z-index: 1000;
+
+//     position: ${({ isMain }) => (isMain ? 'fixed' : 'relative')};
+//     background: ${({ isMain }) => (isMain ? 'transparent' : 'white')};
+//     height: 120px;
+//     color: ${({ isMain }) => (isMain ? 'white' : '#515151')};
+//     border-bottom: 1px solid ${({ isMain }) => (isMain ? 'transparent' : '#ececec')};
+
+//     transition: transform 1s ease;
+//     transform: ${({ show }) => (show ? 'translateY(0)' : 'translateY(-100%)')};
+//     .inner {
+//         height: 100%;
+//     }
+
+//     h1 {
+//         position: absolute;
+//         left: 0;
+//         top: 50%;
+//         transform: translateY(-50%);
+//     }
+// `;
 export const HeaderStyle = styled.header`
     box-sizing: border-box;
     width: 100%;
     top: 0;
     z-index: 1000;
-
-    position: ${({ isMain }) => (isMain ? 'fixed' : 'relative')};
-    background: ${({ isMain }) => (isMain ? 'transparent' : 'white')};
     height: 120px;
-    color: ${({ isMain }) => (isMain ? 'white' : '#515151')};
-    border-bottom: ${({ isMain }) => (isMain ? 'none' : '1px solid #ececec')};
+    position: fixed;
+
+    background: ${({ isTransparent, isHover }) =>
+        isTransparent && !isHover ? 'transparent' : 'white'};
+
+    color: ${({ isTransparent, isHover }) => (isTransparent && !isHover ? 'white' : '#515151')};
+
+    border-bottom: 1px solid
+        ${({ isTransparent, isHover }) => (isTransparent && !isHover ? 'transparent' : '#ececec')};
+
+    transition: all 0.4s ease;
+    transform: ${({ show }) => (show ? 'translateY(0)' : 'translateY(-100%)')};
 
     .inner {
         height: 100%;
+        position: relative;
     }
 
     h1 {
@@ -23,6 +56,7 @@ export const HeaderStyle = styled.header`
         transform: translateY(-50%);
     }
 `;
+
 export const NavStyle = styled.nav`
     &.nav {
         position: absolute;
@@ -52,14 +86,18 @@ export const NavStyle = styled.nav`
                 &.shopMenu {
                     .navBg {
                         position: absolute;
-                        bottom: -162px;
-                        left: -775px;
+                        /* bottom: -162px; */
+                        top: 71px;
+                        left: 48%;
+                        transform: translateX(-50%);
                         width: 100vw;
                         height: 428px;
+
                         background: #fff;
-                        background-image: url(/images/header/header_nav.png);
-                        background-position: 183px;
+                        background-image: url(/images/header/header_img2.png);
+                        background-position: left 17% top -25px;
                         background-repeat: no-repeat;
+
                         z-index: -100;
                         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
                     }
@@ -200,7 +238,7 @@ export const NavStyle = styled.nav`
         font-size: 16px;
         font-weight: 500;
         height: 30px;
-
+        padding-left: 116px;
         align-items: center;
 
         a {
@@ -215,7 +253,7 @@ export const NavStyle = styled.nav`
                     content: '';
                     width: 1px;
                     height: 12px;
-                    background: #fff;
+                    background: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
                     display: block;
                     position: absolute;
                     top: 50%;
@@ -253,14 +291,14 @@ export const NavStyle = styled.nav`
 
         .search {
             display: flex;
-            border: 1px solid ${({ isMain }) => (isMain ? '#fff' : '#515151')};
+            /* border: 1px solid ${({ isMain }) => (isMain ? '#fff' : '#515151')}; */
             color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
-            width: 140px;
-            height: 30px;
+            /* width: 140px;
+            height: 30px; */
             justify-content: space-between;
-            line-height: 30px;
-            gap: 45px;
-            padding: 0 9px 0 14px;
+            line-height: 15px;
+            /* gap: 45px; */
+            /* padding: 0 9px 0 14px; */
             box-sizing: border-box;
             cursor: pointer;
         }

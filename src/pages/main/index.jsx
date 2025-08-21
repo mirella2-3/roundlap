@@ -16,8 +16,8 @@ import { MainStyle } from './style';
 const Main = () => {
     return (
         <>
-            <MainVisual />
             <MainStyle id="main_wrap">
+                <MainVisual />
                 <BestItem />
                 <Slogan />
                 <MainProductLine />

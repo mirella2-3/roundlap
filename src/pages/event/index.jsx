@@ -5,7 +5,7 @@ const Event = () => {
     return (
         <EventStyle>
             <div className="inner">
-                <h1>EVENT</h1>
+                <h1 className='engTitle'>EVENT</h1>
                 <EventList />
             </div>
         </EventStyle>

@@ -23,6 +23,8 @@ export const BrandStyle = styled.div`
         height: 100vh;
     }
 `;
-export const MagazineStyle = styled.div``;
+export const MagazineStyle = styled.div`
+    margin-top: 120px;
+`;
 
 export const ProductlineStyle = styled.div``;

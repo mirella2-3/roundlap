@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux';
 import WishListItem from './WishListItem';
 import { WishListStyle } from './style';
+import WishListNoting from './WishListNoting';
 
 const WishList = () => {
     const wishItems = useSelector((state) => state.wish.wishItems);
 
-    if (wishItems.length === 0) return <WishListStyle>위시리스트가 비어있습니다.</WishListStyle>;
+    if (wishItems.length === 0) return <WishListNoting />;
 
     return (
         <WishListStyle>
