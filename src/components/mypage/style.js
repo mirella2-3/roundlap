@@ -113,13 +113,29 @@ export const WishListStyle = styled.div`
 `;
 export const WishListNotingStyle = styled.div``;
 export const WishListItem = styled.div`
+    position: relative;
     display: flex;
-    img {
+    .wishItem {
         width: 274px;
-        height: 276px;
-    }
-    .title {
-        font-size: 20px;
-        font-weight: 500;
+        height: 354px;
+        p {
+            img {
+                width: 274px;
+                height: 276px;
+                object-fit: contain;
+            }
+        }
+        .heart {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 21px;
+            height: 21px;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+        }
     }
 `;

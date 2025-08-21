@@ -1,14 +1,33 @@
-const WishListItem = () => {
+import { FaHeart } from 'react-icons/fa';
+import { WishListItem as WishItemStyle } from './style';
+import { useDispatch } from 'react-redux';
+import { removeWish } from '../../store/modules/WishListSlice';
+
+const WishListItem = ({ product }) => {
+    const dispatch = useDispatch();
+    if (!product) return null;
+
+    const { id, title, price, imgurl } = product;
+
+    const handleRemove = () => {
+        dispatch(removeWish(id));
+    };
+
     return (
-        <WishListItem>
-            <p>
-                <img src="https://placehold.co/274x276" alt="" />
-            </p>
-            <p className="title">상품이름</p>
-            <strong>
-                <span>가격</span>원
-            </strong>
-        </WishListItem>
+        <WishItemStyle>
+            <div className="wishItem">
+                <p>
+                    <img src={imgurl || 'https://placehold.co/274x276'} alt={title} />
+                </p>
+
+                <div className="heart" onClick={handleRemove}>
+                    <FaHeart color="#FF7C76" />
+                </div>
+
+                <p className="title">{title}</p>
+                <strong>{price.toLocaleString()}원</strong>
+            </div>
+        </WishItemStyle>
     );
 };
 

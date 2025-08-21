@@ -39,7 +39,7 @@ const ProductDetail = () => {
 
         const ctx = gsap.context(() => {
             gsap.to(imgRef.current, {
-                scale: 0.8,
+                scale: 0.95,
                 scrollTrigger: {
                     trigger: productRef.current,
                     start: 'top top',
