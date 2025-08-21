@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addCart, openCart } from '../../store/modules/cartSlice';
+import { addCart, openCart } from '../../store/modules/CartSlice';
 import { addWish } from '../../store/modules/WishListSlice';
 import { Link } from 'react-router-dom';
 

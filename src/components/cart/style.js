@@ -104,6 +104,7 @@ export const CartBottomStyle = styled.div`
 // `;
 
 export const CartItemStyle = styled.div`
+    position: relative;
     .itembox {
         margin-top: 12px;
         width: 480px;
@@ -114,6 +115,11 @@ export const CartItemStyle = styled.div`
         padding-bottom: 12px;
         box-sizing: border-box;
         border-bottom: 1px solid #e3e3e3;
+        img {
+            width: 112px;
+            height: 112px;
+            object-fit: contain;
+        }
 
         .itemtitle {
             margin-left: 20px;

@@ -3,7 +3,6 @@ import ProductItem from './ProductItem';
 import { ProductListWrap } from './style';
 
 const ProductList = () => {
-    // const { products } = useSelector((state) => state.product);
     const filteredProducts = useSelector((state) => state.product.filtered);
 
     return (
