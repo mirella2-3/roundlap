@@ -1,50 +1,54 @@
 import styled from 'styled-components';
 export const MegazineListStyle = styled.div`
+    margin: 160px 0px 160px 0px;
+
     .magazine-list {
-        width: 1394px;
+        width: 1400px;
         flex-wrap: wrap;
         display: flex;
-        justify-content: center;
-        margin-top: 50px;
+        justify-content: flex-start;
+        gap: 50px 25px;
+        margin-top: 80px;
     }
     .pagination {
         display: flex;
         justify-content: center;
     }
-    margin: 130px 0px 160px 0px;
+    /* margin: 130px 0px 160px 0px; */
 `;
 export const MegazineItemStyle = styled.div`
     width: 450px;
-    height: 583px;
+    /* height: 583px; */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+    /* align-items: center; */
+    /* margin-top: 30px; */
 
     .img-container {
         width: 450px;
         height: 450px;
         img {
-            width: 450px;
-            height: 450px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
     }
     .text {
         width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
         h2 {
-            width: 420px;
+            width: 400px;
             font-size: 20px;
             font-weight: 600;
             color: #1a1a1a;
-            margin-top: 30px;
+            margin-top: 24px;
             text-align: left;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
+            white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            word-break: break-word;
             margin-bottom: 10px;
         }
 
@@ -52,21 +56,20 @@ export const MegazineItemStyle = styled.div`
             width: 420px;
             font-size: 16px;
             color: #8a8a8a;
-            font-weight: 500;
+            font-weight: 400;
             line-height: 130%;
             margin-bottom: 10px;
-            width: 420px;
-            height: 42px;
             text-align: left;
+
             display: -webkit-box;
-            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
             overflow: hidden;
             text-overflow: ellipsis;
             word-break: break-word;
         }
         span {
-            display: block;
+            /* display: block; */
             text-align: left;
             font-size: 14px;
             color: #8a8a8a;
@@ -125,19 +128,24 @@ export const MegazineStyle = styled.div`
         width: 1400px;
         height: 640px;
         display: flex;
+        justify-content: space-between;
         .textbox {
-            width: 581px;
+            /* width: 581px; */
             margin-top: 396px;
-            margin-right: 52px;
+            /* margin-right: 52px; */
             h2 {
                 font-size: 32px;
-                font-weight: 700;
+                font-weight: 800;
                 text-align: left;
-                margin-bottom: 0;
                 color: #1a1a1a;
+                line-height: 42px;
                 margin-bottom: 16px;
             }
             p {
+                font-size: 16px;
+                font-weight: 400;
+                color: #8a8a8a;
+                line-height: 140%;
                 margin-bottom: 32px;
             }
             button {
@@ -147,16 +155,14 @@ export const MegazineStyle = styled.div`
                 background: none;
                 color: #54afea;
                 font-size: 16px;
-                font-weight: medium;
-                transition: 0.3s;
+                font-weight: 500;
+                transition: 0.3s;git branch
+                
                 &:hover {
                     background: #54afea;
-                    color: white;
+                    color: #fff;
                 }
             }
-        }
-        .imeagebox {
-            margin-top: 38px;
         }
     }
 `;
