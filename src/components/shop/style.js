@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ProductdetailStyle = styled.div`
     position: relative;
+    margin-top: 80px;
     .bg {
         background-color: #f1f9ff;
         height: 330px;
@@ -145,7 +146,7 @@ export const ProductdetailStyle = styled.div`
                 color: #fff;
                 transition: 0.3s;
                 &:hover {
-                    background: #0087e0;
+                    background: var(--hover-color);
                 }
             }
             li {
@@ -189,10 +190,15 @@ export const ProductListWrap = styled.div`
             .img {
                 position: relative;
                 cursor: pointer;
+                background: #f6f6f6;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
 
                 > img {
-                    width: 343px;
-                    height: 400px;
+                    max-width: 100%;
+                    height: auto;
                 }
                 .bg {
                     position: absolute;
@@ -271,16 +277,11 @@ export const ProductDescStyle = styled.div`
                     padding: 10px 0;
                     box-sizing: border-box;
                 }
-                .text {
-                    display: block;
-                    margin-left: 30px;
 
-                    strong {
-                        display: block;
-                        &:first-child {
-                            margin-bottom: 4px;
-                        }
-                    }
+                strong {
+                    margin-left: 30px;
+                    width: 250px;
+                    word-break: keep-all;
                 }
             }
         }
@@ -339,12 +340,10 @@ export const ReviewStyle = styled.div`
             font-size: 18px;
             width: 272px;
             height: 50px;
-            color: #54afea;
             background: #fff;
-            border: 1px solid #54afea;
             transition: 0.3s;
             &:hover {
-                background: #54afea;
+                background: var(--hover-color);
                 color: #fff;
             }
         }
@@ -367,21 +366,35 @@ export const ReviewStyle = styled.div`
             }
             > ul {
                 display: flex;
-                gap: 20px;
+                /* justify-content: space-between; */
 
                 li {
                     font-size: 14px;
                     font-weight: 500;
+                    margin-bottom: 10px;
                     &:nth-child(1) {
+                        text-align: left;
                         width: 50px;
+                        margin-right: 20px;
                     }
-                    &:nth-child(2) {
+                    &.total {
                         width: 250px;
                         height: 10px;
                         border-radius: 10px;
                         background: #ececec;
+                        position: relative;
+                        .score {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 10px;
+                            background: #515151;
+                            border-radius: 10px;
+                        }
                     }
-                    &:nth-child(3) {
+                    &.percent {
+                        width: 50px;
+                        text-align: right;
                     }
                 }
             }

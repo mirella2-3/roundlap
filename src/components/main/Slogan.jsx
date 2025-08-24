@@ -1,9 +1,29 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { SloganStyle } from './style';
 
 const Slogan = () => {
+    const [inView, setInView] = useState(false);
+    const innerRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!innerRef.current) return;
+            const rect = innerRef.current.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+                // 뷰포트 85% 이내 도달 시
+                setInView(true);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // 초기 실행용
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <SloganStyle>
-            <div className="inner">
+            <div ref={innerRef} className={`inner ${inView ? 'show' : ''}`}>
                 <strong>BETTER SKIN, BETTER ROUND</strong>
                 <h3>피부와 세상을 변화시키는 매일의 힘, 라운드랩</h3>
                 <span>

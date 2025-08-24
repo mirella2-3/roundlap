@@ -4,7 +4,10 @@ import { SnsStyle } from './style';
 const BestReview = () => {
     return (
         <SnsStyle>
-            <h2>INSTAGRAM</h2>
+            <h2>
+                INSTAGRAM <strong>@ round.lab</strong>
+            </h2>
+
             <InstaSlider />
         </SnsStyle>
     );

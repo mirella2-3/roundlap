@@ -4,7 +4,7 @@ import { addWish } from '../../store/modules/WishListSlice';
 import { Link } from 'react-router-dom';
 
 const ProductItem = ({ product }) => {
-    const { title, price, imgurl } = product;
+    const { title, price, imgUrl } = product;
     const dispatch = useDispatch();
 
     const handleWishClick = (e) => {
@@ -22,7 +22,7 @@ const ProductItem = ({ product }) => {
         <article>
             <Link to={`/shop/${product.id}`}>
                 <div className="img">
-                    <img src={imgurl} alt={title} />
+                    <img src={imgUrl} alt={title} />
                     <div className="bg">
                         <img src="/images/wish_1.png" alt="wish" onClick={handleWishClick} />
                         <img src="/images/wish_2.png" alt="cart" onClick={handleCartClick} />

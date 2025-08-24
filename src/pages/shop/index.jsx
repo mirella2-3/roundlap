@@ -40,7 +40,12 @@ const categoryDisplayMap = {
         dongbaek: '동백 탄력',
     },
 };
-
+const categoryTitleMap = {
+    all: '전제품',
+    type: '유형별',
+    concern: '고민별',
+    line: '라인별',
+};
 const categories = {
     all: ['ALL', 'BEST', 'SET', 'SALE'],
     type: ['toner', 'essence', 'lotion', 'cleansing', 'mask', 'suncare'],
@@ -49,10 +54,17 @@ const categories = {
 };
 
 const Shop = () => {
-    const { category, line } = useParams(); // /product/:category/:line 구조
+    const { category, line } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [activeCategory, setActiveCategory] = useState('all');
+
+    const categoryTitleMap = {
+        all: '전제품',
+        type: '유형별',
+        concern: '고민별',
+        line: '라인별',
+    };
 
     useEffect(() => {
         if (category && Object.keys(categories).includes(category)) {
@@ -69,7 +81,6 @@ const Shop = () => {
     };
 
     useEffect(() => {
-        // 첫 로딩 시 전체 상품 세팅
         dispatch(productActions.setAllProducts());
     }, []);
 
@@ -80,7 +91,7 @@ const Shop = () => {
     return (
         <ShopStyle>
             <div className="inner">
-                <h2>전제품</h2>
+                <h2>{categoryTitleMap[activeCategory] || '전제품'}</h2>
                 <div className="product-tabs on">
                     {lines.map((lineName) => (
                         <div

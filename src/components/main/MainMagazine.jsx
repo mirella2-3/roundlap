@@ -3,6 +3,16 @@ import { MainMagazineStyle } from './style';
 const MainMagazine = () => {
     return (
         <MainMagazineStyle>
+            <div class="section left">
+                <div class="animated-text">
+                    MAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINE
+                </div>
+            </div>
+            <div class="section right">
+                <div class="animated-text">
+                    MAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINEMAGAZINE
+                </div>
+            </div>
             <div className="inner">
                 <div class="container">
                     <ul>

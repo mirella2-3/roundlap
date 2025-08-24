@@ -29,6 +29,7 @@ const DiscountSwiper = () => {
                 slidesPerView={3}
                 direction={direction}
                 centeredSlides={true}
+                spaceBetween={200}
                 navigation={{
                     nextEl: '.swiper-button-next-dis',
                     prevEl: '.swiper-button-prev-dis',
@@ -45,8 +46,10 @@ const DiscountSwiper = () => {
                                 <img src="/images/wish_2.png" alt="" />
                             </div>
                         </div>
-                        <span className="title">{title}</span>
-                        <p className="discount">{discount}%</p>
+                        <span className="title">
+                            <p className="discount">{discount}%</p>
+                            {title}
+                        </span>
                     </SwiperSlide>
                 ))}
             </Swiper>

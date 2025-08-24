@@ -58,14 +58,26 @@ const ProductDetail = () => {
         return <div>상품을 불러오는 중...</div>;
     }
 
-    const { title, price, imgUrl } = product;
+    const {
+        title,
+        price,
+        imgUrl,
+        salePercent,
+        salePrice,
+        nowLine,
+        colorDark,
+        colorSale,
+        colorLight,
+    } = product;
 
     return (
         <>
             <ProductdetailStyle>
-                <div className="bg"></div>
+                <div className="bg" style={{ background: colorLight }}></div>
                 <div className="inner">
-                    <div className="bgtxt">1025</div>
+                    <div className="bgtxt" style={{ color: colorLight }}>
+                        {nowLine}
+                    </div>
 
                     <section className="text">
                         <p>{title}</p>
@@ -76,11 +88,13 @@ const ProductDetail = () => {
 
                         <ul>
                             <li className="price">
-                                <button>
-                                    <span>00</span>%
-                                </button>
+                                {salePercent && (
+                                    <button style={{ background: colorSale }}>
+                                        <span>{salePercent}</span>%
+                                    </button>
+                                )}
                                 <span>
-                                    <strong>{price.toLocaleString()}</strong>원
+                                    <strong>{salePrice.toLocaleString()}</strong>원
                                 </span>
                                 <p>{price.toLocaleString()}원</p>
                             </li>
@@ -109,7 +123,13 @@ const ProductDetail = () => {
                                     <strong>{(price * quantity).toLocaleString()}</strong>원
                                 </span>
                             </li>
-                            <button className="buy" onClick={onClick}>
+                            <button
+                                className="buy"
+                                onClick={onClick}
+                                style={{
+                                    '--hover-color': colorSale,
+                                }}
+                            >
                                 구매하기
                             </button>
 
@@ -124,12 +144,12 @@ const ProductDetail = () => {
                 </div>
 
                 <div ref={targetRef}>
-                    <ProductDesc />
+                    <ProductDesc product={product} />
                 </div>
             </ProductdetailStyle>
 
             <ProductRecom />
-            <Review />
+            <Review product={product} />
         </>
     );
 };

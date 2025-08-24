@@ -1,19 +1,237 @@
 import styled from 'styled-components';
 export const VisualStyle = styled.div`
-    width: 100%;
-    .visualImg {
-        width: 100%;
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+    }
 
+    body {
+        font-family: Tahoma, sans-serif;
+        overflow: hidden;
+        background-color: #2c3e50;
+    }
+
+    article {
+        overflow: hidden;
         position: absolute;
         top: 0;
         left: 0;
-        display: flex;
-        li {
+        height: 100vh;
+        width: 100%;
+
+        .left,
+        .right {
+            position: absolute;
+            display: table;
             width: 50%;
-            img {
-                width: 100%;
+            height: 100%;
+            top: 0;
+            transition: transform 1s;
+
+            > div {
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 25px;
             }
         }
+
+        .left {
+            left: 0;
+            transform: translateY(-100%);
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+
+            .textBox {
+                position: absolute;
+                top: 15%;
+                left: 13vw;
+                color: #fff;
+
+                h2 {
+                    font-size: 60px;
+                    font-weight: 800;
+                    text-align: left;
+                    letter-spacing: 0;
+                    line-height: auto;
+                    margin-bottom: 22px;
+                }
+                strong {
+                    display: block;
+                    font-size: 24px;
+                    text-align: left;
+                    letter-spacing: 0;
+                    line-height: auto;
+                }
+                &.centerText {
+                    text-align: center;
+
+                    h2,
+                    strong {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .right {
+            right: 0;
+            transform: translateY(100%);
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &:nth-child(even) {
+            .left {
+                background-color: #34495e;
+            }
+
+            .right {
+                background-color: #1a2530;
+            }
+        }
+
+        &.visible {
+            .left,
+            .right {
+                z-index: 1;
+                transform: translateY(0);
+            }
+        }
+        /* 애니메이션 */
+
+        /* 왼쪽 이전 이미지 아래로 내려가기 */
+        .left-slide-out-down {
+            animation: slideOutDown 1s forwards;
+        }
+
+        /* 왼쪽 새 이미지 위에서 아래로 내려오기 */
+        .left-slide-in-down {
+            animation: slideInDown 1s forwards;
+        }
+
+        /* 왼쪽 이전 이미지 위로 올라가기 */
+        .left-slide-out-up {
+            animation: slideOutUp 1s forwards;
+        }
+
+        /* 왼쪽 새 이미지 아래에서 위로 올라오기 */
+        .left-slide-in-up {
+            animation: slideInUp 1s forwards;
+        }
+
+        /* 오른쪽 이전 이미지 위로 올라가기 */
+        .right-slide-out-up {
+            animation: slideOutUp 1s forwards;
+        }
+
+        /* 오른쪽 이전 이미지 아래로 내려가기 */
+        .right-slide-out-down {
+            animation: slideOutDown 1s forwards;
+        }
+
+        /* 오른쪽 새 이미지 아래에서 위로 올라오기 */
+        .right-slide-in-up {
+            animation: slideInUp 1s forwards;
+        }
+
+        /* 오른쪽 새 이미지 위에서 아래로 내려오기 */
+        .right-slide-in-down {
+            animation: slideInDown 1s forwards;
+        }
+    }
+
+    @keyframes slideOutDown {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInDown {
+        0% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOutUp {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    @keyframes slideInUp {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .pagination {
+        position: relative;
+        top: 350px;
+        left: 110px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 10;
+    }
+
+    .pagination button {
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 16px;
+        /* font-weight: 700; */
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+        width: 40px;
+        text-align: left;
+        transition: color 0.3s;
+    }
+
+    .pagination button.active {
+        color: #fff;
+        /* font-weight: 900; */
+    }
+
+    .pagination button.active::before {
+        content: '';
+        position: absolute;
+        right: 45px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 110px; /* 가로줄 길이 */
+        height: 1px; /* 가로줄 두께 */
+        background-color: #fff;
+        border-radius: 1px;
     }
 `;
 
@@ -21,10 +239,25 @@ export const BestItemStyle = styled.div`
     .inner {
         padding: 160px 0;
         padding-top: 1200px;
+        position: relative;
+    }
+    .engTitle {
+        font-family: 'YUniverse-B';
+    }
+    .circle {
+        width: 80px;
+        height: 80px;
+        background: #e6f3fc;
+        border-radius: 50%;
+        position: absolute;
+        left: 550px;
     }
     h2 {
-        font-size: 36px;
+        padding-top: 24px;
+        font-size: 38px;
         font-weight: 700;
+        position: relative;
+        cursor: default;
     }
     ul {
         display: flex;
@@ -83,61 +316,123 @@ export const SloganStyle = styled.div`
     cursor: default;
     text-align: center;
     padding: 160px;
+
+    strong,
+    h3,
+    span,
+    p {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s ease, transform 3s ease;
+    }
+
     strong {
         color: #339fe6;
         font-size: 18px;
-        font-weight: 600;
+
+        transition-delay: 0.1s;
+        font-family: 'YUniverse-B';
     }
+
     h3 {
         padding: 22px 0;
         color: #1a1a1a;
         font-size: 36px;
         font-weight: 700;
+        transition-delay: 0.1s;
     }
+
     span {
+        display: block;
         font-size: 18px;
+        transition-delay: 1s;
     }
+
     p {
         padding-top: 22px;
+        transition-delay: 1.5s;
+    }
+
+    .inner.show {
+        strong,
+        h3,
+        span,
+        p {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 `;
 
 export const ProductLineStyle = styled.div`
     position: relative;
-    padding: 160px 0;
-    .bg {
+    width: 100%;
+    overflow: hidden;
+    .bg-wrapper {
+        background-color: black;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        z-index: 0;
+
         img {
+            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            animation: 0.5s ease forwards;
-            position: absolute;
-            top: 0;
-            left: 0;
+            transition: opacity 0.6s ease-in-out;
         }
     }
+
     .inner {
-        height: 760px;
+        /* height: 760px; */
         overflow: visible;
+        padding: 160px 0 385px 0;
+        position: relative;
+        z-index: 1; // 배경 위로 올라오게
 
         h2 {
             font-size: 48px;
             font-weight: 800;
             color: #fff;
-            padding-top: 60px;
+            margin-top: 60px;
             margin-bottom: 108px;
+            font-family: 'YUniverse-B';
         }
     }
     .swiper {
         width: 1400px;
         /* width: 1670px; */
         height: 311px;
+        position: relative;
+        .btn {
+            display: block;
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 272px;
+            height: 50px;
+
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'YUniverse-B';
+
+            color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            text-transform: uppercase;
+            text-decoration: none;
+
+            cursor: default;
+
+            transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
+        }
     }
     .swiper-wrapper {
         width: 100%;
@@ -146,8 +441,10 @@ export const ProductLineStyle = styled.div`
     .swiper-slide {
         text-align: center;
         font-size: 18px;
-        /* border: 1px solid #000; */
         color: rgba(255, 255, 255, 0.3);
+
+        width: 311px;
+
         span {
             font-size: 30px;
             font-weight: 800;
@@ -159,23 +456,8 @@ export const ProductLineStyle = styled.div`
         }
         strong {
             font-size: 18px;
-            font-weight: 400;
+            font-weight: 200;
             line-height: 1.3;
-        }
-        button {
-            display: block;
-            position: absolute;
-            bottom: 1px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 272px;
-            height: 50px;
-            font-size: 18px;
-
-            color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            cursor: default;
         }
     }
     .swiper-slide-active {
@@ -183,19 +465,40 @@ export const ProductLineStyle = styled.div`
             color: rgba(255, 255, 255, 0.3);
         }
         color: rgba(255, 255, 255, 1);
-        button {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid #fff;
-            cursor: pointer;
-
-            &:hover {
-                color: #0087e0;
-                border: 1px solid #0087e0;
-                background: rgba(255, 255, 255, 1);
-            }
-        }
     }
+
+    /* active 상태일 때만 활성화 */
+    .swiper-slide-active .btn {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid #fff;
+        cursor: pointer;
+    }
+
+    /* hover: 글자/테두리는 buttonColor, 배경은 흰색 ::before로 */
+    .swiper-slide-active .btn:hover {
+        color: var(--btn-hover-color);
+        border-color: var(--btn-hover-color);
+    }
+
+    /* hover용 ::before 대각선 흰색 배경 */
+    .btn::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        top: 0;
+        left: -40px;
+        transform: skewX(45deg);
+        background-color: rgba(255, 255, 255, 1); /* 흰색 대각선 */
+        z-index: -1;
+        transition: width 1s;
+    }
+
+    .swiper-slide-active .btn:hover::before {
+        width: 160%;
+    }
+
     .swiper {
         margin-left: auto;
         margin-right: auto;
@@ -223,8 +526,59 @@ export const ProductLineStyle = styled.div`
         right: -125px;
     }
 `;
-
 export const MainMagazineStyle = styled.div`
+    position: relative;
+    overflow: hidden;
+    .section {
+        display: flex;
+        width: 100%;
+        height: 230px;
+        align-items: center;
+        justify-content: middle;
+        transform: translateX(-0vh) rotate(-0deg);
+        transform-origin: top left;
+
+        &.right {
+            transform: translateY(100vh) rotate(-90deg);
+            position: absolute;
+            left: 90%;
+            transform-origin: top left;
+        }
+        &.left {
+            transform: translateY(100vh) rotate(90deg);
+            position: absolute;
+            left: 10%;
+            transform-origin: top top;
+        }
+    }
+
+    .animated-text {
+        animation: textLoop 800s infinite linear;
+        color: #f9f9f9;
+        font-size: 230px;
+        font-family: 'YUniverse-B';
+    }
+
+    @keyframes textLoop {
+        from {
+            transform: translateX(-80%);
+        }
+
+        to {
+            transform: translateX(100%);
+        }
+    }
+
+    @keyframes positionLoop {
+        from {
+            transform: none;
+        }
+
+        to {
+            transform: translateY(100vh) rotate(-90deg);
+        }
+    }
+
     .inner {
         padding: 160px 0;
     }
@@ -271,6 +625,7 @@ export const MainMagazineStyle = styled.div`
                 transition: 0.3s;
                 z-index: 10;
                 margin-top: 44px;
+                transition: 0.3s;
             }
             h3 {
                 font-size: 36px;
@@ -288,6 +643,7 @@ export const MainMagazineStyle = styled.div`
             &:hover {
                 button {
                     opacity: 1;
+                    transform: rotate(-35deg);
                 }
                 &::after {
                     background: rgba(0, 0, 0, 0.4);
@@ -343,26 +699,30 @@ export const SetItemStyle = styled.div`
                 color: #f9f9f9;
                 padding-top: 390px;
                 box-sizing: border-box;
-
-                h4 {
-                    font-size: 36px;
-                    font-weight: 700;
-                    margin-bottom: 18px;
-                }
-                strong {
-                    font-size: 18px;
-                }
             }
             &.productList {
                 padding-top: 150px;
                 box-sizing: border-box;
                 background: #f9f9f9;
+                position: relative;
+
+                .circle {
+                    width: 60px;
+                    height: 60px;
+                    background: #e6f3fc;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 130px;
+                    left: 357px;
+                }
 
                 h3 {
                     font-size: 36px;
                     font-weight: 700;
                     margin-bottom: 12px;
                     color: #1a1a1a;
+                    font-family: 'YUniverse-B';
+                    position: relative;
                 }
                 p {
                     margin-bottom: 52px;
@@ -399,18 +759,48 @@ export const SetItemStyle = styled.div`
                 img {
                 }
                 .slide-item {
+                    .wish-inner {
+                        > img {
+                            opacity: 0.5;
+                            transition: 0.3s;
+                        }
+                    }
                     .title {
+                        white-space: nowrap;
+                        width: 100%;
                         position: absolute;
                         bottom: 0;
                         font-size: 18px;
-                        font-weight: 300;
-                        color: #b1b1b1;
+                        color: #515151;
                         cursor: pointer;
+                        font-weight: 600;
+                        gap: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        opacity: 0;
+                        .discount {
+                            padding: 6px;
+                            background: #00395e;
+                            color: #fff;
+                            display: inline-block;
+                        }
+                    }
+                }
+                .swiper-slide-active {
+                    .wish-inner {
+                        > img {
+                            opacity: 1;
+                        }
+                    }
+                    .title {
+                        opacity: 1;
+                        transition: opacity 0.3s ease;
                     }
                     &:hover {
                         .title {
                             color: #1a1a1a;
-                            font-weight: 400;
+                            font-weight: 600;
                         }
                     }
                 }
@@ -435,9 +825,9 @@ export const SetItemStyle = styled.div`
                     position: relative;
                     .swiper-button-next {
                         position: absolute;
-                        right: 295px;
+                        right: 250px;
                         background: transparent;
-                        color: #8a8a8a;
+                        color: #515151;
                         width: 60px;
 
                         &::after {
@@ -446,23 +836,15 @@ export const SetItemStyle = styled.div`
                     }
                     .swiper-button-prev {
                         position: absolute;
-                        left: 295px;
+                        left: 250px;
                         background: transparent;
-                        color: #8a8a8a;
+                        color: #515151;
                         width: 60px;
 
                         &::after {
                             display: none;
                         }
                     }
-
-                    /* .swiper-slide-prev,
-                .swiper-slide-next {
-                    scale: 0.8;
-                }
-                .swiper-slide-active {
-                    scale: 1.3;
-                } */
                 }
             }
         }
@@ -488,28 +870,35 @@ export const DiscountItemStyle = styled.div`
                 color: #fff;
                 padding-top: 390px;
                 box-sizing: border-box;
-
-                h4 {
-                    font-size: 36px;
-                    font-weight: 700;
-                    margin-bottom: 18px;
-                }
-                strong {
-                    font-size: 18px;
-                }
+                position: relative;
+                overflow: hidden;
             }
             &.productList {
                 padding-top: 150px;
                 box-sizing: border-box;
                 background: #f9f9f9;
+                position: relative;
+
+                .circle {
+                    width: 60px;
+                    height: 60px;
+                    background: #e6f3fc;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 130px;
+                    left: 289px;
+                }
 
                 h3 {
                     font-size: 36px;
                     font-weight: 700;
                     margin-bottom: 12px;
                     color: #1a1a1a;
+                    font-family: 'YUniverse-B';
+                    position: relative;
                 }
-                p {
+
+                > p {
                     margin-bottom: 52px;
                     font-size: 18px;
                 }
@@ -546,33 +935,51 @@ export const DiscountItemStyle = styled.div`
                 }
 
                 .slide-item {
+                    .wish-inner {
+                        > img {
+                            opacity: 0.5;
+                            transition: 0.3s;
+                        }
+                    }
                     .title {
+                        white-space: nowrap;
                         position: absolute;
                         bottom: 0;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
                         font-size: 18px;
-                        font-weight: 300;
-                        color: #b1b1b1;
+                        font-weight: 600;
+                        color: #515151;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
                         cursor: pointer;
+                        .discount {
+                            padding: 6px;
+                            background: #00395e;
+                            color: #fff;
+                            display: inline-block;
+                        }
+                    }
+                }
+                .swiper-slide-active {
+                    .wish-inner {
+                        > img {
+                            opacity: 1;
+                        }
+                    }
+                    .title {
+                        opacity: 1;
+                        transition: opacity 0.3s ease;
                     }
                     &:hover {
                         .title {
                             color: #1a1a1a;
-                            font-weight: 400;
+                            font-weight: 600;
                         }
                     }
-                }
-                .discount {
-                    font-size: 16px;
-                    position: absolute;
-                    top: 40px;
-                    left: 40px;
-                    width: 45px;
-                    height: 45px;
-                    background: #515151;
-                    color: #fff;
-                    border-radius: 50%;
-                    text-align: center;
-                    line-height: 45px;
                 }
 
                 /*  */
@@ -598,25 +1005,20 @@ export const DiscountItemStyle = styled.div`
                         z-index: 10;
                         top: 50%;
                         transform: translateY(-50%);
-                        right: 295px;
+                        right: 250px;
                         background: transparent;
-                        color: #8a8a8a;
+                        color: #515151;
                         /* width: 60px; */
                     }
-                    /* .swiper-button-next,
-                    .swiper-button-prev {
-                        &::after {
-                            display: none;
-                        }
-                    } */
+
                     .swiper-button-prev-dis {
                         position: absolute;
                         z-index: 10;
                         top: 50%;
                         transform: translateY(-50%);
-                        left: 295px;
+                        left: 250px;
                         background: transparent;
-                        color: #8a8a8a;
+                        color: #515151;
                     }
                 }
             }
@@ -648,6 +1050,7 @@ export const StoryStyle = styled.div`
             text-align: center;
             /* margin-top: 432px; */
             margin-top: 45%;
+            font-family: 'YUniverse-B';
         }
         span {
             display: block;
@@ -655,24 +1058,48 @@ export const StoryStyle = styled.div`
             margin-top: 100px;
             font-size: 18px;
             color: #54afea;
-            font-weight: 300;
+            /* font-weight: 300; */
+            line-height: 150%;
         }
         p {
             display: block;
             text-align: center;
             margin-top: 50px;
 
-            button {
-                width: 226px;
-                height: 50px;
-                border: 1px solid #54afea;
-                background: transparent;
+            .btn {
+                position: relative;
                 color: #54afea;
+                text-decoration: none;
+                border: 1px solid #54afea;
+                padding: 15px 91px;
                 font-size: 18px;
-                transition: 0.3s;
-                &:hover {
+                cursor: pointer;
+                font-weight: bold;
+                background: transparent;
+                position: relative;
+                transition: all 1s;
+                overflow: hidden;
+                z-index: 1;
+                font-family: 'YUniverse-B';
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 0%;
+                    top: 0;
+                    left: -40px;
+                    transform: skewX(45deg);
+                    background-color: #54afea;
                     color: #fff;
-                    background: #54afea;
+                    z-index: -1;
+                    transition: 1s;
+                }
+                &:hover {
+                    color: white;
+                    &::before {
+                        width: 160%;
+                    }
                 }
             }
         }
@@ -686,7 +1113,31 @@ export const SnsStyle = styled.div`
         font-weight: 700;
         color: #1a1a1a;
         margin-bottom: 80px;
+        font-family: 'YUniverse-B';
+        position: relative;
+        z-index: 1;
+        strong {
+            margin-top: 12px;
+            display: block;
+            font-size: 20px;
+            color: #515151;
+            font-family: 'pretendard';
+            font-weight: 200;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: #e6f3fc;
+            border-radius: 50%;
+            top: -41%;
+            left: 42.25%;
+            z-index: -1;
+        }
     }
+
     * {
         margin: 0;
         padding: 0;
@@ -740,5 +1191,64 @@ export const SnsStyle = styled.div`
                 height: 30px;
             }
         }
+    }
+`;
+
+export const KConStyle = styled.div`
+    .cta {
+        position: relative;
+        margin: auto;
+        padding: 22px 18px 17px 28px;
+        transition: all 0.2s ease;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .cta:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background: #dfceff;
+        width: 60px;
+        height: 60px;
+        transition: all 0.3s ease;
+    }
+
+    .cta span {
+        position: relative;
+        /* font-family: 'Ubuntu', sans-serif; */
+        font-size: 18px;
+        font-weight: 500;
+        color: #6a32db;
+    }
+
+    .cta svg {
+        position: relative;
+        top: 0;
+        margin-left: 12px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #6a32db;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+    }
+
+    .cta:hover:before {
+        width: 100%;
+        background: #dfceff;
+    }
+
+    .cta:hover svg {
+        transform: translateX(0);
+    }
+
+    .cta:active {
+        transform: scale(0.95);
     }
 `;

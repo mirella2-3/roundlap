@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const ShopStyle = styled.div`
+    padding-top: 150px;
     .inner {
         margin: 160px auto;
     }

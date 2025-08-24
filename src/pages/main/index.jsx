@@ -10,12 +10,14 @@ import {
     Slogan,
     Story,
 } from '../../components';
+import ScrollBtns from '../../components/scrolltotop/ScrollBtns';
 
 import { MainStyle } from './style';
 
 const Main = () => {
     return (
         <>
+            <ScrollBtns />
             <MainStyle id="main_wrap">
                 <MainVisual />
                 <BestItem />

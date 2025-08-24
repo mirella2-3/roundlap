@@ -27,6 +27,7 @@ const SetItemSwiper = () => {
             <Swiper
                 modules={[Navigation]}
                 slidesPerView={3}
+                spaceBetween={200}
                 direction={direction}
                 centeredSlides={true}
                 navigation={{

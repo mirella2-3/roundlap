@@ -48,7 +48,8 @@ const BestItem = () => {
     return (
         <BestItemStyle>
             <div className="inner">
-                <h2>BEST ITEM</h2>
+                <p className="circle"></p>
+                <h2 className="engTitle">BEST ITEMS</h2>
                 <ul className="items">
                     {products.map((product) => (
                         <li key={product.id}>
