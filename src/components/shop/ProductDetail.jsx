@@ -68,6 +68,7 @@ const ProductDetail = () => {
         colorDark,
         colorSale,
         colorLight,
+        id,
     } = product;
 
     return (
@@ -148,7 +149,7 @@ const ProductDetail = () => {
                 </div>
             </ProductdetailStyle>
 
-            <ProductRecom />
+            <ProductRecom currentItem={{ id }} />
             <Review product={product} />
         </>
     );

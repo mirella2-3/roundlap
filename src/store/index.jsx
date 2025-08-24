@@ -7,7 +7,8 @@ import magazine from './modules/megazineSlice';
 import event from './modules/EventSlice';
 import order from './modules/OrderSlice';
 import wish from './modules/WishListSlice';
-import cart from './modules/cartSlice';
+import cart from './modules/CartSlice';
+import recommend from './modules/recommendSlice';
 
 const store = configureStore({
     reducer: {
@@ -20,6 +21,7 @@ const store = configureStore({
         order,
         wish,
         cart,
+        recommend,
     },
 });
 

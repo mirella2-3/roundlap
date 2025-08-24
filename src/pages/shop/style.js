@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const ShopStyle = styled.div`
-    padding-top: 150px;
     .inner {
-        margin: 160px auto;
+        /* margin: 100px auto; */
     }
     h2 {
         color: #1a1a1a;

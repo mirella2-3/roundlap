@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const ProductdetailStyle = styled.div`
     position: relative;
-    margin-top: 80px;
     .bg {
         background-color: #f1f9ff;
         height: 330px;
@@ -310,22 +309,45 @@ export const ProductRecomStyle = styled.div`
 
 export const RecommendListStyle = styled.ul`
     display: flex;
-    gap: 8px;
+    gap: 10px;
     width: 273px;
     text-align: center;
-    p {
-        img {
+
+    li {
+        height: 412px;
+
+        p {
+            width: 273px;
+            height: 332px;
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 273px;
+                height: 100%;
+                margin: auto;
+                object-fit: contain;
+            }
         }
-    }
-    h4 {
-        font-size: 20px;
-        font-weight: 500;
-        margin: 22px 0 10px 0;
-    }
-    strong {
-        font-size: 20px;
-        font-weight: 700;
-        color: #1a1a1a;
+        h4 {
+            font-size: 18px;
+            box-sizing: border-box;
+            padding: 22px 10px 10px 10px;
+            white-space: nowrap;
+            width: 273px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+        }
+        strong {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            cursor: pointer;
+        }
     }
 `;
 

@@ -11,6 +11,7 @@ const Layout = () => {
     return (
         <div className="wrap">
             <Header onIconClick={() => setIsModalOpen(true)} />
+            <div style={{ height: '120px', pointerEvents: 'none' }} aria-hidden="true" />
             <main className="main">
                 <Outlet />
             </main>

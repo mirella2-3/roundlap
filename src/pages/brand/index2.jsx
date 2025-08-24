@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import {
     Brand_Con1,
     Brand_Con2,
@@ -9,14 +8,12 @@ import {
     Brand_Video,
 } from '../../components';
 import { BrandStyle } from './style';
+import { useEffect, useRef, useState } from 'react';
 import { ScrollTrigger } from 'gsap/all';
 import gsap from 'gsap';
 gsap.registerPlugin(ScrollTrigger);
 
 const Brand = () => {
-    const wrapRef = useRef(null);
-
-    // 가로 스크롤 애니메이션 설정
     useEffect(() => {
         const sections = gsap.utils.toArray('.panel');
 
@@ -25,11 +22,10 @@ const Brand = () => {
             ease: 'none',
             scrollTrigger: {
                 trigger: wrapRef.current,
-                start: 'top top+120',
+                start: 'top top',
                 end: () => `+=${window.innerWidth * sections.length}`,
                 scrub: 1,
                 pin: true,
-                anticipatePin: 1,
             },
         });
 

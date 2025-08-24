@@ -26,23 +26,19 @@ import styled from 'styled-components';
 //     }
 // `;
 export const HeaderStyle = styled.header`
-    box-sizing: border-box;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    height: 120px;
     position: fixed;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1000;
+    transition: opacity 0.4s ease;
 
-    background: ${({ isTransparent, isHover }) =>
-        isTransparent && !isHover ? 'transparent' : 'white'};
+    opacity: ${({ show }) => (show ? 1 : 0)};
+    pointer-events: ${({ show }) => (show ? 'auto' : 'none')};
 
-    color: ${({ isTransparent, isHover }) => (isTransparent && !isHover ? 'white' : '#515151')};
-
-    border-bottom: 1px solid
-        ${({ isTransparent, isHover }) => (isTransparent && !isHover ? 'transparent' : '#ececec')};
-
-    transition: all 0.4s ease;
-    transform: ${({ show }) => (show ? 'translateY(0)' : 'translateY(-100%)')};
+    background: ${({ isTransparent }) => (isTransparent ? 'transparent' : 'white')};
+    color: ${({ isTransparent }) => (isTransparent ? 'white' : '#515151')};
+    border-bottom: 1px solid ${({ isTransparent }) => (isTransparent ? 'transparent' : '#ececec')};
 
     .inner {
         height: 100%;
@@ -51,9 +47,10 @@ export const HeaderStyle = styled.header`
 
     h1 {
         position: absolute;
-        left: 0;
         top: 50%;
         transform: translateY(-50%);
+        margin: 0;
+        padding: 0;
     }
 `;
 
@@ -77,6 +74,7 @@ export const NavStyle = styled.nav`
 
                 color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
                 font-size: 18px;
+                font-family: 'YUniverse-B';
 
                 &:hover {
                     color: #007bbc;
@@ -103,6 +101,7 @@ export const NavStyle = styled.nav`
                     }
 
                     .subMenu {
+                        font-family: 'pretendard';
                         cursor: default;
                         position: absolute;
                         /* display: none; */
@@ -126,6 +125,7 @@ export const NavStyle = styled.nav`
                                         padding-left: 0;
                                         font-size: 16px;
                                         font-weight: 400;
+                                        font-family: 'pretendard';
 
                                         &:hover {
                                             color: #007bcc;
@@ -245,6 +245,7 @@ export const NavStyle = styled.nav`
             color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
         }
         .login {
+            font-family: 'YUniverse-B';
             display: flex;
             gap: 12px;
             position: relative;

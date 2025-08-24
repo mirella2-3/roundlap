@@ -1,11 +1,19 @@
-const RecommendItem = () => {
+import { useNavigate } from 'react-router-dom';
+
+const RecommendItem = ({ item }) => {
+    const { imgUrl, title, salePrice, colorLight, id } = item;
+    const navigate = useNavigate();
+    const goToDetail = () => {
+        navigate(`/shop/${id}`);
+    };
+
     return (
-        <li>
+        <li onClick={goToDetail}>
             <p>
-                <img src="https://placehold.co/273x332" alt="" />
+                <img src={imgUrl} alt={title} style={{ background: colorLight }} />
             </p>
-            <h4 className="title">title</h4>
-            <strong>000원</strong>
+            <h4 className="title">{title}</h4>
+            <strong>{salePrice.toLocaleString()}원</strong>
         </li>
     );
 };

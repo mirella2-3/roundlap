@@ -1,33 +1,39 @@
-import { IndexStyle } from './style';
-
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { IndexStyle } from './style';
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Brand_Index = () => {
     const sectionsRef = useRef([]);
+    const txtboxRef = useRef(null);
 
     useEffect(() => {
-        sectionsRef.current.forEach((section) => {
-            ScrollTrigger.create({
-                trigger: section,
-                start: 'top 85%',
-                onEnter: () => {
-                    gsap.to(window, {
-                        scrollTo: { y: section, offsetY: 0 },
-                        duration: 0.3,
-                        ease: 'power1.out',
-                    });
-                },
-            });
-        });
-        document.body.classList.add('prevent-scroll');
+        const elements = sectionsRef.current;
 
-        // 클린업
+        gsap.fromTo(
+            elements,
+            {
+                x: 170,
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 3,
+                ease: 'ease.out',
+                stagger: 1.5, // 순차적으로 등장
+                trigger: txtboxRef.current,
+                start: 'top center',
+                toggleActions: 'play none none none',
+                markers: false,
+            }
+        );
+
         return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            ScrollTrigger.getAll().forEach((t) => t.kill());
         };
     }, []);
 
@@ -38,7 +44,7 @@ const Brand_Index = () => {
                     <h1>01</h1>
                     <strong>깨끗한 원료를 선별하다</strong>
                     <div>
-                        <span>라운드랩은 자연 그대로의 깨끗한 원료를 사용하여</span>
+                        <span>라운드랩은 자연 그대로의 깨끗한 원료를 사용하여</span>
                         <span>피부에 이로운 화장품을 만듭니다.</span>
                     </div>
                 </section>
@@ -54,7 +60,7 @@ const Brand_Index = () => {
                     <h1>03</h1>
                     <strong>더 나은 가치를 향하다</strong>
                     <div>
-                        <span>라운드랩은 우리가 살아가는 세상을 더 아름답게 만드는</span>
+                        <span>라운드랩은 우리가 살아가는 세상을 더 아름답게 만드는</span>
                         <span>가치 있는 발걸음을 내딛고 있습니다.</span>
                     </div>
                 </section>

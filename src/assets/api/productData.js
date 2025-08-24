@@ -5,7 +5,7 @@ export const allProductData = [
         price: 16700,
         salePrice: 16700,
         category: ['toner', 'water', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202501/8a3370d3587010a6ad8636990069e34e.jpg',
+
         imgUrl: '/images/Data/dokdo/30_dokdo_toner200.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -27,7 +27,7 @@ export const allProductData = [
         price: 24800,
         salePrice: 24800,
         category: ['lotion', 'sensitive', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202203/1302ee042ef7723fe048ad9aa1f4bcb3.jpg',
+
         imgUrl: '/images/Data/dokdo/07_dokdo_lotion400.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -48,7 +48,7 @@ export const allProductData = [
         price: 13800,
         salePrice: 13800,
         category: ['cleansing', 'corneous', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/365366adaa42b883be155e8cc9c3743b.jpg',
+
         imgUrl: '/images/Data/dokdo/20_dokdo_cleanser200.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -69,7 +69,7 @@ export const allProductData = [
         price: 28000,
         salePrice: 19000,
         category: ['essence', 'water', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202204/55b3eb6d92a0f592e03baef918f0e777.jpg',
+
         imgUrl: '/images/Data/dokdo/28_dokdo_ampoule.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -90,7 +90,7 @@ export const allProductData = [
         price: 35000,
         salePrice: 35000,
         category: ['suncare', 'sunblock', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202203/aa294ebf2773976c3ad51a372bb48f9c.jpg',
+
         imgUrl: '/images/Data/dokdo/11_dokdo_peeling.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -111,7 +111,7 @@ export const allProductData = [
         price: 29000,
         salePrice: 29000,
         category: ['mask', 'water', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202506/74d7b0e0452241ab38581a2f896cc970.jpg',
+
         imgUrl: '/images/Data/dokdo/13_dokdo_balm.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -132,7 +132,7 @@ export const allProductData = [
         price: 21000,
         salePrice: 21000,
         category: ['cleansing', 'sensitive', 'BEST', '1025', 'SET'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202501/20bc1d2897c2d122858af29e255ae66d.jpg',
+
         imgUrl: '/images/Data/dokdo/02_dokdo_toner200-lotion200.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -153,7 +153,7 @@ export const allProductData = [
         price: 49500,
         salePrice: 49500,
         category: ['cleansing', 'sensitive', 'BEST', '1025', 'SET'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/41df2ffd3aa1f76b4e613224f39db368.jpg',
+
         imgUrl: '/images/Data/dokdo/04_dokdo_toner200-toner500.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -174,7 +174,7 @@ export const allProductData = [
         price: 36500,
         salePrice: 36500,
         category: ['lotion', 'sensitive', 'BEST', '1025', 'SET'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202501/d362d9833ae3f11193802de11f78551d.jpg',
+
         imgUrl: '/images/Data/dokdo/05_dokdo_toner500-lotion200.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -195,7 +195,7 @@ export const allProductData = [
         price: 34000,
         salePrice: 34000,
         category: ['essence', 'water', 'BEST', '1025', 'SET'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202212/b88b826bb8820b4564b8c300ab1fa50c.jpg',
+
         imgUrl: '/images/Data/dokdo/06_dokdo_pads-2set.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -216,7 +216,7 @@ export const allProductData = [
         price: 41000,
         salePrice: 41000,
         category: ['lotion', 'vitamin', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202303/a3bf8c91d8682568f00a47dd645b6406.jpg',
+
         imgUrl: '/images/Data/dokdo/14_dokdo_gelLotion.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -238,7 +238,7 @@ export const allProductData = [
         category: ['toner', 'water', '1025', 'BEST', 'SET', 'SALE'],
         salePercent: 40,
         salePrice: 22000,
-        imgurl: 'https://roundlab.co.kr/web/product/big/202111/70e76d059864acd240c27d54b7984095.jpg',
+
         imgUrl: '/images/Data/dokdo/22_dokdo_cream50-2set.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -259,7 +259,7 @@ export const allProductData = [
         price: 30000,
         salePrice: 30000,
         category: ['essence', 'sensitive', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202211/40e24e6e4fa07d49a8f5778d022aec06.jpg',
+
         imgUrl: '/images/Data/dokdo/18_dokdo_sleepingPack.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -280,7 +280,7 @@ export const allProductData = [
         price: 26000,
         salePrice: 26000,
         category: ['suncare', 'sunblock', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202207/fe04bae04a9ebc8b8b75d4e0536dda92.jpg',
+
         imgUrl: '/images/Data/dokdo/10_dokdo_oil.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -302,7 +302,7 @@ export const allProductData = [
         salePrice: 14000,
         category: ['mask', 'corneous', '1025', 'SALE'],
         salePercent: 13,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202203/177810ec862da11f18c037a5107079b4.jpg',
+
         imgUrl: '/images/Data/dokdo/21_dokdo_bubble.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -323,7 +323,7 @@ export const allProductData = [
         price: 4500,
         salePrice: 4500,
         category: ['lotion', 'water', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202207/c914c9ce2004a8f45bfc57c1a3e7680c.jpg',
+
         imgUrl: '/images/Data/dokdo/24_dokdo_wipes.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -344,7 +344,7 @@ export const allProductData = [
         price: 22000,
         salePrice: 22000,
         category: ['suncare', 'sunblock', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202207/cfcbed783a1e1c7d9e468e9cf9e9a79f.jpg',
+
         imgUrl: '/images/Data/dokdo/26_dokdo_mist150.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -365,7 +365,7 @@ export const allProductData = [
         price: 8500,
         salePrice: 8500,
         category: ['lotion', 'water', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202212/082f13c53b403f29146b7323d8678fe6.jpg',
+
         imgUrl: '/images/Data/dokdo/27_dokdo_eyecream.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -386,7 +386,7 @@ export const allProductData = [
         price: 18500,
         salePrice: 18500,
         category: ['cleansing', 'water', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202202/4224946edf88dfdefa0afd9319406458.jpg',
+
         imgUrl: '/images/Data/dokdo/17_dokdo_milk.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -407,7 +407,7 @@ export const allProductData = [
         price: 18500,
         salePrice: 18500,
         category: ['cleansing', 'water', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202202/4224946edf88dfdefa0afd9319406458.jpg',
+
         imgUrl: '/images/Data/dokdo/17_dokdo_milk.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -429,7 +429,7 @@ export const allProductData = [
         salePrice: 22000,
         category: ['mask', 'water', '1025', 'SALE'],
         salePercent: 40,
-        imgurl: 'https://roundlab.co.kr/web/product/big/202207/f00c35510a02ec07def3b47a2869c1a2.jpg',
+
         imgUrl: '/images/Data/dokdo/25_dokdo_gelMask.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -451,7 +451,7 @@ export const allProductData = [
         salePrice: 31500,
         category: ['toner', 'sensitive', '1025', 'SET', 'SALE'],
         salePercent: 20,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/e36b88464af9e64985c25f5104f57a0e.jpg',
+
         imgUrl: '/images/Data/dokdo/29_dokdo_cleanser150-3set.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -473,7 +473,7 @@ export const allProductData = [
         salePrice: 26500,
         category: ['toner', 'sensitive', '1025', 'SALE'],
         salePercent: 12,
-        imgurl: 'https://roundlab.co.kr/web/product/big/202501/f5c67db6e8b63c0680991f62dfa96238.jpg',
+
         imgUrl: '/images/Data/dokdo/01_dokdo_toner500.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -495,7 +495,7 @@ export const allProductData = [
         salePrice: 12500,
         category: ['toner', 'sensitive', '1025', 'SET', 'SALE'],
         salePercent: 13,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202207/6192e97e2d9543a5de2b838984af4b29.jpg',
+
         imgUrl: '/images/Data/dokdo/23_dokdo_wipes-3set.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -517,7 +517,7 @@ export const allProductData = [
         salePrice: 9900,
         category: ['toner', 'sensitive', '1025', 'SALE'],
         salePercent: 50,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202308/970647347bb4d62a3c42183ffa576fb7.jpg',
+
         imgUrl: '/images/Data/dokdo/09_dokdo_water.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -538,7 +538,7 @@ export const allProductData = [
         price: 16000,
         salePrice: 16000,
         category: ['lotion', 'sensitive', '1025', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202211/700c1fccabf5cdea96d1bd014cd73bac.jpg',
+
         imgUrl: '/images/Data/dokdo/19_dokdo_lotion200.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -559,7 +559,7 @@ export const allProductData = [
         price: 16000,
         salePrice: 16000,
         category: ['lotion', 'sensitive', '1025'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202207/96ab1fe05298e73355fb50b04550226b.jpg',
+
         imgUrl: '/images/Data/dokdo/27_dokdo_eyecream.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -580,7 +580,7 @@ export const allProductData = [
         price: 24000,
         salePrice: 24000,
         category: ['lotion', 'sensitive', '1025', 'man'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202312/b18937125b4bb027b98a6927e7f8715e.jpg',
+
         imgUrl: '/images/Data/dokdo/12_dokdo_cream80.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -602,7 +602,7 @@ export const allProductData = [
         salePrice: 18000,
         category: ['lotion', 'sensitive', '1025', 'man', 'SALE'],
         salePercent: 30,
-        imgurl: 'https://roundlab.co.kr/web/product/big/202305/a57a5fb0143427e14b58ea27e9d89d11.jpg',
+
         imgUrl: '/images/Data/dokdo/22_dokdo_cream50-2set.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -623,7 +623,7 @@ export const allProductData = [
         price: 24000,
         salePrice: 24000,
         category: ['lotion', 'sensitive', '1025', 'man'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202303/664f1414ed0202c2c8297061f5509ae1.jpg',
+
         imgUrl: '/images/Data/dokdo/16_dokdo_formenFluid.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -644,7 +644,7 @@ export const allProductData = [
         price: 36000,
         salePrice: 36000,
         category: ['suncare', 'sunblock', 'jajack', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/3b38e738c4136407d152f345c85a6457.jpg',
+
         imgUrl: '/images/Data/birch/01_jajack_sunCream.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -666,7 +666,7 @@ export const allProductData = [
         price: 21000,
         salePrice: 21000,
         category: ['lotion', 'water', 'jajack', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/97bbefc04161f7f20c0bb6f6a9831246.jpg',
+
         imgUrl: '/images/Data/birch/02_jajack_cream80.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -687,7 +687,7 @@ export const allProductData = [
         price: 32000,
         salePrice: 32000,
         category: ['essence', 'water', 'jajack', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202211/36f91e19bd2c65e8b16a639b5e31ac15.jpg',
+
         imgUrl: '/images/Data/birch/03_jajack_cleanser.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -709,7 +709,7 @@ export const allProductData = [
         category: ['mask', 'water', 'jajack', 'SALE'],
         salePrice: 25000,
         salePercent: 8,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202204/46e2ea4763d89a38ab86420f03e3d3cb.jpg',
+
         imgUrl: '/images/Data/birch/04_jajack_mineralSun.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -730,7 +730,7 @@ export const allProductData = [
         price: 34500,
         salePrice: 34500,
         category: ['lotion', 'water', 'jajack', 'SET'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/ee56f150ce78a14a3c34b75cc83ed133.jpg',
+
         imgUrl: '/images/Data/birch/13_jajack_toner300-cream80.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -751,7 +751,7 @@ export const allProductData = [
         price: 32000,
         salePrice: 32000,
         category: ['mask', 'vitamin', 'jajack', 'mask'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202102/36696a44512de4d9d9a310e5b7be4694.jpg',
+
         imgUrl: '/images/Data/birch/20_jajack_washoffPack.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -772,7 +772,7 @@ export const allProductData = [
         price: 24000,
         salePrice: 24000,
         category: ['toner', 'water', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202304/317b43fd3e613dc7a4f1837c7f470871.jpg',
+
         imgUrl: '/images/Data/birch/06_jajack_sunStick.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -793,7 +793,7 @@ export const allProductData = [
         price: 23000,
         salePrice: 23000,
         category: ['toner', 'corneous', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202504/67313fd81cba10c07fefe9d8511fde3a.jpg',
+
         imgUrl: '/images/Data/birch/07_jajack_sunCushion.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -814,7 +814,7 @@ export const allProductData = [
         price: 25000,
         salePrice: 25000,
         category: ['mask', 'cleansing', 'sensitive', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202105/14d66cd934143eaa758d335f2798c0fb.jpg',
+
         imgUrl: '/images/Data/birch/09_jajack_cleanserPads.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -835,7 +835,7 @@ export const allProductData = [
         price: 23000,
         salePrice: 23000,
         category: ['mask', 'corneous', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202505/72e7dad71877ddefd21cb752ce589be2.jpg',
+
         imgUrl: '/images/Data/birch/21_jajack_mask-10sheets.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -857,7 +857,7 @@ export const allProductData = [
         category: ['toner', 'water', 'jajack', 'SALE'],
         salePrice: 22800,
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202008/72d2208f040245168e9a5e7de395f304.jpg',
+
         imgUrl: '/images/Data/birch/17_jajack_formenToner.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -879,7 +879,7 @@ export const allProductData = [
         category: ['toner', 'vitamin', 'jajack', 'SALE'],
         salePrice: 25000,
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202505/dca3206c957c0ad6d9998be849874788.jpg',
+
         imgUrl: '/images/Data/birch/14_jajack_lipbalm.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -901,7 +901,7 @@ export const allProductData = [
         category: ['toner', 'water', 'jajack', 'SALE'],
         salePrice: 24000,
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202402/f21c610a920e0fccf1d90df5f02b96e5.jpg',
+
         imgUrl: '/images/Data/birch/12_jajack_ampoule.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -923,7 +923,7 @@ export const allProductData = [
         category: ['cleansing', 'vitamin', 'jajack', 'SALE', 'man'],
         salePrice: 23000,
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202304/8ddb016d6daab5e898c283716a3dde79.jpg',
+
         imgUrl: '/images/Data/birch/15_jajack_formenShaving.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -944,7 +944,7 @@ export const allProductData = [
         price: 26000,
         salePrice: 26000,
         category: ['sunblock', 'suncare', 'sensitive', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202303/8a8a947bf14fb34d31d926aa7c468506.jpg',
+
         imgUrl: '/images/Data/birch/05_jajack_toneupSun.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -965,7 +965,7 @@ export const allProductData = [
         price: 35000,
         salePrice: 35000,
         category: ['lotion', 'vitamin', 'man', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202211/f653792604d02ab6638616e1d402545e.jpg',
+
         imgUrl: '/images/Data/birch/16_jajack_formenLotion.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -986,7 +986,7 @@ export const allProductData = [
         price: 37000,
         salePrice: 37000,
         category: ['toner', 'vitamin', 'man', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202211/8b7bdcb5e721aadda479d7d7cc97898e.jpg',
+
         imgUrl: '/images/Data/birch/17_jajack_formenToner.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -1007,7 +1007,7 @@ export const allProductData = [
         price: 36000,
         salePrice: 36000,
         category: ['lotion', 'water', 'man', 'jajack'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202211/2718058f4364cedf9886b735d120a62f.jpg',
+
         imgUrl: '/images/Data/birch/08_jajack_formenCream.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -1029,7 +1029,7 @@ export const allProductData = [
         category: ['mask', 'vitamin', 'man', 'jajack', 'SALE'],
         salePrice: 35000,
         salePercent: 10,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202211/8b7bdcb5e721aadda479d7d7cc97898e.jpg',
+
         imgUrl: '/images/Data/birch/11_jajack_gelMask.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -1051,7 +1051,7 @@ export const allProductData = [
         category: ['mask', 'water', 'jajack', 'SALE'],
         salePrice: 15000,
         salePercent: 50,
-        imgurl: 'https://roundlab.co.kr/web/product/big/20200316/a0d791d8d5c522a9dcab72a21bc45a3e.jpg',
+
         imgUrl: '/images/Data/birch/21_jajack_mask-10sheets.png',
         nowLine: 'BIRCH',
         colorDark: '#54AFEA',
@@ -1072,7 +1072,7 @@ export const allProductData = [
         price: 32500,
         salePrice: 32500,
         category: ['lotion', 'sensitive', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202404/016f05541fc5742cf10ab5d8b4f34ead.jpg',
+
         imgUrl: '/images/Data/baby/01_baby_lotion.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1093,7 +1093,7 @@ export const allProductData = [
         price: 21500,
         salePrice: 21500,
         category: ['lotion', 'sensitive', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202404/ac2b0a83e384e7627ecc5bf0d4f7b6de.jpg',
+
         imgUrl: '/images/Data/baby/02_baby_wash.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1114,7 +1114,7 @@ export const allProductData = [
         price: 29000,
         salePrice: 29000,
         category: ['toner', 'sensitive', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202404/b0cb2ee2e7d012d594243fd655ec50c0.jpg',
+
         imgUrl: '/images/Data/baby/03_baby_wetWipes-10set.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1135,7 +1135,7 @@ export const allProductData = [
         price: 17000,
         salePrice: 17000,
         category: ['toner', 'sensitive', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202404/a28ccefac7353091db2f7c6922ce4e95.jpg',
+
         imgUrl: '/images/Data/baby/04_baby_wetWipes-12set.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1156,7 +1156,7 @@ export const allProductData = [
         price: 23000,
         salePrice: 23000,
         category: ['suncare', 'sunblock', 'sensitive', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202406/bbed05c0daed4739a53f36cd7c794782.jpg',
+
         imgUrl: '/images/Data/baby/05_baby_sunCream.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1177,7 +1177,7 @@ export const allProductData = [
         price: 31000,
         salePrice: 31000,
         category: ['essence', 'sensitive', 'baby', 'water'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202406/2b5111dbc6754667e3fb10eb8eccf75f.jpg',
+
         imgUrl: '/images/Data/baby/06_baby_soothingGel.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1198,7 +1198,7 @@ export const allProductData = [
         price: 42000,
         salePrice: 42000,
         category: ['suncare', 'sunblock', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202408/5221adec199a63fe896f5ebdbbd0b6e4.jpg',
+
         imgUrl: '/images/Data/baby/07_baby_sunCushion.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1219,7 +1219,6 @@ export const allProductData = [
         price: 29000,
         salePrice: 29000,
         category: ['suncare', 'sunblock', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202408/32d6e9eb4ab00153ead40160732a372f.jpg',
         imgUrl: '/images/Data/baby/08_baby_sunStick.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1240,7 +1239,7 @@ export const allProductData = [
         price: 33000,
         salePrice: 33000,
         category: ['lotion', 'sensitive', 'baby'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202507/73d6a33b1df79d57801c922041a2c59e.jpg',
+
         imgUrl: '/images/Data/baby/09_baby_cream.png',
         nowLine: 'BABY',
         colorDark: '#54AFEA',
@@ -1261,7 +1260,7 @@ export const allProductData = [
         price: 19000,
         salePrice: 19000,
         category: ['cleansing', 'corneous', 'yakkong'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/6abcbf2b2f3b68bb1be9b39671dadc83.jpg',
+
         imgUrl: '/images/Data/soybean/01_yakkong_oil.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1282,7 +1281,7 @@ export const allProductData = [
         price: 22000,
         salePrice: 22000,
         category: ['cleansing', 'sensitive', 'yakkong'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/35140a02772f63e616f7ec7df12a448e.jpg',
+
         imgUrl: '/images/Data/soybean/02_yakkong_cleanser.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1303,7 +1302,7 @@ export const allProductData = [
         price: 21000,
         salePrice: 21000,
         category: ['cleansing', 'corneous', 'yakkong'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202407/93985e9ec0e1203fc20bc8895593b76a.jpg',
+
         imgUrl: '/images/Data/soybean/03_yakkong_toner.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1324,7 +1323,7 @@ export const allProductData = [
         price: 20000,
         salePrice: 20000,
         category: ['mask', 'sensitive', 'yakkong'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202308/a5cd0441832168b9c60a7e65f2403f84.jpg',
+
         imgUrl: '/images/Data/soybean/04_yakkong_mask-10sheets.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1345,7 +1344,7 @@ export const allProductData = [
         price: 21000,
         salePrice: 21000,
         category: ['cleansing', 'corneous', 'yakkong'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202308/bca270227df9a220d2d92a353346b552.jpg',
+
         imgUrl: '/images/Data/soybean/05_yakkong_ampoule.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1367,7 +1366,7 @@ export const allProductData = [
         salePrice: 20500,
         category: ['lotion', 'sensitive', 'yakkong', 'SALE'],
         salePercent: 10,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202308/e07bd0b54823923da5c707894fd22da2.jpg',
+
         imgUrl: '/images/Data/soybean/06_yakkong_cream.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1389,7 +1388,7 @@ export const allProductData = [
         salePrice: 25000,
         category: ['cleansing', 'corneous', 'yakkong', 'SALE'],
         salePercent: 23,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202308/e07bd0b54823923da5c707894fd22da2.jpg',
+
         imgUrl: '/images/Data/soybean/03_yakkong_toner.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1411,7 +1410,7 @@ export const allProductData = [
         salePrice: 18000,
         category: ['cleansing', 'sensitive', 'yakkong', 'man', 'SALE'],
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/35140a02772f63e616f7ec7df12a448e.jpg',
+
         imgUrl: '/images/Data/soybean/06_yakkong_cream.png',
         nowLine: 'SOYBEAN',
         colorDark: '#FFB481',
@@ -1432,7 +1431,7 @@ export const allProductData = [
         price: 28000,
         salePrice: 28000,
         category: ['essence', 'vitamin', 'dongbaek'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202409/5608214b0089081cf3fd07b0bf5cc76c.jpg',
+
         imgUrl: '/images/Data/camelia/01_dongbaek_FirmingMask.png',
         nowLine: 'CAMELIA',
         colorDark: '#FFA39F',
@@ -1454,7 +1453,7 @@ export const allProductData = [
         salePrice: 28500,
         category: ['essence', 'sensitive', 'dongbaek', 'SALE'],
         salePercent: 8,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202411/5e5a3be6ffd2524ec780710308e6522b.jpg',
+
         imgUrl: '/images/Data/camelia/02_dongbaek_ampoule.png',
         nowLine: 'CAMELIA',
         colorDark: '#FFA39F',
@@ -1476,7 +1475,7 @@ export const allProductData = [
         salePrice: 26500,
         category: ['essence', 'water', 'dongbaek', 'SALE', 'suncare'],
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202502/75e931616ed03ddac4f696191db49799.jpg',
+
         imgUrl: '/images/Data/camelia/03_dongbaek_sunSerum.png',
         nowLine: 'CAMELIA',
         colorDark: '#FFA39F',
@@ -1498,7 +1497,7 @@ export const allProductData = [
         salePrice: 27000,
         category: ['essence', 'sensitive', 'dongbaek', 'SALE'],
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202504/9da3d542578d4c611cdb9ab505ff1ab9.jpg',
+
         imgUrl: '/images/Data/camelia/04_dongbaek_LiftingMask.png',
         nowLine: 'CAMELIA',
         colorDark: '#FFA39F',
@@ -1520,7 +1519,7 @@ export const allProductData = [
         salePrice: 25000,
         category: ['essence', 'water', 'dongbaek', 'SALE'],
         salePercent: 20,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202507/841558b087b9d1a4524fece560e8f459.jpg',
+
         imgUrl: '/images/Data/camelia/05_dongbaek_cleanser.png',
         nowLine: 'CAMELIA',
         colorDark: '#FFA39F',
@@ -1541,7 +1540,7 @@ export const allProductData = [
         price: 27500,
         salePrice: 27500,
         category: ['lotion', 'water', 'BEST', 'vita', 'vitamin'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202404/b99228e146035f4881be3eaa13109dac.jpg',
+
         imgUrl: '/images/Data/vita/01_vita_cream.png',
         nowLine: 'VITA',
         colorDark: '#FFCE65',
@@ -1562,7 +1561,6 @@ export const allProductData = [
         price: 18500,
         salePrice: 18500,
         category: ['lotion', 'sensitive', 'BEST', 'vita', 'vitamin'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202404/1bcdf8a1878728ac34385aaf82aaab58.jpg',
         imgUrl: '/images/Data/vita/02_vita_serum.png',
         nowLine: 'VITA',
         colorDark: '#FFCE65',
@@ -1583,7 +1581,7 @@ export const allProductData = [
         price: 15500,
         salePrice: 15500,
         category: ['mask', 'corneous', 'BEST', 'vita', 'vitamin'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202406/a0f4515d198d7e54c0e0ea8d19d86576.jpg',
+
         imgUrl: '/images/Data/vita/03_vita_mask.png',
         nowLine: 'VITA',
         colorDark: '#FFCE65',
@@ -1604,7 +1602,7 @@ export const allProductData = [
         price: 28000,
         salePrice: 28000,
         category: ['essence', 'sensitive', 'sonamu', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/fa6046e6b672c27ac8422416602ccb1e.jpg',
+
         imgUrl: '/images/Data/pine/04_sonamu_ampoule50.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1625,7 +1623,7 @@ export const allProductData = [
         price: 19000,
         salePrice: 19000,
         category: ['mask', 'corneous', 'sonamu', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202304/cd7235260de2f527742d4e1afadeb9fa.jpg',
+
         imgUrl: '/images/Data/pine/15_sonamu_pads.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1646,7 +1644,7 @@ export const allProductData = [
         price: 12000,
         salePrice: 12000,
         category: ['cleansing', 'sensitive', 'sonamu', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202304/7e4b8a6369473e087ecef062d3e11c0b.jpg',
+
         imgUrl: '/images/Data/pine/05_sonamu_cleanser.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1667,7 +1665,7 @@ export const allProductData = [
         price: 15500,
         salePrice: 15500,
         category: ['cleansing', 'sensitive', 'sonamu', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202502/c2123230adcc5ff818062cab0489b37c.jpg',
+
         imgUrl: '/images/Data/pine/03_sonamu_creamPlus.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1688,7 +1686,7 @@ export const allProductData = [
         price: 22000,
         salePrice: 22000,
         category: ['lotion', 'sensitive', 'sonamu', 'BEST'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202209/1daefc6b8cbabcd3fcbba68dc168ea8a.jpg',
+
         imgUrl: '/images/Data/pine/18_sonamu_bodyWash.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1709,7 +1707,7 @@ export const allProductData = [
         price: 32000,
         salePrice: 32000,
         category: ['lotion', 'sensitive', 'BEST', 'man', 'sonamu'],
-        imgurl: 'https://roundlab.co.kr/web/product/big/202401/64b30edfd1e843e66628928ab6e5f3fa.jpg',
+
         imgUrl: '/images/Data/pine/19_sonamu_lotion.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1731,7 +1729,7 @@ export const allProductData = [
         salePrice: 39000,
         category: ['lotion', 'sensitive', 'SALE', 'sonamu', 'mask', 'SET'],
         salePercent: 22,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202304/a745bc93ab087b926cd2c39cb5c24da8.jpg',
+
         imgUrl: '/images/Data/pine/20_sonamu_pads-2set.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1752,7 +1750,7 @@ export const allProductData = [
         price: 8000,
         salePrice: 8000,
         category: ['mask', 'sensitive', 'sonamu', 'SET'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202402/9288353a8c8a3bd50c97cc05f341a965.jpg',
+
         imgUrl: '/images/Data/pine/15_sonamu_pads.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1773,7 +1771,7 @@ export const allProductData = [
         price: 28000,
         salePrice: 28000,
         category: ['lotion', 'water', 'sonamu'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202209/54a2ff7f02ea72eb560f8a0eebd4940c.jpg',
+
         imgUrl: '/images/Data/pine/19_sonamu_lotion.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1794,7 +1792,7 @@ export const allProductData = [
         price: 30000,
         salePrice: 30000,
         category: ['cleansing', 'sensitive', 'sonamu'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202507/43247c4f7530a6a25e11c60e19a6a4b0.jpg',
+
         imgUrl: '/images/Data/pine/05_sonamu_cleanser.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1815,7 +1813,7 @@ export const allProductData = [
         price: 29000,
         salePrice: 29000,
         category: ['cleansing', 'water', 'sonamu'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202507/ea5eb975c73c13b494ff683b9bc1f49c.jpg',
+
         imgUrl: '/images/Data/pine/10_sonamu_oil.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1836,7 +1834,7 @@ export const allProductData = [
         price: 29000,
         salePrice: 29000,
         category: ['suncare', 'sunblock', 'sensitive', 'sonamu'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202507/0363830ba0cfad26965d4e4d936b6d92.jpg',
+
         imgUrl: '/images/Data/pine/08_sonamu_mineralSun.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1857,7 +1855,7 @@ export const allProductData = [
         price: 34000,
         salePrice: 34000,
         category: ['suncare', 'sunblock', 'vitamin', 'sonamu'],
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202507/bab9f34a576a7248d95e2b1f2d69f76d.jpg',
+
         imgUrl: '/images/Data/pine/09_sonamu_sunStick.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1879,7 +1877,7 @@ export const allProductData = [
         salePrice: 29500,
         category: ['lotion', 'vitamin', 'sensitive', 'sonamu', 'SALE'],
         salePercent: 20,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202409/00288816d2d3154540915139cfebe1f0.jpg',
+
         imgUrl: '/images/Data/pine/12_sonamu_hairTonic.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1901,7 +1899,7 @@ export const allProductData = [
         salePrice: 30000,
         category: ['lotion', 'water', 'sonamu', 'SALE'],
         salePercent: 3,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202409/02604132353667dd382c0029aa03ebee.jpg',
+
         imgUrl: '/images/Data/pine/13_sonamu_shampoo.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1923,7 +1921,7 @@ export const allProductData = [
         salePrice: 32500,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         salePercent: 7,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202402/9288353a8c8a3bd50c97cc05f341a965.jpg',
+
         imgUrl: '/images/Data/pine/15_sonamu_pads.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1945,7 +1943,7 @@ export const allProductData = [
         salePrice: 32000,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         salePercent: 10,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202310/66280fc593d5748dffccbe10bf47a53f.jpg',
+
         imgUrl: '/images/Data/pine/15_sonamu_pads.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1967,7 +1965,7 @@ export const allProductData = [
         salePrice: 21000,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         salePercent: 5,
-        imgurl: 'https://roundlab.co.kr/web/product/big/202304/4ed41a9ed46b367138b7eadc82369f2e.jpg',
+
         imgUrl: '/images/Data/pine/17_sonamu_bodyMist.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -1989,7 +1987,7 @@ export const allProductData = [
         salePrice: 39000,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         salePercent: 22,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202304/a60d23310c416f697380e1ff56d7e2a3.jpg',
+
         imgUrl: '/images/Data/pine/18_sonamu_bodyWash.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -2011,7 +2009,7 @@ export const allProductData = [
         salePrice: 21500,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
         salePercent: 15,
-        imgurl: 'https://roundlab.co.kr/web/product/medium/202501/76184c1d2f6a22438b62fc131ab05e7a.jpg',
+
         imgUrl: '/images/Data/pine/04_sonamu_ampoule50.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
@@ -2027,3 +2025,4 @@ export const allProductData = [
         ],
     },
 ];
+export default allProductData;

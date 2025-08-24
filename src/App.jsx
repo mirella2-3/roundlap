@@ -20,11 +20,13 @@ import { ProductDetail, ProductList } from './components';
 import JoinSucess from './pages/login/JoinSucess';
 import './App.css';
 import Order from './pages/order/Order';
+import ClickToTop from './components/scrolltotop/clickToTop';
 
 const App = () => {
     return (
         <>
             <BrowserRouter>
+                <ClickToTop />
                 <GlobalStyle />
                 <Routes>
                     <Route path="/" element={<Layout />}>

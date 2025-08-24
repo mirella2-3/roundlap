@@ -193,8 +193,8 @@ export const VisualStyle = styled.div`
         }
     }
     .pagination {
-        position: relative;
-        top: 350px;
+        position: absolute;
+        top: 500px;
         left: 110px;
         transform: translateY(-50%);
         display: flex;
@@ -238,7 +238,7 @@ export const VisualStyle = styled.div`
 export const BestItemStyle = styled.div`
     .inner {
         padding: 160px 0;
-        padding-top: 1200px;
+        padding-top: 850px;
         position: relative;
     }
     .engTitle {
@@ -1195,24 +1195,61 @@ export const SnsStyle = styled.div`
 `;
 
 export const KConStyle = styled.div`
-    .cta {
+    .wrap {
         position: relative;
-        margin: auto;
-        padding: 22px 18px 17px 28px;
-        transition: all 0.2s ease;
-        border: none;
-        background: none;
-        cursor: pointer;
+        height: 100vh;
+        width: 100vw;
+        .cta {
+            position: absolute;
+            bottom: 182px;
+            right: 100px;
+            margin: auto;
+            padding: 22px 18px 17px 28px;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .whiteBox {
+            width: 442px;
+            height: 718px;
+            border-radius: 994px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bgTxt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+            font-size: 320px;
+
+            display: flex;
+            gap: 190px;
+
+            span {
+                font-family: 'Y-universe';
+                &:first-child {
+                }
+                &:last-child {
+                }
+            }
+        }
     }
 
     .cta:before {
         content: '';
         position: absolute;
-        top: 0;
+        /* top: 0; */
+        bottom: 0;
         left: 0;
         display: block;
         border-radius: 50px;
-        background: #dfceff;
+        background: var(--boxColor);
         width: 60px;
         height: 60px;
         transition: all 0.3s ease;
@@ -1250,5 +1287,31 @@ export const KConStyle = styled.div`
 
     .cta:active {
         transform: scale(0.95);
+    }
+
+    .mySwiper {
+        width: 100vw;
+        height: 100vh;
+        .swiper-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .swiper-pagination-bullet {
+            margin: 0;
+            margin-bottom: 50px;
+            width: 90px; // 네모 가로 길이
+            height: 3px; // 얇은 높이
+            background-color: white; // 비활성 색상
+            opacity: 1;
+            border-radius: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: var(--bgColor); // 활성화 색상
+        }
     }
 `;

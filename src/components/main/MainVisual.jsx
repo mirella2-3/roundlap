@@ -89,26 +89,12 @@ const MainVisual = () => {
         setPrevIndex(null);
     };
 
-    // useEffect(() => {
-    //     const handleWheel = (event) => {
-    //         if (isAnimating.current) return;
-    //         if (event.deltaY < 0) {
-    //             prevSlide();
-    //         } else {
-    //             nextSlide();
-    //         }
-    //     };
-
-    //     window.addEventListener('wheel', handleWheel, { passive: true });
-    //     return () => window.removeEventListener('wheel', handleWheel);
-    // }, [visibleIndex]);
-
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
-        }, 5000); // 5초마다 넘어감 (원하는 시간으로 조절)
+        }, 4000);
 
-        return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 제거
+        return () => clearInterval(interval);
     }, [visibleIndex]);
 
     return (
@@ -198,7 +184,6 @@ const MainVisual = () => {
                                     goToSlide(idx, dir);
                                 }
                             }}
-                            aria-label={`Go to slide ${number}`}
                         >
                             {number}
                         </button>

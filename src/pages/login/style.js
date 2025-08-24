@@ -204,7 +204,6 @@ export const SearchStyle = styled.div`
 `;
 
 export const JoinStyle = styled.div`
-    padding-top: 120px;
     span {
         color: #f00;
     }
@@ -226,7 +225,8 @@ export const JoinStyle = styled.div`
         box-sizing: border-box;
 
         h2 {
-            margin-top: 160px;
+            /* margin-top: 160px; */
+            margin: 100px;
             font-size: 36px;
             font-weight: 700;
             color: #1a1a1a;
