@@ -2,6 +2,7 @@ import { MypageDetail, OrderCheck, WishList, WishListNoting } from '../../compon
 import { MypageStyle } from './style';
 
 const Mypage = () => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     return (
         <MypageStyle>
             <div className="inner">
@@ -12,7 +13,7 @@ const Mypage = () => {
                         <p>
                             <img src="./images/Mypage_profile.png" alt="" />
                         </p>
-                        <strong>이름</strong>님은 일반회원 입니다.
+                        <strong>{currentUser?.name || '이름'}</strong>님은 일반회원 입니다.
                     </div>
                     <div>
                         적립금 <span>0</span>P

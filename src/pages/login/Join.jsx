@@ -10,6 +10,16 @@ const Join = () => {
         document.body.appendChild(script);
     }, []);
     const navigate = useNavigate();
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+
+        users.push(form);
+        localStorage.setItem('users', JSON.stringify(users));
+
+        navigate('/login/Join/success');
+    };
 
     const [form, setForm] = useState({
         userId: '',
@@ -89,12 +99,6 @@ const Join = () => {
             agreeInfo: checked,
             agreeProcess: checked,
         }));
-    };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-
-        navigate('/login/Join/success');
     };
 
     return (
