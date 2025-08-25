@@ -251,3 +251,57 @@ export const CartListStyle = styled.div`
         }
     }
 `;
+export const ShopStyle = styled.div`
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+
+    .modal-box {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 320px;
+        padding: 24px 20px 0;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 500;
+
+        .modal-message {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 16px;
+        }
+
+        .modal-buttons {
+            display: flex;
+            border-top: 1px solid #eee;
+            margin-top: 20px;
+
+            button {
+                flex: 1;
+                padding: 12px 0;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 600;
+
+                &.btn-grey {
+                    background: #4a4a4a;
+                    color: white;
+                    border-bottom-left-radius: 10px;
+                }
+
+                &.btn-blue {
+                    background: #3ca6e6;
+                    color: white;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+    }
+`;

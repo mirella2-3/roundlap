@@ -108,11 +108,11 @@ export const ProductlineStyle = styled.div`
     .fashion-slider-title-text {
         display: block;
         font-weight: 700;
-        font-size: var(--fashion-slider-title-font-size);
-        line-height: var(--fashion-slider-title-line-height);
-        letter-spacing: -1px;
+        font-size: 300px;
+        letter-spacing: -10px;
         color: #fff0;
         -webkit-text-stroke: 2px #fff;
+        margin-bottom: 140px;
     }
 
     /* 확대 축소 래퍼 + 이미지 */
@@ -124,8 +124,7 @@ export const ProductlineStyle = styled.div`
         transition-duration: 1s;
         transition-property: transform;
         transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
-        opacity: 0.9;
-        /* 정은님한테 질문하기 */
+
         overflow: hidden;
 
         img {

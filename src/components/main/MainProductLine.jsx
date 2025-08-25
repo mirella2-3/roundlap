@@ -179,9 +179,7 @@ const MainProductLine = () => {
 
     return (
         <ProductLineStyle>
-            {/* <div className="bg">
-                <img src={bgImages[activeIndex]} alt="배경" />
-            </div> */}
+          
             <div className="bg-wrapper">
                 {/* 이전 이미지 */}
                 <img

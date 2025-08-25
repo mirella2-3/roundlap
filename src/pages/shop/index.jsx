@@ -2,7 +2,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ShopStyle } from './style';
 import ProductList from '../../components/shop/ProductList';
-import Pagination from '../../components/pagination';
 import { useDispatch } from 'react-redux';
 import { productActions } from '../../store/modules/productSlice';
 

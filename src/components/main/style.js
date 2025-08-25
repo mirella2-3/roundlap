@@ -1192,10 +1192,22 @@ export const SnsStyle = styled.div`
 `;
 
 export const KConStyle = styled.div`
+    .mySwiper {
+        width: 100vw;
+        height: 100vh;
+    }
     .wrap {
         position: relative;
         height: 100vh;
         width: 100vw;
+        .bg {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            z-index: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
         .cta {
             position: absolute;
             bottom: 182px;
@@ -1216,25 +1228,84 @@ export const KConStyle = styled.div`
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            overflow: hidden;
+            .pong {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .wrapper {
+                border-radius: 50%;
+                width: 402px;
+                height: 718px;
+                border-radius: 994px;
+                background: #fff;
+                overflow: hidden;
+                backface-visibility: hidden;
+                transform: translate3d(0, 0, 0);
+
+                svg {
+                    transform: translateY(150px);
+                }
+            }
+
+            .wrapper .fill {
+                animation-name: fillAction;
+                animation-iteration-count: 1;
+                animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+                animation-duration: 6s;
+                animation-fill-mode: forwards;
+            }
+
+            .wrapper .waveShape {
+                animation-name: waveAction;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                animation-duration: 3s;
+            }
+
+            @keyframes fillAction {
+                0% {
+                    transform: translate(0, 500px);
+                }
+                100% {
+                    transform: translate(0, -200px);
+                }
+            }
+
+            @keyframes waveAction {
+                0% {
+                    transform: translateX(-100%);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
         }
         .bgTxt {
             position: absolute;
-            top: 50%;
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
-            opacity: 0.2;
             font-size: 320px;
-
             display: flex;
-            gap: 190px;
-
-            span {
-                font-family: 'Y-universe';
-                &:first-child {
-                }
-                &:last-child {
-                }
-            }
+            gap: 200px;
+            letter-spacing: -30px;
+        }
+        .desc {
+            display: block;
+            font-size: 30px;
+            position: absolute;
+            z-index: 1;
+            bottom: 21%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 32px;
+            text-align: center;
         }
     }
 

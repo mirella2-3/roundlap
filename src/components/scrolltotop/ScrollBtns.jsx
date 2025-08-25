@@ -11,6 +11,8 @@ import { RiMegaphoneFill, RiSettings5Fill } from 'react-icons/ri';
 import { IoIosArrowForward, IoMdChatbubbles } from 'react-icons/io';
 
 const ScrollBtns = () => {
+    const [chatEnterTime, setChatEnterTime] = useState('');
+
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -55,7 +57,24 @@ const ScrollBtns = () => {
                                     안녕하세요.
                                     <br /> 라이프스타일 뷰티 브랜드 라운드 랩 입니다.
                                 </p>
-                                <div className="chat-button" onClick={() => setActiveTab('chat')}>
+                                <div
+                                    className="chat-button"
+                                    onClick={() => {
+                                        if (!chatEnterTime) {
+                                            const now = new Date();
+                                            const formatted = now
+                                                .toLocaleTimeString('ko-KR', {
+                                                    hour: '2-digit',
+                                                    minute: '2-digit',
+                                                    hour12: true,
+                                                })
+                                                .replace(':', ' : ');
+
+                                            setChatEnterTime(formatted);
+                                        }
+                                        setActiveTab('chat');
+                                    }}
+                                >
                                     문의하기
                                 </div>
                                 <div className="notice">
@@ -67,12 +86,12 @@ const ScrollBtns = () => {
 
                         {activeTab === 'chat' && (
                             <div className="chat-content">
-                                <p onClick={() => setActiveTab('home')}>
+                                <p onClick={() => setActiveTab('home')} className="toBack">
                                     <MdArrowBackIos size={20} color="#1a1a1a" />
                                 </p>
                                 <div className="notice">
-                                    <p>
-                                        <RiMegaphoneFill />
+                                    <p className="megaphone">
+                                        <RiMegaphoneFill color="#8A8A8A" />
                                     </p>
                                     <span>
                                         무료배송 신규회원 10%쿠폰 <br />
@@ -88,15 +107,29 @@ const ScrollBtns = () => {
                                         운영시간 보기 <IoIosArrowForward />
                                     </span>
                                 </div>
+                                <p className="chat-time">{chatEnterTime}</p>
                                 <div className="chat_bubble">
                                     <div className="chat-bubble bot">
-                                        안녕하세요.
-                                        <br />
-                                        라이프스타일 뷰티 브랜드 라운드 랩입니다.
-                                        <br />
-                                        무엇을 도와드릴까요?
+                                        <p className="profile">
+                                            <img src="/images/scroll/profile.png" alt="" />
+                                        </p>
+                                        <strong>
+                                            안녕하세요.
+                                            <br />
+                                            라이프스타일 뷰티 브랜드 라운드 랩입니다.
+                                            <br />
+                                            무엇을 도와드릴까요?
+                                        </strong>
                                     </div>
-                                    <div className="chat-bubble user"></div>
+                                    <div className="chat-bubble user">
+                                        <ul className="select">
+                                            <li>주문/배송</li>
+                                            <li>공식몰 10% 할인코드</li>
+                                            <li>쇼핑백 사이즈 추천</li>
+                                            <li>상담원 연결</li>
+                                            <li>대량/기업구매 문의</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -113,7 +146,21 @@ const ScrollBtns = () => {
                         </div>
                         <div
                             className="icon_chat"
-                            onClick={() => setActiveTab('chat')}
+                            onClick={() => {
+                                if (!chatEnterTime) {
+                                    const now = new Date();
+                                    const formatted = now
+                                        .toLocaleTimeString('ko-KR', {
+                                            hour: '2-digit',
+                                            minute: '2-digit',
+                                            hour12: true,
+                                        })
+                                        .replace(':', ' : ');
+
+                                    setChatEnterTime(formatted);
+                                }
+                                setActiveTab('chat');
+                            }}
                             style={{ color: activeTab === 'chat' ? '#1a1a1a' : '#8A8A8A' }}
                         >
                             <RiSettings5Fill size={25} />
