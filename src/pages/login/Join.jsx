@@ -1,8 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { JoinStyle } from './style';
 import { useNavigate } from 'react-router-dom';
 
 const Join = () => {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = '//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
+        script.async = true;
+        document.body.appendChild(script);
+    }, []);
     const navigate = useNavigate();
 
     const [form, setForm] = useState({
@@ -28,6 +34,30 @@ const Join = () => {
         agreeInfo: false,
         agreeProcess: false,
     });
+
+    const handleAddressSearch = () => {
+        new window.daum.Postcode({
+            oncomplete: function (data) {
+                let fullAddress = data.address;
+                let extraAddress = '';
+
+                if (data.addressType === 'R') {
+                    if (data.bname !== '') extraAddress += data.bname;
+                    if (data.buildingName !== '') {
+                        extraAddress +=
+                            extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
+                    }
+                    fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
+                }
+
+                setForm((prev) => ({
+                    ...prev,
+                    postCode: data.zonecode,
+                    address1: fullAddress,
+                }));
+            },
+        }).open();
+    };
 
     const onChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -159,7 +189,9 @@ const Join = () => {
                                 value={form.postCode}
                                 onChange={onChange}
                             />
-                            <button type="button">주소검색</button>
+                            <button type="button" onClick={handleAddressSearch}>
+                                주소검색
+                            </button>
                         </div>
                         <div className="joinAddr1">
                             <label htmlFor="postCode"></label>
