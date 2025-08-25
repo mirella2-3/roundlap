@@ -74,6 +74,7 @@ export const MegazineItemStyle = styled.div`
             font-size: 14px;
             color: #8a8a8a;
             font-weight: 500;
+            margin-bottom: 95px;
         }
     }
 `;
@@ -156,9 +157,8 @@ export const MegazineStyle = styled.div`
                 color: #54afea;
                 font-size: 16px;
                 font-weight: 500;
-                transition: 0.3s;git branch
-                
-                &:hover {
+                transition: 0.3s;
+                git branch &:hover {
                     background: #54afea;
                     color: #fff;
                 }

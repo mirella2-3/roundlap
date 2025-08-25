@@ -72,6 +72,7 @@ export const EventItemStyle = styled.div`
             font-size: 14px;
             color: #8a8a8a;
             font-weight: 500;
+            margin-bottom: 15px;
         }
     }
 `;

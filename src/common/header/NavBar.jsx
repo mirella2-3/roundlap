@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Cart from '../../components/cart/Cart';
 import Search from '../../components/search/Search';
 import Login from '../../pages/login/Login';
+import { useSelector } from 'react-redux';
 
 const NavBar = ({ isMain }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -14,6 +15,7 @@ const NavBar = ({ isMain }) => {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const carts = []; // 장바구니 데이터 (props나 context로 연결 가능)
 
+    const { authed, user } = useSelector((state) => state.auth);
     //
     const [hoveredMenu, setHoveredMenu] = useState(null);
 
@@ -186,18 +188,28 @@ const NavBar = ({ isMain }) => {
                 <ul className="topMenu">
                     <li>
                         <ul className="login">
-                            <li
-                                className="login"
-                                onClick={toggleLogin}
-                                style={{ cursor: 'pointer' }}
-                            >
-                                LOGIN
-                                {/* <Link to="/login/login">LOGIN</Link> */}
-                                {/* <Link to="/">LOGOUT</Link> */}
-                            </li>
-                            <li>
-                                <Link to="/login/join">JOIN</Link>
-                            </li>
+                            {authed ? (
+                                <li
+                                    className="login"
+                                    onClick={toggleLogin}
+                                    style={{ cursor: 'pointer', color: 'orange' }}
+                                >
+                                    <Link to="/logout">{user.name}님 안녕하세요.</Link>
+                                </li>
+                            ) : (
+                                <>
+                                    <li
+                                        className="login"
+                                        onClick={toggleLogin}
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        LOGIN
+                                    </li>
+                                    <li>
+                                        <Link to="/login/join">JOIN</Link>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </li>
                     <li>

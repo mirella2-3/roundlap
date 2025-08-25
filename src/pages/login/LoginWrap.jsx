@@ -1,7 +1,7 @@
 import { MdOutlineClose } from 'react-icons/md';
 import { SearchStyle } from './style';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const KAKAO_JS_KEY = '7ea357e59ef6f9bc3a13e98433e37392';
 const LoginWrap = ({ onClose }) => {
@@ -109,10 +109,14 @@ const LoginWrap = ({ onClose }) => {
                             <strong>비밀번호 재설정</strong>
                         </p>
                     </div>
-                    <button type="button" onClick={handleLogin}>
+                    <button type="button" onClick={handleLogin} className="loginBtn">
                         로그인
                     </button>
-                    <button>회원가입</button>
+                    <Link to="/login/join">
+                        <button className="joinBtn" onClick={onClose}>
+                            회원가입
+                        </button>
+                    </Link>
                     <span>
                         비회원 주문조회
                         <img src="/images/Login/Login_arrow.png" alt="arrow" />

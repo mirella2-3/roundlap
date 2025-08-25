@@ -9,6 +9,7 @@ import order from './modules/OrderSlice';
 import wish from './modules/WishListSlice';
 import cart from './modules/CartSlice';
 import recommend from './modules/recommendSlice';
+import auth from './modules/authSlice';
 
 const store = configureStore({
     reducer: {
@@ -22,6 +23,7 @@ const store = configureStore({
         wish,
         cart,
         recommend,
+        auth,
     },
 });
 

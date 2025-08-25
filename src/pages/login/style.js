@@ -111,12 +111,12 @@ export const SearchStyle = styled.div`
                 font-size: 16px;
                 font-weight: 400;
                 color: #515151;
-                &:first-of-type {
+                &.loginBtn {
                     background: #515151;
                     border: none;
                     color: #fff;
                 }
-                &:last-of-type {
+                &.joinBtn {
                     background: #fff;
                     border: 1px solid #515151;
                 }
