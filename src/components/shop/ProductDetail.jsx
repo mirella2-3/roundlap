@@ -10,6 +10,8 @@ import Review from './Review';
 import { allProductData } from '../../assets/api/productData';
 import { useDispatch } from 'react-redux';
 import { setOrderItems } from '../../store/modules/OrderSlice';
+import { addWish } from '../../store/modules/WishListSlice';
+import { addCart, openCart } from '../../store/modules/CartSlice';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +24,14 @@ const ProductDetail = () => {
     const productRef = useRef(null);
     const imgRef = useRef(null);
     const targetRef = useRef(null);
+    const handleWishClick = (product) => {
+        dispatch(addWish(product));
+    };
 
+    const handleCartClick = (product) => {
+        dispatch(addCart(product));
+        dispatch(openCart());
+    };
     useEffect(() => {
         const found = allProductData.find((item) => String(item.id) === String(productId));
         setProduct(found);
@@ -136,8 +145,24 @@ const ProductDetail = () => {
 
                             <li>
                                 <ul>
-                                    <button className="cart">장바구니</button>
-                                    <button className="wish">관심상품</button>
+                                    <button
+                                        className="cart"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleCartClick(product);
+                                        }}
+                                    >
+                                        장바구니
+                                    </button>
+                                    <button
+                                        className="wish"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleWishClick(product);
+                                        }}
+                                    >
+                                        관심상품
+                                    </button>
                                 </ul>
                             </li>
                         </ul>

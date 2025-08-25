@@ -1,0 +1,92 @@
+[1mdiff --git a/src/common/header/NavBar.jsx b/src/common/header/NavBar.jsx[m
+[1mindex c929758..8fe5c37 100644[m
+[1m--- a/src/common/header/NavBar.jsx[m
+[1m+++ b/src/common/header/NavBar.jsx[m
+[36m@@ -7,13 +7,14 @@[m [mimport { useState } from 'react';[m
+ import Cart from '../../components/cart/Cart';[m
+ import Search from '../../components/search/Search';[m
+ import Login from '../../pages/login/Login';[m
+[32m+[m[32mimport { useSelector } from 'react-redux';[m
+ [m
+ const NavBar = ({ isMain }) => {[m
+     const [isCartOpen, setIsCartOpen] = useState(false);[m
+     const [isSearchOpen, setIsSearchOpen] = useState(false);[m
+     const [isLoginOpen, setIsLoginOpen] = useState(false);[m
+[31m-    const carts = []; // 장바구니 데이터 (props나 context로 연결 가능)[m
+[31m-[m
+[32m+[m[32m    const cartItems = useSelector((state) => state.cart.cartItems);[m
+[32m+[m[32m    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);[m
+     const [hoveredMenu, setHoveredMenu] = useState(null);[m
+ [m
+     const handleMouseEnter = (menu) => setHoveredMenu(menu);[m
+[36m@@ -210,13 +211,13 @@[m [mconst NavBar = ({ isMain }) => {[m
+                                 <BsCart2 className="cartIcon" />[m
+                             </li>[m
+                             <li>[m
+[31m-                                <p>0{/* {carts.length} */}</p>[m
+[32m+[m[32m                                <p>{totalQuantity}</p>[m
+                             </li>[m
+                         </ul>[m
+                     </li>[m
+                 </ul>[m
+ [m
+[31m-                {isCartOpen && <Cart onClose={toggleCart} carts={carts} />}[m
+[32m+[m[32m                {isCartOpen && <Cart onClose={toggleCart} carts={cartItems} />}[m
+                 {isSearchOpen && <Search onClose={toggleSearch} />}[m
+                 {isLoginOpen && <Login onClose={toggleLogin} />}[m
+             </NavStyle>[m
+[1mdiff --git a/src/components/shop/ProductDetail.jsx b/src/components/shop/ProductDetail.jsx[m
+[1mindex 3deef4d..2e917bb 100644[m
+[1m--- a/src/components/shop/ProductDetail.jsx[m
+[1m+++ b/src/components/shop/ProductDetail.jsx[m
+[36m@@ -10,6 +10,8 @@[m [mimport Review from './Review';[m
+ import { allProductData } from '../../assets/api/productData';[m
+ import { useDispatch } from 'react-redux';[m
+ import { setOrderItems } from '../../store/modules/OrderSlice';[m
+[32m+[m[32mimport { addWish } from '../../store/modules/WishListSlice';[m
+[32m+[m[32mimport { addCart, openCart } from '../../store/modules/CartSlice';[m
+ [m
+ gsap.registerPlugin(ScrollTrigger);[m
+ [m
+[36m@@ -22,7 +24,14 @@[m [mconst ProductDetail = () => {[m
+     const productRef = useRef(null);[m
+     const imgRef = useRef(null);[m
+     const targetRef = useRef(null);[m
+[32m+[m[32m    const handleWishClick = (product) => {[m
+[32m+[m[32m        dispatch(addWish(product));[m
+[32m+[m[32m    };[m
+ [m
+[32m+[m[32m    const handleCartClick = (product) => {[m
+[32m+[m[32m        dispatch(addCart(product));[m
+[32m+[m[32m        dispatch(openCart());[m
+[32m+[m[32m    };[m
+     useEffect(() => {[m
+         const found = allProductData.find((item) => String(item.id) === String(productId));[m
+         setProduct(found);[m
+[36m@@ -136,8 +145,24 @@[m [mconst ProductDetail = () => {[m
+ [m
+                             <li>[m
+                                 <ul>[m
+[31m-                                    <button className="cart">장바구니</button>[m
+[31m-                                    <button className="wish">관심상품</button>[m
+[32m+[m[32m                                    <button[m
+[32m+[m[32m                                        className="cart"[m
+[32m+[m[32m                                        onClick={(e) => {[m
+[32m+[m[32m                                            e.stopPropagation();[m
+[32m+[m[32m                                            handleCartClick(product);[m
+[32m+[m[32m                                        }}[m
+[32m+[m[32m                                    >[m
+[32m+[m[32m                                        장바구니[m
+[32m+[m[32m                                    </button>[m
+[32m+[m[32m                                    <button[m
+[32m+[m[32m                                        className="wish"[m
+[32m+[m[32m                                        onClick={(e) => {[m
+[32m+[m[32m                                            e.stopPropagation();[m
+[32m+[m[32m                                            handleWishClick(product);[m
+[32m+[m[32m                                        }}[m
+[32m+[m[32m                                    >[m
+[32m+[m[32m                                        관심상품[m
+[32m+[m[32m                                    </button>[m
+                                 </ul>[m
+                             </li>[m
+                         </ul>[m

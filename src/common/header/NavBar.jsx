@@ -7,13 +7,14 @@ import { useState } from 'react';
 import Cart from '../../components/cart/Cart';
 import Search from '../../components/search/Search';
 import Login from '../../pages/login/Login';
+import { useSelector } from 'react-redux';
 
 const NavBar = ({ isMain }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLoginOpen, setIsLoginOpen] = useState(false);
-    const carts = []; // 장바구니 데이터 (props나 context로 연결 가능)
-
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     const [hoveredMenu, setHoveredMenu] = useState(null);
 
     const handleMouseEnter = (menu) => setHoveredMenu(menu);
@@ -210,13 +211,13 @@ const NavBar = ({ isMain }) => {
                                 <BsCart2 className="cartIcon" />
                             </li>
                             <li>
-                                <p>0{/* {carts.length} */}</p>
+                                <p>{totalQuantity}</p>
                             </li>
                         </ul>
                     </li>
                 </ul>
 
-                {isCartOpen && <Cart onClose={toggleCart} carts={carts} />}
+                {isCartOpen && <Cart onClose={toggleCart} carts={cartItems} />}
                 {isSearchOpen && <Search onClose={toggleSearch} />}
                 {isLoginOpen && <Login onClose={toggleLogin} />}
             </NavStyle>
