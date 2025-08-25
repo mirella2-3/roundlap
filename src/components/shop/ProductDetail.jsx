@@ -9,7 +9,7 @@ import ProductRecom from './ProductRecom';
 import Review from './Review';
 import { allProductData } from '../../assets/api/productData';
 import { useDispatch } from 'react-redux';
-import { setOrderItem } from '../../store/modules/OrderSlice';
+import { setOrderItems } from '../../store/modules/OrderSlice';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,7 +29,7 @@ const ProductDetail = () => {
     }, [productId]);
 
     const onClick = () => {
-        dispatch(setOrderItem({ ...product, quantity }));
+        dispatch(setOrderItems({ ...product, quantity }));
         navigate('/shop/order');
     };
     const increaseQuantity = () => setQuantity((prev) => prev + 1);
@@ -65,7 +65,7 @@ const ProductDetail = () => {
         salePercent,
         salePrice,
         nowLine,
-        colorDark,
+
         colorSale,
         colorLight,
         id,

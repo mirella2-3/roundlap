@@ -10,7 +10,7 @@ const CartItem = ({ product }) => {
     return (
         <CartItemStyle>
             <div className="itembox">
-                <img src={product.imgurl} alt={product.title} />
+                <img src={product.imgUrl} alt={product.title} />
                 <div className="itemtitle">
                     <h2>{product.title}</h2>
 

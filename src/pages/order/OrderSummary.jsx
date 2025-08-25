@@ -1,8 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { OrderSummaryStyles } from './style';
+import { useNavigate } from 'react-router-dom';
+import { resetOrder, addOrderHistory, setOrderSummary } from '../../store/modules/OrderSlice';
 
 const OrderSummary = () => {
+    const Navigate = useNavigate();
+    const dispatch = useDispatch();
     const orderItems = useSelector((state) => state.order.orderItems || []);
 
     const productTotal = orderItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -12,6 +16,14 @@ const OrderSummary = () => {
     const points = Math.floor(productTotal * 0.01);
 
     const total = productTotal + shipping;
+
+    const handlePayment = () => {
+        const updatedItems = orderItems.map((item) => ({ ...item, status: 'paid' }));
+        dispatch(addOrderHistory(updatedItems));
+        dispatch(setOrderSummary({ productTotal, shipping, points, total }));
+        dispatch(resetOrder());
+        Navigate('/shop/order/PaySucess');
+    };
 
     return (
         <OrderSummaryStyles>
@@ -32,7 +44,9 @@ const OrderSummary = () => {
                     <span>TOTAL</span>
                     <span>{total.toLocaleString()} 원</span>
                 </div>
-                <button className="orderButton">주문하기</button>
+                <button className="orderButton" onClick={handlePayment}>
+                    주문하기
+                </button>
             </div>
         </OrderSummaryStyles>
     );

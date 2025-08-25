@@ -7,8 +7,11 @@ const PaySucess = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-
         navigate('/');
+    };
+    const onOrder = (e) => {
+        e.preventDefault();
+        navigate('/mypage');
     };
     return (
         <PaySucessStyles>
@@ -25,7 +28,9 @@ const PaySucess = () => {
                         <button type="submit" onClick={onSubmit}>
                             메인으로가기
                         </button>
-                        <button type="submit">주문내역 확인</button>
+                        <button type="submit" onClick={onOrder}>
+                            주문내역 확인
+                        </button>
                     </div>
                 </div>
             </div>

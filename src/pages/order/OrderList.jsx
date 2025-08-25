@@ -5,7 +5,7 @@ import OrderItem from './OrderItem';
 import OrderSummary from './OrderSummary';
 
 const OrderList = () => {
-    const orderItems = useSelector((state) => state.order.orderItems || []); // Redux에서 가져오기
+    const orderItems = useSelector((state) => state.order.orderItems || []); //
 
     return (
         <OrderListStyle>

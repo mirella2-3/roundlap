@@ -21,6 +21,7 @@ import JoinSucess from './pages/login/JoinSucess';
 import './App.css';
 import Order from './pages/order/Order';
 import ClickToTop from './components/scrolltotop/clickToTop';
+import PaySucess from './pages/order/PaySucess';
 
 const App = () => {
     return (
@@ -38,6 +39,7 @@ const App = () => {
 
                         <Route path="/shop/:productId" element={<ProductDetail />} />
                         <Route path="/shop/order" element={<Order />} />
+                        <Route path="/shop/order/PaySucess" element={<PaySucess />} />
 
                         {/* Event */}
                         <Route path="/event" element={<Event />} />

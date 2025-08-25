@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ModalWrapper, ModalContent } from './style';
 
@@ -7,14 +6,10 @@ import CartList from './CartList';
 import CartBottom from './CartBottom';
 import CartEmpty from './CartEmpty';
 
-const Cart = ({ onClose, carts }) => {
-    const [mounted, setMounted] = useState(false);
+import { useSelector } from 'react-redux';
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) return null;
+const Cart = ({ onClose }) => {
+    const carts = useSelector((state) => state.cart.cartItems);
 
     return createPortal(
         <ModalWrapper onClick={onClose}>

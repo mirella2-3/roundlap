@@ -7,7 +7,7 @@ const WishListItem = ({ product }) => {
     const dispatch = useDispatch();
     if (!product) return null;
 
-    const { id, title, price, imgurl } = product;
+    const { id, title, price, imgUrl } = product;
 
     const handleRemove = () => {
         dispatch(removeWish(id));
@@ -17,7 +17,7 @@ const WishListItem = ({ product }) => {
         <WishItemStyle>
             <div className="wishItem">
                 <p>
-                    <img src={imgurl || 'https://placehold.co/274x276'} alt={title} />
+                    <img src={imgUrl} alt={title} />
                 </p>
 
                 <div className="heart" onClick={handleRemove}>
