@@ -6,6 +6,9 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useDispatch } from 'react-redux';
+import { addWish } from '../../store/modules/WishListSlice';
+import { addCart, openCart } from '../../store/modules/CartSlice';
 
 const DiscountSwiper = () => {
     const [direction, setDirection] = useState('horizontal');
@@ -21,7 +24,16 @@ const DiscountSwiper = () => {
         window.addEventListener('resize', updateDirection);
         return () => window.removeEventListener('resize', updateDirection);
     }, []);
+    const dispatch = useDispatch();
 
+    const handleWishClick = (product) => {
+        dispatch(addWish(product));
+    };
+
+    const handleCartClick = (product) => {
+        dispatch(addCart(product));
+        dispatch(openCart());
+    };
     return (
         <div className="wrap">
             <Swiper
@@ -37,18 +49,26 @@ const DiscountSwiper = () => {
                 style={{ width: '100%', height: '100%' }}
                 loop={true}
             >
-                {mainDiscountData.map(({ id, title, imgUrl, discount }) => (
-                    <SwiperSlide key={id} className="slide-item">
+                {mainDiscountData.map((product) => (
+                    <SwiperSlide key={product.id} className="slide-item">
                         <div className="wish-inner">
-                            <img src={imgUrl} alt={title} />
+                            <img src={product.imgUrl} alt={product.title} />
                             <div className="bg">
-                                <img src="/images/wish_1.png" alt="" />
-                                <img src="/images/wish_2.png" alt="" />
+                                <img
+                                    src="/images/wish_1.png"
+                                    alt=""
+                                    onClick={() => handleWishClick(product)}
+                                />
+                                <img
+                                    src="/images/wish_2.png"
+                                    alt=""
+                                    onClick={() => handleCartClick(product)}
+                                />
                             </div>
                         </div>
                         <span className="title">
-                            <p className="discount">{discount}%</p>
-                            {title}
+                            <p className="discount">{product.discount}%</p>
+                            {product.title}
                         </span>
                     </SwiperSlide>
                 ))}
