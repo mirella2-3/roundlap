@@ -35,6 +35,7 @@ const Slogan = () => {
                 <p>
                     <img src="/images/Main/slogan1.png" alt="" />
                 </p>
+                {/* <video src="/videos/Kwinter.mp4" autoPlay muted loop playsInline></video> */}
             </div>
         </SloganStyle>
     );

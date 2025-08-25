@@ -1598,7 +1598,7 @@ export const allProductData = [
     },
     {
         id: 76,
-        title: '소나무 진정 시카 앰플',
+        title: '소나무 진정시카 앰플',
         price: 28000,
         salePrice: 28000,
         category: ['essence', 'sensitive', 'sonamu', 'BEST'],
@@ -1619,7 +1619,7 @@ export const allProductData = [
     },
     {
         id: 77,
-        title: '소나무 진정 시카 패드',
+        title: '소나무 진정시카 패드',
         price: 19000,
         salePrice: 19000,
         category: ['mask', 'corneous', 'sonamu', 'BEST'],
@@ -1640,7 +1640,7 @@ export const allProductData = [
     },
     {
         id: 78,
-        title: '소나무 진정 시카 클렌저',
+        title: '소나무 진정시카 클렌저',
         price: 12000,
         salePrice: 12000,
         category: ['cleansing', 'sensitive', 'sonamu', 'BEST'],
@@ -1661,7 +1661,7 @@ export const allProductData = [
     },
     {
         id: 79,
-        title: '소나무 진정 시카 크림 플러스',
+        title: '소나무 진정시카 크림 플러스',
         price: 15500,
         salePrice: 15500,
         category: ['cleansing', 'sensitive', 'sonamu', 'BEST'],
@@ -1682,7 +1682,7 @@ export const allProductData = [
     },
     {
         id: 80,
-        title: '소나무 진정 시카 바디 로션',
+        title: '소나무 진정시카 바디 로션',
         price: 22000,
         salePrice: 22000,
         category: ['lotion', 'sensitive', 'sonamu', 'BEST'],
@@ -1703,7 +1703,7 @@ export const allProductData = [
     },
     {
         id: 81,
-        title: '포 맨 소나무 진정 시카 로션',
+        title: '포 맨 소나무 진정시카 로션',
         price: 32000,
         salePrice: 32000,
         category: ['lotion', 'sensitive', 'BEST', 'man', 'sonamu'],
@@ -1724,7 +1724,7 @@ export const allProductData = [
     },
     {
         id: 82,
-        title: '소나무 진정 시카 패드 (50매입) 2개 세트',
+        title: '소나무 진정시카 패드 (50매입) 2개 세트',
         price: 50000,
         salePrice: 39000,
         category: ['lotion', 'sensitive', 'SALE', 'sonamu', 'mask', 'SET'],
@@ -1746,7 +1746,7 @@ export const allProductData = [
     },
     {
         id: 83,
-        title: '소나무 진정 시카 패드(50매입)',
+        title: '소나무 진정시카 패드(50매입)',
         price: 8000,
         salePrice: 8000,
         category: ['mask', 'sensitive', 'sonamu', 'SET'],
@@ -1788,7 +1788,7 @@ export const allProductData = [
     },
     {
         id: 85,
-        title: '소나무 시카 딥 포어 클레이 팩 클렌저',
+        title: '소나무 진정시카 딥 포어 클레이 팩 클렌저',
         price: 30000,
         salePrice: 30000,
         category: ['cleansing', 'sensitive', 'sonamu'],
@@ -1809,7 +1809,7 @@ export const allProductData = [
     },
     {
         id: 86,
-        title: '소나무 시카 딥 포어 클렌징 오일',
+        title: '소나무 진정시카 딥 포어 클렌징 오일',
         price: 29000,
         salePrice: 29000,
         category: ['cleansing', 'water', 'sonamu'],
@@ -1830,7 +1830,7 @@ export const allProductData = [
     },
     {
         id: 87,
-        title: '소나무 진정 시카 무기자차 선크림',
+        title: '소나무 진정시카 무기자차 선크림',
         price: 29000,
         salePrice: 29000,
         category: ['suncare', 'sunblock', 'sensitive', 'sonamu'],
@@ -1851,7 +1851,7 @@ export const allProductData = [
     },
     {
         id: 88,
-        title: '소나무 진정 시카 에어리 선스틱',
+        title: '소나무 진정시카 에어리 선스틱',
         price: 34000,
         salePrice: 34000,
         category: ['suncare', 'sunblock', 'vitamin', 'sonamu'],
@@ -1872,7 +1872,7 @@ export const allProductData = [
     },
     {
         id: 89,
-        title: '소나무 진정 시카 두피 앰플',
+        title: '소나무 진정시카 두피 앰플',
         price: 35000,
         salePrice: 29500,
         category: ['lotion', 'vitamin', 'sensitive', 'sonamu', 'SALE'],
@@ -1894,7 +1894,7 @@ export const allProductData = [
     },
     {
         id: 90,
-        title: '소나무 진정 시카 샴푸',
+        title: '소나무 진정시카 샴푸',
         price: 31000,
         salePrice: 30000,
         category: ['lotion', 'water', 'sonamu', 'SALE'],
@@ -1916,7 +1916,7 @@ export const allProductData = [
     },
     {
         id: 91,
-        title: '소나무 진정 시카 패드',
+        title: '소나무 진정시카 패드',
         price: 34000,
         salePrice: 32500,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
@@ -1938,7 +1938,7 @@ export const allProductData = [
     },
     {
         id: 92,
-        title: '소나무 진정 시카 코팩',
+        title: '소나무 진정시카 코팩',
         price: 35000,
         salePrice: 32000,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
@@ -1960,7 +1960,7 @@ export const allProductData = [
     },
     {
         id: 93,
-        title: '소나무 진정 시카 바디 미스트 ',
+        title: '소나무 진정시카 바디 미스트 ',
         price: 22000,
         salePrice: 21000,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
@@ -1982,7 +1982,7 @@ export const allProductData = [
     },
     {
         id: 94,
-        title: '소나무 진정 시카 바디 워시 ',
+        title: '소나무 진정시카 바디 워시 ',
         price: 50000,
         salePrice: 39000,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],
@@ -2004,7 +2004,7 @@ export const allProductData = [
     },
     {
         id: 95,
-        title: '소나무 진정 시카 앰플 ',
+        title: '소나무 진정시카 마스크 ',
         price: 24000,
         salePrice: 21500,
         category: ['lotion', 'vitamin', 'sonamu', 'SALE'],

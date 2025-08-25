@@ -618,7 +618,7 @@ export const MainMagazineStyle = styled.div`
                 position: relative;
                 z-index: 2;
             }
-            button {
+            /* button {
                 display: block;
                 background: transparent;
                 opacity: 0.5;
@@ -626,7 +626,7 @@ export const MainMagazineStyle = styled.div`
                 z-index: 10;
                 margin-top: 44px;
                 transition: 0.3s;
-            }
+            } */
             h3 {
                 font-size: 36px;
                 font-weight: 700;
@@ -641,10 +641,6 @@ export const MainMagazineStyle = styled.div`
                 text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
             }
             &:hover {
-                button {
-                    opacity: 1;
-                    transform: rotate(-35deg);
-                }
                 &::after {
                     background: rgba(0, 0, 0, 0.4);
                 }
@@ -653,6 +649,70 @@ export const MainMagazineStyle = styled.div`
                     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0);
                 }
             }
+        }
+        .cta {
+            /* position: absolute;
+            bottom: 0;
+            left: 0; */
+            display: block;
+            text-align: left;
+            /* opacity: 0.5; */
+            z-index: 10;
+            margin-top: 44px;
+            /* margin: auto; */
+            padding: 22px 18px 17px 28px;
+            transition: all 0.2s ease;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .cta:before {
+            content: '';
+            position: absolute;
+            /* top: 0; */
+            bottom: 0;
+            left: 0;
+            display: block;
+            border-radius: 50px;
+            background: #fff;
+            width: 60px;
+            height: 60px;
+            transition: all 0.3s ease;
+            opacity: 0.2;
+        }
+
+        .cta span {
+            position: relative;
+            /* font-family: 'Ubuntu', sans-serif; */
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .cta svg {
+            position: relative;
+            top: 0;
+            margin-left: 12px;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke: #fff;
+            stroke-width: 2;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+
+        .cta:hover:before {
+            width: 100%;
+            background: #fff;
+        }
+
+        .cta:hover svg {
+            transform: translateX(0);
+        }
+
+        .cta:active {
+            transform: scale(0.95);
         }
     }
     .container .box1 {
@@ -1246,32 +1306,32 @@ export const KConStyle = styled.div`
                 backface-visibility: hidden;
                 transform: translate3d(0, 0, 0);
 
-                svg {
+                /* svg {
                     transform: translateY(150px);
-                }
+                } */
             }
 
-            .wrapper .fill {
+            /* .wrapper .fill {
                 animation-name: fillAction;
                 animation-iteration-count: 1;
                 animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
                 animation-duration: 6s;
                 animation-fill-mode: forwards;
-            }
-
+            } */
+            /* 
             .wrapper .waveShape {
                 animation-name: waveAction;
                 animation-iteration-count: infinite;
                 animation-timing-function: linear;
-                animation-duration: 3s;
-            }
-
+                animation-duration: 6s;
+            } */
+            /* 
             @keyframes fillAction {
                 0% {
                     transform: translate(0, 500px);
                 }
                 100% {
-                    transform: translate(0, -200px);
+                    transform: translate(0, -300px);
                 }
             }
 
@@ -1282,8 +1342,19 @@ export const KConStyle = styled.div`
                 100% {
                     transform: translateX(-50%);
                 }
+            } */
+        }
+        div {
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            video {
+                height: 440px;
+                margin: auto;
+                padding-bottom: 50px;
             }
         }
+
         .bgTxt {
             position: absolute;
             top: 55%;
@@ -1293,6 +1364,14 @@ export const KConStyle = styled.div`
             display: flex;
             gap: 200px;
             letter-spacing: -30px;
+
+            img {
+                filter: grayscale(100%);
+                transition: 0.5s;
+                &:hover {
+                    filter: grayscale(0%);
+                }
+            }
         }
         .desc {
             display: block;
@@ -1306,6 +1385,29 @@ export const KConStyle = styled.div`
             font-weight: 500;
             line-height: 32px;
             text-align: center;
+
+            p {
+                display: block;
+                margin-left: 0;
+                animation: fadeUp 1.5s ease-out forwards;
+                opacity: 0;
+                &:first-child {
+                    animation-delay: 3s;
+                }
+                &:last-child {
+                    animation-delay: 4.5s;
+                }
+            }
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     }
 
@@ -1328,7 +1430,7 @@ export const KConStyle = styled.div`
         /* font-family: 'Ubuntu', sans-serif; */
         font-size: 18px;
         font-weight: 500;
-        color: #6a32db;
+        /* color: #6a32db; */
     }
 
     .cta svg {
@@ -1338,7 +1440,7 @@ export const KConStyle = styled.div`
         fill: none;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke: #6a32db;
+        /* stroke: #6a32db; */
         stroke-width: 2;
         transform: translateX(-5px);
         transition: all 0.3s ease;
@@ -1346,7 +1448,7 @@ export const KConStyle = styled.div`
 
     .cta:hover:before {
         width: 100%;
-        background: #dfceff;
+        background: var(--boxColor);
     }
 
     .cta:hover svg {
@@ -1360,26 +1462,26 @@ export const KConStyle = styled.div`
     .mySwiper {
         width: 100vw;
         height: 100vh;
-        .swiper-pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30px;
-        }
+    }
+    .swiper-pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
 
-        .swiper-pagination-bullet {
-            margin: 0;
-            margin-bottom: 50px;
-            width: 90px; // 네모 가로 길이
-            height: 3px; // 얇은 높이
-            background-color: white; // 비활성 색상
-            opacity: 1;
-            border-radius: 0;
-            transition: background-color 0.3s ease;
-        }
+    .swiper-pagination-bullet {
+        margin: 0;
+        margin-bottom: 50px;
+        width: 90px; // 네모 가로 길이
+        height: 3px; // 얇은 높이
+        background-color: white; // 비활성 색상
+        opacity: 1;
+        border-radius: 0;
+        transition: background-color 0.3s ease;
+    }
 
-        .swiper-pagination-bullet-active {
-            background-color: var(--bgColor); // 활성화 색상
-        }
+    .swiper-pagination-bullet-active {
+        background-color: var(--bgColor); // 활성화 색상
     }
 `;

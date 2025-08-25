@@ -23,8 +23,15 @@ const MainMagazine = () => {
                                 <br />
                                 깊은 보습과 영양을 공급해 탄탄하고 건강한 피부로 케어해준다.
                             </strong>
-                            <button>
+                            {/* <button>
                                 <img src="/images/Main/Arrow.png" alt="" />
+                            </button> */}
+                            <button className="cta" style={{ color: '#fff' }}>
+                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                    <path d="M1,5 L11,5"></path>
+                                    <polyline points="8 1 12 5 8 9"></polyline>
+                                </svg>
                             </button>
                         </li>
                         <li className="item box2">
@@ -33,8 +40,12 @@ const MainMagazine = () => {
                                 자작나무 수분 선크림을 <br />
                                 리뉴얼 출시했다고 5일 밝혔다.
                             </strong>
-                            <button>
-                                <img src="/images/Main/Arrow.png" alt="" />
+                            <button className="cta" style={{ color: '#fff' }}>
+                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                    <path d="M1,5 L11,5"></path>
+                                    <polyline points="8 1 12 5 8 9"></polyline>
+                                </svg>
                             </button>
                         </li>
                     </ul>
@@ -45,8 +56,12 @@ const MainMagazine = () => {
                                 자작나무 수분 선크림을 <br />
                                 리뉴얼 출시했다고 5일 밝혔다.
                             </strong>
-                            <button>
-                                <img src="/images/Main/Arrow.png" alt="" />
+                            <button className="cta" style={{ color: '#fff' }}>
+                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                    <path d="M1,5 L11,5"></path>
+                                    <polyline points="8 1 12 5 8 9"></polyline>
+                                </svg>
                             </button>
                         </li>
                         <li className="item box4">
@@ -56,8 +71,12 @@ const MainMagazine = () => {
                                 <br />
                                 깊은 보습과 영양을 공급해 탄탄하고 건강한 피부로 케어해준다.
                             </strong>
-                            <button>
-                                <img src="/images/Main/Arrow.png" alt="" />
+                            <button className="cta" style={{ color: '#fff' }}>
+                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                                    <path d="M1,5 L11,5"></path>
+                                    <polyline points="8 1 12 5 8 9"></polyline>
+                                </svg>
                             </button>
                         </li>
                     </ul>
