@@ -8,10 +8,12 @@ import 'swiper/css/navigation';
 import { addWish } from '../../store/modules/WishListSlice';
 import { useDispatch } from 'react-redux';
 import { addCart, openCart } from '../../store/modules/CartSlice';
+import { ImgStyle } from './style';
+import { useNavigate } from 'react-router-dom';
 
 const SetItemSwiper = () => {
     const [direction, setDirection] = useState('horizontal');
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleWishClick = (product) => {
@@ -22,7 +24,9 @@ const SetItemSwiper = () => {
         dispatch(addCart(product));
         dispatch(openCart());
     };
-
+    const handleDetailClick = (product) => {
+        navigate(`/shop/${product.id}`);
+    };
     // 윈도우 크기에 따라 방향 바꾸기
     useEffect(() => {
         function updateDirection() {
@@ -53,17 +57,29 @@ const SetItemSwiper = () => {
                 {mainSetItemData.map((product) => (
                     <SwiperSlide key={product.id} className="slide-item">
                         <div className="wish-inner">
-                            <img src={product.imgUrl} alt={product.title} />
+                            <ImgStyle>
+                                <img
+                                    src={product.imgUrl}
+                                    alt={product.title}
+                                    onClick={() => handleDetailClick(product)}
+                                />
+                            </ImgStyle>
                             <div className="bg">
                                 <img
                                     src="/images/wish_1.png"
                                     alt=""
-                                    onClick={() => handleWishClick(product)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleWishClick(product);
+                                    }}
                                 />
                                 <img
                                     src="/images/wish_2.png"
                                     alt=""
-                                    onClick={() => handleCartClick(product)}
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleCartClick(product);
+                                    }}
                                 />
                             </div>
                         </div>

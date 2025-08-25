@@ -17,7 +17,7 @@ const OrderItem = () => {
                         </div>
                         <div className="itemtitle">
                             <h2>{item.title}</h2>
-                            <h3>{(item.price * item.quantity).toLocaleString()} 원</h3>
+                            <h3>{(item.salePrice * item.quantity).toLocaleString()} 원</h3>
                             <p>수량: {item.quantity}</p>
                         </div>
                     </div>

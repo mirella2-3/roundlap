@@ -1312,3 +1312,9 @@ export const KConStyle = styled.div`
         }
     }
 `;
+export const ImgStyle = styled.div`
+    img {
+        width: 272px;
+        height: 383px;
+    }
+`;

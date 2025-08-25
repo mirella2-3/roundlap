@@ -14,7 +14,7 @@ const CartItem = ({ product }) => {
                 <div className="itemtitle">
                     <h2>{product.title}</h2>
 
-                    <strong>{(product.price * product.quantity).toLocaleString()}원</strong>
+                    <strong>{(product.salePrice * product.quantity).toLocaleString()}원</strong>
 
                     <div className="itemquantity">
                         <button

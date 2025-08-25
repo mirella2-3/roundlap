@@ -5,7 +5,7 @@ import { CartListStyle } from './style';
 
 const CartList = () => {
     const carts = useSelector((state) => state.cart.cartItems);
-    const totalPrice = carts.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const totalPrice = carts.reduce((acc, item) => acc + item.salePrice * item.quantity, 0);
     const shipping = totalPrice > 0 && totalPrice < 15000 ? 2500 : 0;
     const finalTotal = totalPrice + shipping;
 
