@@ -1,12 +1,12 @@
 export const mainSetItemData = [
     {
         id: 7,
-        title: '1025 독도 토너 200ml + 독도 로션 200ml 2종 세트',
+        title: '1025 독도 토너 + 독도 로션 2종 세트',
         price: 21000,
         salePrice: 21000,
         category: ['cleansing', 'sensitive', 'BEST', '1025', 'SET'],
 
-        imgUrl: '/images/Data/dokdo/02_dokdo_toner200-lotion200.png',
+        imgUrl: '/images/Main/Main-products06.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
         colorSale: '#709FD2',
@@ -22,12 +22,12 @@ export const mainSetItemData = [
     },
     {
         id: 8,
-        title: '1025 독도 토너 200ml + 독도 토너 500ml 2종 세트',
+        title: '1025 독도 토너 + 독도 토너 2종 세트',
         price: 49500,
         salePrice: 49500,
         category: ['cleansing', 'sensitive', 'BEST', '1025', 'SET'],
 
-        imgUrl: '/images/Data/dokdo/04_dokdo_toner200-toner500.png',
+        imgUrl: '/images/Main/Main-products07.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
         colorSale: '#709FD2',
@@ -43,12 +43,12 @@ export const mainSetItemData = [
     },
     {
         id: 9,
-        title: '라운드랩 1025 독도 토너 500ml X 로션 200ml 2종 세트',
+        title: '1025 독도 토너 X 로션 2종 세트',
         price: 36500,
         salePrice: 36500,
         category: ['lotion', 'sensitive', 'BEST', '1025', 'SET'],
 
-        imgUrl: '/images/Data/dokdo/05_dokdo_toner500-lotion200.png',
+        imgUrl: '/images/Main/Main-products08.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
         colorSale: '#709FD2',
@@ -69,7 +69,7 @@ export const mainSetItemData = [
         salePrice: 34000,
         category: ['essence', 'water', 'BEST', '1025', 'SET'],
 
-        imgUrl: '/images/Data/dokdo/06_dokdo_pads-2set.png',
+        imgUrl: '/images/Main/Main-products09.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
         colorSale: '#709FD2',
@@ -85,12 +85,12 @@ export const mainSetItemData = [
     },
     {
         id: 78,
-        title: '소나무 진정 시카 클렌저',
+        title: '소나무 진정 시카 클렌저 2개 세트',
         price: 12000,
         salePrice: 12000,
         category: ['cleansing', 'sensitive', 'sonamu', 'BEST'],
 
-        imgUrl: '/images/Data/pine/05_sonamu_cleanser.png',
+        imgUrl: '/images/Main/Main-products10.png',
         nowLine: 'PINE',
         colorDark: '#83BA56',
         colorSale: '#1E8E67',

@@ -1,4 +1,4 @@
-import { BestItemStyle, ImgStyle } from './style';
+import { BestItemStyle } from './style';
 import { useDispatch } from 'react-redux';
 import { addWish } from '../../store/modules/WishListSlice';
 import { addCart, openCart } from '../../store/modules/CartSlice';
@@ -27,7 +27,7 @@ const BestItem = () => {
             category: ['toner', 'sensitive', '1025', 'SALE'],
             salePercent: 12,
 
-            imgUrl: '/images/Data/dokdo/01_dokdo_toner500.png',
+            imgUrl: '/images/Main/Main-products01.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -48,7 +48,7 @@ const BestItem = () => {
             salePrice: 16000,
             category: ['lotion', 'sensitive', '1025', 'BEST'],
 
-            imgUrl: '/images/Data/dokdo/19_dokdo_lotion200.png',
+            imgUrl: '/images/Main/Main-products02.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -69,7 +69,7 @@ const BestItem = () => {
             salePrice: 16700,
             category: ['toner', 'water', '1025', 'BEST'],
 
-            imgUrl: '/images/Data/dokdo/30_dokdo_toner200.png',
+            imgUrl: '/images/Main/Main-products03.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -90,7 +90,7 @@ const BestItem = () => {
             salePrice: 16000,
             category: ['lotion', 'sensitive', '1025'],
 
-            imgUrl: '/images/Data/dokdo/27_dokdo_eyecream.png',
+            imgUrl: '/images/Main/Main-products04.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -111,7 +111,7 @@ const BestItem = () => {
             salePrice: 13800,
             category: ['cleansing', 'corneous', '1025', 'BEST'],
 
-            imgUrl: '/images/Data/dokdo/20_dokdo_cleanser200.png',
+            imgUrl: '/images/Main/Main-products05.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -136,13 +136,12 @@ const BestItem = () => {
                     {products.map((product) => (
                         <li key={product.id}>
                             <div>
-                                <ImgStyle>
-                                    <img
-                                        src={product.imgUrl}
-                                        alt={product.title}
-                                        onClick={() => handleDetailClick(product)}
-                                    />
-                                </ImgStyle>
+                                <img
+                                    src={product.imgUrl}
+                                    alt={product.title}
+                                    onClick={() => handleDetailClick(product)}
+                                />
+
                                 <p className="bg">
                                     <img
                                         src="/images/wish_1.png"
