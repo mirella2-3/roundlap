@@ -24,6 +24,7 @@ const LoginWrap = ({ onClose }) => {
         if (user) {
             localStorage.setItem('currentUser', JSON.stringify(user));
             alert(`${user.name}님, 로그인 성공!`);
+            onClose();
             navigate('/');
         } else {
             alert('아이디 또는 비밀번호가 잘못되었습니다.');

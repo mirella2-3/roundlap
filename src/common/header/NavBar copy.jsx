@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Cart from '../../components/cart/Cart';
 import Search from '../../components/search/Search';
 import Login from '../../pages/login/Login';
+import { useSelector } from 'react-redux';
 
 const NavBar = ({ isMain }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
@@ -14,19 +15,31 @@ const NavBar = ({ isMain }) => {
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const carts = []; // 장바구니 데이터 (props나 context로 연결 가능)
 
+    const { authed, user } = useSelector((state) => state.auth);
+    //
     const [hoveredMenu, setHoveredMenu] = useState(null);
 
-    const handleMouseEnter = (menu) => setHoveredMenu(menu);
-    const handleMouseLeave = () => setHoveredMenu(null);
+    const handleMouseEnter = (menu) => {
+        setHoveredMenu(menu);
+    };
 
-    const toggleCart = () => setIsCartOpen((prev) => !prev);
-    const toggleSearch = () => setIsSearchOpen((prev) => !prev);
-    const toggleLogin = () => setIsLoginOpen((prev) => !prev);
+    const handleMouseLeave = () => {
+        setHoveredMenu(null);
+    };
+    //
 
+    const toggleCart = () => {
+        setIsCartOpen((prev) => !prev);
+    };
+    const toggleSearch = () => {
+        setIsSearchOpen((prev) => !prev);
+    };
+    const toggleLogin = () => {
+        setIsLoginOpen((prev) => !prev);
+    };
     return (
         <>
-            {/* 여기에서 isMain -> $isMain 으로 변경 */}
-            <NavStyle className="nav" $isMain={isMain}>
+            <NavStyle className="nav" isMain={isMain}>
                 <ul className="MainMenu">
                     <li
                         className="shopMenu"
@@ -37,6 +50,7 @@ const NavBar = ({ isMain }) => {
                         <Link to="/shop/all/ALL">SHOP</Link>
                         {hoveredMenu === 'shop' && (
                             <ul className="subMenu">
+                                {/* <div className="navBg"></div> */}
                                 <li className="allMenu">
                                     전제품
                                     <ul className="subSubMenu">
@@ -129,7 +143,6 @@ const NavBar = ({ isMain }) => {
                             </ul>
                         )}
                     </li>
-
                     <li>
                         <Link to="/event">EVENT</Link>
                     </li>
@@ -154,7 +167,6 @@ const NavBar = ({ isMain }) => {
                             </ul>
                         )}
                     </li>
-
                     <li
                         className="csMenu"
                         onMouseEnter={() => handleMouseEnter('cs')}
@@ -173,29 +185,34 @@ const NavBar = ({ isMain }) => {
                         )}
                     </li>
                 </ul>
-
                 <ul className="topMenu">
                     <li>
                         <ul className="login">
-                            <li
-                                className="login"
-                                onClick={toggleLogin}
-                                style={{ cursor: 'pointer' }}
-                            >
-                                LOGIN
-                            </li>
-                            <li>
-                                <Link to="/login/join">JOIN</Link>
-                            </li>
+                            {authed ? (
+                                <li className="login" onClick={toggleLogin}>
+                                    <Link to="/logout">{user.name}님 안녕하세요.</Link>
+                                </li>
+                            ) : (
+                                <>
+                                    <li
+                                        className="login"
+                                        onClick={toggleLogin}
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        LOGIN
+                                    </li>
+                                    <li>
+                                        <Link to="/login/join">JOIN</Link>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </li>
-
                     <li>
                         <Link to="/mypage">
                             <GoPerson className="person" />
                         </Link>
                     </li>
-
                     <li>
                         <ul className="search" onClick={toggleSearch}>
                             <li>
@@ -203,22 +220,35 @@ const NavBar = ({ isMain }) => {
                             </li>
                         </ul>
                     </li>
-
                     <li>
                         <ul className="cart" onClick={toggleCart}>
                             <li>
                                 <BsCart2 className="cartIcon" />
                             </li>
+
                             <li>
                                 <p>0{/* {carts.length} */}</p>
                             </li>
                         </ul>
                     </li>
                 </ul>
-
-                {isCartOpen && <Cart onClose={toggleCart} carts={carts} />}
-                {isSearchOpen && <Search onClose={toggleSearch} />}
-                {isLoginOpen && <Login onClose={toggleLogin} />}
+                {isCartOpen && (
+                    <>
+                        {/* <Overlay1 onClick={toggleCart} /> */}
+                        <Cart onClose={toggleCart} carts={carts} />
+                    </>
+                )}
+                {isSearchOpen && (
+                    <>
+                        {/* <Overlay onClick={toggleSearch} /> */}
+                        <Search onClose={toggleSearch} />
+                    </>
+                )}
+                {isLoginOpen && (
+                    <>
+                        <Login onClose={toggleLogin} />
+                    </>
+                )}
             </NavStyle>
         </>
     );

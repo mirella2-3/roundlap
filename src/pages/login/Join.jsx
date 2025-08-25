@@ -44,6 +44,7 @@ const Join = () => {
         agreeInfo: false,
         agreeProcess: false,
     });
+    const { userId, name, password } = form;
 
     const handleAddressSearch = () => {
         new window.daum.Postcode({

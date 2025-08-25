@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import {
     Brand_Con1,
     Brand_Con2,
@@ -15,27 +15,30 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Brand = () => {
     const wrapRef = useRef(null);
+    const [containerAnim, setContainerAnim] = useState(null);
 
-    // 가로 스크롤 애니메이션 설정
-    useEffect(() => {
-        const sections = gsap.utils.toArray('.panel');
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const sections = gsap.utils.toArray('.panel');
 
-        gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: wrapRef.current,
-                start: 'top top+120',
-                end: () => `+=${window.innerWidth * sections.length}`,
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-            },
+            const tween = gsap.to(sections, {
+                xPercent: -100 * (sections.length - 1),
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: wrapRef.current,
+                    start: 'top top',
+                    end: () => `+=${window.innerWidth * sections.length}`,
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                    // markers: true,
+                },
+            });
+
+            setContainerAnim(tween); // 👈 자식에게 넘길 애니메이션 저장
         });
 
-        return () => {
-            ScrollTrigger.getAll().forEach((t) => t.kill());
-        };
+        return () => ctx.revert();
     }, []);
 
     return (
@@ -50,7 +53,8 @@ const Brand = () => {
                     <Brand_Con1 />
                 </div>
                 <div className="panel">
-                    <Brand_Con2 />
+                    {/* 👇 가로 스크롤 타임라인 전달 */}
+                    <Brand_Con2 containerAnimation={containerAnim} />
                 </div>
                 <div className="panel">
                     <Brand_Con3 />

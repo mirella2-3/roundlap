@@ -78,12 +78,14 @@ const InstaSlider = () => {
             >
                 {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                     <li key={num}>
-                        <img src={instaImages[num - 1]} alt={`instaImages-${num}`} />
-                        <img
-                            className="buttonImage"
-                            src={buttonImages[num - 1]}
-                            alt={`buttonImages-${num}`}
-                        />
+                        <a href="https://www.instagram.com/round.lab/">
+                            <img src={instaImages[num - 1]} alt={`instaImages-${num}`} />
+                            <img
+                                className="buttonImage"
+                                src={buttonImages[num - 1]}
+                                alt={`buttonImages-${num}`}
+                            />
+                        </a>
                     </li>
                 ))}
             </ul>

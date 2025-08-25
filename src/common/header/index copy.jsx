@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { HeaderStyle } from './style';
 import NavBar from './NavBar';
@@ -14,6 +14,9 @@ const Header = () => {
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [scrollY, setScrollY] = useState(0);
+
+    // ref는 제거 — 현재 사용하지 않으므로
+    // const sectionRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -34,10 +37,15 @@ const Header = () => {
 
     // 투명 조건: 메인 페이지 + hover 아님 + 스크롤 최상단
     const isTransparent = isMainPath && !isHover && scrollY < 100;
+    const useWhiteBackground = !isTransparent;
 
     return (
         <>
-            <HeaderStyle $isTransparent={isTransparent} $show={showHeader}>
+            <HeaderStyle
+                isTransparent={isTransparent}
+                show={showHeader}
+                useWhite={useWhiteBackground}
+            >
                 <div
                     className="inner"
                     onMouseEnter={() => setIsHover(true)}
@@ -55,13 +63,11 @@ const Header = () => {
                             />
                         </Link>
                     </h1>
-
-                    {/* NavBar 내부에서 NavStyle 사용 시 `$isMain`으로 전달 필요 */}
                     <NavBar isMain={isTransparent} />
                 </div>
             </HeaderStyle>
 
-            {/* 헤더 자리 유지용 스페이서 */}
+            {/* 항상 높이는 유지하되, 투명 상태일 땐 안 보이게 */}
             <div
                 style={{
                     height: '120px',

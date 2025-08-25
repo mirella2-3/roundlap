@@ -3,10 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 const memberData = [
     {
         id: 1,
-        name: '홍길동',
+        name: 'af',
         tel: '010-1111-2222',
         email: 'abc@naver.com',
         password: 'a1234',
+        loginId: '',
     },
 ];
 
@@ -28,8 +29,8 @@ export const authSlice = createSlice({
     initialState,
     reducers: {
         login: (state, action) => {
-            const { email, password } = action.payload;
-            const item = state.members.find((member) => member.email === email);
+            const { loginId, password } = action.payload;
+            const item = state.members.find((member) => member.loginId === loginId);
             if (item && item.password === password) {
                 state.authed = true;
                 state.user = item;

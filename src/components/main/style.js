@@ -271,7 +271,7 @@ export const BestItemStyle = styled.div`
             font-weight: 600;
             position: relative;
             cursor: pointer;
-            p {
+            > div {
                 .bg {
                     position: absolute;
                     /* top: 50%; */
@@ -903,9 +903,6 @@ export const DiscountItemStyle = styled.div`
                     font-size: 18px;
                 }
 
-                img {
-                    scale: 0.9;
-                }
                 .wish-inner {
                     position: relative;
                     cursor: pointer;

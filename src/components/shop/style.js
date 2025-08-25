@@ -114,7 +114,9 @@ export const ProductdetailStyle = styled.div`
                             margin-right: 0;
                         }
                         strong {
-                            margin: 0 10px;
+                            display: inline-block;
+                            width: 40px;
+                            text-align: center;
                             color: #1a1a1a;
                             font-size: 18px;
                             font-weight: 500;

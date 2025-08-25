@@ -53,17 +53,17 @@ const BestItem = () => {
                 <ul className="items">
                     {products.map((product) => (
                         <li key={product.id}>
-                            <p>
+                            <div>
                                 <img src={product.imgurl} alt={product.title} />
-                                <div className="bg">
+                                <p className="bg">
                                     <img
                                         src="/images/wish_1.png"
                                         alt="wish"
                                         onClick={() => handleWishClick(product)}
                                     />
                                     <img src="/images/wish_2.png" alt="" />
-                                </div>
-                            </p>
+                                </p>
+                            </div>
                             <strong>{product.title}</strong>
                             {/* <span>{product.price.toLocaleString()}원</span> */}
                         </li>

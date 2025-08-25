@@ -5,7 +5,7 @@ export const ScrollStyle = styled.div`
         position: fixed;
         right: 66px;
         /* right: 30px; */
-        bottom: 250px;
+        bottom: 161px;
         width: 42px;
         height: 42px;
         border-radius: 50%;
@@ -14,6 +14,7 @@ export const ScrollStyle = styled.div`
         font-size: 16px;
         font-weight: 700;
         z-index: 1000;
+        box-shadow: 0 0 2px;
         &:hover {
             background: #00395e;
             color: #fff;
@@ -24,11 +25,10 @@ export const ScrollStyle = styled.div`
         position: fixed;
         bottom: 100px;
         right: 130px;
-        width: 300px;
-        height: 400px;
-        background: white;
-        border: 1px solid #ccc;
-        border-radius: 10px;
+        width: 370px;
+        height: 650px;
+        background-image: url(/images/scroll/CH.png);
+        border-radius: 30px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         display: flex;
         flex-direction: column;
@@ -36,89 +36,150 @@ export const ScrollStyle = styled.div`
     }
 
     .chat-header {
-        padding: 10px;
-        color: #515151;
-        font-weight: bold;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        padding: 0 25px;
+        padding-top: 144px;
+        box-sizing: border-box;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        line-height: 24px;
+        strong {
+            font-size: 12px;
+            font-weight: 300;
+        }
     }
 
     .chat-body {
+        margin: 8px 20px;
         flex: 1;
-        padding: 10px;
-        overflow-y: auto;
-        p {
-            font-size: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            box-shadow: 0 2px 10px;
-        }
-    }
-    .chat-bubble {
-        max-width: 80%;
-        padding: 10px 15px;
-        margin: 10px 0;
-        border-radius: 15px;
-        position: relative;
-        font-size: 14px;
-        line-height: 1.4;
-    }
-
-    /* 봇 메시지 (왼쪽) */
-    .chat-bubble.bot {
-        background-color: #e0e0e0;
-        color: #000;
-        align-self: flex-start;
-        margin-left: 10px;
-    }
-
-    .chat-bubble.bot::after {
-        content: '';
-        position: absolute;
-        left: -10px;
-        top: 10px;
-        border: 10px solid transparent;
-        border-right-color: #e0e0e0;
-    }
-
-    /* 사용자 메시지 (오른쪽) 추가하고 싶을 때 사용 */
-    .chat-bubble.user {
-        background-color: #007bff;
-        color: white;
-        align-self: flex-end;
-        margin-left: auto;
-        margin-right: 10px;
-    }
-
-    .chat-bubble.user::after {
-        content: '';
-        position: absolute;
-        right: -10px;
-        top: 10px;
-        border: 10px solid transparent;
-        border-left-color: #007bff;
-    }
-    button {
-        position: fixed;
-        right: 66px;
-        /* right: 30px; */
-        font-size: 16px;
-        cursor: pointer;
-        background: #515151;
-        z-index: 1000;
-        color: #fff;
+        padding: 0 25px;
         box-sizing: border-box;
-        width: 42px;
-        height: 50px;
+        width: 329px;
+        /* height: 274px; */
+        border-radius: 30px;
+        background: #fff;
+        .chat-page {
+            .logo {
+                padding-top: 44px;
+                padding-bottom: 29px;
+                width: 156px;
+                img {
+                    width: 100%;
+                }
+            }
+            .hi {
+                font-size: 14px;
+                color: #1a1a1a;
+                width: 100%;
+                font-weight: 500;
+                margin-bottom: 37px;
+            }
+            .chat-button {
+                font-size: 16px;
+                font-weight: 700;
+                padding: 12px 111px;
+                box-sizing: border-box;
+                background: #515151;
+                color: #fff;
+                cursor: pointer;
+            }
 
-        &.top {
-            bottom: 191px;
-            border-radius: 48px 48px 0 0;
+            .notice {
+                font-size: 12px;
+                margin-top: 12px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                .circle {
+                    width: 6px;
+                    height: 6px;
+                    background: #b0daf5;
+                    border-radius: 50%;
+                    margin: 4px 8px;
+                }
+            }
         }
-        &.bottom {
-            bottom: 140px;
-            border-radius: 0 0 48px 48px;
+    }
+
+    .chat-menu {
+        /* margin-top: 138px; */
+        display: flex;
+        padding: 0 72px;
+        justify-content: space-between;
+        div {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 500;
+            padding-bottom: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .chat-content {
+        padding: 23px 0;
+        background: #fff;
+
+        /* 봇 메시지 (왼쪽) */
+        .chat-bubble.bot {
+            background-color: #f9f9f9;
+            border-radius: 16px;
+            color: #1a1a1a;
+            align-self: flex-start;
+            margin-left: 10px;
+            font-size: 13px;
+            padding: 20px 15px;
+        }
+
+        .chat-bubble.bot::after {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            border: 10px solid transparent;
+            border-right-color: #e0e0e0;
+        }
+
+        /* 사용자 메시지 (오른쪽) 추가하고 싶을 때 사용 */
+        .chat-bubble.user {
+            background-color: #007bff;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+
+        .chat-bubble.user::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 10px;
+            border: 10px solid transparent;
+            border-left-color: #007bff;
+        }
+        button {
+            position: fixed;
+            right: 66px;
+            /* right: 30px; */
+            font-size: 16px;
+            cursor: pointer;
+            background: #515151;
+            z-index: 1000;
+            color: #fff;
+            box-sizing: border-box;
+            width: 42px;
+            height: 50px;
+
+            &.top {
+                bottom: 100px;
+                border-radius: 48px 48px 0 0;
+            }
+            &.bottom {
+                bottom: 49px;
+                border-radius: 0 0 48px 48px;
+            }
         }
     }
 `;

@@ -46,7 +46,7 @@ const Kcontents = () => {
                     )
                 )}
                 <div
-                    class="swiper-pagination"
+                    className="swiper-pagination"
                     style={{ '--bgColor': seasonsData.boxTxtColor }}
                 ></div>
             </Swiper>

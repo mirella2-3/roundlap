@@ -1,30 +1,5 @@
 import styled from 'styled-components';
 
-// export const HeaderStyle = styled.header`
-//     box-sizing: border-box;
-//     width: 100%;
-//     top: 0;
-//     z-index: 1000;
-
-//     position: ${({ isMain }) => (isMain ? 'fixed' : 'relative')};
-//     background: ${({ isMain }) => (isMain ? 'transparent' : 'white')};
-//     height: 120px;
-//     color: ${({ isMain }) => (isMain ? 'white' : '#515151')};
-//     border-bottom: 1px solid ${({ isMain }) => (isMain ? 'transparent' : '#ececec')};
-
-//     transition: transform 1s ease;
-//     transform: ${({ show }) => (show ? 'translateY(0)' : 'translateY(-100%)')};
-//     .inner {
-//         height: 100%;
-//     }
-
-//     h1 {
-//         position: absolute;
-//         left: 0;
-//         top: 50%;
-//         transform: translateY(-50%);
-//     }
-// `;
 export const HeaderStyle = styled.header`
     position: fixed;
     top: 0;
@@ -33,12 +8,12 @@ export const HeaderStyle = styled.header`
     z-index: 1000;
     transition: opacity 0.4s ease;
 
-    opacity: ${({ show }) => (show ? 1 : 0)};
-    pointer-events: ${({ show }) => (show ? 'auto' : 'none')};
+    opacity: ${({ $show }) => ($show ? 1 : 0)};
+    pointer-events: ${({ $show }) => ($show ? 'auto' : 'none')};
 
-    background: ${({ isTransparent }) => (isTransparent ? 'transparent' : 'white')};
-    color: ${({ isTransparent }) => (isTransparent ? 'white' : '#515151')};
-    border-bottom: 1px solid ${({ isTransparent }) => (isTransparent ? 'transparent' : '#ececec')};
+    background: ${({ $isTransparent }) => ($isTransparent ? 'transparent' : 'white')};
+    color: ${({ $isTransparent }) => ($isTransparent ? 'white' : '#515151')};
+    border-bottom: 1px solid ${({ $isTransparent }) => ($isTransparent ? 'transparent' : '#ececec')};
 
     .inner {
         height: 100%;
@@ -72,7 +47,7 @@ export const NavStyle = styled.nav`
                 display: block;
                 width: 85px;
 
-                color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
+                color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
                 font-size: 18px;
                 font-family: 'YUniverse-B';
 
@@ -84,7 +59,6 @@ export const NavStyle = styled.nav`
                 &.shopMenu {
                     .navBg {
                         position: absolute;
-                        /* bottom: -162px; */
                         top: 71px;
                         left: 48%;
                         transform: translateX(-50%);
@@ -104,7 +78,6 @@ export const NavStyle = styled.nav`
                         font-family: 'pretendard';
                         cursor: default;
                         position: absolute;
-                        /* display: none; */
                         display: flex;
                         gap: 87px;
                         top: 103.5px;
@@ -178,6 +151,7 @@ export const NavStyle = styled.nav`
                 }
             }
         }
+
         .brandMenu {
             position: relative;
             .subMenu {
@@ -199,26 +173,26 @@ export const NavStyle = styled.nav`
                     }
                 }
             }
-            /* display: none; */
         }
+
         .csMenu {
             padding-right: 19px;
             padding-bottom: 100px;
-            /* box-sizing: border-box; */
             > a {
                 width: 110px;
             }
             position: relative;
+
             .subMenu {
                 box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
                 width: 59px;
                 position: absolute;
                 top: 70.5px;
-
                 left: -15px;
                 padding: 40px;
                 background: #fff;
                 font-size: 16px;
+
                 a {
                     font-size: 16px;
                     margin-bottom: 8px;
@@ -229,9 +203,9 @@ export const NavStyle = styled.nav`
                     }
                 }
             }
-            /* display: none; */
         }
     }
+
     .topMenu {
         display: flex;
         gap: 12px;
@@ -242,19 +216,21 @@ export const NavStyle = styled.nav`
         align-items: center;
 
         a {
-            color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
+            color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
         }
+
         .login {
             font-family: 'YUniverse-B';
             display: flex;
             gap: 12px;
             position: relative;
+
             li {
                 &:first-child::after {
                     content: '';
                     width: 1px;
                     height: 12px;
-                    background: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
+                    background: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
                     display: block;
                     position: absolute;
                     top: 50%;
@@ -263,19 +239,21 @@ export const NavStyle = styled.nav`
                 }
             }
         }
+
         .person {
             font-size: 22px;
             padding: 5px 0 0 0;
         }
+
         .cart {
             display: flex;
 
             p {
-                background: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
+                background: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
                 width: 16px;
                 height: 16px;
                 border-radius: 16px;
-                color: ${({ isMain }) => (isMain ? '#1a1a1a' : '#fff')};
+                color: ${({ $isMain }) => ($isMain ? '#1a1a1a' : '#fff')};
                 font-weight: 200;
                 line-height: 16px;
                 font-size: 12px;
@@ -285,21 +263,16 @@ export const NavStyle = styled.nav`
             .cartIcon {
                 font-size: 20px;
                 padding: 4px 3px 0 0;
-                color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
+                color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
                 cursor: pointer;
             }
         }
 
         .search {
             display: flex;
-            /* border: 1px solid ${({ isMain }) => (isMain ? '#fff' : '#515151')}; */
-            color: ${({ isMain }) => (isMain ? '#fff' : '#515151')};
-            /* width: 140px;
-            height: 30px; */
+            color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
             justify-content: space-between;
             line-height: 15px;
-            /* gap: 45px; */
-            /* padding: 0 9px 0 14px; */
             box-sizing: border-box;
             cursor: pointer;
         }
