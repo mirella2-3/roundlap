@@ -1,26 +1,35 @@
 import { useDispatch } from 'react-redux';
-import { addCart, openCart } from '../../store/modules/CartSlice';
+import { addCart } from '../../store/modules/CartSlice';
 import { addWish } from '../../store/modules/WishListSlice';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import CartModal from '../cart/CartModal';
+import WishModal from '../cart/WishModal';
 
 const ProductItem = ({ product }) => {
     const { title, price, imgUrl } = product;
     const dispatch = useDispatch();
 
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isWishOpen, setIsWishOpen] = useState(false);
+
+    const openCart = () => setIsCartOpen(true);
+    const closeCart = () => setIsCartOpen(false);
+
+    const openWish = () => setIsWishOpen(true);
+    const closeWish = () => setIsWishOpen(false);
+
     const handleWishClick = (e) => {
         e.preventDefault();
         dispatch(addWish(product));
+        openWish();
     };
 
     const handleCartClick = (e) => {
         e.preventDefault();
         dispatch(addCart(product));
-        toggleCart();
+        openCart();
     };
-    const [isCartOpen, setIsCartOpen] = useState(false);
-    const toggleCart = () => setIsCartOpen((prev) => !prev);
 
     return (
         <article>
@@ -38,7 +47,8 @@ const ProductItem = ({ product }) => {
                     <h4>{price.toLocaleString()}원</h4>
                 </div>
             </Link>
-            {isCartOpen && <CartModal onClose={toggleCart} />}
+            {isCartOpen && <CartModal onClose={closeCart} />}
+            {isWishOpen && <WishModal onClose={closeWish} />}
         </article>
     );
 };

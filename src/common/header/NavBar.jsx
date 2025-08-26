@@ -7,16 +7,19 @@ import { useState } from 'react';
 import Cart from '../../components/cart/Cart';
 import Search from '../../components/search/Search';
 import Login from '../../pages/login/Login';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { closeCart } from '../../store/modules/CartSlice';
 
 const NavBar = ({ isMain }) => {
+    const dispatch = useDispatch();
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-    const [hoveredMenu, setHoveredMenu] = useState(null);
 
+    const [hoveredMenu, setHoveredMenu] = useState(null);
+    const toggleCart1 = () => dispatch(closeCart());
     const handleMouseEnter = (menu) => setHoveredMenu(menu);
     const handleMouseLeave = () => setHoveredMenu(null);
 
