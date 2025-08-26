@@ -305,3 +305,77 @@ export const ShopStyle = styled.div`
         }
     }
 `;
+
+export const CartModalStyle = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .CartModal {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        animation: fadeInUp 0.3s ease;
+        position: relative;
+        .Closebox {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            svg {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+        .top {
+            width: 466px;
+            height: 134px;
+            h2 {
+                position: absolute;
+                top: 52px;
+                right: 97px;
+                font-size: 20px;
+                font-weight: 500;
+                text-align: center;
+                align-items: center;
+            }
+        }
+
+        .bottom {
+            width: 466px;
+            display: flex;
+            border-radius: 10px;
+            button {
+                width: 233px;
+                font-size: 16px;
+                font-weight: 600;
+                height: 57px;
+                color: white;
+                &:first-of-type {
+                    background: #515151;
+                }
+                &:last-of-type {
+                    background: #54afea;
+                }
+            }
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
