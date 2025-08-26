@@ -38,7 +38,6 @@ const LoginWrap = ({ onClose }) => {
 
             alert(`${user.name}님, 로그인 성공!`);
             onClose();
-            navigate('/');
         }
     };
 

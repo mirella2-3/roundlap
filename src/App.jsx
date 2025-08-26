@@ -22,6 +22,7 @@ import './App.css';
 import Order from './pages/order/Order';
 import ClickToTop from './components/scrolltotop/clickToTop';
 import PaySucess from './pages/order/PaySucess';
+import LogoutSucess from './pages/login/LogoutSucess';
 
 const App = () => {
     return (
@@ -58,7 +59,7 @@ const App = () => {
                         <Route path="/login/Login" element={<Login />} />
                         <Route path="/login/Logout" element={<Logout />} />
                         <Route path="/login/Join" element={<Join />} />
-                        <Route path="/login/Join/success" element={<JoinSucess />} />
+                        <Route path="/logout/success" element={<LogoutSucess />} />
                         <Route path="/mypage" element={<Mypage />} />
                     </Route>
                     <Route path="/notfile" element={<Notfile />} />

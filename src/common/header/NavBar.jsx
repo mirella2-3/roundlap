@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { NavStyle } from './style';
 import { BsCart2 } from 'react-icons/bs';
 import { IoMdSearch } from 'react-icons/io';
@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '../../store/modules/authSlice';
 
 const NavBar = ({ isMain }) => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -31,6 +32,7 @@ const NavBar = ({ isMain }) => {
     const handleLoginClick = () => {
         if (authed) {
             dispatch(authActions.logout());
+            navigate('/logout/success');
         } else {
             toggleLogin();
         }

@@ -6,9 +6,10 @@ const LogoutSucess = () => {
     const navigate = useNavigate();
     const onSubmit = (e) => {
         e.preventDefault();
-
         navigate('/');
     };
+
+    const reLogin = (e) => {};
     return (
         <SucessStyles>
             <div className="inner">
