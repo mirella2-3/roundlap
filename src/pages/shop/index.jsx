@@ -4,6 +4,7 @@ import { ShopStyle } from './style';
 import ProductList from '../../components/shop/ProductList';
 import { useDispatch } from 'react-redux';
 import { productActions } from '../../store/modules/productSlice';
+import ScrollBtns from '../../components/scrolltotop/ScrollBtns';
 
 const categoryDisplayMap = {
     // 영문 → 한글
@@ -88,25 +89,28 @@ const Shop = () => {
     }, [line]);
 
     return (
-        <ShopStyle>
-            <div className="inner">
-                <h2>{categoryTitleMap[activeCategory] || '전제품'}</h2>
-                <div className="product-tabs on">
-                    {lines.map((lineName) => (
-                        <div
-                            key={lineName}
-                            className={lineName === line ? 'active-tab' : ''}
-                            onClick={() => handleTabClick(lineName)}
-                        >
-                            {categoryDisplayMap[activeCategory]?.[lineName] || lineName}
-                        </div>
-                    ))}
+        <>
+            <ScrollBtns />
+            <ShopStyle>
+                <div className="inner">
+                    <h2>{categoryTitleMap[activeCategory] || '전제품'}</h2>
+                    <div className="product-tabs on">
+                        {lines.map((lineName) => (
+                            <div
+                                key={lineName}
+                                className={lineName === line ? 'active-tab' : ''}
+                                onClick={() => handleTabClick(lineName)}
+                            >
+                                {categoryDisplayMap[activeCategory]?.[lineName] || lineName}
+                            </div>
+                        ))}
+                    </div>
+                    <p className="line"></p>
+                    <ProductList category={activeCategory} line={line} />
+                    {/* <Pagination /> */}
                 </div>
-                <p className="line"></p>
-                <ProductList category={activeCategory} line={line} />
-                {/* <Pagination /> */}
-            </div>
-        </ShopStyle>
+            </ShopStyle>
+        </>
     );
 };
 
