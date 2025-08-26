@@ -28,10 +28,10 @@ const Brand = () => {
                     trigger: wrapRef.current,
                     start: 'top top',
                     end: () => `+=${window.innerWidth * sections.length}`,
-                    scrub: 1,
+                    scrub: 0.2,
                     pin: true,
                     anticipatePin: 1,
-                    // markers: true,
+                    snap: 1 / (sections.length - 1),
                 },
             });
 

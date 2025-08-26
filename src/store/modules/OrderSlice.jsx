@@ -16,8 +16,15 @@ const orderSlice = createSlice({
             state.orderItems = Array.isArray(action.payload) ? action.payload : [action.payload];
         },
         addOrderItem: (state, action) => {
-            state.orderItems.push(action.payload);
+            const item = action.payload;
+            const exist = state.orderItems.find((i) => i.id === item.id);
+            if (exist) {
+                exist.quantity = (exist.quantity || 1) + 1;
+            } else {
+                state.orderItems.push({ ...item, quantity: 1 });
+            }
         },
+
         setOrderSummary: (state, action) => {
             state.orderSummary = action.payload;
         },

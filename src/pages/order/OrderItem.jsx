@@ -4,15 +4,9 @@ import { setOrderItems } from '../../store/modules/OrderSlice';
 import { OrderItemStyle } from './style';
 
 const OrderItem = () => {
-    const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items || []);
     const orderItems = useSelector((state) => state.order.orderItems);
     const displayItems = orderItems.map((item) => ({ ...item, status: 'paid' }));
-    useEffect(() => {
-        if (cartItems.length > 0 && orderItems.length === 0) {
-            dispatch(setOrderItems(cartItems));
-        }
-    }, [cartItems, orderItems, dispatch]);
 
     return (
         <div>

@@ -48,7 +48,6 @@ const DiscountSwiper = () => {
         dispatch(addCart(productWithQuantity));
         setSelectedProduct(productWithQuantity);
         openCart();
-        dispatch(openCart());
     };
 
     const handleDetailClick = (product) => {
