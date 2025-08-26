@@ -333,6 +333,7 @@ export const Con1Style = styled.div`
         .right {
             position: relative;
             width: 55vw;
+
             .txts {
                 position: absolute;
                 left: 50%;
@@ -340,6 +341,7 @@ export const Con1Style = styled.div`
                 transform: translate(-50%, -50%);
                 text-align: center;
                 color: #515151;
+
                 span {
                     display: block;
                     font-size: 18px;

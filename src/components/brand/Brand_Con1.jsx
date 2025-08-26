@@ -18,6 +18,24 @@ const Brand_Con1 = () => {
         './images/Brand/brand_yakkong.png',
         './images/Brand/brand_vita.png',
     ];
+    const desc1 = [
+        '300년 제주 동백 마을에서 자라난',
+        '아기의 순수함을 닮은',
+        '사람의 손이 닿지 않는 깊은 바다의',
+        '선선하고 청량한 인제에서 자라난',
+        '해오름의 고장 강원도 양양에서 자라난',
+        '새벽이 차갑고 청량한 정선에서 자라난',
+        '강원도 영월의 햇살을 머금은',
+    ];
+    const desc2 = [
+        '동백',
+        '해남 무농약 귀리',
+        '울릉도 해양심층수',
+        '자작나무',
+        '소나무',
+        '약콩',
+        '비타민 나무',
+    ];
 
     useLayoutEffect(() => {
         if (!brandCon1Ref.current) return;
@@ -91,8 +109,28 @@ const Brand_Con1 = () => {
                 </div>
                 <div className="right">
                     <div className="txts">
-                        <span>사람의 손이 닿지 않는 깊은 바다의</span>
-                        <strong>울릉도 해양심층수</strong>
+                        <span
+                            key={`desc1-${currentIdx}`}
+                            style={{ opacity: 0 }}
+                            ref={(el) => {
+                                if (el) {
+                                    gsap.to(el, { opacity: 1, duration: 1.5 });
+                                }
+                            }}
+                        >
+                            {desc1[currentIdx]}
+                        </span>
+                        <strong
+                            key={`desc2-${currentIdx}`}
+                            style={{ opacity: 0 }}
+                            ref={(el) => {
+                                if (el) {
+                                    gsap.to(el, { opacity: 1, duration: 1, delay: 0.5 });
+                                }
+                            }}
+                        >
+                            {desc2[currentIdx]}
+                        </strong>
                     </div>
                     <div className="scroll-section">
                         <div className="sticky-container">
