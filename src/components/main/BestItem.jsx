@@ -26,8 +26,8 @@ const BestItem = () => {
             salePrice: 26500,
             category: ['toner', 'sensitive', '1025', 'SALE'],
             salePercent: 12,
-
-            imgUrl: '/images/Main/Main-products01.png',
+            imgUrl: '/images/Data/dokdo/01_dokdo_toner500.png',
+            mainImg: '/images/Main/Main-products01.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -47,8 +47,8 @@ const BestItem = () => {
             price: 16000,
             salePrice: 16000,
             category: ['lotion', 'sensitive', '1025', 'BEST'],
-
-            imgUrl: '/images/Main/Main-products02.png',
+            imgUrl: '/images/Data/dokdo/19_dokdo_lotion200.png',
+            mainImg: '/images/Main/Main-products02.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -68,8 +68,8 @@ const BestItem = () => {
             price: 16700,
             salePrice: 16700,
             category: ['toner', 'water', '1025', 'BEST'],
-
-            imgUrl: '/images/Main/Main-products03.png',
+            imgUrl: '/images/Data/dokdo/30_dokdo_toner200.png',
+            mainImg: '/images/Main/Main-products03.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -89,8 +89,8 @@ const BestItem = () => {
             price: 16000,
             salePrice: 16000,
             category: ['lotion', 'sensitive', '1025'],
-
-            imgUrl: '/images/Main/Main-products04.png',
+            imgUrl: '/images/Data/dokdo/27_dokdo_eyecream.png',
+            mainImg: '/images/Main/Main-products04.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -110,8 +110,8 @@ const BestItem = () => {
             price: 13800,
             salePrice: 13800,
             category: ['cleansing', 'corneous', '1025', 'BEST'],
-
-            imgUrl: '/images/Main/Main-products05.png',
+            imgUrl: '/images/Data/dokdo/20_dokdo_cleanser200.png',
+            mainImg: '/images/Main/Main-products05.png',
             nowLine: '1025',
             colorDark: '#A1D7EB',
             colorSale: '#709FD2',
@@ -137,7 +137,7 @@ const BestItem = () => {
                         <li key={product.id}>
                             <div>
                                 <img
-                                    src={product.imgUrl}
+                                    src={product.mainImg}
                                     alt={product.title}
                                     onClick={() => handleDetailClick(product)}
                                 />

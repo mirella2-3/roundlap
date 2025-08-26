@@ -27,6 +27,8 @@ const NavBar = ({ isMain }) => {
     const toggleSearch = () => setIsSearchOpen((prev) => !prev);
     const toggleLogin = () => setIsLoginOpen((prev) => !prev);
 
+    const { authed, user } = useSelector((state) => state.auth);
+
     return (
         <>
             {/* 여기에서 isMain -> $isMain 으로 변경 */}
@@ -181,13 +183,23 @@ const NavBar = ({ isMain }) => {
                 <ul className="topMenu">
                     <li>
                         <ul className="login">
-                            <li
-                                className="login"
-                                onClick={toggleLogin}
-                                style={{ cursor: 'pointer' }}
-                            >
-                                LOGIN
-                            </li>
+                            {authed ? (
+                                <li className="loginwrap">
+                                    <Link to="/logout">
+                                        <span style={{ color: 'orange' }}>{user.name}</span>님
+                                        LOGOUT
+                                    </Link>
+                                </li>
+                            ) : (
+                                <li
+                                    className="login"
+                                    onClick={toggleLogin}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    LOGIN
+                                </li>
+                            )}
+
                             <li>
                                 <Link to="/login/join">JOIN</Link>
                             </li>

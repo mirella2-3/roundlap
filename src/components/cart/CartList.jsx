@@ -11,13 +11,14 @@ const CartList = () => {
 
     return (
         <CartListStyle>
-            <div className="CartList">
+            <div className="CartListBox">
                 {carts.length === 0 ? (
                     <p>카트가 비어 있습니다.</p>
                 ) : (
                     carts.map((item) => <CartItem key={item.id} product={item} />)
                 )}
             </div>
+
             <div className="CartPrice">
                 <h2>상품금액</h2>
                 <h3>{totalPrice.toLocaleString()}원</h3>

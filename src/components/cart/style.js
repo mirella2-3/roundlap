@@ -57,6 +57,7 @@ export const CartWrapStyle = styled.div`
     .ModalText {
         margin-top: 90px;
         /* margin-left: 59px; */
+        margin-bottom: 54px;
 
         width: 510px;
         display: flex;
@@ -119,6 +120,7 @@ export const CartItemStyle = styled.div`
             width: 112px;
             height: 112px;
             object-fit: contain;
+            background: #f6f6f6;
         }
 
         .itemtitle {
@@ -129,7 +131,19 @@ export const CartItemStyle = styled.div`
             flex-direction: column;
             justify-content: space-between;
 
+            strong {
+                font-size: 18px;
+                color: #1a1a1a;
+                position: absolute;
+                top: 50%;
+                right: 0%;
+                transform: translateY(-50%);
+                font-weight: 600;
+            }
+
             h2 {
+                position: absolute;
+                top: 10px;
                 width: 220px;
                 font-size: 16px;
                 font-weight: 400;
@@ -143,6 +157,8 @@ export const CartItemStyle = styled.div`
                 text-overflow: ellipsis;
             }
             .itemquantity {
+                position: absolute;
+                bottom: 20px;
                 margin-top: 28px;
                 width: 79px;
                 font-size: 16px;
@@ -189,12 +205,11 @@ export const CartItemStyle = styled.div`
 
 export const CartListStyle = styled.div`
     .CartListBox {
-        margin-top: 54px;
         width: 510px;
         height: 480px;
         overflow-y: auto;
         overflow-x: hidden;
-
+        /* background: #000; */
         display: flex;
         flex-direction: column;
     }
@@ -319,6 +334,9 @@ export const CartModalStyle = styled.div`
     z-index: 1000;
 
     .CartModal {
+        width: 280px;
+        height: 150px;
+        overflow: hidden;
         background: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -335,13 +353,18 @@ export const CartModalStyle = styled.div`
             }
         }
         .top {
-            width: 466px;
-            height: 134px;
+            width: 280px;
+            height: 105px;
             h2 {
+                .icon {
+                    /* margin-right: 10px; */
+                    display: b;
+                }
                 position: absolute;
-                top: 52px;
-                right: 97px;
-                font-size: 20px;
+                top: 37%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 16px;
                 font-weight: 500;
                 text-align: center;
                 align-items: center;
@@ -349,20 +372,30 @@ export const CartModalStyle = styled.div`
         }
 
         .bottom {
-            width: 466px;
+            width: 280px;
             display: flex;
-            border-radius: 10px;
+            border-top: 1px solid #ececec;
             button {
                 width: 233px;
-                font-size: 16px;
-                font-weight: 600;
-                height: 57px;
-                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                height: 45px;
                 &:first-of-type {
-                    background: #515151;
+                    color: #515151;
+                    background: #fff;
+                    border-right: 1px solid #ececec;
+                    &:hover {
+                        color: #fff;
+                        background: #515151;
+                    }
                 }
                 &:last-of-type {
-                    background: #54afea;
+                    color: #54afea;
+                    background: #fff;
+                    &:hover {
+                        background: #54afea;
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -392,6 +425,9 @@ export const CartWishStyle = styled.div`
     z-index: 1000;
 
     .CartModal {
+        width: 280px;
+        height: 150px;
+        overflow: hidden;
         background: #fff;
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -408,13 +444,14 @@ export const CartWishStyle = styled.div`
             }
         }
         .top {
-            width: 466px;
-            height: 134px;
+            width: 280px;
+            height: 105px;
             h2 {
                 position: absolute;
-                top: 52px;
-                right: 97px;
-                font-size: 20px;
+                top: 37%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 16px;
                 font-weight: 500;
                 text-align: center;
                 align-items: center;
@@ -422,20 +459,30 @@ export const CartWishStyle = styled.div`
         }
 
         .bottom {
-            width: 466px;
+            width: 280px;
             display: flex;
-            border-radius: 10px;
+            border-top: 1px solid #ececec;
             button {
                 width: 233px;
-                font-size: 16px;
-                font-weight: 600;
-                height: 57px;
-                color: white;
+                font-size: 14px;
+                font-weight: 500;
+                height: 45px;
                 &:first-of-type {
-                    background: #515151;
+                    color: #515151;
+                    background: #fff;
+                    border-right: 1px solid #ececec;
+                    &:hover {
+                        color: #fff;
+                        background: #515151;
+                    }
                 }
                 &:last-of-type {
-                    background: #54afea;
+                    color: #54afea;
+                    background: #fff;
+                    &:hover {
+                        background: #54afea;
+                        color: #fff;
+                    }
                 }
             }
         }

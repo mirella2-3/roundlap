@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const OrderStyles = styled.div`
-    margin-top: 120px;
     .inner {
         padding: 160px 0;
         width: 1400px;
@@ -10,6 +9,14 @@ export const OrderStyles = styled.div`
         position: relative;
         display: flex;
         justify-content: space-between;
+
+        .emptyOrder {
+            width: 100%;
+            text-align: center;
+
+            font-size: 32px;
+            font-weight: 700;
+        }
     }
 `;
 export const OrderInfoStyles = styled.div`
@@ -41,12 +48,18 @@ export const OrderListStyle = styled.div`
         justify-content: center;
         .OrderListBox {
             width: 460px;
-            height: 433px;
+            max-height: 433px;
             overflow-y: auto;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
         }
+    }
+    .noProduct {
+        font-size: 32px;
+        font-weight: 700;
+        color: #d1d1d1;
+        text-align: center;
     }
 `;
 export const OrderItemStyle = styled.div`
@@ -56,7 +69,7 @@ export const OrderItemStyle = styled.div`
         position: relative;
         display: flex;
         align-items: center;
-        box-sizing: border-box;
+        /* box-sizing: border-box; */
         padding: 12px 0px;
         border-bottom: 1px solid #e3e3e3;
 
@@ -65,6 +78,8 @@ export const OrderItemStyle = styled.div`
             align-items: center;
             p {
                 margin-right: 20px;
+                background: #f6f6f6;
+                border: 1px solid #ececec;
                 img {
                     width: 112px;
                     height: 112px;
@@ -74,11 +89,14 @@ export const OrderItemStyle = styled.div`
 
         .itemtitle {
             h2 {
-                font-size: 14px;
-                font-weight: 500;
+                font-size: 15px;
                 color: #515151;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
                 text-align: left;
+            }
+            p {
+                font-size: 14px;
+                margin-bottom: 10px;
             }
             h3 {
                 font-size: 16px;
@@ -337,6 +355,12 @@ export const CardStyles = styled.div`
 
             &:hover {
                 background-color: #e6f3fc;
+                border: 1px solid #e6f3fc;
+            }
+
+            &.selected {
+                background-color: #e6f3fc;
+                border: 1px solid #e6f3fc;
             }
         }
     }

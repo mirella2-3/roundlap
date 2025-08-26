@@ -238,7 +238,7 @@ export const VisualStyle = styled.div`
 export const BestItemStyle = styled.div`
     .inner {
         padding: 160px 0;
-        padding-top: 850px;
+        padding-top: 970px;
         position: relative;
     }
     .engTitle {
@@ -1252,6 +1252,8 @@ export const SnsStyle = styled.div`
 `;
 
 export const KConStyle = styled.div`
+    width: 100vw;
+    height: 100vh;
     .mySwiper {
         width: 100vw;
         height: 100vh;
@@ -1305,48 +1307,11 @@ export const KConStyle = styled.div`
                 overflow: hidden;
                 backface-visibility: hidden;
                 transform: translate3d(0, 0, 0);
-
-                /* svg {
-                    transform: translateY(150px);
-                } */
             }
-
-            /* .wrapper .fill {
-                animation-name: fillAction;
-                animation-iteration-count: 1;
-                animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
-                animation-duration: 6s;
-                animation-fill-mode: forwards;
-            } */
-            /* 
-            .wrapper .waveShape {
-                animation-name: waveAction;
-                animation-iteration-count: infinite;
-                animation-timing-function: linear;
-                animation-duration: 6s;
-            } */
-            /* 
-            @keyframes fillAction {
-                0% {
-                    transform: translate(0, 500px);
-                }
-                100% {
-                    transform: translate(0, -300px);
-                }
-            }
-
-            @keyframes waveAction {
-                0% {
-                    transform: translateX(-100%);
-                }
-                100% {
-                    transform: translateX(-50%);
-                }
-            } */
         }
         div {
             display: flex;
-            /* align-items: center; */
+
             justify-content: center;
             video {
                 height: 440px;
@@ -1378,10 +1343,10 @@ export const KConStyle = styled.div`
             font-size: 30px;
             position: absolute;
             z-index: 1;
-            bottom: 21%;
+            bottom: 23%;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 500;
             line-height: 32px;
             text-align: center;
@@ -1392,10 +1357,10 @@ export const KConStyle = styled.div`
                 animation: fadeUp 1.5s ease-out forwards;
                 opacity: 0;
                 &:first-child {
-                    animation-delay: 3s;
+                    animation-delay: 1s;
                 }
                 &:last-child {
-                    animation-delay: 4.5s;
+                    animation-delay: 2.5s;
                 }
             }
         }
@@ -1468,6 +1433,7 @@ export const KConStyle = styled.div`
         justify-content: center;
         align-items: center;
         margin-top: 30px;
+        margin-bottom: 50px;
     }
 
     .swiper-pagination-bullet {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ShopStyle = styled.div`
     .inner {
-        /* margin: 100px auto; */
+        margin: 100px auto;
     }
     h2 {
         color: #1a1a1a;
