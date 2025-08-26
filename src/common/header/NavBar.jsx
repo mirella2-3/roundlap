@@ -8,24 +8,36 @@ import Cart from '../../components/cart/Cart';
 import Search from '../../components/search/Search';
 import Login from '../../pages/login/Login';
 import { useDispatch, useSelector } from 'react-redux';
-import { closeCart } from '../../store/modules/CartSlice';
+
+import { authActions } from '../../store/modules/authSlice';
 
 const NavBar = ({ isMain }) => {
     const dispatch = useDispatch();
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+    const authed = useSelector((state) => state.auth.authed);
+    const user = useSelector((state) => state.auth.user);
+
     const cartItems = useSelector((state) => state.cart.cartItems);
     const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
     const [hoveredMenu, setHoveredMenu] = useState(null);
-    const toggleCart1 = () => dispatch(closeCart());
     const handleMouseEnter = (menu) => setHoveredMenu(menu);
     const handleMouseLeave = () => setHoveredMenu(null);
 
     const toggleCart = () => setIsCartOpen((prev) => !prev);
     const toggleSearch = () => setIsSearchOpen((prev) => !prev);
     const toggleLogin = () => setIsLoginOpen((prev) => !prev);
+
+    const handleLoginClick = () => {
+        if (authed) {
+            dispatch(authActions.logout());
+        } else {
+            toggleLogin();
+        }
+    };
 
     return (
         <>
@@ -183,14 +195,18 @@ const NavBar = ({ isMain }) => {
                         <ul className="login">
                             <li
                                 className="login"
-                                onClick={toggleLogin}
+                                onClick={
+                                    authed ? () => dispatch(authActions.logout()) : toggleLogin
+                                }
                                 style={{ cursor: 'pointer' }}
                             >
-                                LOGIN
+                                {authed ? `LOGOUT (${user?.name}님 반갑습니다)` : 'LOGIN'}
                             </li>
-                            <li>
-                                <Link to="/login/join">JOIN</Link>
-                            </li>
+                            {!authed && (
+                                <li>
+                                    <Link to="/login/join">JOIN</Link>
+                                </li>
+                            )}
                         </ul>
                     </li>
 
