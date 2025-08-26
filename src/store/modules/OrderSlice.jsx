@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createSelector } from '@reduxjs/toolkit';
 
 const initialState = {
     orderItems: [],
@@ -11,9 +11,7 @@ const orderSlice = createSlice({
     initialState,
     reducers: {
         setOrderItems: (state, action) => {
-            state.orderItems = (
-                Array.isArray(action.payload) ? action.payload : [action.payload]
-            ).map((item) => ({ ...item, status: 'paid' }));
+            state.orderItems = Array.isArray(action.payload) ? action.payload : [action.payload];
         },
         addOrderItem: (state, action) => {
             state.orderItems.push(action.payload);
@@ -31,6 +29,13 @@ const orderSlice = createSlice({
     },
 });
 
+// Memoized selector
+export const selectOrderItems = createSelector(
+    (state) => state.order.orderItems,
+    (orderItems) => orderItems.map((item) => ({ ...item, status: 'paid' }))
+);
+
 export const { setOrderItems, addOrderItem, setOrderSummary, resetOrder, addOrderHistory } =
     orderSlice.actions;
+
 export default orderSlice.reducer;

@@ -2,14 +2,18 @@ import { BiShoppingBag } from 'react-icons/bi';
 import { CartModalStyle } from './style';
 import { IoClose } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
-import { openCart } from '../../store/modules/CartSlice';
 
-const CartModal = ({ onClose }) => {
+import { useNavigate } from 'react-router-dom';
+import { setOrderItems } from '../../store/modules/OrderSlice';
+
+const CartModal = ({ onClose, product }) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    const goToCart = () => {
+    const goToOrder = () => {
+        dispatch(setOrderItems([{ ...product, quantity: product.quantity || 1 }]));
+        navigate('/shop/order');
         onClose();
-        dispatch(openCart());
     };
 
     return (
@@ -28,7 +32,7 @@ const CartModal = ({ onClose }) => {
 
                 <div className="bottom">
                     <button onClick={onClose}>계속 쇼핑하기</button>
-                    <button onClick={goToCart}>장바구니 바로가기</button>
+                    <button onClick={goToOrder}>결제하기</button>
                 </div>
             </div>
         </CartModalStyle>
