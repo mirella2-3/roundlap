@@ -15,7 +15,7 @@ const MypageAcess = () => {
         <LogoutAcessStyles>
             <div className="inner">
                 <div className="checkbox">
-                    <img src="../../../public/images/Sucessicon.png" alt="" />
+                    <img src="/images/Sucessicon.png" alt="" />
                 </div>
                 <div className="check-text">
                     <h2>“마이페이지는 회원 전용입니다"</h2>

@@ -228,7 +228,7 @@ export const NavStyle = styled.nav`
             position: relative;
 
             li {
-                &:first-child::after {
+                &:nth-child(2)::after {
                     content: '';
                     width: 1px;
                     height: 12px;

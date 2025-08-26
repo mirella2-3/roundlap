@@ -27,7 +27,7 @@ const MainMagazine = () => {
                                 <img src="/images/Main/Arrow.png" alt="" />
                             </button> */}
                             <button className="cta" style={{ color: '#fff' }}>
-                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <span style={{ color: '#fff' }}> 더 보기</span>
                                 <svg width="15px" height="10px" viewBox="0 0 13 10">
                                     <path d="M1,5 L11,5"></path>
                                     <polyline points="8 1 12 5 8 9"></polyline>
@@ -41,7 +41,7 @@ const MainMagazine = () => {
                                 리뉴얼 출시했다고 5일 밝혔다.
                             </strong>
                             <button className="cta" style={{ color: '#fff' }}>
-                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <span style={{ color: '#fff' }}> 더 보기</span>
                                 <svg width="15px" height="10px" viewBox="0 0 13 10">
                                     <path d="M1,5 L11,5"></path>
                                     <polyline points="8 1 12 5 8 9"></polyline>
@@ -57,7 +57,7 @@ const MainMagazine = () => {
                                 리뉴얼 출시했다고 5일 밝혔다.
                             </strong>
                             <button className="cta" style={{ color: '#fff' }}>
-                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <span style={{ color: '#fff' }}> 더 보기</span>
                                 <svg width="15px" height="10px" viewBox="0 0 13 10">
                                     <path d="M1,5 L11,5"></path>
                                     <polyline points="8 1 12 5 8 9"></polyline>
@@ -72,7 +72,7 @@ const MainMagazine = () => {
                                 깊은 보습과 영양을 공급해 탄탄하고 건강한 피부로 케어해준다.
                             </strong>
                             <button className="cta" style={{ color: '#fff' }}>
-                                <span style={{ color: '#fff' }}> 제품 보러가기</span>
+                                <span style={{ color: '#fff' }}> 더 보기</span>
                                 <svg width="15px" height="10px" viewBox="0 0 13 10">
                                     <path d="M1,5 L11,5"></path>
                                     <polyline points="8 1 12 5 8 9"></polyline>

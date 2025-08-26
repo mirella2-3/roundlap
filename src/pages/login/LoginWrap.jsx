@@ -36,8 +36,11 @@ const LoginWrap = ({ onClose }) => {
 
             localStorage.setItem('currentUser', JSON.stringify(user));
 
-            alert(`${user.name}님, 로그인 성공!`);
+            alert(`${user.name}님, 라운드랩에 오신 걸 환영합니다.`);
             onClose();
+            navigate('/');
+        } else {
+            alert('로그인 정보를 확인해주세요.');
         }
     };
 

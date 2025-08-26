@@ -26,7 +26,7 @@ const WishModal = ({ onClose }) => {
 
                 <div className="bottom">
                     <button onClick={onClose}>계속 쇼핑하기</button>
-                    <button onClick={onToggle}>위시리스트 바로가기</button>
+                    <button onClick={onToggle}>관심상품 확인</button>
                 </div>
             </div>
         </CartWishStyle>

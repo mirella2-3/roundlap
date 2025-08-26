@@ -205,7 +205,7 @@ const NavBar = ({ isMain }) => {
                             onClick={handleLoginClick}
                             style={{ cursor: 'pointer' }}
                         >
-                            {authed ? `LOGOUT (${user?.name}님 반갑습니다)` : 'LOGIN'}
+                            {authed ? `LOGOUT (${user?.name} 님)` : 'LOGIN'}
                         </li>
                         {!authed && (
                             <li>

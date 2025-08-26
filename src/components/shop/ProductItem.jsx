@@ -43,7 +43,14 @@ const ProductItem = ({ product }) => {
     const navigate = useNavigate();
 
     return (
-        <article onClick={() => navigate(`/shop/${product.id}`)} style={{ cursor: 'pointer' }}>
+        <article
+            onClick={() => {
+                if (!isCartOpen && !isWishOpen) {
+                    navigate(`/shop/${product.id}`);
+                }
+            }}
+            style={{ cursor: 'pointer' }}
+        >
             <Link>
                 <div className="img">
                     <img src={imgUrl} alt={title} />

@@ -361,7 +361,7 @@ export const CartModalStyle = styled.div`
                     display: b;
                 }
                 position: absolute;
-                top: 37%;
+                top: 32%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 font-size: 16px;
@@ -448,7 +448,7 @@ export const CartWishStyle = styled.div`
             height: 105px;
             h2 {
                 position: absolute;
-                top: 37%;
+                top: 32%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 font-size: 16px;
