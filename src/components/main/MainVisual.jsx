@@ -101,6 +101,7 @@ const MainVisual = () => {
         <VisualStyle>
             <main>
                 {articlesData.map((item, index) => {
+                    const isActive = index === visibleIndex;
                     let leftClass = '';
                     let rightClass = '';
                     let visibleClass = '';
@@ -133,6 +134,13 @@ const MainVisual = () => {
                         visibleClass = '';
                     }
 
+                    const [triggerKey, setTriggerKey] = useState(0);
+
+                    useEffect(() => {
+                        // visibleIndex가 바뀔 때마다 강제로 트리거 변경
+                        setTriggerKey((prev) => prev + 1);
+                    }, [visibleIndex]);
+
                     return (
                         <article key={index} className={visibleClass}>
                             <div
@@ -141,7 +149,7 @@ const MainVisual = () => {
                                 onAnimationEnd={handleAnimationEnd}
                             >
                                 <div className={`textBox ${index >= 2 ? 'centerText' : ''}`}>
-                                    <h2>
+                                    {/* <h2>
                                         {item.left.title?.split('\n').map((line, idx) => (
                                             <React.Fragment key={idx}>
                                                 {line}
@@ -151,6 +159,31 @@ const MainVisual = () => {
                                     </h2>
 
                                     <strong>
+                                        {item.left.subtext?.split('\n').map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
+                                    </strong> */}
+                                    <h2
+                                        key={`title-${triggerKey}`}
+                                        className="fade-up"
+                                        style={{ animationDelay: '0.2s' }}
+                                    >
+                                        {item.left.title?.split('\n').map((line, idx) => (
+                                            <React.Fragment key={idx}>
+                                                {line}
+                                                <br />
+                                            </React.Fragment>
+                                        ))}
+                                    </h2>
+
+                                    <strong
+                                        key={`subtext-${triggerKey}`}
+                                        className="fade-up"
+                                        style={{ animationDelay: '0.6s' }}
+                                    >
                                         {item.left.subtext?.split('\n').map((line, idx) => (
                                             <React.Fragment key={idx}>
                                                 {line}

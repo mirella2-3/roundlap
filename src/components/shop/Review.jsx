@@ -1,7 +1,7 @@
 import ReviewList from './ReviewList';
 import { ReviewStyle } from './style';
 
-const Review = ({ product }) => {
+const Review = ({ product, reviewImages }) => {
     const { colorSale } = product;
     return (
         <ReviewStyle>
@@ -13,10 +13,12 @@ const Review = ({ product }) => {
                         <ul>
                             <li>좋음</li>
                             <li className="total">
-                                <li
-                                    className="score"
-                                    style={{ width: 180, background: colorSale }}
-                                ></li>
+                                <ul>
+                                    <li
+                                        className="score"
+                                        style={{ width: 180, background: colorSale }}
+                                    ></li>
+                                </ul>
                             </li>
 
                             <li className="percent">70%</li>
@@ -24,14 +26,19 @@ const Review = ({ product }) => {
                         <ul>
                             <li>보통</li>
                             <li className="total">
-                                <li className="score" style={{ width: 50 }}></li>
+                                <ul>
+                                    <li className="score" style={{ width: 50 }}></li>{' '}
+                                </ul>
                             </li>
                             <li className="percent">29%</li>
                         </ul>
                         <ul>
                             <li>좋지않음</li>
                             <li className="total">
-                                <li className="score" style={{ width: 20 }}></li>
+                                <ul>
+                                    {' '}
+                                    <li className="score" style={{ width: 20 }}></li>
+                                </ul>
                             </li>
                             <li className="percent">1%</li>
                         </ul>
@@ -41,10 +48,12 @@ const Review = ({ product }) => {
                         <ul>
                             <li>좋음</li>
                             <li className="total">
-                                <li
-                                    className="score"
-                                    style={{ width: 180, background: colorSale }}
-                                ></li>
+                                <ul>
+                                    <li
+                                        className="score"
+                                        style={{ width: 180, background: colorSale }}
+                                    ></li>
+                                </ul>
                             </li>
 
                             <li className="percent">70%</li>
@@ -52,14 +61,19 @@ const Review = ({ product }) => {
                         <ul>
                             <li>보통</li>
                             <li className="total">
-                                <li className="score" style={{ width: 50 }}></li>
+                                <ul>
+                                    <li className="score" style={{ width: 50 }}></li>{' '}
+                                </ul>
                             </li>
                             <li className="percent">29%</li>
                         </ul>
                         <ul>
                             <li>좋지않음</li>
                             <li className="total">
-                                <li className="score" style={{ width: 20 }}></li>
+                                <ul>
+                                    {' '}
+                                    <li className="score" style={{ width: 20 }}></li>
+                                </ul>
                             </li>
                             <li className="percent">1%</li>
                         </ul>
@@ -69,10 +83,12 @@ const Review = ({ product }) => {
                         <ul>
                             <li>좋음</li>
                             <li className="total">
-                                <li
-                                    className="score"
-                                    style={{ width: 180, background: colorSale }}
-                                ></li>
+                                <ul>
+                                    <li
+                                        className="score"
+                                        style={{ width: 180, background: colorSale }}
+                                    ></li>
+                                </ul>
                             </li>
 
                             <li className="percent">70%</li>
@@ -80,21 +96,26 @@ const Review = ({ product }) => {
                         <ul>
                             <li>보통</li>
                             <li className="total">
-                                <li className="score" style={{ width: 50 }}></li>
+                                <ul>
+                                    <li className="score" style={{ width: 50 }}></li>{' '}
+                                </ul>
                             </li>
                             <li className="percent">29%</li>
                         </ul>
                         <ul>
                             <li>좋지않음</li>
                             <li className="total">
-                                <li className="score" style={{ width: 20 }}></li>
+                                <ul>
+                                    {' '}
+                                    <li className="score" style={{ width: 20 }}></li>
+                                </ul>
                             </li>
                             <li className="percent">1%</li>
                         </ul>
                     </li>
                 </ul>
 
-                <ReviewList />
+                <ReviewList reviewImages={reviewImages} />
                 <button
                     onMouseEnter={(e) => {
                         e.currentTarget.style.background = colorSale;

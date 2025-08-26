@@ -32,10 +32,11 @@ export const ProductdetailStyle = styled.div`
         .itemImg {
             width: 705px;
             min-height: 800px;
-            display: flex;
             box-sizing: border-box;
+            display: flex;
             align-items: center;
             justify-content: center;
+
             overflow: hidden;
             filter: drop-shadow(-30px 20px 4px rgba(29, 29, 29, 0.2));
         }

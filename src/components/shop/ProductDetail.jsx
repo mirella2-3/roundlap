@@ -12,6 +12,8 @@ import { useDispatch } from 'react-redux';
 import { setOrderItems } from '../../store/modules/OrderSlice';
 import { addWish } from '../../store/modules/WishListSlice';
 import { addCart, openCart } from '../../store/modules/CartSlice';
+//
+import { getReviewImagesByLine } from '../../assets/api/reviewData';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +23,8 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
+    //
+    const [reviewImages, setReviewImages] = useState([]);
     const productRef = useRef(null);
     const imgRef = useRef(null);
     const targetRef = useRef(null);
@@ -36,6 +40,14 @@ const ProductDetail = () => {
         const found = allProductData.find((item) => String(item.id) === String(productId));
         setProduct(found);
     }, [productId]);
+
+    //
+    useEffect(() => {
+        if (product) {
+            const images = getReviewImagesByLine(product.nowLine);
+            setReviewImages(images);
+        }
+    }, [product]);
 
     const onClick = () => {
         dispatch(setOrderItems({ ...product, quantity }));
@@ -175,7 +187,7 @@ const ProductDetail = () => {
             </ProductdetailStyle>
 
             <ProductRecom currentItem={{ id }} />
-            <Review product={product} />
+            <Review product={product} reviewImages={reviewImages} />
         </>
     );
 };

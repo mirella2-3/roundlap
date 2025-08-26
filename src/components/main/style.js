@@ -69,6 +69,18 @@ export const VisualStyle = styled.div`
                     letter-spacing: 0;
                     line-height: auto;
                 }
+                .fade-up {
+                    opacity: 0;
+                    transform: translateY(20px);
+                    animation: fadeUp 0.8s ease forwards;
+                }
+
+                @keyframes fadeUp {
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
                 &.centerText {
                     text-align: center;
 

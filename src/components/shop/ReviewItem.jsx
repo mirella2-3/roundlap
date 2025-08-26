@@ -1,8 +1,8 @@
-const ReviewItem = () => {
+const ReviewItem = ({ image }) => {
     return (
         <li>
             <p>
-                <img src="https://placehold.co/166x166" alt="" />
+                <img src={image} alt="" />
             </p>
             <div className="black_bg"></div>
             <span>자세히 보기</span>

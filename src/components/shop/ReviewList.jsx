@@ -1,9 +1,11 @@
 import ReviewItem from './ReviewItem';
 
-const ReviewList = () => {
+const ReviewList = ({ reviewImages }) => {
     return (
         <ul className="photo">
-            <ReviewItem />
+            {reviewImages.map((img, idx) => (
+                <ReviewItem key={idx} image={img} />
+            ))}
         </ul>
     );
 };

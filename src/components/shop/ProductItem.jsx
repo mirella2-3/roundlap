@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { addCart } from '../../store/modules/CartSlice';
 import { addWish } from '../../store/modules/WishListSlice';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import CartModal from '../cart/CartModal';
 import WishModal from '../cart/WishModal';
@@ -40,9 +40,10 @@ const ProductItem = ({ product }) => {
         dispatch(addWish(product));
         setIsWishOpen(true);
     };
+    const navigate = useNavigate();
 
     return (
-        <article onClick={() => Navigate(`/shop/${product.id}`)} style={{ cursor: 'pointer' }}>
+        <article onClick={() => navigate(`/shop/${product.id}`)} style={{ cursor: 'pointer' }}>
             <Link>
                 <div className="img">
                     <img src={imgUrl} alt={title} />
