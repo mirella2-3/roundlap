@@ -247,5 +247,52 @@ export const ProductlineStyle = styled.div`
                 right: var(--fashion-slider-button-mobile-side-offset);
             }
         }
+        .fashion-slider-title-text {
+            transition: color 0.5s, opacity 0.5s;
+            opacity: 0;
+        }
+
+        .fashion-slider-subText {
+            transition: color 0.5s 2s, opacity 0.5s 2s; /* 0.3초 딜레이 추가 */
+            opacity: 0;
+        }
+
+        /* 활성 슬라이드에서 보이게 */
+        .swiper-slide-active .fashion-slider-title-text {
+            opacity: 1;
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .swiper-slide-active .fashion-slider-subText {
+            opacity: 1;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+`;
+export const SubtextStyle = styled.div`
+    .fashion-slider-subText {
+        transform: translateY(-110px);
+        font-size: 24px;
+        font-weight: 600;
+        color: white;
+    }
+`;
+
+export const PDLINEStyle = styled.div`
+    .fashion-slider-sub2Text {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        color: #fff;
+        pointer-events: none;
+        z-index: 1000;
+        h2 {
+            font-weight: 600;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
     }
 `;

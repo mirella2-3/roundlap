@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Parallax } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/parallax';
-import { ProductlineStyle } from './style';
+import { PDLINEStyle, ProductlineStyle, SubtextStyle } from './style';
 
 export default function FashionSlider() {
     // 데이터 (필요 시 props로 치환 가능)
@@ -13,8 +13,10 @@ export default function FashionSlider() {
                 title: 'DOKDO',
                 subText: '사람의 손이 닿지 않는 깊은 바다의 울릉도 해양심층수',
                 color: '#00527B',
+
                 img: '/images/productLine/dokdoImg_O.png',
                 alt: 'DOKDO',
+                sub2Text: 'PRODUCT LINE',
             },
             {
                 title: 'BIRCH',
@@ -22,6 +24,7 @@ export default function FashionSlider() {
                 color: '#5D7681',
                 img: '/images/productLine/jajakImg_O.png',
                 alt: 'BIRCH',
+                sub2Text: 'PRODUCT LINE',
             },
             {
                 title: 'PINE',
@@ -29,6 +32,7 @@ export default function FashionSlider() {
                 color: '#1A280F',
                 img: '/images/productLine/pineImg_O.png',
                 alt: 'PINE',
+                sub2Text: 'PRODUCT LINE',
             },
             {
                 title: 'SOYBEAN',
@@ -36,6 +40,7 @@ export default function FashionSlider() {
                 color: '#2C2C2C',
                 img: '/images/productLine/soybeanImg_O.png',
                 alt: 'SOYBEAN',
+                sub2Text: 'PRODUCT LINE',
             },
             {
                 title: 'VITA',
@@ -43,6 +48,7 @@ export default function FashionSlider() {
                 color: '#B87800',
                 img: '/images/productLine/vitaImg_O.png',
                 alt: 'VITA',
+                sub2Text: 'PRODUCT LINE',
             },
             {
                 title: 'CAMELLIA',
@@ -50,6 +56,7 @@ export default function FashionSlider() {
                 color: '#630400',
                 img: '/images/productLine/camelliaImg_O.png',
                 alt: 'CAMELLIA',
+                sub2Text: 'PRODUCT LINE',
             },
             {
                 title: 'OATS',
@@ -57,6 +64,7 @@ export default function FashionSlider() {
                 color: '#432200',
                 img: '/images/productLine/oatsImg_O.png',
                 alt: 'OATS',
+                sub2Text: 'PRODUCT LINE',
             },
         ],
         []
@@ -113,6 +121,8 @@ export default function FashionSlider() {
                 const scaleWrap = active.querySelector('.fashion-slider-scale');
                 const img = active.querySelector('img');
                 const title = active.querySelector('.fashion-slider-title-text');
+                const subText = active.querySelector('.fashion-slider-subText');
+
                 if (scaleWrap) scaleWrap.style.transform = 'scale(1)';
                 if (img) {
                     img.style.transitionDuration = '1000ms';
@@ -122,8 +132,14 @@ export default function FashionSlider() {
                     title.style.transition = '1000ms';
                     title.style.color = 'rgba(255,255,255,1)';
                 }
+                if (subText) {
+                    subText.style.transition = 'opacity 0.5s';
+                    subText.style.opacity = 0;
+                    setTimeout(() => {
+                        subText.style.opacity = 1;
+                    }, 700);
+                }
             }
-
             setActiveIndex(s.activeIndex);
         },
         [slides]
@@ -256,16 +272,24 @@ export default function FashionSlider() {
                             key={i}
                             data-slide-bg-color={slide.color}
                         >
-                            <div className="fashion-slider-title" data-swiper-parallax="-130%">
+                            <div className="fashion-slider-title">
                                 <div className="fashion-slider-title-text">{slide.title}</div>
+                                <SubtextStyle>
+                                    <div className="fashion-slider-subText">{slide.subText}</div>
+                                </SubtextStyle>
                             </div>
+
                             <div className="fashion-slider-scale">
                                 <img src={slide.img} alt={slide.alt} />
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
+                <PDLINEStyle>
+                    <div className="fashion-slider-sub2Text">
+                        <h2>PRODUCT LINE</h2>
+                    </div>
+                </PDLINEStyle>
                 {/* Prev */}
                 <button
                     type="button"
