@@ -6,6 +6,7 @@ import OrderSummary from './OrderSummary';
 
 const OrderList = () => {
     const orderItems = useSelector((state) => state.order.orderItems || []); //
+    const usedPoints = useSelector((state) => state.order.usedPoints || 0);
 
     return (
         <OrderListStyle>
@@ -18,11 +19,10 @@ const OrderList = () => {
                     )} */}
                     {orderItems.map((item) => (
                         <OrderItem key={item.id} item={item} />
-                        
                     ))}
                 </div>
             </div>
-            <OrderSummary />
+            <OrderSummary usedPoints={usedPoints} />
         </OrderListStyle>
     );
 };

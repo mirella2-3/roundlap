@@ -1,31 +1,46 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUsedPoints } from '../../store/modules/OrderSlice';
 import { OrderInfoInputStyles } from './style';
 import PaymentSection from './Paymentsection';
 
 const OrderInfoInput = () => {
+    const dispatch = useDispatch();
+    const availablePoints = useSelector((state) => state.order.userPoints || 0);
+
     const [form, setForm] = useState({
         userName: '',
-        password: '',
-        passwordConfirm: '',
+        delivery: 'save',
+        receiveName: '',
+        address1: '',
+        address2: '',
         postCode: '',
-        delivery: 'save', // 기본값을 'save'로 설정
+        phonePrefix: '010',
+        phoneMid: '',
+        phoneLast: '',
+        postmessage: '',
+        usedPoints: 0,
     });
 
     const onChange = (e) => {
         const { name, value, type } = e.target;
+
+        if (name === 'usedPoints') {
+            let pointsValue = Number(value);
+            if (pointsValue > availablePoints) pointsValue = availablePoints;
+            if (pointsValue < 0) pointsValue = 0;
+
+            setForm({ ...form, [name]: pointsValue });
+            dispatch(setUsedPoints(pointsValue));
+            return;
+        }
+
         if (type === 'radio') {
-            setForm({
-                ...form,
-                [name]: value,
-            });
+            setForm({ ...form, [name]: value });
         } else {
-            setForm({
-                ...form,
-                [name]: value,
-            });
+            setForm({ ...form, [name]: value });
         }
     };
-
     return (
         <OrderInfoInputStyles>
             <div className="orderlayout">
@@ -180,13 +195,14 @@ const OrderInfoInput = () => {
                     <input
                         type="text"
                         id="point"
-                        name="point"
-                        placeholder="1000p이상 사용 가능"
-                        value={form.postmessage}
+                        name="usedPoints"
+                        placeholder="1000p 이상 사용 가능"
+                        value={form.usedPoints}
                         onChange={onChange}
+                        max={availablePoints}
                     />
                     <h4>p</h4>
-                    <h5>(가용 적립금: 00p)</h5>
+                    <h5>(가용 적립금: {availablePoints}p)</h5>
                 </div>
             </div>
             <PaymentSection />

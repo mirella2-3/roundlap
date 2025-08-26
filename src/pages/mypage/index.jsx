@@ -1,8 +1,10 @@
+import { useSelector } from 'react-redux';
 import { MypageDetail, OrderCheck, WishList, WishListNoting } from '../../components';
 import { MypageStyle } from './style';
 
 const Mypage = () => {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    const points = useSelector((state) => state.order.userPoints || 0);
     return (
         <MypageStyle>
             <div className="inner">
@@ -16,7 +18,7 @@ const Mypage = () => {
                         <strong>{currentUser?.name || '이름'}</strong>님은 일반회원 입니다.
                     </div>
                     <div>
-                        적립금 <span>0</span>P
+                        적립금 <span>{points.toLocaleString()}</span>P
                     </div>
                 </div>
                 <section>

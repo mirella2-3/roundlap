@@ -1,13 +1,13 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice } from '@reduxjs/toolkit';
 import { allProductData } from '../../assets/api/productData';
 
 const initialState = {
-    products: [], // 전체 상품
-    filtered: [], // 필터링된 상품
-    selectedCategory: '', // 현재 선택된 카테고리
+    products: [],
+    filtered: [],
+    selectedCategory: '',
+    currentPage: 1,
+    itemsPerPage: 16,
 };
-//이게 xx의 state에 전달
 
 export const productSlice = createSlice({
     name: 'product',
@@ -26,9 +26,17 @@ export const productSlice = createSlice({
             } else {
                 state.filtered = state.products.filter((item) => item.category.includes(category));
             }
+
+            state.currentPage = 1; // 필터링 후 페이지 초기화
+        },
+        setCurrentPage: (state, action) => {
+            state.currentPage = action.payload;
+        },
+        setItemsPerPage: (state, action) => {
+            state.itemsPerPage = action.payload;
         },
     },
 });
-// export const {onUp, onDown} = countSlice.actions;
+
 export const productActions = productSlice.actions;
 export default productSlice.reducer;
