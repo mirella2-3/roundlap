@@ -1,7 +1,7 @@
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
@@ -179,7 +179,6 @@ const MainProductLine = () => {
 
     return (
         <ProductLineStyle>
-          
             <div className="bg-wrapper">
                 {/* 이전 이미지 */}
                 <img
@@ -214,7 +213,11 @@ const MainProductLine = () => {
                 <h2>PRODUCT LINE</h2>
                 <Swiper
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-                    modules={[Navigation, Pagination]}
+                    modules={[Navigation, Pagination, Autoplay]}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    }}
                     slidesPerView={3}
                     spaceBetween={30}
                     loop={true}
