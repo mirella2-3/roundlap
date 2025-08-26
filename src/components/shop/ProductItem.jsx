@@ -28,7 +28,7 @@ const ProductItem = ({ product }) => {
     const handleCartClick = (e) => {
         e.preventDefault();
         dispatch(addCart(product));
-        openCart();
+        setIsCartOpen(true);
     };
 
     return (
@@ -47,7 +47,7 @@ const ProductItem = ({ product }) => {
                     <h4>{price.toLocaleString()}원</h4>
                 </div>
             </Link>
-            {isCartOpen && <CartModal onClose={closeCart} />}
+            {isCartOpen && <CartModal onClose={closeCart} product={product} />}
             {isWishOpen && <WishModal onClose={closeWish} />}
         </article>
     );

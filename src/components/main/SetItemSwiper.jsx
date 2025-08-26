@@ -9,18 +9,33 @@ import { addWish } from '../../store/modules/WishListSlice';
 import { useDispatch } from 'react-redux';
 import { addCart, openCart } from '../../store/modules/CartSlice';
 import { useNavigate } from 'react-router-dom';
+import CartModal from '../cart/CartModal';
+import WishModal from '../cart/WishModal';
 
 const SetItemSwiper = () => {
     const [direction, setDirection] = useState('horizontal');
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isWishOpen, setIsWishOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const openCart = () => setIsCartOpen(true);
+    const closeCart = () => setIsCartOpen(false);
+
+    const openWish = () => setIsWishOpen(true);
+    const closeWish = () => setIsWishOpen(false);
 
     const handleWishClick = (product) => {
         dispatch(addWish(product));
+        setSelectedProduct(product);
+        openWish();
     };
 
     const handleCartClick = (product) => {
-        dispatch(addCart(product));
+        const productWithQuantity = { ...product, quantity: 1 };
+        dispatch(addCart(productWithQuantity));
+        setSelectedProduct(productWithQuantity);
+        openCart();
         dispatch(openCart());
     };
     const handleDetailClick = (product) => {
@@ -91,6 +106,12 @@ const SetItemSwiper = () => {
             <button className="swiper-button-next">
                 <MdKeyboardArrowRight size={40} />
             </button>
+            {isCartOpen && selectedProduct && (
+                <CartModal onClose={closeCart} product={selectedProduct} />
+            )}
+            {isWishOpen && selectedProduct && (
+                <WishModal onClose={closeWish} product={selectedProduct} />
+            )}
         </div>
     );
 };
