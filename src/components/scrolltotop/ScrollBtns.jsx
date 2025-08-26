@@ -166,10 +166,10 @@ const ScrollBtns = () => {
                             <RiSettings5Fill size={25} />
                             <p>대화</p>
                         </div>
-                        <div className="icon_set" style={{ color: '#8a8a8a' }}>
+                        {/* <div className="icon_set" style={{ color: '#8a8a8a' }}>
                             <IoMdChatbubbles size={25} />
                             <p>설정</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             )}

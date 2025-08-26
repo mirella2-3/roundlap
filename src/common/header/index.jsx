@@ -62,14 +62,14 @@ const Header = () => {
             </HeaderStyle>
 
             {/* 헤더 자리 유지용 스페이서 */}
-            <div
+            {/* <div
                 style={{
                     height: '120px',
                     pointerEvents: 'none',
                     opacity: isTransparent ? 0 : 1,
                     transition: 'opacity 0.3s ease',
                 }}
-            />
+            /> */}
         </>
     );
 };

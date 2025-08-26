@@ -107,6 +107,10 @@ const Kcontents = () => {
                         </SwiperSlide>
                     );
                 })}
+                <div
+                    className="swiper-pagination"
+                    style={{ '--bgColor': seasonsData[activeIndex]?.boxTxtColor || '#ccc' }}
+                ></div>
             </Swiper>
         </KConStyle>
     );

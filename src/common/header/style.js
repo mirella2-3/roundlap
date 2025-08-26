@@ -163,6 +163,7 @@ export const NavStyle = styled.nav`
                 background: #fff;
 
                 a {
+                    font-family: 'pretendard';
                     width: 112px;
                     font-size: 16px;
                     margin-bottom: 8px;
@@ -194,6 +195,7 @@ export const NavStyle = styled.nav`
                 font-size: 16px;
 
                 a {
+                    font-family: 'pretendard';
                     font-size: 16px;
                     margin-bottom: 8px;
                     color: #515151;

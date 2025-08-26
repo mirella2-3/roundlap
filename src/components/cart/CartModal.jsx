@@ -25,13 +25,14 @@ const CartModal = ({ onClose, product }) => {
 
                 <div className="top">
                     <h2>
-                        <BiShoppingBag />
-                        장바구니에 상품을 담았습니다.
+                        장바구니에 <br />
+                        상품을 담았습니다.
                     </h2>
                 </div>
 
                 <div className="bottom">
                     <button onClick={onClose}>계속 쇼핑하기</button>
+
                     <button onClick={goToOrder}>결제하기</button>
                 </div>
             </div>

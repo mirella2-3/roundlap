@@ -89,6 +89,7 @@ export const OrderCheckStyle = styled.div`
 export const WishListStyle = styled.div`
     ul {
         display: flex;
+        overflow: hidden;
         li {
             margin-right: 7.5px;
             font-size: 20px;
@@ -119,17 +120,21 @@ export const WishListNotingStyle = styled.div`
     color: #b1b1b1;
 `;
 export const WishListItem = styled.div`
+    overflow: hidden;
     position: relative;
     display: flex;
     .wishItem {
         width: 274px;
-        height: 354px;
+        height: 325px;
         position: relative;
+        cursor: pointer;
         p {
             img {
                 width: 274px;
-                height: 354px;
+                /* height: 354px; */
                 object-fit: contain;
+                /* border: 1px solid #f6f6f6; */
+                background: rgb(253, 253, 253);
             }
         }
         .heart {
@@ -145,7 +150,7 @@ export const WishListItem = styled.div`
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 500;
         }
     }

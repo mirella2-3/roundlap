@@ -47,6 +47,7 @@ const App = () => {
                         {/* Brand */}
                         <Route path="/brand" element={<Brand />} />
                         <Route path="/productLine" element={<ProductLine />} />
+                        <Route path="/productLine/Detail" element={<ProductDetail />} />
                         <Route path="/magazine" element={<Magazine />} />
 
                         {/* Notice */}

@@ -2,10 +2,15 @@ import { MdOutlineClose } from 'react-icons/md';
 import { SearchStyle } from './style';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/modules/authSlice';
 
 const KAKAO_JS_KEY = '7ea357e59ef6f9bc3a13e98433e37392';
+
 const LoginWrap = ({ onClose }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
     const [kakaoLoaded, setKakaoLoaded] = useState(false);
     const [loginForm, setLoginForm] = useState({ loginID: '', loginPW: '' });
 
@@ -22,12 +27,18 @@ const LoginWrap = ({ onClose }) => {
         );
 
         if (user) {
+            dispatch(
+                authActions.login({
+                    loginId: user.userId,
+                    name: user.name, // <-- 여기에 이름 추가
+                })
+            );
+
             localStorage.setItem('currentUser', JSON.stringify(user));
+
             alert(`${user.name}님, 로그인 성공!`);
             onClose();
             navigate('/');
-        } else {
-            alert('아이디 또는 비밀번호가 잘못되었습니다.');
         }
     };
 
@@ -70,8 +81,17 @@ const LoginWrap = ({ onClose }) => {
                     name: res.kakao_account.profile.nickname,
                     email: res.kakao_account.email,
                 };
+
+                // ✅ Redux 로그인 상태 업데이트
+                dispatch(
+                    authActions.login({
+                        loginId: loginForm.loginID,
+                        password: loginForm.loginPW,
+                    })
+                );
                 localStorage.setItem('currentUser', JSON.stringify(user));
                 alert(`카카오 로그인 성공: ${user.name}`);
+                onClose();
                 navigate('/');
             },
             fail: (err) => {
@@ -79,6 +99,7 @@ const LoginWrap = ({ onClose }) => {
             },
         });
     };
+
     return (
         <SearchStyle>
             <article>

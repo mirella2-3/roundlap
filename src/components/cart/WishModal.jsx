@@ -18,8 +18,9 @@ const WishModal = ({ onClose }) => {
 
                 <div className="top">
                     <h2>
-                        <FaHeart style={{ color: '#FF7C76' }} />
-                        관심목록에 상품을 담았습니다.
+                        관심목록에
+                        <br />
+                        상품을 담았습니다.
                     </h2>
                 </div>
 

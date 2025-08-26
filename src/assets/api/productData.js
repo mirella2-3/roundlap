@@ -193,9 +193,9 @@ export const allProductData = [
         id: 10,
         title: '1025 독도 패드 (70매입) 2개 세트',
         price: 34000,
-        salePrice: 34000,
+        salePrice: 28000,
         category: ['essence', 'water', 'BEST', '1025', 'SET'],
-
+        salePercent: 20,
         imgUrl: '/images/Data/dokdo/06_dokdo_pads-2set.png',
         nowLine: '1025',
         colorDark: '#A1D7EB',
@@ -1598,7 +1598,7 @@ export const allProductData = [
     },
     {
         id: 76,
-        title: '소나무 진정시카 앰플',
+        title: '소나무 진정시카 마스크',
         price: 28000,
         salePrice: 28000,
         category: ['essence', 'sensitive', 'sonamu', 'BEST'],

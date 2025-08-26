@@ -72,7 +72,7 @@ const SetItemSwiper = () => {
                     <SwiperSlide key={product.id} className="slide-item">
                         <div className="wish-inner">
                             <img
-                                src={product.imgUrl}
+                                src={product.mainImg}
                                 alt={product.title}
                                 onClick={() => handleDetailClick(product)}
                             />

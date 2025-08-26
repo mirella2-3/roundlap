@@ -31,6 +31,7 @@ const NavBar = ({ isMain }) => {
     const toggleSearch = () => setIsSearchOpen((prev) => !prev);
     const toggleLogin = () => setIsLoginOpen((prev) => !prev);
 
+<<<<<<< HEAD
     const handleLoginClick = () => {
         if (authed) {
             dispatch(authActions.logout());
@@ -38,6 +39,9 @@ const NavBar = ({ isMain }) => {
             toggleLogin();
         }
     };
+=======
+    const { authed, user } = useSelector((state) => state.auth);
+>>>>>>> 6735c7e912997e75e55851f896b944f336c8a761
 
     return (
         <>
@@ -193,6 +197,7 @@ const NavBar = ({ isMain }) => {
                 <ul className="topMenu">
                     <li>
                         <ul className="login">
+<<<<<<< HEAD
                             <li
                                 className="login"
                                 onClick={
@@ -201,6 +206,27 @@ const NavBar = ({ isMain }) => {
                                 style={{ cursor: 'pointer' }}
                             >
                                 {authed ? `LOGOUT (${user?.name}님 반갑습니다)` : 'LOGIN'}
+=======
+                            {authed ? (
+                                <li className="loginwrap">
+                                    <Link to="/logout">
+                                        <span style={{ color: 'orange' }}>{user.name}</span>님
+                                        LOGOUT
+                                    </Link>
+                                </li>
+                            ) : (
+                                <li
+                                    className="login"
+                                    onClick={toggleLogin}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    LOGIN
+                                </li>
+                            )}
+
+                            <li>
+                                <Link to="/login/join">JOIN</Link>
+>>>>>>> 6735c7e912997e75e55851f896b944f336c8a761
                             </li>
                             {!authed && (
                                 <li>

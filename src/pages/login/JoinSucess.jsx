@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SucessStyles } from './style';
 import { useNavigate } from 'react-router-dom';
+import Login from './Login';
 
 const JoinSucess = () => {
     const navigate = useNavigate();
@@ -10,6 +11,9 @@ const JoinSucess = () => {
 
         navigate('/');
     };
+
+    const toggleLogin = () => setIsLoginOpen((prev) => !prev);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
     return (
         <SucessStyles>
             <div className="inner">
@@ -25,10 +29,13 @@ const JoinSucess = () => {
                         <button type="submit" onClick={onSubmit}>
                             메인으로 이동
                         </button>
-                        <button type="submit">로그인</button>
+                        <button type="submit" onClick={toggleLogin}>
+                            로그인
+                        </button>
                     </div>
                 </div>
             </div>
+            {isLoginOpen && <Login onClose={toggleLogin} />}
         </SucessStyles>
     );
 };
