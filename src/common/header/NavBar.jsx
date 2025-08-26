@@ -37,7 +37,9 @@ const NavBar = ({ isMain }) => {
             toggleLogin();
         }
     };
-
+    const LoginInfo = () => {
+        navigate('/mypage/MypageAcess');
+    };
     return (
         <NavStyle className="nav" $isMain={isMain}>
             {/* Main Menu */}
@@ -215,9 +217,15 @@ const NavBar = ({ isMain }) => {
 
                 {/* My Page */}
                 <li>
-                    <Link to="/mypage">
-                        <GoPerson className="person" />
-                    </Link>
+                    {authed ? (
+                        <Link to="/mypage">
+                            <GoPerson className="person" />
+                        </Link>
+                    ) : (
+                        <div style={{ cursor: 'pointer' }} onClick={LoginInfo}>
+                            <GoPerson className="person" />
+                        </div>
+                    )}
                 </li>
 
                 {/* Search */}

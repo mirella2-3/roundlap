@@ -23,6 +23,7 @@ import Order from './pages/order/Order';
 import ClickToTop from './components/scrolltotop/clickToTop';
 import PaySucess from './pages/order/PaySucess';
 import LogoutSucess from './pages/login/LogoutSucess';
+import MypageAcess from './pages/mypage/MypageAcess';
 
 const App = () => {
     return (
@@ -62,6 +63,7 @@ const App = () => {
                         <Route path="/login/Join/success" element={<JoinSucess />} />
                         <Route path="/logout/success" element={<LogoutSucess />} />
                         <Route path="/mypage" element={<Mypage />} />
+                        <Route path="/mypage/MypageAcess" element={<MypageAcess />} />
                     </Route>
                     <Route path="/notfile" element={<Notfile />} />
                 </Routes>

@@ -73,3 +73,63 @@ export const MypageStyle = styled.div`
         }
     }
 `;
+export const LogoutAcessStyles = styled.div`
+    .inner {
+        width: 1400px;
+        margin: auto;
+        box-sizing: border-box;
+        position: relative;
+        .checkbox {
+            margin-top: 210px;
+            margin-bottom: 50px;
+            text-align: center;
+            img {
+                width: 64px;
+                height: 64px;
+                object-fit: contain;
+            }
+        }
+        .check-text {
+            margin-bottom: 120px;
+            text-align: center;
+            h2 {
+                font-size: 36px;
+                font-weight: 700;
+                color: #1a1a1a;
+                margin-bottom: 14px;
+            }
+            h3 {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+        .buttons {
+            margin-bottom: 160px;
+            display: flex;
+            justify-content: center;
+            button[type='submit'] {
+                width: 160px;
+                height: 50px;
+
+                font-size: 18px;
+                font-weight: 400;
+                color: #fff;
+
+                background-color: #515151;
+                border: none;
+                cursor: pointer;
+                text-align: center;
+                margin-right: 20px;
+
+                &:hover {
+                    background-color: #54afea;
+                    color: white;
+                }
+
+                &:last-of-type {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+`;
