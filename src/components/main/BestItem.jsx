@@ -5,7 +5,7 @@ import { addCart } from '../../store/modules/CartSlice';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import WishModal from '../cart/WishModal';
-import CartModal from '../cart/cartModal';
+import CartModal from '../cart/CartModal';
 
 const BestItem = () => {
     const [isCartOpen, setIsCartOpen] = useState(false);

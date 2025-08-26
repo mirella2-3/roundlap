@@ -20,7 +20,7 @@ import { ProductDetail, ProductList } from './components';
 import JoinSucess from './pages/login/JoinSucess';
 import './App.css';
 import Order from './pages/order/Order';
-import ClickToTop from './components/scrolltotop/clickToTop';
+import ClickToTop from './components/scrolltotop/ClickToTop';
 import PaySucess from './pages/order/PaySucess';
 import LogoutSucess from './pages/login/LogoutSucess';
 import MypageAcess from './pages/mypage/MypageAcess';
