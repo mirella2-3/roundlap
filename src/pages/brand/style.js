@@ -271,7 +271,7 @@ export const ProductlineStyle = styled.div`
 `;
 export const SubtextStyle = styled.div`
     .fashion-slider-subText {
-        transform: translateY(-110px);
+        transform: translateY(-140px);
         font-size: 24px;
         font-weight: 600;
         color: white;
@@ -281,7 +281,7 @@ export const SubtextStyle = styled.div`
 export const PDLINEStyle = styled.div`
     .fashion-slider-sub2Text {
         position: absolute;
-        bottom: 20px;
+        bottom: -15px;
         left: 50%;
         transform: translateX(-50%);
         font-size: 18px;
