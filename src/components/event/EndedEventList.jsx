@@ -5,29 +5,21 @@ import Pagination1 from '../pagination/Magazinindex';
 import EventItem from './EventItem';
 import { EventListStyle } from './style';
 
-const EventList = () => {
+const EndedEventList = () => {
     const dispatch = useDispatch();
     const { events, currentPage, itemsPerPage } = useSelector((state) => state.event);
-
-    // 🔁 isActive가 true인 항목이 먼저 오도록 정렬
-    // const sortedEvents = [...events].sort((a, b) => b.isActive - a.isActive);
-    const sortedEvents = events.filter((event) => event.isActive === true);
-
-    // 📄 페이징을 정렬된 목록에 적용
+    const endedEvents = events.filter((event) => event.isActive === false);
     const indexOfLast = currentPage * itemsPerPage;
     const indexOfFirst = indexOfLast - itemsPerPage;
-    const currentEvents = sortedEvents.slice(indexOfFirst, indexOfLast);
-
+    const currentEvents = endedEvents.slice(indexOfFirst, indexOfLast);
     const totalPages = Math.ceil(events.length / itemsPerPage);
 
     const handlePrev = () => {
         if (currentPage > 1) dispatch(eventActions.setCurrentPage(currentPage - 1));
     };
-
     const handleNext = () => {
         if (currentPage < totalPages) dispatch(eventActions.setCurrentPage(currentPage + 1));
     };
-
     const handlePageClick = (page) => {
         dispatch(eventActions.setCurrentPage(page));
     };
@@ -51,4 +43,4 @@ const EventList = () => {
     );
 };
 
-export default EventList;
+export default EndedEventList;

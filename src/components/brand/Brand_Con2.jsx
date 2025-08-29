@@ -15,12 +15,9 @@ const Brand_Con2 = ({ containerAnimation }) => {
             const strongEl = brandCon2Ref.current.querySelector('strong');
             const divEl = brandCon2Ref.current.querySelector('div');
 
-            // 공통 트리거 설정 (가로 스크롤 연결: containerAnimation)
             const baseTrigger = {
                 trigger: brandCon2Ref.current,
-                // 가로 스크롤 타임라인과 동기화
                 ...(containerAnimation ? { containerAnimation } : {}),
-                // Brand_Con2 패널의 "왼쪽"이 뷰포트 "센터"에 닿을 때
                 start: 'left center',
                 toggleActions: 'restart none restart none',
                 markers: false,

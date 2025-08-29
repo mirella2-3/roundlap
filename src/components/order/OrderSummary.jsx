@@ -8,7 +8,7 @@ import {
     setOrderSummary,
     addUserPoints,
     setUsedPoints,
-} from '../../store/modules/OrderSlice';
+} from '../../store/modules/orderSlice';
 
 const OrderSummary = () => {
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ const OrderSummary = () => {
 
         dispatch(resetOrder());
 
-        navigate('/shop/order/PaySucess');
+        navigate('/shop/order/PaySuccess');
     };
 
     return (

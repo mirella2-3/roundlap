@@ -7,9 +7,18 @@ import CartBottom from './CartBottom';
 import CartEmpty from './CartEmpty';
 
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const Cart = ({ onClose }) => {
     const carts = useSelector((state) => state.cart.cartItems);
+    useEffect(() => {
+        document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
+        return () => {
+            document.body.style.overflow = 'auto';
+            document.body.style.height = 'auto';
+        };
+    }, []);
 
     return createPortal(
         <ModalWrapper onClick={onClose}>
@@ -19,14 +28,13 @@ const Cart = ({ onClose }) => {
                         <CartEmpty />
                     ) : (
                         <>
-                            <CartList carts={carts} onClose={onClose} />
+                            <CartList onClose={onClose} />
                             <CartBottom carts={carts} onClose={onClose} />
                         </>
                     )}
                 </CartWrap>
             </ModalContent>
-        </ModalWrapper>,
-        document.body
+        </ModalWrapper>
     );
 };
 

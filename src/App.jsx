@@ -6,24 +6,23 @@ import {
     Event,
     Faq,
     Join,
+    JoinSuccess,
     Login,
     Logout,
+    LogoutSuccess,
     Magazine,
     Main,
     Mypage,
+    MypageAccess,
     Notfile,
     Notice,
+    Order,
     ProductLine,
     Shop,
 } from './pages';
-import { ProductDetail, ProductList } from './components';
-import JoinSucess from './pages/login/JoinSucess';
-import './App.css';
-import Order from './pages/order/Order';
 import ClickToTop from './components/scrolltotop/ClickToTop';
-import PaySucess from './pages/order/PaySucess';
-import LogoutSucess from './pages/login/LogoutSucess';
-import MypageAcess from './pages/mypage/MypageAcess';
+import './App.css';
+import { PaySuccess, ProductDetail } from './components';
 
 const App = () => {
     return (
@@ -41,7 +40,7 @@ const App = () => {
 
                         <Route path="/shop/:productId" element={<ProductDetail />} />
                         <Route path="/shop/order" element={<Order />} />
-                        <Route path="/shop/order/PaySucess" element={<PaySucess />} />
+                        <Route path="/shop/order/PaySuccess" element={<PaySuccess />} />
 
                         {/* Event */}
                         <Route path="/event" element={<Event />} />
@@ -60,10 +59,10 @@ const App = () => {
                         <Route path="/login/Login" element={<Login />} />
                         <Route path="/login/Logout" element={<Logout />} />
                         <Route path="/login/Join" element={<Join />} />
-                        <Route path="/login/Join/success" element={<JoinSucess />} />
-                        <Route path="/logout/success" element={<LogoutSucess />} />
+                        <Route path="/login/Join/success" element={<JoinSuccess />} />
+                        <Route path="/logout/success" element={<LogoutSuccess />} />
                         <Route path="/mypage" element={<Mypage />} />
-                        <Route path="/mypage/MypageAcess" element={<MypageAcess />} />
+                        <Route path="/mypage/MypageAccess" element={<MypageAccess />} />
                     </Route>
                     <Route path="/notfile" element={<Notfile />} />
                 </Routes>

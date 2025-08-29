@@ -20,9 +20,9 @@ const WishListItem = ({ product }) => {
 
     return (
         <WishItemStyle>
-            <div className="wishItem">
+            <div className="wishItem" onClick={toGo}>
                 <p>
-                    <img src={imgUrl} alt={title} onClick={toGo} />
+                    <img src={imgUrl} alt={title} />
                 </p>
 
                 <div className="heart" onClick={handleRemove}>

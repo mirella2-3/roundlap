@@ -41,18 +41,12 @@ const Brand_Con1 = () => {
         if (!brandCon1Ref.current) return;
         const ctx = gsap.context(() => {
             const spans = brandCon1Ref.current.querySelectorAll('span');
-            gsap.fromTo(
-                spans,
-                { y: 30, opacity: 0 },
+            gsap.to(
+                {},
                 {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1.5,
-                    ease: 'power3.out',
-                    stagger: 1,
                     scrollTrigger: {
                         trigger: brandCon1Ref.current,
-                        start: 'top center', // ← 'left center' 대신 유효한 값
+                        start: 'top center',
                         toggleActions: 'restart none restart none',
                         markers: false,
                     },
@@ -62,7 +56,6 @@ const Brand_Con1 = () => {
         return () => ctx.revert();
     }, []);
 
-    // 자동 슬라이드
     useLayoutEffect(() => {
         const id = setInterval(() => {
             setPrevIdx((p) => (p === null ? 0 : (p + 1) % imageList.length));

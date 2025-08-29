@@ -5,13 +5,20 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Brand_Con3 = () => {
+const Brand_Con3 = ({ containerAnimation }) => {
     const brandCon3Ref = useRef(null);
 
     useEffect(() => {
         if (!brandCon3Ref.current) return;
 
         const forTxt = brandCon3Ref.current.querySelectorAll('.item');
+        const baseTrigger = {
+            trigger: brandCon3Ref.current,
+            ...(containerAnimation ? { containerAnimation } : {}),
+            start: 'left center',
+            toggleActions: 'restart none restart none',
+            markers: false,
+        };
 
         gsap.fromTo(
             forTxt,
@@ -23,10 +30,11 @@ const Brand_Con3 = () => {
                 ease: 'power3.out',
                 stagger: 1,
                 scrollTrigger: {
-                    trigger: brandCon3Ref.current,
-                    start: 'top center',
-                    toggleActions: 'play none none none',
-                    markers: false,
+                    baseTrigger,
+                    // trigger: brandCon3Ref.current,
+                    // start: 'top center',
+                    // toggleActions: 'play none none none',
+                    // markers: false,
                 },
             }
         );
@@ -43,7 +51,7 @@ const Brand_Con3 = () => {
                 <li>피부를 고민하다</li>
                 <li className="on">더 나은 가치를 향하다</li>
             </ul>
-            <div className="txtbox">
+            <div className="txtbox" ref={brandCon3Ref}>
                 <span>AIM FOR</span>
                 <span>BETTER VALUE</span>
             </div>

@@ -1,11 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import CartModal from '../../components/cart/cartModal';
-import WishModal from '../../components/cart/WishModal';
 
 const initialState = {
     isCartModalOpen: false,
     isWishModalOpen: false,
-    
 };
 
 export const modalSlice = createSlice({

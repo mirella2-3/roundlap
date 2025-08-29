@@ -215,7 +215,7 @@ const MainProductLine = () => {
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                     modules={[Navigation, Pagination, Autoplay]}
                     autoplay={{
-                        delay: 5000,
+                        delay: 3000,
                         disableOnInteraction: false,
                     }}
                     slidesPerView={3}

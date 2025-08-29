@@ -1,9 +1,9 @@
 import { MdOutlineClose } from 'react-icons/md';
-import { SearchStyle } from './style';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../../store/modules/authSlice';
+import { SearchStyle } from './style';
 
 const KAKAO_JS_KEY = '7ea357e59ef6f9bc3a13e98433e37392';
 
@@ -75,29 +75,36 @@ const LoginWrap = ({ onClose }) => {
             return;
         }
 
-        window.Kakao.API.request({
-            url: '/v2/user/me',
-            success: (res) => {
-                const user = {
-                    id: res.id,
-                    name: res.kakao_account.profile.nickname,
-                    email: res.kakao_account.email,
-                };
-
-                // ✅ Redux 로그인 상태 업데이트
-                dispatch(
-                    authActions.login({
-                        loginId: loginForm.loginID,
-                        password: loginForm.loginPW,
-                    })
-                );
-                localStorage.setItem('currentUser', JSON.stringify(user));
-                alert(`카카오 로그인 성공: ${user.name}`);
-                onClose();
-                navigate('/');
+        window.Kakao.Auth.login({
+            scope: 'profile_nickname, account_email',
+            success: (authObj) => {
+                console.log('카카오 로그인 성공:', authObj);
+                window.Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: (res) => {
+                        const user = {
+                            id: res.id,
+                            name: res.kakao_account.profile.nickname,
+                            email: res.kakao_account.email,
+                        };
+                        dispatch(
+                            authActions.login({
+                                loginId: loginForm.loginID,
+                                password: loginForm.loginPW,
+                            })
+                        );
+                        localStorage.setItem('currentUser', JSON.stringify(user));
+                        alert(`카카오 로그인 성공: ${user.name}`);
+                        onClose();
+                        navigate('/');
+                    },
+                    fail: (err) => {
+                        console.error('사용자 정보 요청 실패', err);
+                    },
+                });
             },
             fail: (err) => {
-                console.error('사용자 정보 요청 실패', err);
+                console.error('카카오 로그인 실패', err);
             },
         });
     };

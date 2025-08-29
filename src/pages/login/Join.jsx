@@ -9,6 +9,7 @@ const Join = () => {
         script.async = true;
         document.body.appendChild(script);
     }, []);
+
     const navigate = useNavigate();
     const onSubmit = (e) => {
         e.preventDefault();

@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { ModalContent, ModalWrapper } from './style';
-import LoginWrap from './LoginWrap';
+import LoginWrap from '../../components/login/LoginWrap';
 
 const Login = ({ onClose }) => {
     return createPortal(

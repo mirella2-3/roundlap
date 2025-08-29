@@ -1,9 +1,9 @@
 import React from 'react';
-import { MegazineStyle } from './style';
+import { MagazineStyle } from './style';
 
-const MegazinVisual = () => {
+const MagazineVisual = () => {
     return (
-        <MegazineStyle>
+        <MagazineStyle>
             <div className="banner">
                 <div className="textbox">
                     <h2>
@@ -16,14 +16,14 @@ const MegazinVisual = () => {
                         기부 러닝 캠페인에 2천 5백만원 상당의 자작나무 수분 선크림 1,000개를
                         후원했다.
                     </p>
-                    <button>자세히보기</button>
+                    <button className="btn">자세히보기</button>
                 </div>
                 <div className="imeagebox">
                     <img src="/images/Magazine/MagazineBanner.png" alt="" />
                 </div>
             </div>
-        </MegazineStyle>
+        </MagazineStyle>
     );
 };
 
-export default MegazinVisual;
+export default MagazineVisual;

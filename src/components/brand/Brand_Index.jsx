@@ -21,11 +21,11 @@ const Brand_Index = () => {
                     opacity: 1,
                     duration: 1.2,
                     ease: 'power2.out',
-                    stagger: 0.3, // 필요시 1.5 등으로 조절
+                    stagger: 1.5,
                     scrollTrigger: {
-                        trigger: txtboxRef.current, // .inner가 뷰포트에 들어오면
+                        trigger: txtboxRef.current,
                         start: 'top 80%',
-                        toggleActions: 'restart none restart none', // 내려갈때/올라올때마다 다시 재생
+                        toggleActions: 'restart none restart none',
                         markers: false,
                     },
                 }

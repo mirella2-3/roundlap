@@ -1,7 +1,7 @@
 import React from 'react';
 import { OrderStyles } from './style';
-import OrderInfo from './OrderInfo';
-import OrderCart from './OrderCart';
+import OrderInfo from '../../components/order/OrderInfo';
+import OrderCart from '../../components/order/OrderCart';
 import { useSelector } from 'react-redux';
 import OrderEmpty from '../../components/order/orderEmpty';
 

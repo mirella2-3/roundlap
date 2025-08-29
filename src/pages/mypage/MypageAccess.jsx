@@ -1,33 +1,28 @@
 import React, { useState } from 'react';
-import { SucessStyles } from './style';
+import { LogoutAccessStyles } from './style';
 import { useNavigate } from 'react-router-dom';
-import Login from './Login';
+import Login from '../login/Login';
 
-const JoinSucess = () => {
+const MypageAccess = () => {
     const navigate = useNavigate();
-
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
     const onSubmit = (e) => {
         e.preventDefault();
-
-        navigate('/');
+        navigate('/login/Join');
     };
-
     const toggleLogin = () => setIsLoginOpen((prev) => !prev);
-    const [isLoginOpen, setIsLoginOpen] = useState(false);
     return (
-        <SucessStyles>
+        <LogoutAccessStyles>
             <div className="inner">
-                <div className="checkbox">
-                    <img src="/images/Sucessicon.png" alt="" />
-                </div>
+                <div className="checkbox"></div>
                 <div className="check-text">
-                    <h2>회원가입이 완료되었습니다.</h2>
-                    <h3>로그인하시면 더욱 다양한 서비스와 혜택을 제공 받으실 수 있습니다.</h3>
+                    <h2>“마이페이지는 회원 전용입니다"</h2>
+                    <h3>로그인 후, 나만의 맞춤 뷰티 정보를 확인해보세요.</h3>
                 </div>
                 <div className="buttonbox">
                     <div className="buttons">
                         <button type="submit" onClick={onSubmit}>
-                            메인으로 이동
+                            회원가입하기
                         </button>
                         <button type="submit" onClick={toggleLogin}>
                             로그인
@@ -36,8 +31,8 @@ const JoinSucess = () => {
                 </div>
             </div>
             {isLoginOpen && <Login onClose={toggleLogin} />}
-        </SucessStyles>
+        </LogoutAccessStyles>
     );
 };
 
-export default JoinSucess;
+export default MypageAccess;

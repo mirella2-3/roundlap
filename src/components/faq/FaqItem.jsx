@@ -1,3 +1,5 @@
+import React from 'react';
+
 const FaqItem = ({ faq, onClick }) => {
     const { id, title, answer, isOpen } = faq;
     return (
@@ -5,7 +7,14 @@ const FaqItem = ({ faq, onClick }) => {
             <dt>
                 <div className="question">
                     <span>Q.</span>
-                    <p>{title}</p>
+                    <p>
+                        {title.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
+                    </p>
                 </div>
                 {isOpen ? (
                     <img src="./images/Notice/Faq_arrow_on.png" alt="" />
@@ -15,7 +24,14 @@ const FaqItem = ({ faq, onClick }) => {
             </dt>
             {isOpen && (
                 <dd>
-                    <p>{answer}</p>
+                    <p>
+                        {answer.split('\n').map((line, index) => (
+                            <React.Fragment key={index}>
+                                {line}
+                                <br />
+                            </React.Fragment>
+                        ))}
+                    </p>
                 </dd>
             )}
         </dl>

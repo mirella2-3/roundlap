@@ -1,5 +1,5 @@
-import MegazinList from '../../components/megazine/MegazinList';
-import MegazinVisual from '../../components/megazine/MegazinVisual';
+import MagazineList from '../../components/magazine/MagazineList';
+import MagazineVisual from '../../components/magazine/MagazineVisual';
 import ScrollBtns from '../../components/scrolltotop/ScrollBtns';
 import { MagazineStyle } from './style';
 
@@ -9,8 +9,8 @@ const Magazine = () => {
             <ScrollBtns />
             <MagazineStyle>
                 <div className="inner">
-                    <MegazinVisual />
-                    <MegazinList />
+                    <MagazineVisual />
+                    <MagazineList />
                 </div>
             </MagazineStyle>
         </>

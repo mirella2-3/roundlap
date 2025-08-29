@@ -1,10 +1,10 @@
 import React from 'react';
-import { MegazineItemStyle } from './style';
+import { MagazineItemStyle } from './style';
 
-const MegazinItem = ({ magazine }) => {
+const MagazineItem = ({ magazine }) => {
     const { id, title, context, imgUrl, date } = magazine;
     return (
-        <MegazineItemStyle>
+        <MagazineItemStyle>
             <div className="img-container">
                 <img src={imgUrl} alt={title} />
             </div>
@@ -13,8 +13,8 @@ const MegazinItem = ({ magazine }) => {
                 <p>{context}</p>
                 <span>{date}</span>
             </div>
-        </MegazineItemStyle>
+        </MagazineItemStyle>
     );
 };
 
-export default MegazinItem;
+export default MagazineItem;

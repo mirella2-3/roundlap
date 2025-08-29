@@ -4,20 +4,21 @@ export const HeaderStyle = styled.header`
     position: fixed;
     top: 0;
     width: 100%;
-    height: 120px;
+    height: ${({ $height }) => $height}px;
     z-index: 1000;
-    transition: opacity 0.4s ease;
-
+    /* transition: opacity 0.4s ease; */
     opacity: ${({ $show }) => ($show ? 1 : 0)};
     pointer-events: ${({ $show }) => ($show ? 'auto' : 'none')};
-
-    background: ${({ $isTransparent }) => ($isTransparent ? 'transparent' : 'white')};
-    color: ${({ $isTransparent }) => ($isTransparent ? 'white' : '#515151')};
+    background: ${({ $isTransparent }) => ($isTransparent ? 'transparent' : '#fff')};
+    color: ${({ $isTransparent }) => ($isTransparent ? '#fff' : '#515151')};
     border-bottom: 1px solid ${({ $isTransparent }) => ($isTransparent ? 'transparent' : '#ececec')};
 
+    transition: height 0.3s ease, background 0.3s ease, opacity 0.3s ease, border-bottom 0.3s ease;
+
     .inner {
-        height: 100%;
+        height: ${({ $height }) => $height}px;
         position: relative;
+        /* transition: height 0.3s ease; */
     }
 
     h1 {
@@ -26,14 +27,17 @@ export const HeaderStyle = styled.header`
         transform: translateY(-50%);
         margin: 0;
         padding: 0;
+        transition: height 0.3s ease;
     }
 `;
 
 export const NavStyle = styled.nav`
+    height: 100%;
     &.nav {
         position: absolute;
         right: 0;
-        top: 110px;
+        /* top: 110px; */
+        top: 50px;
         transform: translateY(-50%);
         display: flex;
         gap: 167px;
@@ -72,6 +76,7 @@ export const NavStyle = styled.nav`
 
                         z-index: -100;
                         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+                        transition: 0.3s;
                     }
 
                     .subMenu {
@@ -82,6 +87,7 @@ export const NavStyle = styled.nav`
                         gap: 87px;
                         top: 103.5px;
                         font-size: 16px;
+                        transition: 0.3s;
                         > li {
                             width: 141px;
                             height: 233px;

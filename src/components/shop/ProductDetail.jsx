@@ -9,15 +9,39 @@ import ProductRecom from './ProductRecom';
 import Review from './Review';
 import { allProductData } from '../../assets/api/productData';
 import { useDispatch } from 'react-redux';
-import { setOrderItems } from '../../store/modules/OrderSlice';
-import { addWish } from '../../store/modules/WishListSlice';
-import { addCart, openCart } from '../../store/modules/CartSlice';
+import { setOrderItems } from '../../store/modules/orderSlice';
+import { addWish } from '../../store/modules/wishListSlice';
+import { addCart, openCart } from '../../store/modules/cartSlice';
 //
 import { getReviewImagesByLine } from '../../assets/api/reviewData';
+import CartModal from '../cart/CartModal';
+import WishModal from '../cart/WishModal';
+import ScrollBtns from '../scrolltotop/ScrollBtns';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ProductDetail = () => {
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [isWishOpen, setIsWishOpen] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+
+    const openCart = () => setIsCartOpen(true);
+    const closeCart = () => setIsCartOpen(false);
+    const openWish = () => setIsWishOpen(true);
+    const closeWish = () => setIsWishOpen(false);
+
+    const handleWishClick = (product) => {
+        dispatch(addWish(product));
+        setSelectedProduct(product);
+        openWish();
+    };
+
+    const handleCartClick = (product) => {
+        dispatch(addCart({ ...product, quantity: 1 })); // quantity 1로 시작
+        setSelectedProduct({ ...product, quantity: 1 });
+        openCart();
+    };
+
     const { productId } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -28,14 +52,14 @@ const ProductDetail = () => {
     const productRef = useRef(null);
     const imgRef = useRef(null);
     const targetRef = useRef(null);
-    const handleWishClick = (product) => {
-        dispatch(addWish(product));
-    };
+    // const handleWishClick = (product) => {
+    //     dispatch(addWish(product));
+    // };
 
-    const handleCartClick = (product) => {
-        dispatch(addCart(product));
-        dispatch(openCart());
-    };
+    // const handleCartClick = (product) => {
+    //     dispatch(addCart(product));
+    //     dispatch(openCart());
+    // };
     useEffect(() => {
         const found = allProductData.find((item) => String(item.id) === String(productId));
         setProduct(found);
@@ -94,6 +118,7 @@ const ProductDetail = () => {
 
     return (
         <>
+            <ScrollBtns />
             <ProductdetailStyle>
                 <div className="bg" style={{ background: colorLight }}></div>
                 <div className="inner">
@@ -188,6 +213,13 @@ const ProductDetail = () => {
 
             <ProductRecom currentItem={{ id }} />
             <Review product={product} reviewImages={reviewImages} />
+
+            {isCartOpen && selectedProduct && (
+                <CartModal onClose={closeCart} product={selectedProduct} />
+            )}
+            {isWishOpen && selectedProduct && (
+                <WishModal onClose={closeWish} product={selectedProduct} />
+            )}
         </>
     );
 };

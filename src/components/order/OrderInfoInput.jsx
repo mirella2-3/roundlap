@@ -1,12 +1,36 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUsedPoints } from '../../store/modules/OrderSlice';
-import { OrderInfoInputStyles } from './style';
+import { setUsedPoints } from '../../store/modules/orderSlice';
 import PaymentSection from './Paymentsection';
+import { OrderInfoInputStyles } from './style';
 
 const OrderInfoInput = () => {
     const dispatch = useDispatch();
     const availablePoints = useSelector((state) => state.order.userPoints || 0);
+
+    const handleAddressSearch = () => {
+        new window.daum.Postcode({
+            oncomplete: function (data) {
+                let fullAddress = data.address;
+                let extraAddress = '';
+
+                if (data.addressType === 'R') {
+                    if (data.bname !== '') extraAddress += data.bname;
+                    if (data.buildingName !== '') {
+                        extraAddress +=
+                            extraAddress !== '' ? `, ${data.buildingName}` : data.buildingName;
+                    }
+                    fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
+                }
+
+                setForm((prev) => ({
+                    ...prev,
+                    postCode: data.zonecode,
+                    address1: fullAddress,
+                }));
+            },
+        }).open();
+    };
 
     const [form, setForm] = useState({
         userName: '',
@@ -114,7 +138,9 @@ const OrderInfoInput = () => {
                         value={form.postCode}
                         onChange={onChange}
                     />
-                    <button type="button">주소검색</button>
+                    <button type="button" onClick={handleAddressSearch}>
+                        주소검색
+                    </button>
                 </div>
                 <div className="orderAddr1">
                     <label htmlFor="postCode"></label>

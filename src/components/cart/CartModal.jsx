@@ -4,7 +4,8 @@ import { IoClose } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
 
 import { useNavigate } from 'react-router-dom';
-import { setOrderItems } from '../../store/modules/OrderSlice';
+import { useEffect } from 'react';
+import { setOrderItems } from '../../store/modules/orderSlice';
 
 const CartModal = ({ onClose, product }) => {
     const dispatch = useDispatch();

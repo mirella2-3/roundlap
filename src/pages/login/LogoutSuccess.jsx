@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { SucessStyles } from './style';
+import { SuccessStyles } from './style';
 import { useNavigate } from 'react-router-dom';
 import Login from './Login';
 
-const LogoutSucess = () => {
+const LogoutSuccess = () => {
     const navigate = useNavigate();
     const [isLoginOpen, setIsLoginOpen] = useState(false);
 
@@ -14,10 +14,10 @@ const LogoutSucess = () => {
     const toggleLogin = () => setIsLoginOpen((prev) => !prev);
 
     return (
-        <SucessStyles>
+        <SuccessStyles>
             <div className="inner">
                 <div className="checkbox">
-                    <img src="/images/Sucessicon.png" alt="로그아웃 성공 아이콘" />
+                    <img src="/images/Successicon.png" alt="로그아웃 성공 아이콘" />
                 </div>
                 <div className="check-text">
                     <h2>로그아웃이 완료되었습니다.</h2>
@@ -35,8 +35,8 @@ const LogoutSucess = () => {
                 </div>
                 {isLoginOpen && <Login onClose={toggleLogin} />}
             </div>
-        </SucessStyles>
+        </SuccessStyles>
     );
 };
 
-export default LogoutSucess;
+export default LogoutSuccess;

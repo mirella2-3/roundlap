@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { CartBottomStyle } from './style';
 import { useDispatch } from 'react-redux';
-import { setOrderItems } from '../../store/modules/OrderSlice';
+import { setOrderItems } from '../../store/modules/orderSlice';
 
 const CartBottom = ({ carts, onClose }) => {
     const isEmpty = carts.length === 0;
@@ -9,19 +9,23 @@ const CartBottom = ({ carts, onClose }) => {
     const navigate = useNavigate();
 
     const handleOrder = () => {
+        console.log('handleOrder onClose:', onClose);
         dispatch(setOrderItems(carts));
         onClose();
         navigate('/shop/order');
+    };
+
+    const onProduct = () => {
+        // onClose();
+        navigate('/shop/all/ALL');
     };
     return (
         <CartBottomStyle>
             <div className="cartBottom">
                 {isEmpty ? (
-                    <Link to="/shop/all/ALL">
-                        <button className="actionBtn" onClick={() => onClose()}>
-                            상품 보러가기
-                        </button>
-                    </Link>
+                    <button className="actionBtn" onClick={onProduct}>
+                        상품 보러가기
+                    </button>
                 ) : (
                     <button className="actionBtn" onClick={handleOrder}>
                         주문하기

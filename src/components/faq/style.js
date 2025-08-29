@@ -92,11 +92,11 @@ export const FaqListStyle = styled.div`
         dd {
             width: 1380px;
             box-sizing: border-box;
-            padding: 58px 94px;
-            background-color: #e6f3fc;
+            padding: 44px 94px;
+            background-color: #f1f9ff;
             margin-bottom: 10px;
-
-            font-size: 18px;
+            font-size: 16px;
+            line-height: 25px;
         }
     }
 `;

@@ -163,7 +163,7 @@ const ScrollBtns = () => {
                             }}
                             style={{ color: activeTab === 'chat' ? '#1a1a1a' : '#8A8A8A' }}
                         >
-                            <RiSettings5Fill size={25} />
+                            <IoMdChatbubbles size={25} />
                             <p>대화</p>
                         </div>
                         {/* <div className="icon_set" style={{ color: '#8a8a8a' }}>

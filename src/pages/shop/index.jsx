@@ -40,12 +40,6 @@ const categoryDisplayMap = {
         dongbaek: '동백 탄력',
     },
 };
-const categoryTitleMap = {
-    all: '전제품',
-    type: '유형별',
-    concern: '고민별',
-    line: '라인별',
-};
 const categories = {
     all: ['ALL', 'BEST', 'SET', 'SALE'],
     type: ['toner', 'essence', 'lotion', 'cleansing', 'mask', 'suncare'],

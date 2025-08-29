@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-export const MegazineListStyle = styled.div`
+export const MagazineListStyle = styled.div`
     margin: 160px 0px 160px 0px;
 
     .magazine-list {
@@ -16,7 +16,7 @@ export const MegazineListStyle = styled.div`
     }
     /* margin: 130px 0px 160px 0px; */
 `;
-export const MegazineItemStyle = styled.div`
+export const MagazineItemStyle = styled.div`
     width: 450px;
     /* height: 583px; */
     display: flex;
@@ -123,7 +123,7 @@ export const NextButton = styled.button`
 
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 `;
-export const MegazineStyle = styled.div`
+export const MagazineStyle = styled.div`
     .banner {
         position: relative;
         width: 1400px;
@@ -149,19 +149,43 @@ export const MegazineStyle = styled.div`
                 line-height: 140%;
                 margin-bottom: 32px;
             }
-            button {
+
+            .btn {
                 width: 160px;
                 height: 38px;
-                border: 1px solid #54afea;
-                background: none;
                 color: #54afea;
-                font-size: 16px;
-                font-weight: 500;
-                transition: 0.3s;
-                git branch &:hover {
-                    background: #54afea;
-                    color: #fff;
-                }
+                text-transform: uppercase;
+                text-decoration: none;
+                border: 1px solid #54afea;
+                padding: 10px 20px;
+                font-size: 17px;
+                cursor: pointer;
+                font-weight: bold;
+                background: transparent;
+                position: relative;
+                transition: all 1s;
+                overflow: hidden;
+            }
+
+            .btn:hover {
+                color: white;
+            }
+
+            .btn::before {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                top: 0;
+                left: -40px;
+                transform: skewX(45deg);
+                background-color: #54afea;
+                z-index: -1;
+                transition: all 1s;
+            }
+
+            .btn:hover::before {
+                width: 160%;
             }
         }
     }

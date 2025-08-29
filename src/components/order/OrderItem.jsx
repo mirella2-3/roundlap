@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setOrderItems } from '../../store/modules/OrderSlice';
+import { setOrderItems } from '../../store/modules/orderSlice';
 import { OrderItemStyle } from './style';
 
 const OrderItem = () => {

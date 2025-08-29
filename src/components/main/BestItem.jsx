@@ -64,14 +64,12 @@ const BestItem = () => {
         },
         {
             id: 1,
-            title: '촉촉한 각질제거 1025 독도 토너 200ml',
+            title: ' 1025 독도 토너 200ml',
             price: 16700,
             salePrice: 16700,
             category: ['toner', 'water', '1025', 'BEST'],
-
             imgUrl: '/images/Data/dokdo/30_dokdo_toner200.png',
             mainImg: '/images/Main/Main-products03.png',
-
             nowLine: '1025',
         },
         {
@@ -133,8 +131,9 @@ const BestItem = () => {
                                     />
                                 </p>
                             </div>
-                            <strong>{product.title}</strong>
-                            <span>{product.salePrice.toLocaleString()}원</span>
+                            <strong>
+                                {product.title} <span>{product.salePrice.toLocaleString()}원</span>
+                            </strong>
                         </li>
                     ))}
                 </ul>

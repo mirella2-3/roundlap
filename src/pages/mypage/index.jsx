@@ -36,7 +36,6 @@ const Mypage = () => {
                         <span className="more">더보기 +</span>
                     </div>
 
-                    {/* <WishListNoting /> */}
                     <WishList />
                 </section>
             </div>

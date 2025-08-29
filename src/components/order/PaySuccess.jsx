@@ -1,8 +1,8 @@
 import React from 'react';
-import { PaySucessStyles } from './style';
+import { PaySuccessStyles } from './style';
 import { useNavigate } from 'react-router-dom';
 
-const PaySucess = () => {
+const PaySuccess = () => {
     const navigate = useNavigate();
 
     const onSubmit = (e) => {
@@ -14,10 +14,10 @@ const PaySucess = () => {
         navigate('/mypage');
     };
     return (
-        <PaySucessStyles>
+        <PaySuccessStyles>
             <div className="inner">
                 <div className="checkbox">
-                    <img src="/images/Sucessicon.png" alt="" />
+                    <img src="/images/Successicon.png" alt="" />
                 </div>
                 <div className="check-text">
                     <h2>주문이 완료되었습니다.</h2>
@@ -34,8 +34,8 @@ const PaySucess = () => {
                     </div>
                 </div>
             </div>
-        </PaySucessStyles>
+        </PaySuccessStyles>
     );
 };
 
-export default PaySucess;
+export default PaySuccess;

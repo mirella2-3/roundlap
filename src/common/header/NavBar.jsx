@@ -38,22 +38,26 @@ const NavBar = ({ isMain }) => {
         }
     };
     const LoginInfo = () => {
-        navigate('/mypage/MypageAcess');
+        navigate('/mypage/MypageAccess');
     };
+    const navTop = scrollY >= 100 ? 50 : 110;
+    const subMenuTop = scrollY >= 100 ? 73.5 : 103.5;
+    const subMenu2Top = scrollY >= 100 ? 40.5 : 70.5;
+    const navBgH = scrollY >= 100 ? 40.5 : 70.5;
     return (
-        <NavStyle className="nav" $isMain={isMain}>
-            {/* Main Menu */}
+        <NavStyle className="nav" $isMain={isMain} style={{ top: `${navTop}px` }}>
             <ul className="MainMenu">
-                {/* SHOP */}
                 <li
                     className="shopMenu"
                     onMouseEnter={() => handleMouseEnter('shop')}
                     onMouseLeave={handleMouseLeave}
                 >
-                    {hoveredMenu === 'shop' && <div className="navBg"></div>}
+                    {hoveredMenu === 'shop' && (
+                        <div className="navBg" style={{ top: `${navBgH}px` }}></div>
+                    )}
                     <Link to="/shop/all/ALL">SHOP</Link>
                     {hoveredMenu === 'shop' && (
-                        <ul className="subMenu">
+                        <ul className="subMenu" style={{ top: `${subMenuTop}px` }}>
                             {/* 전제품 */}
                             <li className="allMenu">
                                 전제품
@@ -162,7 +166,7 @@ const NavBar = ({ isMain }) => {
                 >
                     <Link to="/brand">BRAND</Link>
                     {hoveredMenu === 'brand' && (
-                        <ul className="subMenu smallMenu">
+                        <ul className="subMenu smallMenu" style={{ top: `${subMenu2Top}px` }}>
                             <li>
                                 <Link to="/brand">BRAND STORY</Link>
                             </li>
@@ -183,7 +187,7 @@ const NavBar = ({ isMain }) => {
                 >
                     <Link to="/notice">C/S CENTER</Link>
                     {hoveredMenu === 'cs' && (
-                        <ul className="subMenu smallMenu">
+                        <ul className="subMenu smallMenu" style={{ top: `${subMenu2Top}px` }}>
                             <li>
                                 <Link to="/notice">NOTICE</Link>
                             </li>
@@ -205,7 +209,7 @@ const NavBar = ({ isMain }) => {
                             onClick={handleLoginClick}
                             style={{ cursor: 'pointer' }}
                         >
-                            {authed ? `LOGOUT (${user?.name} 님)` : 'LOGIN'}
+                            {authed ? `LOGOUT (${user?.name}님 반갑습니다)` : 'LOGIN'}
                         </li>
                         {!authed && (
                             <li>

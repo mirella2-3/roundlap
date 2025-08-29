@@ -50,7 +50,7 @@ export const VisualStyle = styled.div`
 
             .textBox {
                 position: absolute;
-                top: 15%;
+                top: 18%;
                 left: 13vw;
                 color: #fff;
 
@@ -313,6 +313,11 @@ export const BestItemStyle = styled.div`
                 left: 50%;
                 transform: translateX(-50%);
                 font-weight: 300;
+                span {
+                    display: block;
+                    margin-top: 10px;
+                    font-weight: 500;
+                }
             }
             &:hover {
                 strong {
@@ -833,7 +838,8 @@ export const SetItemStyle = styled.div`
                 .slide-item {
                     .wish-inner {
                         > img {
-                            opacity: 0.5;
+                            opacity: 0.3;
+                            filter: saturate(30%);
                             transition: 0.3s;
                         }
                     }
@@ -863,6 +869,7 @@ export const SetItemStyle = styled.div`
                     .wish-inner {
                         > img {
                             opacity: 1;
+                            filter: saturate(100%);
                         }
                     }
                     .title {
@@ -1006,7 +1013,8 @@ export const DiscountItemStyle = styled.div`
                 .slide-item {
                     .wish-inner {
                         > img {
-                            opacity: 0.5;
+                            opacity: 0.3;
+                            filter: saturate(30%);
                             transition: 0.3s;
                         }
                     }
@@ -1030,6 +1038,7 @@ export const DiscountItemStyle = styled.div`
                             background: #00395e;
                             color: #fff;
                             display: inline-block;
+                            font-size: 15px;
                         }
                     }
                 }
@@ -1037,6 +1046,7 @@ export const DiscountItemStyle = styled.div`
                     .wish-inner {
                         > img {
                             opacity: 1;
+                            filter: saturate(100%);
                         }
                     }
                     .title {

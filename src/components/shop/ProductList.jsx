@@ -36,7 +36,7 @@ const ProductList = () => {
         <ProductListWrap className="product-box">
             {currentProducts.map((product) => (
                 <ProductItem key={product.id} product={product} />
-            ))}{' '}
+            ))}
             <Pagination1Style>
                 <div className="paginations">
                     <Pagination2

@@ -73,7 +73,7 @@ export const MypageStyle = styled.div`
         }
     }
 `;
-export const LogoutAcessStyles = styled.div`
+export const LogoutAccessStyles = styled.div`
     .inner {
         width: 1400px;
         margin: auto;
