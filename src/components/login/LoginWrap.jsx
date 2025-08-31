@@ -1,0 +1,177 @@
+import { MdOutlineClose } from 'react-icons/md';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/modules/authSlice';
+import { SearchStyle } from './style';
+
+const KAKAO_JS_KEY = '7ea357e59ef6f9bc3a13e98433e37392';
+
+const LoginWrap = ({ onClose }) => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const [kakaoLoaded, setKakaoLoaded] = useState(false);
+    const [loginForm, setLoginForm] = useState({ loginID: '', loginPW: '' });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setLoginForm((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const user = users.find(
+            (u) => u.userId === loginForm.loginID && u.password === loginForm.loginPW
+        );
+
+        if (user) {
+            dispatch(
+                authActions.login({
+                    loginId: user.userId,
+                    name: user.name, // <-- 여기에 이름 추가
+                })
+            );
+
+            localStorage.setItem('currentUser', JSON.stringify(user));
+
+            alert(`${user.name}님, 라운드랩에 오신 걸 환영합니다.`);
+            onClose();
+            navigate('/');
+        } else {
+            alert('로그인 정보를 확인해주세요.');
+        }
+    };
+
+    useEffect(() => {
+        if (typeof window.Kakao !== 'undefined') {
+            if (!window.Kakao.isInitialized()) {
+                window.Kakao.init(KAKAO_JS_KEY);
+                console.log('카카오 SDK 초기화 완료');
+            }
+            setKakaoLoaded(true);
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
+        script.async = true;
+        script.onload = () => {
+            window.Kakao.init(KAKAO_JS_KEY);
+            console.log('카카오 SDK 동적 로드 & 초기화 완료');
+            setKakaoLoaded(true);
+        };
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
+    const handleKakaoLogin = () => {
+        if (!kakaoLoaded || !window.Kakao.isInitialized()) {
+            alert('카카오 SDK가 아직 로드되지 않았습니다.');
+            return;
+        }
+
+        window.Kakao.Auth.login({
+            scope: 'profile_nickname, account_email',
+            success: (authObj) => {
+                console.log('카카오 로그인 성공:', authObj);
+                window.Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: (res) => {
+                        const user = {
+                            id: res.id,
+                            name: res.kakao_account.profile.nickname,
+                            email: res.kakao_account.email,
+                        };
+                        dispatch(
+                            authActions.login({
+                                loginId: loginForm.loginID,
+                                password: loginForm.loginPW,
+                            })
+                        );
+                        localStorage.setItem('currentUser', JSON.stringify(user));
+                        alert(`카카오 로그인 성공: ${user.name}`);
+                        onClose();
+                        navigate('/');
+                    },
+                    fail: (err) => {
+                        console.error('사용자 정보 요청 실패', err);
+                    },
+                });
+            },
+            fail: (err) => {
+                console.error('카카오 로그인 실패', err);
+            },
+        });
+    };
+
+    return (
+        <SearchStyle>
+            <article>
+                <div className="LogLeft">
+                    <h2>LOGIN</h2>
+                    <form>
+                        <input
+                            type="text"
+                            name="loginID"
+                            value={loginForm.loginID}
+                            onChange={handleChange}
+                            placeholder="아이디"
+                        />
+                        <input
+                            type="password"
+                            name="loginPW"
+                            value={loginForm.loginPW}
+                            onChange={handleChange}
+                            placeholder="비밀번호"
+                        />
+                    </form>
+                    <div className="userSet">
+                        <p>
+                            <input type="checkbox" name="ID_Save" />
+                            아이디 저장
+                        </p>
+                        <p className="searchUser">
+                            <strong>아이디 찾기</strong>
+                            <strong>비밀번호 재설정</strong>
+                        </p>
+                    </div>
+                    <button type="button" onClick={handleLogin} className="loginBtn">
+                        로그인
+                    </button>
+                    <Link to="/login/join">
+                        <button className="joinBtn" onClick={onClose}>
+                            회원가입
+                        </button>
+                    </Link>
+                    <span>
+                        비회원 주문조회
+                        <img src="/images/Login/Login_arrow.png" alt="arrow" />
+                    </span>
+                    <div className="SNS">
+                        <p>SNS 계정으로 로그인</p>
+                        <img src="/images/Login/Login_SNS_naver.png" alt="snsNaver" />
+                        <img
+                            src="/images/Login/Login_SNS_kakao.png"
+                            alt="snsKakao"
+                            onClick={handleKakaoLogin}
+                        />
+                    </div>
+                </div>
+                <div className="LogRight">
+                    <img src="/images/Login/Login_Logo.png" alt="logo" />
+                </div>
+            </article>
+
+            <button className="Close" onClick={onClose}>
+                <MdOutlineClose />
+            </button>
+        </SearchStyle>
+    );
+};
+
+export default LoginWrap;

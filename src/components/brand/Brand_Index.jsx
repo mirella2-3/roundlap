@@ -1,47 +1,52 @@
-import { IndexStyle } from './style';
-
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+import { IndexStyle } from './style';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Brand_Index = () => {
     const sectionsRef = useRef([]);
+    const txtboxRef = useRef(null);
 
-    useEffect(() => {
-        sectionsRef.current.forEach((section) => {
-            ScrollTrigger.create({
-                trigger: section,
-                start: 'top 85%',
-                onEnter: () => {
-                    gsap.to(window, {
-                        scrollTo: { y: section, offsetY: 0 },
-                        duration: 0.3,
-                        ease: 'power1.out',
-                    });
-                },
-            });
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const elements = sectionsRef.current.filter(Boolean);
+
+            gsap.fromTo(
+                elements,
+                { x: 170, opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1.2,
+                    ease: 'power2.out',
+                    stagger: 1.5,
+                    scrollTrigger: {
+                        trigger: txtboxRef.current,
+                        start: 'top 80%',
+                        toggleActions: 'restart none restart none',
+                        markers: false,
+                    },
+                }
+            );
         });
-        document.body.classList.add('prevent-scroll');
 
-        // 클린업
-        return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
+        return () => ctx.revert();
     }, []);
 
     return (
         <IndexStyle>
-            <div className="inner">
+            <div className="inner" ref={txtboxRef}>
                 <section className="first" ref={(el) => (sectionsRef.current[0] = el)}>
                     <h1>01</h1>
                     <strong>깨끗한 원료를 선별하다</strong>
                     <div>
-                        <span>라운드랩은 자연 그대로의 깨끗한 원료를 사용하여</span>
+                        <span>라운드랩은 자연 그대로의 깨끗한 원료를 사용하여</span>
                         <span>피부에 이로운 화장품을 만듭니다.</span>
                     </div>
                 </section>
+
                 <section className="second" ref={(el) => (sectionsRef.current[1] = el)}>
                     <h1>02</h1>
                     <strong>피부를 고민하다</strong>
@@ -50,11 +55,12 @@ const Brand_Index = () => {
                         <span>피부가 진짜 필요로 하는 것만을 고민합니다.</span>
                     </div>
                 </section>
+
                 <section className="third" ref={(el) => (sectionsRef.current[2] = el)}>
                     <h1>03</h1>
                     <strong>더 나은 가치를 향하다</strong>
                     <div>
-                        <span>라운드랩은 우리가 살아가는 세상을 더 아름답게 만드는</span>
+                        <span>라운드랩은 우리가 살아가는 세상을 더 아름답게 만드는</span>
                         <span>가치 있는 발걸음을 내딛고 있습니다.</span>
                     </div>
                 </section>

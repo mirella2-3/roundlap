@@ -1,5 +1,16 @@
+import InstaSlider from './InstaSlide';
+import { SnsStyle } from './style';
+
 const BestReview = () => {
-    return <div>리뷰</div>;
+    return (
+        <SnsStyle>
+            <h2>
+                INSTAGRAM <strong>@ round.lab</strong>
+            </h2>
+
+            <InstaSlider />
+        </SnsStyle>
+    );
 };
 
 export default BestReview;

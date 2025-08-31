@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 export const FooterStyle = styled.footer`
-    background: #f6f7f0ff;
+    background-image: url(/images/header/footer_bg.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
     .inner {
         padding: 90px 0 130px 0;
+
         > ul {
             display: flex;
             justify-content: space-between;

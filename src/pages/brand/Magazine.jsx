@@ -1,11 +1,19 @@
+import MagazineList from '../../components/magazine/MagazineList';
+import MagazineVisual from '../../components/magazine/MagazineVisual';
+import ScrollBtns from '../../components/scrolltotop/ScrollBtns';
 import { MagazineStyle } from './style';
 
 const Magazine = () => {
     return (
-        <MagazineStyle>
-            {/* magazine */}
-            매거진
-        </MagazineStyle>
+        <>
+            <ScrollBtns />
+            <MagazineStyle>
+                <div className="inner">
+                    <MagazineVisual />
+                    <MagazineList />
+                </div>
+            </MagazineStyle>
+        </>
     );
 };
 

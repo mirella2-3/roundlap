@@ -1,5 +1,43 @@
-const NoticeList = () => {
-    return <div></div>;
-};
+import { useDispatch, useSelector } from 'react-redux';
+import { NoticeListStyle } from './style';
+import NoticeItem from './NoticeItem';
+import { useEffect } from 'react';
+import { paginationActions } from '../../store/modules/paginationSlice';
+import { noticeActions } from '../../store/modules/noticeSlice';
 
+const NoticeList = () => {
+    const { noticesF } = useSelector((state) => state.notice);
+    const { pageData, perPage, currentPage } = useSelector((state) => state.pagination);
+    const dispatch = useDispatch();
+    const startIdx = (currentPage - 1) * perPage;
+    const endIdx = startIdx + perPage;
+    const currentNotices = pageData.slice(startIdx, endIdx);
+
+    useEffect(() => {
+        dispatch(paginationActions.setData(noticesF));
+    }, [noticesF]);
+
+    useEffect(() => {
+        dispatch(paginationActions.setCurrentPage(1));
+        dispatch(noticeActions.clearSearchResults());
+    }, [dispatch]);
+
+    return (
+        <NoticeListStyle>
+            <table className="noticeTable">
+                <caption>notice</caption>
+                <colgroup>
+                    <col className="num" />
+                    <col className="title" />
+                    <col className="date" />
+                </colgroup>
+                <tbody>
+                    {currentNotices.map((notice) => (
+                        <NoticeItem key={notice.id} notice={notice} />
+                    ))}
+                </tbody>
+            </table>
+        </NoticeListStyle>
+    );
+};
 export default NoticeList;

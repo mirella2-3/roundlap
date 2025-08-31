@@ -1,111 +1,288 @@
 import styled from 'styled-components';
+
 export const HeaderStyle = styled.header`
-    background: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: ${({ $height }) => $height}px;
+    z-index: 1000;
+    /* transition: opacity 0.4s ease; */
+    opacity: ${({ $show }) => ($show ? 1 : 0)};
+    pointer-events: ${({ $show }) => ($show ? 'auto' : 'none')};
+    background: ${({ $isTransparent }) => ($isTransparent ? 'transparent' : '#fff')};
+    color: ${({ $isTransparent }) => ($isTransparent ? '#fff' : '#515151')};
+    border-bottom: 1px solid ${({ $isTransparent }) => ($isTransparent ? 'transparent' : '#ececec')};
+
+    transition: height 0.3s ease, background 0.3s ease, opacity 0.3s ease, border-bottom 0.3s ease;
+
     .inner {
-        height: 120px;
+        height: ${({ $height }) => $height}px;
+        position: relative;
+        /* transition: height 0.3s ease; */
     }
+
     h1 {
         position: absolute;
-        left: 0;
         top: 50%;
         transform: translateY(-50%);
+        margin: 0;
+        padding: 0;
+        transition: height 0.3s ease;
     }
 `;
+
 export const NavStyle = styled.nav`
+    height: 100%;
     &.nav {
         position: absolute;
         right: 0;
-        top: 50%;
+        /* top: 110px; */
+        top: 50px;
         transform: translateY(-50%);
         display: flex;
         gap: 167px;
 
         .MainMenu {
             display: flex;
-            gap: 7px;
+            position: relative;
+            z-index: 100;
 
             a {
-                border: 1px solid red;
-                padding: 10px;
-                color: #fff;
+                display: block;
+                width: 85px;
+
+                color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
                 font-size: 18px;
-                font-weight: 500;
+                font-family: 'YUniverse-B';
+
                 &:hover {
-                    color: #007bcc;
-                    /* font-weight: 600; */
+                    color: #007bbc;
                 }
             }
-
-            .subMenu {
-                display: none;
-            }
-        }
-        .topMenu {
-            display: flex;
-            gap: 12px;
-            font-size: 16px;
-            font-weight: 500;
-            height: 30px;
-
-            align-items: center;
-
-            a {
-                color: #fff;
-            }
-            .login {
-                display: flex;
-                gap: 12px;
-                position: relative;
-                li {
-                    &:first-child::after {
-                        content: '';
-                        width: 1px;
-                        height: 12px;
-                        background: #fff;
-                        display: block;
+            li {
+                &.shopMenu {
+                    .navBg {
                         position: absolute;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        left: 53px;
+                        top: 71px;
+                        left: 48%;
+                        transform: translateX(-50%);
+                        width: 100vw;
+                        height: 428px;
+
+                        background: #fff;
+                        background-image: url(/images/header/header_img2.png);
+                        background-position: left 17% top -25px;
+                        background-repeat: no-repeat;
+
+                        z-index: -100;
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+                        transition: 0.3s;
+                    }
+
+                    .subMenu {
+                        font-family: 'pretendard';
+                        cursor: default;
+                        position: absolute;
+                        display: flex;
+                        gap: 87px;
+                        top: 103.5px;
+                        font-size: 16px;
+                        transition: 0.3s;
+                        > li {
+                            width: 141px;
+                            height: 233px;
+                            color: #515151;
+                            font-weight: 700;
+                            .subSubMenu {
+                                margin-top: 22px;
+
+                                li {
+                                    margin-top: 8px;
+                                    a {
+                                        width: 233px;
+                                        color: #515151;
+                                        padding-left: 0;
+                                        font-size: 16px;
+                                        font-weight: 400;
+                                        font-family: 'pretendard';
+
+                                        &:hover {
+                                            color: #007bcc;
+                                        }
+                                    }
+                                }
+                            }
+                            &::before {
+                                content: '';
+                                display: block;
+                                width: 1px;
+                                height: 428px;
+                                background: #ececec;
+
+                                position: absolute;
+                                left: -34px;
+                                top: -33px;
+                            }
+                            &::after {
+                                content: '';
+                                display: block;
+                                width: 1px;
+                                height: 428px;
+                                background: #ececec;
+                                position: absolute;
+                                top: -33px;
+                            }
+                        }
+                        .allMenu {
+                            &::after {
+                                left: 194.5px;
+                            }
+                        }
+                        .typeMenu {
+                            &::after {
+                                left: 423px;
+                            }
+                        }
+                        .concernMenu {
+                            &::after {
+                                left: 651.5px;
+                            }
+                        }
+                        .lineMenu {
+                            &::after {
+                                left: 880px;
+                            }
+                        }
                     }
                 }
             }
-            .person {
-                font-size: 22px;
-                padding: 5px 0 0 0;
-            }
-            .cart {
-                display: flex;
+        }
 
-                p {
-                    background: #fff;
-                    width: 16px;
-                    height: 16px;
-                    border-radius: 16px;
-                    color: #000;
-                    font-size: 12px;
-                    text-align: center;
-                    margin: 7px 0;
-                }
-                .cartIcon {
-                    font-size: 20px;
-                    padding: 4px 3px 0 0;
-                    color: #fff;
-                }
-            }
+        .brandMenu {
+            position: relative;
+            .subMenu {
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+                position: absolute;
+                top: 70.5px;
+                left: -60px;
+                padding: 40px;
+                background: #fff;
 
-            .search {
-                display: flex;
-                border: 1px solid #fff;
-                color: #fff;
-                width: 140px;
-                height: 30px;
-                justify-content: space-between;
-                line-height: 30px;
-                gap: 45px;
-                padding: 0 9px 0 14px;
-                box-sizing: border-box;
+                a {
+                    font-family: 'pretendard';
+                    width: 112px;
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    color: #515151;
+                    font-weight: 400;
+                    &:hover {
+                        color: #007bcc;
+                    }
+                }
             }
+        }
+
+        .csMenu {
+            padding-right: 19px;
+            padding-bottom: 100px;
+            > a {
+                width: 110px;
+            }
+            position: relative;
+
+            .subMenu {
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+                width: 59px;
+                position: absolute;
+                top: 70.5px;
+                left: -15px;
+                padding: 40px;
+                background: #fff;
+                font-size: 16px;
+
+                a {
+                    font-family: 'pretendard';
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                    color: #515151;
+                    font-weight: 400;
+                    &:hover {
+                        color: #007bcc;
+                    }
+                }
+            }
+        }
+    }
+
+    .topMenu {
+        display: flex;
+        gap: 12px;
+        font-size: 16px;
+        font-weight: 500;
+        height: 30px;
+        padding-left: 116px;
+        align-items: center;
+
+        a {
+            color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
+        }
+
+        .login {
+            font-family: 'YUniverse-B';
+            display: flex;
+            gap: 12px;
+            position: relative;
+
+            li {
+                &:nth-child(2)::after {
+                    content: '';
+                    width: 1px;
+                    height: 12px;
+                    background: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 53px;
+                }
+            }
+        }
+
+        .person {
+            font-size: 22px;
+            padding: 5px 0 0 0;
+        }
+
+        .cart {
+            display: flex;
+
+            p {
+                background: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
+                width: 16px;
+                height: 16px;
+                border-radius: 16px;
+                color: ${({ $isMain }) => ($isMain ? '#1a1a1a' : '#fff')};
+                font-weight: 200;
+                line-height: 16px;
+                font-size: 12px;
+                text-align: center;
+                margin: 7px 0;
+            }
+            .cartIcon {
+                font-size: 20px;
+                padding: 4px 3px 0 0;
+                color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
+                cursor: pointer;
+            }
+        }
+
+        .search {
+            display: flex;
+            color: ${({ $isMain }) => ($isMain ? '#fff' : '#515151')};
+            justify-content: space-between;
+            line-height: 15px;
+            box-sizing: border-box;
+            cursor: pointer;
         }
     }
 `;

@@ -9,12 +9,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 1.2;
     font-family: 'Pretendard','Noto Sans KR', sans-serif;
-    color:#333;
+    color:#515151;
   }
-
+  
   a {
     text-decoration: none;
-    color:#333; 
+    color:#515151; 
   }
   li { list-style:none }
   img { vertical-align: top; }
@@ -23,7 +23,8 @@ const GlobalStyle = createGlobalStyle`
   .inner { width:1400px; margin:auto; box-sizing:border-box; position:relative }
   .main { width: 100%; }
   .main h2 { text-align: center; font-size: 40px;   margin-bottom: 80px; }
-   button { border:none; cursor: pointer; }
+   button { border:none; cursor: pointer;
+    font-family: 'Pretendard','Noto Sans KR', sans-serif; }
 
    @font-face {
     font-family: 'Pretendard';
@@ -80,9 +81,21 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+  font-family: 'YUniverse-B';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_yuniverse@1.0/YUniverse-B.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
   /* 기본 글로벌 스타일 */
   :root {
-    --main-font: 'Pretendard', sans-serif;
+    --main-font: 'Pretendard','YUniverse-B', sans-serif;
+  }
+
+  html, body {
+    overflow-x: hidden;  /* ✅ 가로 스크롤 제거 */
+    width: 100%;
   }
 `;
 

@@ -1,5 +1,25 @@
 import styled from 'styled-components';
 
+// export const VideoStyle = styled.div`
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     z-index: 0;
+//     width: 100%;
+//     transition: opacity 0.3s ease-out;
+//     opacity: 1;
+//     display: block;
+
+//     &.hidden {
+//         opacity: 0;
+//     }
+
+//     video {
+//         width: 100%;
+//         display: block;
+//     }
+// `;
+
 export const VideoStyle = styled.div`
     position: fixed;
     top: 0;
@@ -108,12 +128,95 @@ export const IntroStyle = styled.div`
         pointer-events: none;
     }
 `;
+// export const IntroStyle = styled.div`
+//     width: 100vw;
+//     position: relative;
+
+//     .txtbox {
+//         position: fixed;
+//         top: 45%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         text-align: center;
+//         transition: all 0.5s ease;
+//         opacity: 1;
+//         visibility: visible;
+//         pointer-events: auto;
+//         z-index: 1000;
+
+//         h2 {
+//             font-weight: 700;
+//             font-size: 38px;
+//             color: #fff;
+//             margin-bottom: 0;
+//             transition: color 0.5s ease;
+//         }
+
+//         p {
+//             margin: 17px 0 60px 0;
+//             filter: brightness(0) invert(1);
+//             transition: 0.5s ease;
+//         }
+
+//         span {
+//             display: block;
+//             color: #515151;
+//             line-height: 1.6;
+//             opacity: 0;
+//             transform: translateY(40px);
+
+//             &.txt1 {
+//                 transition: 2s ease;
+//             }
+//             &.txt2 {
+//                 transition: 2s ease 1s;
+//             }
+//         }
+//     }
+
+//     &.scrolled .txtbox {
+//         h2,
+//         span {
+//             color: #1a1a1a;
+//         }
+
+//         span {
+//             color: #515151;
+//             opacity: 1;
+//             transform: translateY(0px);
+//         }
+//         p {
+//             filter: brightness(1);
+//         }
+//     }
+
+//     &.hidden .txtbox {
+//         opacity: 0;
+//         visibility: hidden;
+//         pointer-events: none;
+//     }
+// `;
 
 export const IndexStyle = styled.div`
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
     /* border: 1px solid #000; */
+
+    /* 추가 */
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    z-index: 5;
+
     .inner {
         height: 800px;
-        margin: 140px auto;
+        margin: 80px auto;
         display: flex;
         gap: 100px;
 
@@ -167,9 +270,12 @@ export const IndexStyle = styled.div`
     }
 `;
 export const Con1Style = styled.div`
+    height: 100vh;
     width: 100%;
-    overflow: hidden;
     position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* border: 1px solid #000; */
     .top_menu {
         width: 100%;
         height: 60px;
@@ -195,7 +301,7 @@ export const Con1Style = styled.div`
     }
     .txtbox {
         position: absolute;
-        top: 910px;
+        bottom: 50px;
         left: 50px;
         span {
             display: block;
@@ -203,19 +309,31 @@ export const Con1Style = styled.div`
             font-weight: 700;
             line-height: 40px;
             color: #fff;
+            font-family: 'YUniverse-B';
         }
     }
     .wrap {
         display: flex;
-        justify-content: space-between;
+        overflow: hidden;
         .left {
+            width: 45vw;
+            height: auto;
+
             img {
-                width: 840px;
+                position: absolute;
+                top: 0px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                /* object-fit: cover; */
+                pointer-events: none;
+                z-index: -1;
             }
         }
         .right {
-            width: 1080px;
             position: relative;
+            width: 55vw;
+
             .txts {
                 position: absolute;
                 left: 50%;
@@ -223,6 +341,7 @@ export const Con1Style = styled.div`
                 transform: translate(-50%, -50%);
                 text-align: center;
                 color: #515151;
+
                 span {
                     display: block;
                     font-size: 18px;
@@ -231,16 +350,76 @@ export const Con1Style = styled.div`
                 strong {
                     font-size: 38px;
                     font-weight: 700;
+                    color: #1a1a1a;
                 }
             }
-            .circle {
+            .scroll-section {
+                position: relative;
+                width: 100%;
+                height: 800px;
                 display: flex;
-                position: absolute;
-                color: #e3e3e3;
-                font-size: 50px;
-                font-weight: 700;
-                .on {
-                    color: #007bcc;
+                justify-content: center;
+                align-items: center;
+                .sticky-container {
+                    position: sticky;
+                    top: 100px;
+
+                    width: 700px;
+                    height: 700px;
+                    margin: 0 auto;
+                    .svg text {
+                        font-size: 50px;
+                        font-weight: 700;
+                        /* font-family: 'Pretendard', sans-serif; */
+                        font-family: 'YUniverse-B';
+                        fill: #d6d6d6;
+                        letter-spacing: 22%;
+                        line-height: 80;
+
+                        &:nth-child(1) {
+                            &:hover {
+                                fill: #ffa39f;
+                            }
+                        }
+                        &:nth-child(2) {
+                            &:hover {
+                                fill: #0087e0;
+                            }
+                        }
+                        &:nth-child(3) {
+                            &:hover {
+                                fill: #709fd2;
+                            }
+                        }
+                        &:nth-child(4) {
+                            &:hover {
+                                fill: #0087e0;
+                            }
+                        }
+                        &:nth-child(5) {
+                            &:hover {
+                                fill: #1e8e67;
+                            }
+                        }
+                        &:nth-child(6) {
+                            &:hover {
+                                fill: #ff8e41;
+                            }
+                        }
+                        &:nth-child(7) {
+                            &:hover {
+                                fill: #ffb006;
+                            }
+                        }
+                    }
+                }
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+                    to {
+                        transform: rotate(360deg);
+                    }
                 }
             }
         }
@@ -250,12 +429,14 @@ export const Con1Style = styled.div`
 export const Con2Style = styled.div`
     position: relative;
     width: 100%;
-    height: 1080px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
     background-image: url('../images/brand_con2.png');
     background-repeat: no-repeat;
     background-position: 0 60px;
-    border: 1px solid #000;
-    box-sizing: border-box;
+    /* border: 1px solid #000; */
+
     .top_menu {
         width: 100%;
         height: 60px;
@@ -281,7 +462,7 @@ export const Con2Style = styled.div`
     }
     .txtbox {
         position: absolute;
-        top: 910px;
+        bottom: 50px;
         left: 50px;
         span {
             display: block;
@@ -289,6 +470,7 @@ export const Con2Style = styled.div`
             font-weight: 700;
             line-height: 40px;
             color: #d6d6d6;
+            font-family: 'YUniverse-B';
         }
     }
     .txtwrap {
@@ -313,18 +495,22 @@ export const Con2Style = styled.div`
             margin-bottom: 6px;
             strong {
                 font-weight: 700;
+                color: #1a1a1a;
             }
         }
     }
 `;
 export const Con3Style = styled.div`
     position: relative;
-    height: 1080px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* height: 1080px; */
     background-image: url('../images/brand_con3.png');
     background-repeat: no-repeat;
     background-position: 0 60px;
-    border: 1px solid #000;
-    box-sizing: border-box;
+    /* border: 1px solid #000; */
+
     .top_menu {
         width: 100%;
         height: 60px;
@@ -350,7 +536,7 @@ export const Con3Style = styled.div`
     }
     .txtbox {
         position: absolute;
-        top: 910px;
+        bottom: 50px;
         left: 50px;
         span {
             display: block;
@@ -358,6 +544,7 @@ export const Con3Style = styled.div`
             font-weight: 700;
             line-height: 40px;
             color: #d6d6d6;
+            font-family: 'YUniverse-B';
         }
     }
     .inner {
@@ -365,8 +552,10 @@ export const Con3Style = styled.div`
         h3 {
             font-size: 38px;
             font-weight: 700;
-            color: #515151;
-            margin-top: 320px;
+            /* color: #515151; */
+            color: #1a1a1a;
+            /* margin-top: 320px; */
+            margin-top: 270px;
             margin-bottom: 144px;
         }
     }
@@ -407,12 +596,17 @@ export const Con3Style = styled.div`
                     font-weight: 700;
                 }
             }
+            opacity: 0;
+            /* transform: translateY(100px); */
         }
     }
 `;
 export const LastStyle = styled.div`
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     height: 1080px;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
 
     .inner {
         text-align: center;
