@@ -2,7 +2,7 @@ import { CartItemStyle } from './style';
 import { MdOutlineClose } from 'react-icons/md';
 
 import { useDispatch } from 'react-redux';
-import { removeCart, updateQuantity } from '../../store/modules/CartSlice';
+import { removeCart, updateQuantity } from '../../store/modules/cartSlice';
 
 const CartItem = ({ product }) => {
     const dispatch = useDispatch();

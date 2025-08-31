@@ -1,7 +1,7 @@
 import { FaHeart } from 'react-icons/fa';
 import { WishListItem as WishItemStyle } from './style';
 import { useDispatch } from 'react-redux';
-import { removeWish } from '../../store/modules/WishListSlice';
+import { removeWish } from '../../store/modules/wishListSlice';
 import { useNavigate } from 'react-router-dom';
 
 const WishListItem = ({ product }) => {

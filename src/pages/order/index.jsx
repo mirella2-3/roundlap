@@ -3,7 +3,7 @@ import { OrderStyles } from './style';
 import OrderInfo from '../../components/order/OrderInfo';
 import OrderCart from '../../components/order/OrderCart';
 import { useSelector } from 'react-redux';
-import OrderEmpty from '../../components/order/orderEmpty';
+import OrderEmpty from '../../components/order/OrderEmpty';
 
 const Order = () => {
     const orderItems = useSelector((state) => state.order.orderItems || []); //

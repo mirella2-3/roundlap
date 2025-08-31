@@ -15,7 +15,7 @@ export { default as Main } from './main';
 export { default as Notfile } from './notfiles';
 export { default as Shop } from './shop';
 export { default as Event } from './event';
-export { default as ProductLine } from './productline';
+export { default as ProductLine } from './productLine';
 export { default as Order } from './order';
 
 export { default as Notice } from './notice';

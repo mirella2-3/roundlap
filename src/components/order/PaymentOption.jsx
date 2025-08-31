@@ -1,6 +1,6 @@
 import React from 'react';
-import CardPayment from './CardPayment.JSX';
-import EasyPayment from './EasyPayment.JSX';
+import CardPayment from './CardPayment';
+import EasyPayment from './EasyPayment';
 import MobilePayment from './MobilePayment';
 import BankPayment from './BankPayment';
 

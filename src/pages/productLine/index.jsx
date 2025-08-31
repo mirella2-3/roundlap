@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/parallax';
 import { PDLINEStyle, ProductlineStyle, SubtextStyle } from './style';
 
-export default function FashionSlider() {
+const ProductLine = () => {
     // 데이터 (필요 시 props로 치환 가능)
     const slides = useMemo(
         () => [
@@ -340,4 +340,5 @@ export default function FashionSlider() {
             </div>
         </ProductlineStyle>
     );
-}
+};
+export default ProductLine;

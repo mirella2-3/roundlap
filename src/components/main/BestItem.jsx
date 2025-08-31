@@ -1,7 +1,7 @@
 import { BestItemStyle } from './style';
 import { useDispatch } from 'react-redux';
-import { addWish } from '../../store/modules/WishListSlice';
-import { addCart } from '../../store/modules/CartSlice';
+import { addWish } from '../../store/modules/wishListSlice';
+import { addCart } from '../../store/modules/cartSlice';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import WishModal from '../cart/WishModal';

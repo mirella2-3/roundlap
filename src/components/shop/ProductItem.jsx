@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { addCart } from '../../store/modules/CartSlice';
-import { addWish } from '../../store/modules/WishListSlice';
+import { addCart } from '../../store/modules/cartSlice';
+import { addWish } from '../../store/modules/wishListSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import CartModal from '../cart/CartModal';

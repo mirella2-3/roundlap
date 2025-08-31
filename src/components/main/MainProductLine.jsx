@@ -241,7 +241,7 @@ const MainProductLine = () => {
                             <strong>{slide.description}</strong>
                             <button
                                 className="btn"
-                                onClick={() => navigate('/productline')}
+                                onClick={() => navigate('/productLine')}
                                 onMouseEnter={(e) => {
                                     if (index === activeIndex) {
                                         const color = buttonColors[index];

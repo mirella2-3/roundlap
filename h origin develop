@@ -43,8 +43,8 @@
  import { allProductData } from '../../assets/api/productData';[m
  import { useDispatch } from 'react-redux';[m
  import { setOrderItems } from '../../store/modules/OrderSlice';[m
-[32m+[m[32mimport { addWish } from '../../store/modules/WishListSlice';[m
-[32m+[m[32mimport { addCart, openCart } from '../../store/modules/CartSlice';[m
+[32m+[m[32mimport { addWish } from '../../store/modules/wishListSlice';[m
+[32m+[m[32mimport { addCart, openCart } from '../../store/modules/cartSlice';[m
  [m
  gsap.registerPlugin(ScrollTrigger);[m
  [m
