@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { setOrderItems } from '../../store/modules/orderSlice';
 
 const CartModal = ({ onClose, product }) => {
+    console.log('onClose 타입dd:', typeof onClose);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 

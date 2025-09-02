@@ -76,22 +76,20 @@ export const CartWrapStyle = styled.div`
         }
     }
 `;
-export const CartBottomStyle = styled.div`
-    .actionBtn {
-        margin-top: 24px;
-        width: 510px;
-        height: 48px;
-        font-size: 16px;
-        font-weight: 500;
-        color: #fff;
+export const CartBottomStyle = styled.button`
+    margin-top: 24px;
+    width: 510px;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
 
-        background-color: #515151;
-        border: none;
-        cursor: pointer;
-        text-align: center;
-        &:hover {
-            background-color: #54afea;
-        }
+    background-color: #515151;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+        background-color: #54afea;
     }
 `;
 export const OverlayStyle = styled.div`

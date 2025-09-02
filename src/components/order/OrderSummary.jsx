@@ -9,6 +9,7 @@ import {
     addUserPoints,
     setUsedPoints,
 } from '../../store/modules/orderSlice';
+import { clearCart } from '../../store/modules/cartSlice';
 
 const OrderSummary = () => {
     const navigate = useNavigate();
@@ -33,6 +34,7 @@ const OrderSummary = () => {
         dispatch(addUserPoints(earnedPoints));
         localStorage.setItem('currentUserPoints', newPoints);
         dispatch(resetOrder());
+        dispatch(clearCart());
         navigate('/shop/order/PaySuccess');
     };
 

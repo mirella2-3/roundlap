@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import CartBottom from './CartBottom';
 import CartItem from './CartItem';
 import { CartListStyle } from './style';
 

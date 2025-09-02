@@ -32,7 +32,6 @@ export { default as WishListItem } from './mypage/WishListItem';
 export { default as WishListNoting } from './mypage/WishListNoting';
 
 export { default as Cart } from './cart/Cart';
-export { default as CartBottom } from './cart/CartBottom';
 export { default as CartEmpty } from './cart/CartEmpty';
 export { default as CartItem } from './cart/CartItem';
 export { default as CartList } from './cart/CartList';
