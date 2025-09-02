@@ -50,7 +50,6 @@ export const OrderItemStyle = styled.div`
         position: relative;
         display: flex;
         align-items: center;
-        /* box-sizing: border-box; */
         padding: 12px 0px;
         border-bottom: 1px solid #e3e3e3;
 

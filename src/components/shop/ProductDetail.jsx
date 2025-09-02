@@ -36,30 +36,21 @@ const ProductDetail = () => {
         openWish();
     };
 
-    const handleCartClick = (product) => {
-        dispatch(addCart({ ...product, quantity: 1 })); // quantity 1로 시작
-        setSelectedProduct({ ...product, quantity: 1 });
-        openCart();
-    };
-
     const { productId } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
-    //
     const [reviewImages, setReviewImages] = useState([]);
     const productRef = useRef(null);
     const imgRef = useRef(null);
     const targetRef = useRef(null);
-    // const handleWishClick = (product) => {
-    //     dispatch(addWish(product));
-    // };
 
-    // const handleCartClick = (product) => {
-    //     dispatch(addCart(product));
-    //     dispatch(openCart());
-    // };
+    const handleCartClick = (product) => {
+        dispatch(addCart({ ...product, quantity }));
+        setSelectedProduct({ ...product, quantity });
+        openCart();
+    };
     useEffect(() => {
         const found = allProductData.find((item) => String(item.id) === String(productId));
         setProduct(found);

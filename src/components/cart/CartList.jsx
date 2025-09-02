@@ -3,8 +3,7 @@ import CartBottom from './CartBottom';
 import CartItem from './CartItem';
 import { CartListStyle } from './style';
 
-const CartList = ({ onClose }) => {
-    const carts = useSelector((state) => state.cart.cartItems);
+const CartList = ({ carts, onClose }) => {
     const totalPrice = carts.reduce((acc, item) => acc + item.salePrice * item.quantity, 0);
     const shipping = totalPrice > 0 && totalPrice < 15000 ? 2500 : 0;
     const finalTotal = totalPrice + shipping;

@@ -27,7 +27,7 @@ const BestItem = () => {
     };
 
     const handleCartClick = (product) => {
-        dispatch(addCart({ ...product, quantity: 1 })); // quantity 1로 시작
+        dispatch(addCart({ ...product, quantity: 1 }));
         setSelectedProduct({ ...product, quantity: 1 });
         openCart();
     };

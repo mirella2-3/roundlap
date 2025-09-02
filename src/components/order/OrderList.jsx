@@ -12,11 +12,6 @@ const OrderList = () => {
         <OrderListStyle>
             <div className="OrderList">
                 <div className="OrderListBox">
-                    {/* {orderItems.length === 0 ? (
-                        <p className="noProduct">주문할 상품이 없습니다.</p>
-                    ) : (
-                        orderItems.map((item) => <OrderItem key={item.id} item={item} />)
-                    )} */}
                     {orderItems.map((item) => (
                         <OrderItem key={item.id} item={item} />
                     ))}

@@ -11,14 +11,12 @@ const cartSlice = createSlice({
     reducers: {
         addCart: (state, action) => {
             const item = action.payload;
-            const exist = state.cartItems.find((i) => i.id === item.id);
+            const existingItem = state.cartItems.find((i) => i.id === item.id);
 
-            if (!exist) {
-                state.cartItems.push({ ...item, quantity: 1 });
+            if (existingItem) {
+                existingItem.quantity += item.quantity;
             } else {
-                // 이미 추가된 item이면 아무 작업도 하지 않음
-                // 이렇게 하면 이벤트가 두 번 발생해도 한 번만 Cart에 추가
-                return;
+                state.cartItems.push(item);
             }
         },
         removeCart: (state, action) => {

@@ -27,17 +27,12 @@ const OrderSummary = () => {
         const updatedItems = orderItems.map((item) => ({ ...item, status: 'paid' }));
 
         dispatch(addOrderHistory(updatedItems));
-
         dispatch(setOrderSummary({ productTotal, shipping, points: earnedPoints, total }));
-
         const newPoints = userPoints - usedPoints + earnedPoints;
         dispatch(setUsedPoints(0));
         dispatch(addUserPoints(earnedPoints));
-
         localStorage.setItem('currentUserPoints', newPoints);
-
         dispatch(resetOrder());
-
         navigate('/shop/order/PaySuccess');
     };
 

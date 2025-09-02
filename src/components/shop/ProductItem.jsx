@@ -7,6 +7,7 @@ import CartModal from '../cart/CartModal';
 import WishModal from '../cart/WishModal';
 
 const ProductItem = ({ product }) => {
+    const [selectedProduct, setSelectedProduct] = useState(null);
     const { title, price, imgUrl } = product;
     const dispatch = useDispatch();
 
@@ -19,27 +20,18 @@ const ProductItem = ({ product }) => {
     const openWish = () => setIsWishOpen(true);
     const closeWish = () => setIsWishOpen(false);
 
-    const handleCartClick = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        // 이미 마지막 클릭에서 추가했는지 체크
-        if (!product.__added) {
-            dispatch(addCart(product));
-            setIsCartOpen(true);
-            product.__added = true; // 임시 플래그
-            setTimeout(() => {
-                product.__added = false;
-            }, 100); // 0.1초 후 플래그 초기화
-        }
+    const handleCartClick = (product) => {
+        dispatch(addCart({ ...product, quantity: 1 }));
+        setSelectedProduct({ ...product, quantity: 1 });
+        openCart();
     };
 
-    const handleWishClick = (e) => {
-        e.preventDefault();
-        e.stopPropagation(); // ← 여기 추가
+    const handleWishClick = (product) => {
         dispatch(addWish(product));
-        setIsWishOpen(true);
+        setSelectedProduct(product);
+        openWish();
     };
+
     const navigate = useNavigate();
 
     return (
@@ -51,38 +43,39 @@ const ProductItem = ({ product }) => {
             }}
             style={{ cursor: 'pointer' }}
         >
-            <Link>
-                <div className="img">
-                    <img src={imgUrl} alt={title} />
-                    <div className="bg">
-                        <img
-                            src="/images/wish_1.png"
-                            alt="wish"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                handleWishClick(e);
-                            }}
-                        />
-                        <img
-                            src="/images/wish_2.png"
-                            alt="cart"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                handleCartClick(e);
-                            }}
-                        />
-                    </div>
+            <div className="img">
+                <img src={imgUrl} alt={title} />
+                <div className="bg">
+                    <img
+                        src="/images/wish_1.png"
+                        alt="wish"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleWishClick(product);
+                        }}
+                    />
+                    <img
+                        src="/images/wish_2.png"
+                        alt="cart"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleCartClick(product);
+                        }}
+                    />
                 </div>
+            </div>
 
-                <div className="txt">
-                    <p className="title">{title}</p>
-                    <h4>{price.toLocaleString()}원</h4>
-                </div>
-            </Link>
-            {isCartOpen && <CartModal onClose={closeCart} product={product} />}
-            {isWishOpen && <WishModal onClose={closeWish} />}
+            <div className="txt">
+                <p className="title">{title}</p>
+                <h4>{price.toLocaleString()}원</h4>
+            </div>
+
+            {isCartOpen && selectedProduct && (
+                <CartModal onClose={closeCart} product={selectedProduct} />
+            )}
+            {isWishOpen && selectedProduct && (
+                <WishModal onClose={closeWish} product={selectedProduct} />
+            )}
         </article>
     );
 };

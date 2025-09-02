@@ -28,13 +28,14 @@ const Cart = ({ onClose }) => {
                         <CartEmpty />
                     ) : (
                         <>
-                            <CartList onClose={onClose} />
+                            <CartList carts={carts} onClose={onClose} />
                             <CartBottom carts={carts} onClose={onClose} />
                         </>
                     )}
                 </CartWrap>
             </ModalContent>
-        </ModalWrapper>
+        </ModalWrapper>,
+        document.body
     );
 };
 
