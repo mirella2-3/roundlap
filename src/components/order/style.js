@@ -375,6 +375,11 @@ export const PaySuccessStyles = styled.div`
                 font-size: 18px;
                 font-weight: 500;
             }
+            h4 {
+                margin-top: 10px;
+                font-size: 14px;
+                color: #b2b2b2;
+            }
         }
         .buttons {
             margin-bottom: 160px;

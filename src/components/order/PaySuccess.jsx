@@ -1,9 +1,11 @@
 import React from 'react';
 import { PaySuccessStyles } from './style';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const PaySuccess = () => {
     const navigate = useNavigate();
+    const authed = useSelector((state) => state.user.authed);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -11,7 +13,11 @@ const PaySuccess = () => {
     };
     const onOrder = (e) => {
         e.preventDefault();
-        navigate('/mypage');
+        if (authed) {
+            navigate('/mypage');
+        } else {
+            navigate('/mypage/MypageAccess');
+        }
     };
     return (
         <PaySuccessStyles>
@@ -22,6 +28,7 @@ const PaySuccess = () => {
                 <div className="check-text">
                     <h2>주문이 완료되었습니다.</h2>
                     <h3>고객님의 주문이 정상적으로 완료되었습니다.</h3>
+                    <h4>비회원 주문 고객님은 이메일 내 주문번호를 확인해주세요.</h4>
                 </div>
                 <div className="buttonbox">
                     <div className="buttons">
