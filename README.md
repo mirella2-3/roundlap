@@ -1,12 +1,59 @@
-# React + Vite
+# Door
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+기존 라운드랩(Round Lab) 웹사이트를 기반으로, UI·UX 관점에서 전면 리디자인한 프로젝트입니다.
+사용자가 브랜드·상품 정보를 더 직관적으로 탐색하고, 편리하게 쇼핑할 수 있도록 정보 구조와 인터페이스를 개선했습니다.
+단순한 재구성이 아닌, 접근성 향상, 시각적 일관성 강화, 사용자 중심 정보 배치, 모바일·데스크톱 환경 최적화 등을 목표로 설계 및 구현한 프론트엔드 중심 리디자인 프로젝트입니다.
 
-Currently, two official plugins are available:
+노션 페이지 : https://www.notion.so/2602405f666180cda173d0910a49c5f9?v=2602405f666181ac908c000c28439769&source=copy_link
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 1. 제작기간, 참여 인원
 
-## Expanding the ESLint configuration
+2025.07.22 ~ 2025.08.26
+ 4명
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 2. 사용 기술
+
+-Front: HTML 5, Sass , JavaScript, React 19, Redux, Redux-toolkit
+
+## 3. 주요 기능
+
+- 메인 페이지 :베스트/세일 아이템 목록 노출 , 브랜드 라인 및 브랜드 소개 섹션 , 인스타그램 피드 연동
+- 샵(Shop) 페이지 : 세일/유형별/고민별/라인별 상품 필터링, 상품 상세 페이지 제공
+- 상품 상세 페이지 : 옵션 및 수량 선택, 장바구니 담기, 위시리스트 추가
+- 이벤트 페이지 : 진행 중/종료된 이벤트 목록 조회
+- 브랜드 페이지 : 브랜드 소개 및 라인업 소개, 매거진(콘텐츠) 조회
+- 장바구니 : 담긴 상품 목록 확인 및 수정, 샵 페이지 이동
+- 고객센터(C/S) 페이지 : 게시글 조회
+- 마이 페이지 : 적립금 확인, 주문내역 확인, 위시리스트 목록 조회
+- 로그인/회원가입 페이지 : 로그인과 회원가입
+
+
+## 4. 팀 소개
+
+- 권석규 - 개발 팀원 / 프론트엔드
+  - 프로덕트 라인 페이지 구현
+  - 마이페이지 및 결제창 적립금 기능 구현
+  - 공통 컴포넌트 (페이지네이션) 작업
+
+- 강미선 – 디자이너 / 디자인 팀장
+  - 메인페이지 레이아웃 및 스타일 구성
+  - Header / Footer 디자인
+
+김미래 – 개발 팀장 / 프론트엔드
+  - 메인페이지 기능 구현 (Header 포함)
+  - 브랜드 스토리 구현
+  - 전체 필요 API 문서화 및 연동
+  - 샵 페이지 및 상세 페이지 기능 + 스타일 구현
+  - 장바구니 및 결제 페이지 디자인 및 스타일 구성
+  - 공지사항 & FAQ 페이지 디자인
+
+김정은 - 퍼블리셔
+  - 로그인/회원가입 기능 구현
+  - 메인페이지 영상 작업
+  - 검색창 CSS 구현
+  - 공지사항 & FAQ 페이지 스타일 구성 및 검색기능 구현
+
+## 5. 주의사항
+
+- 완성 후 기존 레포지토리를 갖고있는 팀원의 사정으로 인해 레포지토리 변경하여 백업해놓아서 작업 내역이 작성되어있지 않습니다.
+- 
